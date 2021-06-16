@@ -1,0 +1,807 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19041.1052; Version 2004; 64bit' Language: 'ru' Physical Memory: 16315 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/llogv/Games/Piggy Bank Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55632
+Successfully changed project path to: C:/Users/llogv/Games/Piggy Bank Project
+C:/Users/llogv/Games/Piggy Bank Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 54.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/llogv/Games/Piggy Bank Project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   27.21.14.6192
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56484
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001863 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 43.26 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.559 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005385 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 46.78 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:StandaloneWindows
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.891 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2078 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.0 MB.
+System memory in use after: 92.0 MB.
+
+Unloading 68 unused Assets to reduce memory usage. Loaded Objects now: 2483.
+Total: 4.875000 ms (FindLiveObjects: 0.300400 ms CreateObjectMapping: 0.128900 ms MarkObjects: 4.325400 ms  DeleteObjects: 0.119500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Bomb.cs
+  artifactKey: Guid(6788dd7596b0b0c4094e0abc0c00fcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Bomb.cs using Guid(6788dd7596b0b0c4094e0abc0c00fcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6ed2ba29add4b9b77c88a21e26cbdd6') in 0.026572 seconds
+  Import took 0.029343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.980367 seconds.
+  path: Assets/Scripts/PlayerHealth.cs
+  artifactKey: Guid(8c280814c7813b849b0ce7d4868c118e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerHealth.cs using Guid(8c280814c7813b849b0ce7d4868c118e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c3baba5ebf972d8090741e031d9a1e7') in 0.005152 seconds
+  Import took 0.008409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006811 seconds.
+  path: Assets/Scripts/Timer.cs
+  artifactKey: Guid(cc88ad0710e23b745a11290ccb581545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Timer.cs using Guid(cc88ad0710e23b745a11290ccb581545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97becba21ffa1453d53b2069aed296c1') in 0.005183 seconds
+  Import took 0.008012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018774 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(abaeeaef48f612442b34f760765441ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(abaeeaef48f612442b34f760765441ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7eeb160fa2288de402e8d9353efadc5') in 0.005085 seconds
+  Import took 0.007889 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.115816 seconds.
+  path: Assets/Scripts/ObjectDestroyer.cs
+  artifactKey: Guid(ab846adcaba9ee94f914fa372790defe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ObjectDestroyer.cs using Guid(ab846adcaba9ee94f914fa372790defe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12717fbfe0e7fdad017d488058c36f7e') in 0.005332 seconds
+  Import took 0.008180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.037679 seconds.
+  path: Assets/Scripts/Powerup.cs
+  artifactKey: Guid(bd25242884dad0c4bb1e93f7d2752f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Powerup.cs using Guid(bd25242884dad0c4bb1e93f7d2752f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e49123f67aa996c9148a5614d5cf2a') in 0.005554 seconds
+  Import took 0.008571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.120157 seconds.
+  path: Assets/Scenes/GameScene.unity
+  artifactKey: Guid(9e962fea5124e134ca584d5985213bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameScene.unity using Guid(9e962fea5124e134ca584d5985213bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73af462c57c0594b9b5c3794781625ec') in 0.011931 seconds
+  Import took 0.014665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.410450 seconds.
+  path: Assets/Scripts/AboutUI.cs
+  artifactKey: Guid(70d44de3534add44abb8d66767d3f5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AboutUI.cs using Guid(70d44de3534add44abb8d66767d3f5ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b72daed322e19df72a92a15328193f1f') in 0.005066 seconds
+  Import took 0.007807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.133438 seconds.
+  path: Assets/Scripts/NormalGameManager.cs
+  artifactKey: Guid(73d8ef7dea2778847b860db9b6fa716f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/NormalGameManager.cs using Guid(73d8ef7dea2778847b860db9b6fa716f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb0e9cf970c046ee9ac010d15938e7ed') in 0.005661 seconds
+  Import took 0.008825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.203489 seconds.
+  path: Assets/Scripts/SurvivalGameManager.cs
+  artifactKey: Guid(c63e77b7b7d2b62428d9ab6661089adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SurvivalGameManager.cs using Guid(c63e77b7b7d2b62428d9ab6661089adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb0f0eb27b6510db7ef67b8446e45725') in 0.005117 seconds
+  Import took 0.007870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019782 seconds.
+  path: Assets/Scenes/MenuScene.unity
+  artifactKey: Guid(c16d5d5fb7db26d43ad9bf398a9f0e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MenuScene.unity using Guid(c16d5d5fb7db26d43ad9bf398a9f0e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f9950cf22cca9d631e62234a988055') in 0.005363 seconds
+  Import took 0.008107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.085994 seconds.
+  path: Assets/Scripts/GameManager.cs
+  artifactKey: Guid(1782880bc11b8874b9bed5a7f40e4573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameManager.cs using Guid(1782880bc11b8874b9bed5a7f40e4573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '258fae40663cb8df65bf1f128bc4c3ea') in 0.005019 seconds
+  Import took 0.007737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.382230 seconds.
+  path: Assets/Scripts/Enemy.cs
+  artifactKey: Guid(acd8feeedbef57947bebfcde2263204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy.cs using Guid(acd8feeedbef57947bebfcde2263204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be314e054e6b5a9a877f7d268a286897') in 0.005519 seconds
+  Import took 0.008463 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005403 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.799 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.0 MB.
+System memory in use after: 92.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2488.
+Total: 4.299900 ms (FindLiveObjects: 0.194700 ms CreateObjectMapping: 0.075800 ms MarkObjects: 3.930100 ms  DeleteObjects: 0.098100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005137 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.809 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.0 MB.
+System memory in use after: 92.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2492.
+Total: 4.849800 ms (FindLiveObjects: 0.311100 ms CreateObjectMapping: 0.104900 ms MarkObjects: 4.319200 ms  DeleteObjects: 0.113300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 308.724757 seconds.
+  path: Assets/Scripts/Enemy.cs
+  artifactKey: Guid(acd8feeedbef57947bebfcde2263204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy.cs using Guid(acd8feeedbef57947bebfcde2263204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f89592c45b6f18a46737c497c0ccb8a') in 0.004398 seconds
+  Import took 0.007824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.868593 seconds.
+  path: Assets/Prefabs/Collecting Objects/Normal Bomb.prefab
+  artifactKey: Guid(f3402d6a6338a37469f1c06dffa7f15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Collecting Objects/Normal Bomb.prefab using Guid(f3402d6a6338a37469f1c06dffa7f15f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c782c099bc7af879e6f4f4b46e0bdbf8') in 0.098305 seconds
+  Import took 0.101358 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.810 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2503.
+Total: 5.711700 ms (FindLiveObjects: 0.322500 ms CreateObjectMapping: 0.123400 ms MarkObjects: 5.146300 ms  DeleteObjects: 0.118000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005476 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.800 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.0 MB.
+System memory in use after: 95.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2507.
+Total: 5.984700 ms (FindLiveObjects: 0.546900 ms CreateObjectMapping: 0.317900 ms MarkObjects: 5.021700 ms  DeleteObjects: 0.095900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005161 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.0 MB.
+System memory in use after: 95.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2511.
+Total: 4.270200 ms (FindLiveObjects: 0.215000 ms CreateObjectMapping: 0.080000 ms MarkObjects: 3.869800 ms  DeleteObjects: 0.103900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 183.710096 seconds.
+  path: Assets/Prefabs/Collecting Objects/Normal Meteorit.prefab
+  artifactKey: Guid(a0298ca5048cc1148bf81ac06edec032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Collecting Objects/Normal Meteorit.prefab using Guid(a0298ca5048cc1148bf81ac06edec032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd1a0db3dbbdc05a53a653906e2f1ce') in 0.049191 seconds
+  Import took 0.052240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Prefabs/Collecting Objects/Super Meteorit.prefab
+  artifactKey: Guid(a8b8386d0667f8f4fb697116b449fec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Collecting Objects/Super Meteorit.prefab using Guid(a8b8386d0667f8f4fb697116b449fec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb38e575a9b39a07926374213f673f6') in 0.016802 seconds
+  Import took 0.019621 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005141 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.824 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2516.
+Total: 4.131100 ms (FindLiveObjects: 0.181500 ms CreateObjectMapping: 0.059600 ms MarkObjects: 3.790900 ms  DeleteObjects: 0.098300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005210 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.814 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2520.
+Total: 8.157600 ms (FindLiveObjects: 0.577200 ms CreateObjectMapping: 0.296000 ms MarkObjects: 7.184100 ms  DeleteObjects: 0.098700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005088 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.816 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2524.
+Total: 5.323300 ms (FindLiveObjects: 0.414800 ms CreateObjectMapping: 0.223500 ms MarkObjects: 4.590400 ms  DeleteObjects: 0.093300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005057 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.829 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2528.
+Total: 4.452700 ms (FindLiveObjects: 0.191800 ms CreateObjectMapping: 0.072400 ms MarkObjects: 4.088100 ms  DeleteObjects: 0.099500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005124 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.821 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2532.
+Total: 4.463600 ms (FindLiveObjects: 0.203600 ms CreateObjectMapping: 0.075200 ms MarkObjects: 4.054400 ms  DeleteObjects: 0.129200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005080 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.841 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2536.
+Total: 4.380600 ms (FindLiveObjects: 0.189200 ms CreateObjectMapping: 0.071800 ms MarkObjects: 4.018600 ms  DeleteObjects: 0.100100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005093 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.839 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2540.
+Total: 4.256300 ms (FindLiveObjects: 0.224000 ms CreateObjectMapping: 0.090300 ms MarkObjects: 3.836300 ms  DeleteObjects: 0.105000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005088 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.909 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2544.
+Total: 4.104900 ms (FindLiveObjects: 0.188500 ms CreateObjectMapping: 0.068100 ms MarkObjects: 3.750800 ms  DeleteObjects: 0.096400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005132 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.856 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.1 MB.
+System memory in use after: 95.1 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2548.
+Total: 6.817700 ms (FindLiveObjects: 0.272400 ms CreateObjectMapping: 0.127400 ms MarkObjects: 6.321000 ms  DeleteObjects: 0.095500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005078 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.862 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2552.
+Total: 8.352200 ms (FindLiveObjects: 0.425000 ms CreateObjectMapping: 0.230400 ms MarkObjects: 7.594800 ms  DeleteObjects: 0.100200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005143 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.886 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2556.
+Total: 4.006600 ms (FindLiveObjects: 0.170500 ms CreateObjectMapping: 0.068600 ms MarkObjects: 3.671400 ms  DeleteObjects: 0.095400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006069 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.977 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2560.
+Total: 4.603100 ms (FindLiveObjects: 0.232100 ms CreateObjectMapping: 0.066400 ms MarkObjects: 4.204400 ms  DeleteObjects: 0.099300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005134 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.850 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2564.
+Total: 4.016300 ms (FindLiveObjects: 0.178900 ms CreateObjectMapping: 0.058400 ms MarkObjects: 3.686600 ms  DeleteObjects: 0.091800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005473 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityIAP: [InitializeOnLoad] Facebook Check
+UnityIAP: Runtime [2020.3.1f1]
+UnityIAP: Current Build is Android:Android
+UnityIAP: stub FacebookStore.dll disabled
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.865 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2075 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2568.
+Total: 4.728300 ms (FindLiveObjects: 0.181700 ms CreateObjectMapping: 0.071500 ms MarkObjects: 4.326900 ms  DeleteObjects: 0.147300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

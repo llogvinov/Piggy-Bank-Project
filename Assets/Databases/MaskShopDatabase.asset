@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade749fb3f77fae42957cea6e5c1946a, type: 3}
+  m_Name: MaskShopDatabase
+  m_EditorClassIdentifier: 
+  mask:
+  - image: {fileID: 0}
+    name: none
+    price: 0
+    isPurchased: 1
+  - image: {fileID: -1305136516854534094, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    name: medicine mask
+    price: 49
+    isPurchased: 0
+  - image: {fileID: -7579279525607880232, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    name: sun glasses
+    price: 190
+    isPurchased: 0
+  - image: {fileID: 729472806332753468, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    name: clown nose
+    price: 290
+    isPurchased: 0
+  - image: {fileID: -6734069999539912144, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    name: glasses
+    price: 390
+    isPurchased: 0
+  - image: {fileID: -6488760723007481649, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    name: eye patch
+    price: 590
+    isPurchased: 0
+  - image: {fileID: 3713756627450362764, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    name: mushu
+    price: 690
+    isPurchased: 0
+  - image: {fileID: 6020975001740733914, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    name: ski glasses
+    price: 890
+    isPurchased: 0
+  - image: {fileID: -4001211420894096464, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    name: moustache
+    price: 990
+    isPurchased: 0
+  - image: {fileID: -7018918851948514271, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    name: black ski mask
+    price: 1190
+    isPurchased: 0
+  - image: {fileID: 4854062428613024586, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    name: white ski mask
+    price: 1190
+    isPurchased: 0
+  - image: {fileID: -824625527999740549, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    name: hockey mask
+    price: 1490
+    isPurchased: 0
+  - image: {fileID: -1925337650781593062, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    name: blind glasses
+    price: 1690
+    isPurchased: 0
+  - image: {fileID: 3045495363885205721, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    name: jewish glasses
+    price: 1990
+    isPurchased: 0
+  - image: {fileID: 3145209889390319254, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    name: tears
+    price: 490
+    isPurchased: 0
+  - image: {fileID: 6044197273956387778, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    name: kyoto ghoul
+    price: 1490
+    isPurchased: 0
+  - image: {fileID: -1922656819982350359, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    name: joker
+    price: 1190
+    isPurchased: 0

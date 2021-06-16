@@ -1,0 +1,6 @@
+Product ID,Published State,Purchase Type,Auto Translate,Locale; Title; Description,Auto Fill Prices,Price,Pricing Template ID;;;
+com.cringegamesls.piggybank.remove_ads,published,managed_by_android,false,en_US;Remove Advertisement;All Ads will be removed;ru_RU;Убрать все рекламы;Все рекламы будут убраны,true,450,
+com.cringegamesls.piggybank.coins1000,published,managed_by_android,false,en_US;1000 coins;Gives player 1000 coins;ru_RU;1000 монет‚;Купить 1000 монет,true,50,
+com.cringegamesls.piggybank.coins3000,published,managed_by_android,false,en_US;3000 coins;Gives player 3000 coins;ru_RU;3000 монет‚;Купить 3000 монет,true,175,
+com.cringegamesls.piggybank.coins10000,published,managed_by_android,false,en_US;10000 coins;Gives player 10000 coins;ru_RU;10000 монет‚;Купить 10000 монет,true,550,
+com.cringegamesls.piggybank.coins40000,published,managed_by_android,false,en_US;40000 coins;Gives player 40000 coins;zh_TW;40000 монет,;Купить 40000 монет,true,2250,
