@@ -7,8 +7,9 @@ public class ModeSelector : MonoBehaviour
     [SerializeField] private GameObject modeUI;
     [SerializeField] private Button openModeButton;
     [SerializeField] private Button closeModeButton;
+    [Space]
     [SerializeField] private Button[] modes;
-
+    [Space]
     [SerializeField] private Button[] buttons;
 
     private void Start()

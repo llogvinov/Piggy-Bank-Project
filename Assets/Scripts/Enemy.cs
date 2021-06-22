@@ -5,16 +5,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private GameObject explosionMarkPrefab;
     [Space]
-    [SerializeField] protected int damage;
-    [SerializeField] protected float damageRadius;
+    [SerializeField] private int damage;
+    [SerializeField] private float damageRadius;
     [SerializeField] private float scale;
 
     protected PlayerHealth playerHealth;
+    
+    protected const float groundCameraShakeForce = 0.05f;
+    protected const float playerCameraShakeForce = 0.1f;
 
-    //Calls when bomb hits cracked player
-    protected void JustExplode()
+    //Calls when the shild is active
+    //or bomb hits cracked player
+    protected void Explode(float cameraShakeForce)
     {
-        CameraShake.Shake(0.2f, 0.05f);
+        CameraShake.Shake(0.2f, cameraShakeForce);
 
         GameObject explosion = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
         explosion.transform.localScale *= scale;
@@ -25,7 +29,9 @@ public class Enemy : MonoBehaviour
     //Calls when the bomb hits the ground
     protected void ExplodeOnGround()
     {
-        Explosion();
+        DamageInRadius();
+
+        Explode(groundCameraShakeForce);
 
         GameObject mark = Instantiate(explosionMarkPrefab, transform.position, explosionMarkPrefab.transform.rotation);
         mark.transform.localScale *= scale;
@@ -36,16 +42,11 @@ public class Enemy : MonoBehaviour
     {
         playerHealth.TakeDamage(damage);
 
-        CameraShake.Shake(0.2f, 0.1f);
-
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
-        explosion.transform.localScale *= scale;
-
-        Destroy(gameObject);
+        Explode(playerCameraShakeForce);
     }
 
     //If player in damage radius damage first
-    protected void Explosion()
+    private void DamageInRadius()
     {
         Collider2D[] overlappedColliders = Physics2D.OverlapCircleAll(transform.position, damageRadius);
 
@@ -60,17 +61,10 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-
-        CameraShake.Shake(0.2f, 0.05f);
-
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
-        explosion.transform.localScale *= scale;
-
-        Destroy(gameObject);
     }
 
     //Show damage radius in scene window
-    protected void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1f, 0f, 0f, 0.5f);
         Gizmos.DrawWireSphere(transform.position, damageRadius);

@@ -5,9 +5,10 @@ public class CrackedPlayer : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer hatImage;
     [SerializeField] private SpriteRenderer maskImage;
+    [Space]
     [SerializeField] private GameObject explosionPosition;
     [SerializeField] private float explosionForce = 1000;
-
+    [Space]
     [SerializeField] private List<Rigidbody2D> parts = new List<Rigidbody2D>();
 
     private void Start()

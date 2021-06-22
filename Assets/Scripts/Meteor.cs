@@ -15,7 +15,7 @@ public class Meteor : Enemy
     {
         if (gameManager.isGameOver || gameManager.currentTime <= 0)
         {
-            JustExplode();
+            Explode(groundCameraShakeForce);
         }
     }
 
@@ -32,7 +32,7 @@ public class Meteor : Enemy
         }
         else
         {
-            JustExplode();
+            Explode(groundCameraShakeForce);
         }
     }
 

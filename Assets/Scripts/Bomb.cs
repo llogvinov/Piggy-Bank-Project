@@ -23,7 +23,7 @@ public class Bomb : Enemy
     {
         if (Powerup.isShildActive)
         {
-            JustExplode();
+            Explode(groundCameraShakeForce);
             return;
         }
 
@@ -38,7 +38,7 @@ public class Bomb : Enemy
         }
         else
         {
-            JustExplode();
+            Explode(groundCameraShakeForce);
         }
     }
 }

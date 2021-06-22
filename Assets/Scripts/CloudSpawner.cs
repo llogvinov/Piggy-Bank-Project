@@ -7,12 +7,13 @@ public class CloudSpawner : MonoBehaviour
     [SerializeField] public List<Cloud> clouds = new List<Cloud>();
     [SerializeField] private bool isNormalMode;
 
+    [Header("Time between spawning")]
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private float maxTimeBetweenSpawn;
 
+    [Header("Spawning bounds")]
     [SerializeField] private float bottomSpawnBound = 2;
     [SerializeField] private float topSpawnBound = 5;
-
     [SerializeField] private float leftSpawnBound = -2;
     [SerializeField] private float rightSpawnBound = 2;
 
