@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!gameManager.isGameOver)
+        if (!gameManager.IsGameOver)
         {
             GetPlayerInput();
             SetAnimation();
@@ -120,11 +120,11 @@ public class PlayerController : MonoBehaviour
     {
         if (!Powerup.isDoubleCoinsActive)
         {
-            gameManager.coinToAdd += coin.coinValue;
+            gameManager.CoinToAdd += coin.coinValue;
         }
         else
         {
-            gameManager.coinToAdd += 2 * coin.coinValue;
+            gameManager.CoinToAdd += 2 * coin.coinValue;
         }
 
         playerAudio.PlayOneShot(coinClip, 1);

@@ -223,9 +223,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spawnBounds: 2.1
-  startTimeSpawn: 1
-  minTimeSpawn: 5
-  maxTimeSpawn: 10
+  startTimeSpawn: 10
+  minTimeSpawn: 15
+  maxTimeSpawn: 25
   scaleTime: 15
   objectPrefabs:
   - {fileID: 2466801115618663130, guid: cd4cae41b0a868f4497822d53ed25d26, type: 3}
@@ -3301,12 +3301,12 @@ MonoBehaviour:
   pauseButton: {fileID: 1913473583}
   rewardText: {fileID: 961951090}
   adManager: {fileID: 492392857}
-  coinToAdd: 0
-  isGameOver: 0
+  CoinToAdd: 0
+  IsGameOver: 0
   coinText: {fileID: 799079811}
   recordText: {fileID: 1411255436}
-  powerupIcon: {fileID: 1151577906}
-  timer: {fileID: 2300292828814205735}
+  PowerupIcon: {fileID: 1151577906}
+  Timer: {fileID: 2300292828814205735}
 --- !u!4 &2121879640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9098467685054153201, guid: 8e9b16f4b40b6764f8745685de54bb9d, type: 3}

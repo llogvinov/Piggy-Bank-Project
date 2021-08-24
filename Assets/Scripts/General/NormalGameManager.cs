@@ -6,33 +6,33 @@ public class NormalGameManager : GameManager
     [SerializeField] private Text coinText;
     [SerializeField] private Text recordText;
 
-    [SerializeField] public Image powerupIcon;
-    [SerializeField] public Timer timer;
+    public Image PowerupIcon;
+    public Timer Timer;
 
     private void Start()
     {
         base.StartGame();
 
         GameDataManager.IncrementNormalGamesPlayed();
-        coinToAdd = 0;
+        CoinToAdd = 0;
     }
 
     private void FixedUpdate()
     {
-        coinText.text = "+" + coinToAdd;
+        coinText.text = "+" + CoinToAdd;
     }
 
     public override void GameOver()
     {
-        isGameOver = true;
+        IsGameOver = true;
 
         pauseButton.SetActive(false);
         gameOverPanel.SetActive(true);
 
-        GameDataManager.SetNewRecord(coinToAdd);
+        GameDataManager.SetNewRecord(CoinToAdd);
         recordText.text = "record: " + GameDataManager.GetPlayerRecord();
-        rewardText.text = "+" + coinToAdd;
-        GameDataManager.AddCoins(coinToAdd);
+        rewardText.text = "+" + CoinToAdd;
+        GameDataManager.AddCoins(CoinToAdd);
         GameSharedUI.Instance.UpdateCoinsUIText();
 
         ShowInterstitialAd();

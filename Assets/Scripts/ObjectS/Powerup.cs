@@ -38,17 +38,17 @@ public class Powerup : MonoBehaviour
         switch (powerupIndex)
         {
             case 0:
-                if (gameManager.timer) { gameManager.timer.StartNewTimer(doubleCoinsPowerupDuration); }
+                if (gameManager.Timer) { gameManager.Timer.StartNewTimer(doubleCoinsPowerupDuration); }
                 else { Debug.Log("Не нашлось :((("); }
                 StartCoroutine(DoubleCoinsPowerup());
                 break;
             case 1:
-                if (gameManager.timer) { gameManager.timer.StartNewTimer(shildPowerupDuration); }
+                if (gameManager.Timer) { gameManager.Timer.StartNewTimer(shildPowerupDuration); }
                 else { Debug.Log("Не нашлось :((("); }
                 StartCoroutine(ShildPowerup());
                 break;
             case 2:
-                if (gameManager.timer) { gameManager.timer.StartNewTimer(superSpeedPowerupDuration); }
+                if (gameManager.Timer) { gameManager.Timer.StartNewTimer(superSpeedPowerupDuration); }
                 else { Debug.Log("Не нашлось :((("); }
                 StartCoroutine(SuperSpeedPowerup());
                 break;
@@ -78,8 +78,8 @@ public class Powerup : MonoBehaviour
     //Powerup that doubles coin values
     private IEnumerator DoubleCoinsPowerup()
     {
-        gameManager.powerupIcon.sprite = powerupIcons[0];
-        gameManager.powerupIcon.gameObject.SetActive(true);
+        gameManager.PowerupIcon.sprite = powerupIcons[0];
+        gameManager.PowerupIcon.gameObject.SetActive(true);
         isDoubleCoinsActive = true;
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -88,7 +88,7 @@ public class Powerup : MonoBehaviour
         yield return new WaitForSeconds(doubleCoinsPowerupDuration);
 
         isDoubleCoinsActive = false;
-        gameManager.powerupIcon.gameObject.SetActive(false);
+        gameManager.PowerupIcon.gameObject.SetActive(false);
 
         Destroy(gameObject);
     }
@@ -96,8 +96,8 @@ public class Powerup : MonoBehaviour
     //Powerup that prevent the player from taking damage
     private IEnumerator ShildPowerup()
     {
-        gameManager.powerupIcon.sprite = powerupIcons[1];
-        gameManager.powerupIcon.gameObject.SetActive(true);
+        gameManager.PowerupIcon.sprite = powerupIcons[1];
+        gameManager.PowerupIcon.gameObject.SetActive(true);
         isShildActive = true;
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -106,7 +106,7 @@ public class Powerup : MonoBehaviour
         yield return new WaitForSeconds(shildPowerupDuration);
         
         isShildActive = false;
-        gameManager.powerupIcon.gameObject.SetActive(false);
+        gameManager.PowerupIcon.gameObject.SetActive(false);
 
         Destroy(gameObject);
     }
@@ -114,8 +114,8 @@ public class Powerup : MonoBehaviour
     //Powerup that speeds up the player
     private IEnumerator SuperSpeedPowerup()
     {
-        gameManager.powerupIcon.sprite = powerupIcons[2];
-        gameManager.powerupIcon.gameObject.SetActive(true);
+        gameManager.PowerupIcon.sprite = powerupIcons[2];
+        gameManager.PowerupIcon.gameObject.SetActive(true);
         isSuperSpeedActive = true;
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -124,7 +124,7 @@ public class Powerup : MonoBehaviour
         yield return new WaitForSeconds(superSpeedPowerupDuration);
         
         isSuperSpeedActive = false;
-        gameManager.powerupIcon.gameObject.SetActive(false);
+        gameManager.PowerupIcon.gameObject.SetActive(false);
 
         Destroy(gameObject);
     }
@@ -132,8 +132,8 @@ public class Powerup : MonoBehaviour
     //Powerup that add 1 heart to players health
     private IEnumerator HeartPowerup()
     {
-        gameManager.powerupIcon.sprite = powerupIcons[3];
-        gameManager.powerupIcon.gameObject.SetActive(true);
+        gameManager.PowerupIcon.sprite = powerupIcons[3];
+        gameManager.PowerupIcon.gameObject.SetActive(true);
 
         PlayerHealth player = FindObjectOfType<PlayerHealth>();
         player.AddHeart();
@@ -143,7 +143,7 @@ public class Powerup : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         
-        gameManager.powerupIcon.gameObject.SetActive(false);
+        gameManager.PowerupIcon.gameObject.SetActive(false);
 
         Destroy(gameObject);
     }

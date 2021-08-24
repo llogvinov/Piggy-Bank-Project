@@ -15,18 +15,18 @@ public class SurvivalGameManager : GameManager
 
         GameDataManager.IncrementSurvivalGamesPlayed();
         currentTime = startingTime;
-        coinToAdd = 75;
+        CoinToAdd = 75;
     }
 
     private void FixedUpdate()
     {
-        if (!isGameOver)
+        if (!IsGameOver)
         {
             currentTime -= Time.deltaTime;
             timerText.text = currentTime.ToString("00");
         }
         
-        if (currentTime <= 0 && !isGameOver)
+        if (currentTime <= 0 && !IsGameOver)
         {
             GameComplete();
         }
@@ -35,13 +35,13 @@ public class SurvivalGameManager : GameManager
     //Calls if the player had completed the game session
     public void GameComplete()
     {
-        isGameOver = true;
+        IsGameOver = true;
 
         pauseButton.SetActive(false);
         gameCompletePanel.SetActive(true);
 
-        rewardText.text = "+" + coinToAdd;
-        GameDataManager.AddCoins(coinToAdd);
+        rewardText.text = "+" + CoinToAdd;
+        GameDataManager.AddCoins(CoinToAdd);
         GameSharedUI.Instance.UpdateCoinsUIText();
 
         ShowInterstitialAd();
@@ -49,7 +49,7 @@ public class SurvivalGameManager : GameManager
 
     public override void GameOver()
     {
-        isGameOver = true;
+        IsGameOver = true;
 
         pauseButton.SetActive(false);
         gameOverPanel.SetActive(true);

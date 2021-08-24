@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if (gameManager.isGameOver)
+        if (gameManager.IsGameOver)
             return;
         
         GetPlayerInput();

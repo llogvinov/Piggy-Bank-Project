@@ -73,7 +73,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         if (showResult == ShowResult.Finished)
         {
             // Reward the user for watching the ad to completion.
-            GameDataManager.AddCoins(gameManager.coinToAdd);
+            GameDataManager.AddCoins(gameManager.CoinToAdd);
             GameSharedUI.Instance.UpdateCoinsUIText();
             gameManager.DoubleCoins();
             rewardButton.gameObject.SetActive(false);

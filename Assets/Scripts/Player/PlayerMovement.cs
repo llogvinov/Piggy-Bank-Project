@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gameManager.isGameOver)
+        if (gameManager.IsGameOver)
             return;
         
         MovePlayer();

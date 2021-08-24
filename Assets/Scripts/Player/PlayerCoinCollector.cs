@@ -20,18 +20,20 @@ public class PlayerCoinCollector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.TryGetComponent(out Coin coin);
-        CollectCoin(other, coin);
+        
+        if (coin != null)
+            CollectCoin(coin);
     }
 
-    private void CollectCoin(Collider2D other, Coin coin)
+    private void CollectCoin(Coin coin)
     {
         if (!Powerup.isDoubleCoinsActive)
-            gameManager.coinToAdd += coin.coinValue;
+            gameManager.CoinToAdd += coin.coinValue;
         else
-            gameManager.coinToAdd += 2 * coin.coinValue;
+            gameManager.CoinToAdd += 2 * coin.coinValue;
 
         playerAudio.PlayOneShot(coinClip, 1);
 
-        Destroy(other.gameObject);
+        Destroy(coin.gameObject);
     }
 }

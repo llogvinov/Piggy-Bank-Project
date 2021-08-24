@@ -13,7 +13,7 @@ public class Meteor : Enemy
 
     private void FixedUpdate()
     {
-        if (gameManager.isGameOver || gameManager.currentTime <= 0)
+        if (gameManager.IsGameOver || gameManager.currentTime <= 0)
         {
             Explode(groundCameraShakeForce);
         }

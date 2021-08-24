@@ -47,7 +47,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObject()
     {
-        while (!gameManager.isGameOver)
+        while (!gameManager.IsGameOver)
         {
             if (objectPrefabs.Length > 1)
             {

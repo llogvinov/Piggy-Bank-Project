@@ -11,8 +11,8 @@ public abstract class GameManager : MonoBehaviour
     [Space]
     [SerializeField] protected AdManager adManager;
 
-    public int coinToAdd;
-    public bool isGameOver;
+    public int CoinToAdd;
+    public bool IsGameOver;
 
     public void ReloadScene()
     {
@@ -24,7 +24,7 @@ public abstract class GameManager : MonoBehaviour
     //Updates UI - doubles coins to add
     public void DoubleCoins()
     {
-        rewardText.text = "+" + (coinToAdd * 2);
+        rewardText.text = "+" + (CoinToAdd * 2);
     }
 
     //Calls when the player dies
@@ -33,7 +33,7 @@ public abstract class GameManager : MonoBehaviour
 
     protected void StartGame()
     {
-        isGameOver = false;
+        IsGameOver = false;
         
         Powerup.DeactivatePowerups();
     }
