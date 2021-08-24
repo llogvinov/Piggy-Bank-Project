@@ -5,10 +5,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer hatImage;
     [SerializeField] private SpriteRenderer maskImage;
 
-    [SerializeField] private GameObject smallCrack;
-    [SerializeField] private GameObject bigCrack;
-    [SerializeField] private GameObject crackedPlayer;
-
     [SerializeField] private AudioClip coinClip;
 
     [SerializeField] private float playerSpeed;
@@ -18,18 +14,14 @@ public class PlayerController : MonoBehaviour
     private bool moveRight;
     private float horizontalInput;
 
-    private Vector2 move;
-
     private AudioSource playerAudio;
     private Rigidbody2D playerRigitbody;
     private GameManager gameManager;
     private Animator playerAnimator;
-    private PlayerHealth playerHealth;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        playerHealth = GetComponent<PlayerHealth>();
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
@@ -55,7 +47,6 @@ public class PlayerController : MonoBehaviour
             GetPlayerInput();
             SetAnimation();
             MovePlayerAndroid();
-            HealthAndCracks();
         }
 
     }
@@ -113,31 +104,6 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
-    }
-
-    //Connect player's health and cracks
-    private void HealthAndCracks()
-    {
-        if (playerHealth.health == 3)
-        {
-            if (smallCrack.activeSelf) { smallCrack.SetActive(false); }
-        }
-        if (playerHealth.health == 2)
-        {
-            if (!smallCrack.activeSelf) { smallCrack.SetActive(true); }
-            if (bigCrack.activeSelf) { bigCrack.SetActive(false); }
-        }
-        else if (playerHealth.health == 1)
-        {
-            if (!bigCrack.activeSelf) { bigCrack.SetActive(true); }
-        }
-        else if (playerHealth.health == 0)
-        {
-            Instantiate(crackedPlayer, transform.position, transform.rotation);
-            gameManager.GameOver();
-
-            Destroy(gameObject);
-        }
     }
 
     //Collecting coins

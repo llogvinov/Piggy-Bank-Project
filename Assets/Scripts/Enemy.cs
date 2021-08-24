@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
             Rigidbody2D rigidbody = overlappedColliders[i].attachedRigidbody;
             if (rigidbody)
             {
-                if (rigidbody.GetComponent<PlayerController>())
+                if (rigidbody.GetComponent<Player>())
                 {
                     playerHealth.TakeDamage(damage);
                 }

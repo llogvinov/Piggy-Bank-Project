@@ -27,35 +27,34 @@ public class Powerup : MonoBehaviour
     //Collecting powerup
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if (player)
-        {
-            int powerupIndex = RandomPowerup();
-            Debug.Log("powerup index: " + powerupIndex);
+        other.gameObject.TryGetComponent(out Player player);
+        
+        if (player == null)
+            return;
+        
+        int powerupIndex = RandomPowerup();
+        Debug.Log("powerup index: " + powerupIndex);
 
-            switch (powerupIndex)
-            {
-                case 0:
-                    if (gameManager.timer) { gameManager.timer.StartNewTimer(doubleCoinsPowerupDuration); }
-                    else { Debug.Log("Не нашлось :((("); }
-                    StartCoroutine(DoubleCoinsPowerup());
-                    break;
-                case 1:
-                    if (gameManager.timer) { gameManager.timer.StartNewTimer(shildPowerupDuration); }
-                    else { Debug.Log("Не нашлось :((("); }
-                    StartCoroutine(ShildPowerup());
-                    break;
-                case 2:
-                    if (gameManager.timer) { gameManager.timer.StartNewTimer(superSpeedPowerupDuration); }
-                    else { Debug.Log("Не нашлось :((("); }
-                    StartCoroutine(SuperSpeedPowerup());
-                    break;
-                case 3:
-                    StartCoroutine(HeartPowerup());
-                    break;
-                default:
-                    break;
-            }
+        switch (powerupIndex)
+        {
+            case 0:
+                if (gameManager.timer) { gameManager.timer.StartNewTimer(doubleCoinsPowerupDuration); }
+                else { Debug.Log("РќРµ РЅР°С€Р»РѕСЃСЊ :((("); }
+                StartCoroutine(DoubleCoinsPowerup());
+                break;
+            case 1:
+                if (gameManager.timer) { gameManager.timer.StartNewTimer(shildPowerupDuration); }
+                else { Debug.Log("РќРµ РЅР°С€Р»РѕСЃСЊ :((("); }
+                StartCoroutine(ShildPowerup());
+                break;
+            case 2:
+                if (gameManager.timer) { gameManager.timer.StartNewTimer(superSpeedPowerupDuration); }
+                else { Debug.Log("РќРµ РЅР°С€Р»РѕСЃСЊ :((("); }
+                StartCoroutine(SuperSpeedPowerup());
+                break;
+            case 3:
+                StartCoroutine(HeartPowerup());
+                break;
         }
     }
 
