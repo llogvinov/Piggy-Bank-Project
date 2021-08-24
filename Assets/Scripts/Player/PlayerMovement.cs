@@ -42,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
     
     private void MovePlayer()
     {
-        if (!Powerup.isSuperSpeedActive)
+        if (!PowerUp.IsSuperSpeedActive)
             playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed;
         else
-            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed * Powerup.speedPowerupMultiplier;
+            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed * PowerUp.SpeedPowerUpMultiplier;
     }
 
     //Flip player

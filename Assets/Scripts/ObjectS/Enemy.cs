@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,9 +13,9 @@ public class Enemy : MonoBehaviour
     protected PlayerHealth playerHealth;
     
     protected const float groundCameraShakeForce = 0.05f;
-    protected const float playerCameraShakeForce = 0.1f;
+    private const float playerCameraShakeForce = 0.1f;
 
-    //Calls when the shild is active
+    //Calls when the shield is active
     //or bomb hits cracked player
     protected void Explode(float cameraShakeForce)
     {
@@ -50,12 +51,12 @@ public class Enemy : MonoBehaviour
     {
         Collider2D[] overlappedColliders = Physics2D.OverlapCircleAll(transform.position, damageRadius);
 
-        for (int i = 0; i < overlappedColliders.Length; i++)
+        foreach (var overlapCollider in overlappedColliders)
         {
-            Rigidbody2D rigidbody = overlappedColliders[i].attachedRigidbody;
-            if (rigidbody)
+            Rigidbody2D rb = overlapCollider.attachedRigidbody;
+            if (rb)
             {
-                if (rigidbody.GetComponent<Player>())
+                if (rb.GetComponent<Player>())
                 {
                     playerHealth.TakeDamage(damage);
                 }

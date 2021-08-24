@@ -89,13 +89,13 @@ public class PlayerController : MonoBehaviour
     
     private void MovePlayerAndroid()
     {
-        if (!Powerup.isSuperSpeedActive)
+        if (!PowerUp.IsSuperSpeedActive)
         {
             playerRigitbody.velocity = Vector2.right * horizontalInput * playerSpeed;
         }
         else
         {
-            playerRigitbody.velocity = Vector2.right * horizontalInput * playerSpeed * Powerup.speedPowerupMultiplier;
+            playerRigitbody.velocity = Vector2.right * horizontalInput * playerSpeed * PowerUp.SpeedPowerUpMultiplier;
         }
     }
 
@@ -118,13 +118,13 @@ public class PlayerController : MonoBehaviour
 
     private void CollectCoin(Collider2D other, Coin coin)
     {
-        if (!Powerup.isDoubleCoinsActive)
+        if (!PowerUp.IsDoubleCoinsActive)
         {
-            gameManager.CoinToAdd += coin.coinValue;
+            gameManager.CoinToAdd += coin.CoinValue;
         }
         else
         {
-            gameManager.CoinToAdd += 2 * coin.coinValue;
+            gameManager.CoinToAdd += 2 * coin.CoinValue;
         }
 
         playerAudio.PlayOneShot(coinClip, 1);

@@ -21,24 +21,18 @@ public class Bomb : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Powerup.isShildActive)
+        if (PowerUp.IsShieldActive)
         {
             Explode(groundCameraShakeForce);
             return;
         }
 
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        collision.gameObject.TryGetComponent(out PlayerHealth player);
         if (player)
-        {
             ExplodeOnPlayer();
-        }
         else if (collision.gameObject.CompareTag("Ground"))
-        {
             ExplodeOnGround();
-        }
         else
-        {
             Explode(groundCameraShakeForce);
-        }
     }
 }

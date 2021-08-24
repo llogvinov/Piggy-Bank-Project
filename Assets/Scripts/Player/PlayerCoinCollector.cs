@@ -27,10 +27,10 @@ public class PlayerCoinCollector : MonoBehaviour
 
     private void CollectCoin(Coin coin)
     {
-        if (!Powerup.isDoubleCoinsActive)
-            gameManager.CoinToAdd += coin.coinValue;
+        if (!PowerUp.IsDoubleCoinsActive)
+            gameManager.CoinToAdd += coin.CoinValue;
         else
-            gameManager.CoinToAdd += 2 * coin.coinValue;
+            gameManager.CoinToAdd += 2 * coin.CoinValue;
 
         playerAudio.PlayOneShot(coinClip, 1);
 

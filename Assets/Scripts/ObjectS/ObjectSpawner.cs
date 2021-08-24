@@ -5,14 +5,14 @@ public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] AnimationCurve animationCurve;
 
-    [SerializeField] protected float spawnBounds = 3.5f;
+    [SerializeField] private float spawnBounds = 3.5f;
 
     [Header("Time")]
-    [SerializeField] protected float startTimeSpawn;
-    [SerializeField] protected float minTimeSpawn;
-    [SerializeField] protected float maxTimeSpawn;
+    [SerializeField] private float startTimeSpawn;
+    [SerializeField] private float minTimeSpawn;
+    [SerializeField] private float maxTimeSpawn;
     [SerializeField] private float scaleTime = 15f;
-
+    [Space]
     [SerializeField] private GameObject[] objectPrefabs;
 
     [SerializeField] private float gravityScale = 1.2f;
@@ -22,13 +22,10 @@ public class ObjectSpawner : MonoBehaviour
     private int objectIndex;
     private float randomFloat;
 
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        
         for (int i = 0; i < objectPrefabs.Length; i++)
         {
             Rigidbody2D objectRb = objectPrefabs[i].GetComponent<Rigidbody2D>();
@@ -49,14 +46,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         while (!gameManager.IsGameOver)
         {
-            if (objectPrefabs.Length > 1)
-            {
-                objectIndex = RandomPrefab();
-            }
-            else
-            {
-                objectIndex = 0;
-            }
+            objectIndex = objectPrefabs.Length > 1 ? RandomPrefab() : 0;
             
             Instantiate(objectPrefabs[objectIndex], RandomPosition(), objectPrefabs[objectIndex].transform.rotation, transform);
 
@@ -67,19 +57,16 @@ public class ObjectSpawner : MonoBehaviour
     private int RandomPrefab()
     {
         randomFloat = animationCurve.Evaluate(Random.value);
-        if (randomFloat > 0.3) 
-        { 
-            return 0; 
-        }
-        else 
-        { 
+        
+        if (randomFloat > 0.3)
+            return 0;
+        else
             return RandomPrefabPlus(objectPrefabs.Length); 
-        }
     }
 
-    private int RandomPrefabPlus(int numOfPrefabs)
+    private int RandomPrefabPlus(int numberOfPrefabs)
     {
-        return Random.Range(1, numOfPrefabs);
+        return Random.Range(1, numberOfPrefabs);
     }
 
     protected Vector2 RandomPosition()

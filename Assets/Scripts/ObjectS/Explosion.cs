@@ -11,8 +11,5 @@ public class Explosion : MonoBehaviour
         explosionAudio.volume = PlayerPrefs.GetFloat("sounds");
     }
 
-    public void DestroyExplosion()
-    {
-        Destroy(gameObject);
-    }
+    public void DestroyExplosion() => Destroy(gameObject);
 }

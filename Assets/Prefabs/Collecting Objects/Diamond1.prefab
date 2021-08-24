@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe90040a1aa9e74eb39ac35a29d26b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 5
+  CoinValue: 5
   maxTorque: 35
