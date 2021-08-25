@@ -29,27 +29,22 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.TryGetComponent(out Player player);
-        
         if (player == null)
             return;
         
         int powerUpIndex = RandomPowerUp();
-        
         switch (powerUpIndex)
         {
             case 0:
-                if (gameManager.Timer) 
-                    gameManager.Timer.StartNewTimer(doubleCoinsPowerUpDuration);
+                StartTimer(doubleCoinsPowerUpDuration);
                 StartCoroutine(DoubleCoinsPowerup());
                 break;
             case 1:
-                if (gameManager.Timer) 
-                    gameManager.Timer.StartNewTimer(shieldPowerUpDuration);
+                StartTimer(shieldPowerUpDuration);
                 StartCoroutine(ShieldPowerUp());
                 break;
             case 2:
-                if (gameManager.Timer)
-                    gameManager.Timer.StartNewTimer(superSpeedPowerUpDuration);
+                StartTimer(superSpeedPowerUpDuration);
                 StartCoroutine(SuperSpeedPowerUp());
                 break;
             case 3:
@@ -58,6 +53,12 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    private void StartTimer(float duration)
+    {
+        if (gameManager.Timer)
+            gameManager.Timer.StartNewTimer(duration);
+    }
+    
     public static void DeactivateAllPowerUps()
     {
         if (IsDoubleCoinsActive) 

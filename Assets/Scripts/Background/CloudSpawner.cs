@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CloudSpawner : MonoBehaviour
 {
-    [SerializeField] public List<Cloud> clouds = new List<Cloud>();
-    [SerializeField] private bool isNormalMode;
+    public List<Cloud> Clouds = new List<Cloud>();
+    [SerializeField] private bool isNotMenu;
 
     [Header("Time between spawning")]
     [SerializeField] private float minTimeBetweenSpawn;
@@ -16,23 +17,26 @@ public class CloudSpawner : MonoBehaviour
     [SerializeField] private float topSpawnBound = 5;
     [SerializeField] private float leftSpawnBound = -2;
     [SerializeField] private float rightSpawnBound = 2;
-
-    public float speed; //using it in a script Cloud.cs
+    [Space]
+    public float Speed; //using it in a script Cloud.cs
 
     private IEnumerator Start()
     {
-        if (isNormalMode)
-        {
+        if (isNotMenu)
             StartCloudSpawn();
-        }
 
         while (true)
         {
             //Instantiate new cloud as child of CloudSpawner
-            Instantiate(clouds[RandomIndex()], RandomPosition(), Quaternion.identity, transform);
+            Instantiate(Clouds[RandomIndex()], RandomPosition(), Quaternion.identity, transform);
 
             yield return new WaitForSeconds(RandomTime());
         }
+    }
+    
+    private int RandomIndex()
+    {
+        return Random.Range(0, Clouds.Count);
     }
 
     private Vector2 RandomPosition()
@@ -45,24 +49,19 @@ public class CloudSpawner : MonoBehaviour
         return Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
     }
 
-    private int RandomIndex()
-    {
-        return Random.Range(0, clouds.Count);
-    }
-
     //Set clouds on screen at start
     private void StartCloudSpawn()
     {
         float yCentre = (topSpawnBound + bottomSpawnBound) / 2;
         float xCentre = (leftSpawnBound + rightSpawnBound) / 2;
 
-        Instantiate(clouds[0], StartCloudRandomPosition(topSpawnBound, yCentre, leftSpawnBound, xCentre), Quaternion.identity, transform);
-        Instantiate(clouds[1], StartCloudRandomPosition(topSpawnBound, yCentre, xCentre, rightSpawnBound), Quaternion.identity, transform);
-        Instantiate(clouds[2], StartCloudRandomPosition(yCentre, bottomSpawnBound, leftSpawnBound, xCentre), Quaternion.identity, transform);
-        Instantiate(clouds[3], StartCloudRandomPosition(yCentre, bottomSpawnBound, xCentre, rightSpawnBound), Quaternion.identity, transform);
+        Instantiate(Clouds[0], StartCloudRandomPosition(topSpawnBound, yCentre, leftSpawnBound, xCentre), Quaternion.identity, transform);
+        Instantiate(Clouds[1], StartCloudRandomPosition(topSpawnBound, yCentre, xCentre, rightSpawnBound), Quaternion.identity, transform);
+        Instantiate(Clouds[2], StartCloudRandomPosition(yCentre, bottomSpawnBound, leftSpawnBound, xCentre), Quaternion.identity, transform);
+        Instantiate(Clouds[3], StartCloudRandomPosition(yCentre, bottomSpawnBound, xCentre, rightSpawnBound), Quaternion.identity, transform);
     }
 
-    private Vector2 StartCloudRandomPosition(float topBound, float bottomBound, float rightBound, float leftBound)
+    private Vector2 StartCloudRandomPosition(float topBound, float bottomBound, float leftBound, float rightBound)
     {
         return new Vector2(Random.Range(leftBound, rightBound), Random.Range(bottomBound, topBound));
     }

@@ -889,20 +889,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646330514fa12d14b912e5929ce3d992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clouds:
+  Clouds:
   - {fileID: 4248567325829228560, guid: 8e9b16f4b40b6764f8745685de54bb9d, type: 3}
   - {fileID: 844583768954662166, guid: eec87343d19def94fad7dae5b01aaba0, type: 3}
   - {fileID: 9195597285128162361, guid: d7c344c7c3f385744ab11f6860ac008f, type: 3}
   - {fileID: 8878031717934851226, guid: 27c5efe41679cb045bc41dce55f2ba06, type: 3}
   - {fileID: 7358448449538944762, guid: d5baa00deda26844a8518f609295a6cb, type: 3}
-  isNormalMode: 1
+  isNotMenu: 1
   minTimeBetweenSpawn: 1
   maxTimeBetweenSpawn: 3
   bottomSpawnBound: 2
   topSpawnBound: 5
   leftSpawnBound: -2
   rightSpawnBound: 2
-  speed: 0.8
+  Speed: 1
 --- !u!1 &793006730
 GameObject:
   m_ObjectHideFlags: 0

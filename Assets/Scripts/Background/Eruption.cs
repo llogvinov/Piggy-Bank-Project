@@ -4,7 +4,7 @@ using UnityEngine;
 public class Eruption : MonoBehaviour
 {
     [SerializeField] private GameObject eruptionPrefab;
-    [SerializeField] private GameObject eruptionPosition;
+    [SerializeField] private Transform eruptionPosition;
 
     [SerializeField] private float minTimeEruption = 5;
     [SerializeField] private float maxTimeEruption = 10;
@@ -15,7 +15,7 @@ public class Eruption : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minTimeEruption, maxTimeEruption));
 
-            Instantiate(eruptionPrefab, eruptionPosition.transform.position, eruptionPrefab.transform.rotation);
+            Instantiate(eruptionPrefab, eruptionPosition.position, Quaternion.identity, transform);
         }
     }
 

@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eruptionPrefab: {fileID: 7185326582359144125, guid: 564454a9cd0b4ac47a086ce4620fb9e4, type: 3}
-  eruptionPosition: {fileID: 990043982}
+  eruptionPosition: {fileID: 990043983}
   minTimeEruption: 5
   maxTimeEruption: 10
 --- !u!1 &116842001
@@ -595,20 +595,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646330514fa12d14b912e5929ce3d992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clouds:
+  Clouds:
   - {fileID: 1341331765687036960, guid: 16cc3a74ead6f2746966f19eedd3aa4e, type: 3}
   - {fileID: 8123130215240668909, guid: c540e6eec17025040bda1dcad61bd96d, type: 3}
   - {fileID: 6736969094670769811, guid: d22ff445c81f30940b2cc3c614c8b354, type: 3}
   - {fileID: 6099278437777919526, guid: 1270c05b1557d7f4c8914f1ebe9a1302, type: 3}
   - {fileID: 5701170756361103599, guid: 73a11a31e770d7d42918eb1e5150b728, type: 3}
-  isNormalMode: 1
+  isNotMenu: 1
   minTimeBetweenSpawn: 1
   maxTimeBetweenSpawn: 3
   bottomSpawnBound: 2
   topSpawnBound: 5
   leftSpawnBound: -2
   rightSpawnBound: 2
-  speed: 0.8
+  Speed: 1
 --- !u!1001 &302777488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1749,7 +1749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990043983}
   m_Layer: 0
-  m_Name: eruptionPosition
+  m_Name: Eruption Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,8 +1990,8 @@ MonoBehaviour:
   pauseButton: {fileID: 2115530413}
   rewardText: {fileID: 2019268803}
   adManager: {fileID: 512712486}
-  coinToAdd: 0
-  isGameOver: 0
+  CoinToAdd: 0
+  IsGameOver: 0
   gameCompletePanel: {fileID: 213656359}
   timerText: {fileID: 1508722751}
   currentTime: 0

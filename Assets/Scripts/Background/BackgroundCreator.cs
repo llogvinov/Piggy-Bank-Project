@@ -16,7 +16,7 @@ public class BackgroundCreator : MonoBehaviour
         CreateBackground();
     }
 
-    public void CreateBackground()
+    private void CreateBackground()
     {
         Location location = GameDataManager.GetSelectedLocation();
 
@@ -27,7 +27,6 @@ public class BackgroundCreator : MonoBehaviour
     //Adjust selected location to the scene
     private void AdjustLocation(Location location)
     {
-        
         sky.sprite = location.sky;
         ground.sprite = location.ground;
         trees.sprite = location.trees;
@@ -37,10 +36,10 @@ public class BackgroundCreator : MonoBehaviour
     //Adjust selected set of clouds to the scene
     private void AdjustClouds(Location location)
     {
-        cloudSpawner.clouds.Clear();
-        for (int i = 0; i < location.clouds.Length; i++)
+        cloudSpawner.Clouds.Clear();
+        foreach (var cloud in location.clouds)
         {
-            cloudSpawner.clouds.Add(location.clouds[i]);
+            cloudSpawner.Clouds.Add(cloud);
         }
     }
 
