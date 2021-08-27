@@ -8,14 +8,12 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private Button openShopButton;
     [SerializeField] private Button closeShopButton;
 
+    [Header("Buttons to hide on panel open")]
     [SerializeField] private Button[] buttons;
 
-    private void Start()
-    {
-        AddShopEvents();
-    }
+    private void Start() => AddShopButtonsEvents();
 
-    private void AddShopEvents()
+    private void AddShopButtonsEvents()
     {
         openShopButton.onClick.RemoveAllListeners();
         openShopButton.onClick.AddListener(OpenShop);

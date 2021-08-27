@@ -9,24 +9,24 @@ public class AboutUI : MonoBehaviour
     [SerializeField] private Button closeAboutButton;
 
     [Header("About Buttons")]
-    //[SerializeField] private Button moreButton;
-    //[SerializeField] private Button rateButton;
+    [SerializeField] private Button moreButton;
+    [SerializeField] private Button rateButton;
+    [SerializeField] private Button feedback;
     [SerializeField] private Button privacyPolicyButton;
     [SerializeField] private Button termsButton;
 
+    [Header("Buttons to hide on panel open")]
     [SerializeField] private Button[] buttons;
 
-    private const string privacyPolicy = "https://piggybank.flycricket.io/privacy.html";
-    private const string terms = "https://piggybank.flycricket.io/terms.html";
-    //private const string more;
-    //private const string rate;
+    private const string PrivacyPolicy = "https://piggybank.flycricket.io/privacy.html";
+    private const string Terms = "https://piggybank.flycricket.io/terms.html";
+    private const string More = "https://play.google.com/store/apps/developer?id=Cringe+Games+LS";
+    private const string Rate = "https://play.google.com/store/apps/details?id=com.CringeGamesLS.PiggyBank";
+    private const string MailAddress = "cringeGamesOfficial@gmail.com";
+    
+    private void Start() => AddAboutButtonsEvents();
 
-    void Start()
-    {
-        AddAboutEvents();
-    }
-
-    private void AddAboutEvents()
+    private void AddAboutButtonsEvents()
     {
         openAboutButton.onClick.RemoveAllListeners();
         openAboutButton.onClick.AddListener(OpenAbout);
@@ -34,6 +34,15 @@ public class AboutUI : MonoBehaviour
         closeAboutButton.onClick.RemoveAllListeners();
         closeAboutButton.onClick.AddListener(CloseAbout);
 
+        moreButton.onClick.RemoveAllListeners();
+        moreButton.onClick.AddListener(OpenMore);
+        
+        rateButton.onClick.RemoveAllListeners();
+        rateButton.onClick.AddListener(OpenRate);
+        
+        feedback.onClick.RemoveAllListeners();
+        feedback.onClick.AddListener(Feedback);
+        
         privacyPolicyButton.onClick.RemoveAllListeners();
         privacyPolicyButton.onClick.AddListener(OpenPrivacyPolicy);
 
@@ -61,25 +70,14 @@ public class AboutUI : MonoBehaviour
         }
     }
 
-    private void OpenPrivacyPolicy()
-    {
-        Application.OpenURL(privacyPolicy);
-    }
+    private void OpenPrivacyPolicy() => Application.OpenURL(PrivacyPolicy);
 
-    private void OpenTerms()
-    {
-        Application.OpenURL(terms);
-    }
+    private void OpenTerms() => Application.OpenURL(Terms);
+    
+    private void OpenMore() => Application.OpenURL(More);
 
-    /*
-    private void OpenMore()
-    {
-        Application.OpenURL(more);
-    }
+    private void OpenRate() => Application.OpenURL(Rate);
 
-    private void OpenRate()
-    {
-        Application.OpenURL(rate);
-    }
-    */
+    private void Feedback() => Application.OpenURL("mailto:" + MailAddress);
+    
 }
