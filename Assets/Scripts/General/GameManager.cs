@@ -11,8 +11,8 @@ public abstract class GameManager : MonoBehaviour
     [Space]
     [SerializeField] protected AdManager adManager;
 
-    public int CoinToAdd;
-    public bool IsGameOver;
+    [HideInInspector] public int CoinToAdd;
+    [HideInInspector] public bool IsGameOver;
 
     public void ReloadScene()
     {

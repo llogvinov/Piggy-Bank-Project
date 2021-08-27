@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class NormalGameManager : GameManager
 {
+    [Space(15f)]
     [SerializeField] private Text coinText;
     [SerializeField] private Text recordText;
 
@@ -11,7 +12,7 @@ public class NormalGameManager : GameManager
 
     private void Start()
     {
-        base.StartGame();
+        StartGame();
 
         GameDataManager.IncrementNormalGamesPlayed();
         CoinToAdd = 0;
@@ -39,15 +40,15 @@ public class NormalGameManager : GameManager
         Debug.Log(GameDataManager.GetNormalGamesPlayed());
     }
 
-    //Shows an interstitial ad after every fourth game in Normal mode
+    //Shows an interstitial ad after every game in Normal mode
     private void ShowInterstitialAd()
     {
-        if (!GameDataManager.IsRemovedAds())
+        if (GameDataManager.IsRemovedAds()) 
+            return;
+        
+        if (GameDataManager.GetNormalGamesPlayed() % 1 == 0)
         {
-            if (GameDataManager.GetNormalGamesPlayed() % 4 == 0)
-            {
-                adManager.ShowInterstitialAd();
-            }
+            adManager.ShowInterstitialAd();
         }
     }
 

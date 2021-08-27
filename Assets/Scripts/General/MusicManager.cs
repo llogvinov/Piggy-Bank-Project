@@ -21,14 +21,8 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        gameAudio = GetComponent<AudioSource>();
-    }
+    private void Start() => gameAudio = GetComponent<AudioSource>();
 
-    private void Update()
-    {
-        gameAudio.volume = PlayerPrefs.GetFloat("music");
-    }
+    private void Update() => gameAudio.volume = PlayerPrefs.GetFloat("music");
 
 }

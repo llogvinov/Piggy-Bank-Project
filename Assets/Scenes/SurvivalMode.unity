@@ -1994,7 +1994,7 @@ MonoBehaviour:
   IsGameOver: 0
   gameCompletePanel: {fileID: 213656359}
   timerText: {fileID: 1508722751}
-  currentTime: 0
+  "\u0421urrentTime": 0
   startingTime: 40
 --- !u!1 &1100613781
 GameObject:
