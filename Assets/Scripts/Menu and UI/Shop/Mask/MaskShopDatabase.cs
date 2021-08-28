@@ -6,19 +6,10 @@ public class MaskShopDatabase : ScriptableObject
 {
     public Mask[] mask;
 
-    public int MasksCount
-    {
-        get { return mask.Length; }
-    }
+    public int MasksCount => mask.Length;
 
-    public Mask GetMask(int index)
-    {
-        return mask[index];
-    }
+    public Mask GetMask(int index) => mask[index];
 
-    public void PurchaseMask(int index)
-    {
-        mask[index].isPurchased = true;
-    }
+    public void PurchaseMask(int index) => mask[index].isPurchased = true;
 
 }

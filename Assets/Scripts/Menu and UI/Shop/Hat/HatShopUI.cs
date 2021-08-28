@@ -7,7 +7,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
     [SerializeField] private float itemSpacing = 5f;
     [SerializeField] private float itemHeight;
 
-    [Header("UIelements")]
+    [Header("UI Elements")]
     [SerializeField] private Transform ShopItemsContainer;
     [SerializeField] private GameObject itemPrefab;
     [Space(20f)]
@@ -16,8 +16,8 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
     [Header("Main Menu")]
     [SerializeField] private SpriteRenderer mainMenuHatImage;
 
-    private int newSelectedHatIndex = 0;
-    private int previousSelectedHatIndex = 0;
+    private int newSelectedHatIndex;
+    private int previousSelectedHatIndex;
 
     private void Start()
     {
@@ -74,15 +74,19 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
             uiItem.SetHatName(hat.name);
             uiItem.SetHatImage(hat.image);
             uiItem.SetHatPrice(hat.price);
-            
-            if (i == 0) { uiItem.SetHatImageOpacity(); }
 
+            if (i == 0)
+            {
+                uiItem.SetHatImageOpacity();
+            }
+            
             if (hat.isPurchased)
             {
                 //Hat is purchased
                 uiItem.SetItemAsPurchased();
                 uiItem.OnItemSelect(i, OnItemSelected);
-            } else
+            } 
+            else
             {
                 //Hat is not purchased yet
                 uiItem.SetHatPrice(hat.price);
@@ -125,10 +129,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
         newUiItem.SelectItem();
     }
 
-    private HatItemUI GetItemUI(int index)
-    {
-        return ShopItemsContainer.GetChild(index).GetComponent<HatItemUI>();
-    }
+    private HatItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<HatItemUI>();
 
     public void OnItemPurchased(int index)
     {
@@ -147,10 +148,13 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
             //Add purchased data on Shop Data
             GameDataManager.AddPurchasedHat(index);
 
-        } else
+        } 
+        else
         {
             //Not enough coins
+#if UNITY_EDITOR
             Debug.Log("Not Enough Coins!");
+#endif
         }
     }
 

@@ -17,12 +17,8 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 
 	[Space(20f)]
 	[SerializeField] private Button chooseLocationButton;
-
-	//--------------------------------------------------------------
-	public void SetItemPosition(Vector2 pos)
-	{
-		GetComponent<RectTransform>().anchoredPosition += pos;
-	}
+	
+	public void SetItemPosition(Vector2 pos) => GetComponent<RectTransform>().anchoredPosition += pos;
 
 	public void SetLocationImages(Sprite sky, Sprite ground, Sprite trees, Sprite mountain)
 	{
@@ -32,15 +28,9 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 		mountainImage.sprite = mountain;
 	}
 
-	public void SetLocationName(string name)
-	{
-		locationNameText.text = name;
-	}
+	public void SetLocationName(string name) => locationNameText.text = name;
 
-	public void SetLocationPrice(int price)
-	{
-		locationPriceText.text = price.ToString();
-	}
+	public void SetLocationPrice(int price) => locationPriceText.text = price.ToString();
 
 	public void SetItemAsPurchased()
 	{
@@ -51,7 +41,7 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 	public void OnItemPurchase(int itemIndex, UnityAction<int> action)
 	{
 		locationPurchaseButton.onClick.RemoveAllListeners();
-		locationPurchaseButton.onClick.AddListener(() => action.Invoke(itemIndex));
+		locationPurchaseButton.onClick.AddListener(() => action?.Invoke(itemIndex));
 	}
 
 	public void OnItemSelect(int itemIndex, UnityAction<int> action)
@@ -59,16 +49,10 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 		chooseLocationButton.interactable = true;
 
 		chooseLocationButton.onClick.RemoveAllListeners();
-		chooseLocationButton.onClick.AddListener(() => action.Invoke(itemIndex));
+		chooseLocationButton.onClick.AddListener(() => action?.Invoke(itemIndex));
 	}
 
-	public void SelectItem()
-	{
-		chooseLocationButton.interactable = false;
-	}
+	public void SelectItem() => chooseLocationButton.interactable = false;
 
-	public void DeselectItem()
-	{
-		chooseLocationButton.interactable = true;
-	}
+	public void DeselectItem() => chooseLocationButton.interactable = true;
 }

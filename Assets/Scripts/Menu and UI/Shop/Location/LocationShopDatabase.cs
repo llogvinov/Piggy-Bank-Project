@@ -6,19 +6,10 @@ public class LocationShopDatabase : ScriptableObject
 {
     public Location[] location;
 
-    public int LocationsCount
-    {
-        get { return location.Length; }
-    }
+    public int LocationsCount => location.Length;
 
-    public Location GetLocation(int index)
-    {
-        return location[index];
-    }
+    public Location GetLocation(int index) => location[index];
 
-    public void PurchaseLocation(int index)
-    {
-        location[index].isPurchased = true;
-    }
+    public void PurchaseLocation(int index) => location[index].isPurchased = true;
 
 }

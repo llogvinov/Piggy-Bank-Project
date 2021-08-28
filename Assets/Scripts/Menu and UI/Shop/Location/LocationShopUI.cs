@@ -7,14 +7,14 @@ public class LocationShopUI : MonoBehaviour, IItemShopUI
     [SerializeField] private float itemSpacing = 5f;
     [SerializeField] private float itemWidth;
 
-    [Header("UIelements")]
+    [Header("UI Elements")]
     [SerializeField] private Transform ShopItemsContainer;
     [SerializeField] private GameObject itemPrefab;
     [Space(20f)]
     [SerializeField] private LocationShopDatabase locationDB;
 
-    private int newSelectedLocationIndex = 0;
-    private int previousSelectedLocationIndex = 0;
+    private int newSelectedLocationIndex;
+    private int previousSelectedLocationIndex;
 
     private void Start()
     {
@@ -120,10 +120,7 @@ public class LocationShopUI : MonoBehaviour, IItemShopUI
         newUiItem.SelectItem();
     }
 
-    private LocationItemUI GetItemUI(int index)
-    {
-        return ShopItemsContainer.GetChild(index).GetComponent<LocationItemUI>();
-    }
+    private LocationItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<LocationItemUI>();
 
     public void OnItemPurchased(int index)
     {
@@ -141,6 +138,13 @@ public class LocationShopUI : MonoBehaviour, IItemShopUI
 
             //Add purchased data on Shop Data
             GameDataManager.AddPurchasedLocation(index);
+        }
+        else
+        {
+            //Not enough coins
+#if UNITY_EDITOR
+            Debug.Log("Not Enough Coins!");
+#endif
         }
     }
 

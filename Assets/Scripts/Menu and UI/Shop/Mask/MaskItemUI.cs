@@ -17,31 +17,15 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 	[SerializeField] private Button itemButton;
 	[SerializeField] private Image itemImage;
 
-	//--------------------------------------------------------------
-	public void SetItemPosition(Vector2 pos)
-	{
-		GetComponent<RectTransform>().anchoredPosition += pos;
-	}
+	public void SetItemPosition(Vector2 pos) => GetComponent<RectTransform>().anchoredPosition += pos;
 
-	public void SetMaskImage(Sprite sprite)
-	{
-		maskImage.sprite = sprite;
-	}
+	public void SetMaskImage(Sprite sprite) => maskImage.sprite = sprite;
 
-	public void SetMaskImageOpacity()
-	{
-		maskImage.color = new Color(0f, 0f, 0f, 0f);
-	}
+	public void SetMaskImageOpacity() => maskImage.color = new Color(0f, 0f, 0f, 0f);
 
-	public void SetMaskName(string name)
-	{
-		maskNameText.text = name;
-	}
+	public void SetMaskName(string name) => maskNameText.text = name;
 
-	public void SetMaskPrice(int price)
-	{
-		maskPriceText.text = price.ToString();
-	}
+	public void SetMaskPrice(int price) => maskPriceText.text = price.ToString();
 
 	public void SetItemAsPurchased()
 	{
@@ -54,7 +38,7 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 	public void OnItemPurchase(int itemIndex, UnityAction<int> action)
 	{
 		maskPurchaseButton.onClick.RemoveAllListeners();
-		maskPurchaseButton.onClick.AddListener(() => action.Invoke(itemIndex));
+		maskPurchaseButton.onClick.AddListener(() => action?.Invoke(itemIndex));
 	}
 
 	public void OnItemSelect(int itemIndex, UnityAction<int> action)
@@ -62,7 +46,7 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 		itemButton.interactable = true;
 
 		itemButton.onClick.RemoveAllListeners();
-		itemButton.onClick.AddListener(() => action.Invoke(itemIndex));
+		itemButton.onClick.AddListener(() => action?.Invoke(itemIndex));
 	}
 
 	public void SelectItem()

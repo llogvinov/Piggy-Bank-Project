@@ -7,7 +7,7 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
     [SerializeField] private float itemSpacing = 5f;
     [SerializeField] private float itemHeight;
 
-    [Header("UIelements")]
+    [Header("UI Elements")]
     [SerializeField] private Transform ShopItemsContainer;
     [SerializeField] private GameObject itemPrefab;
     [Space(20f)]
@@ -16,8 +16,8 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
     [Header("Main Menu")]
     [SerializeField] private SpriteRenderer mainMenuMaskImage;
 
-    private int newSelectedMaskIndex = 0;
-    private int previousSelectedMaskIndex = 0;
+    private int newSelectedMaskIndex;
+    private int previousSelectedMaskIndex;
 
     private void Start()
     {
@@ -75,7 +75,10 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
             uiItem.SetMaskImage(mask.image);
             uiItem.SetMaskPrice(mask.price);
 
-            if (i == 0) { uiItem.SetMaskImageOpacity(); }
+            if (i == 0)
+            {
+                uiItem.SetMaskImageOpacity();
+            }
 
             if (mask.isPurchased)
             {
@@ -126,10 +129,7 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
         newUiItem.SelectItem();
     }
 
-    private MaskItemUI GetItemUI(int index)
-    {
-        return ShopItemsContainer.GetChild(index).GetComponent<MaskItemUI>();
-    }
+    private MaskItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<MaskItemUI>();
 
     public void OnItemPurchased(int index)
     {
@@ -151,7 +151,9 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
         else
         {
             //Not enough coins
+#if UNITY_EDITOR
             Debug.Log("Not Enough Coins!");
+#endif
         }
     }
 }

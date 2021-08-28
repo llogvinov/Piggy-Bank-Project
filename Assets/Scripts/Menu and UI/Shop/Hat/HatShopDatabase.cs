@@ -6,19 +6,10 @@ public class HatShopDatabase : ScriptableObject
 {
     public Hat[] hats;
 
-    public int HatsCount
-    {
-        get { return hats.Length; }
-    }
+    public int HatsCount => hats.Length;
 
-    public Hat GetHat(int index)
-    {
-        return hats[index];
-    }
+    public Hat GetHat(int index) => hats[index];
 
-    public void PurchaseHat(int index) 
-    {
-        hats[index].isPurchased = true;
-    }
+    public void PurchaseHat(int index) => hats[index].isPurchased = true;
 
 }
