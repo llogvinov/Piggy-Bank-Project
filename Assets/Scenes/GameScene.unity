@@ -1769,7 +1769,7 @@ RectTransform:
   - {fileID: 1992671743}
   - {fileID: 967439203}
   m_Father: {fileID: 1906231797}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2617,7 +2617,6 @@ GameObject:
   - component: {fileID: 1906231796}
   - component: {fileID: 1906231795}
   - component: {fileID: 1906231794}
-  - component: {fileID: 1906231798}
   m_Layer: 5
   m_Name: Player Canvas
   m_TagString: Untagged
@@ -2705,8 +2704,8 @@ RectTransform:
   - {fileID: 1572464273}
   - {fileID: 551193398}
   - {fileID: 1913473584}
-  - {fileID: 1078391938}
   - {fileID: 838248743}
+  - {fileID: 1078391938}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2715,19 +2714,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1906231798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906231793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4178ad2839c204d808c36d54ad714f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausePanel: {fileID: 838248742}
 --- !u!1 &1913473583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6209296506064772062, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
@@ -3939,7 +3925,7 @@ PrefabInstance:
     - target: {fileID: 6209296506064772032, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1906231798}
+      objectReference: {fileID: 0}
     - target: {fileID: 6209296506064772033, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4040,8 +4026,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Button
       objectReference: {fileID: 0}
+    - target: {fileID: 8704020295220008894, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 838248742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
+--- !u!114 &6209296506904498674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704020295220008894, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
+  m_PrefabInstance: {fileID: 6209296506904498673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913473583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4178ad2839c204d808c36d54ad714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6244853518487838514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4301,7 +4302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8700830339135235224, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8700830339135235224, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4386,6 +4387,14 @@ PrefabInstance:
     - target: {fileID: 8700830339470881405, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1906231798}
+      objectReference: {fileID: 6209296506904498674}
+    - target: {fileID: 8700830339470881405, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700830339470881405, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}

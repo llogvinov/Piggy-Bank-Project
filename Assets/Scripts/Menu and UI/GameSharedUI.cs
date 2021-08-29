@@ -10,9 +10,7 @@ public class GameSharedUI : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
     }
 
     #endregion
@@ -32,9 +30,6 @@ public class GameSharedUI : MonoBehaviour
         }
     }
 
-    public void SetCoinsText(Text text, int value)
-    {
-        text.text = value + "";
-    } 
+    private void SetCoinsText(Text text, int value) => text.text = value + "";
 
 }

@@ -8,14 +8,9 @@ public class ModeSelector : MonoBehaviour
     [SerializeField] private Button openModeButton;
     [SerializeField] private Button closeModeButton;
     [Space]
-    [SerializeField] private Button[] modes;
-    [Space]
     [SerializeField] private Button[] buttons;
 
-    private void Start()
-    {
-        AddModeEvents();
-    }
+    private void Start() => AddModeEvents();
 
     private void AddModeEvents()
     {
@@ -50,9 +45,7 @@ public class ModeSelector : MonoBehaviour
     public static void LoadScene(int index)
     {
         if (index >= 0 && index < SceneManager.sceneCountInBuildSettings)
-        {
             SceneManager.LoadScene(index);
-        }
     }
 
 }

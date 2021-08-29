@@ -183,6 +183,14 @@ PrefabInstance:
     - target: {fileID: 9220625686358050899, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 8704020295220008894, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
+    - target: {fileID: 9220625686358050899, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220625686358050899, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseButton, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}

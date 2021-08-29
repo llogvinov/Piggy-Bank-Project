@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5793812411518547598}
   - component: {fileID: 5793812411518547597}
   - component: {fileID: 5793812411518547596}
-  - component: {fileID: 5793812409982500810}
+  - component: {fileID: 4054705588443723351}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5793812409982500810
+--- !u!114 &4054705588443723351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,8 +210,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5793812411518547594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da099c59ef80e24e97c9052ab6ba336, type: 3}
+  m_Script: {fileID: 11500000, guid: b4422d8d2dc9ad745b1d561832d3982e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoader: {fileID: 0}
-  targetScene: 2

@@ -49,8 +49,8 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
         //make them purchased in the Database array
         for (int i = 0; i < GameDataManager.GetAllPurchasedHats().Count; i++)
         {
-            int purchaseCharacterIndex = GameDataManager.GetPurchasedHat(i);
-            hatDB.PurchaseHat(purchaseCharacterIndex);
+            int purchaseHatIndex = GameDataManager.GetPurchasedHat(i);
+            hatDB.PurchaseHat(purchaseHatIndex);
         }
 
         //Delete item template after calculating item's height
@@ -112,7 +112,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
 
         //Save Data
         GameDataManager.SetSelectedHat(hatDB.GetHat(index), index);
-
+        
         //Change hat skin
         ChangeItemSkin();
     }
@@ -147,7 +147,6 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
 
             //Add purchased data on Shop Data
             GameDataManager.AddPurchasedHat(index);
-
         } 
         else
         {
