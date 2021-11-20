@@ -1,7 +1,7 @@
 # Piggy-Bank-Project
 My Complete Game "Piggy Bank"
 
-Team size: 2 people (me and my friend)
+Team size: 2 people;
 I am responsible for all code: gameplay, in-game store, IAP, advertisement and game design
 
 This project was fully completed in 3 weeks (including publishing to the play market)
