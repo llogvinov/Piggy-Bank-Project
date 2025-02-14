@@ -48,7 +48,7 @@ public class NormalGameManager : GameManager
         
         if (GameDataManager.GetNormalGamesPlayed() % 1 == 0)
         {
-            adManager.ShowInterstitialAd();
+            //adManager.ShowInterstitialAd();
         }
     }
 

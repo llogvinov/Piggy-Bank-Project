@@ -9,7 +9,7 @@ public abstract class GameManager : MonoBehaviour
 
     [SerializeField] protected Text rewardText;
     [Space]
-    [SerializeField] protected AdManager adManager;
+    //[SerializeField] protected AdManager adManager;
 
     [HideInInspector] public int CoinToAdd;
     [HideInInspector] public bool IsGameOver;

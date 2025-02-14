@@ -66,7 +66,7 @@ public class SurvivalGameManager : GameManager
         
         if (GameDataManager.GetSurvivalGamesPlayed() % 1 == 0)
         {
-            adManager.ShowInterstitialAd();
+            //adManager.ShowInterstitialAd();
         }
     }
 
