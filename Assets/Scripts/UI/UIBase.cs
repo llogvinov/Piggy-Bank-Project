@@ -5,7 +5,7 @@ namespace UI
 {
     public class UIBase : MonoBehaviour
     {
-        [SerializeField] protected Canvas Canvas;
+        [SerializeField] protected Canvas _canvas;
         [Space]
         [SerializeField] protected Button _openButton;
         [SerializeField] protected Button _closeButton;
@@ -26,13 +26,15 @@ namespace UI
 
         public virtual void Show()
         {
-            Canvas.gameObject.SetActive(true);
+            Debug.Log("show");
+            _canvas.gameObject.SetActive(true);
             ToggleButtons(false);
         }
 
         public virtual void Hide()
         {
-            Canvas.gameObject.SetActive(false);
+            Debug.Log("hide");
+            _canvas.gameObject.SetActive(false);
             ToggleButtons(true);
         }
 

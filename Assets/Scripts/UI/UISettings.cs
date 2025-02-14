@@ -14,12 +14,12 @@ namespace UI
 
         protected override void Start()
         {
-            base.Start();
+            _openButton.onClick.AddListener(ToggleCanvas);
             _musicButton.onClick.AddListener(ToggleMusic);
             _soundButton.onClick.AddListener(ToggleSound);
-            
+
             RemoveAdsComplete();
-            
+
             if (PlayerPrefs.GetFloat("music") == 0)
                 noMusicImage.gameObject.SetActive(true);
             if (PlayerPrefs.GetFloat("sounds") == 0)
@@ -28,9 +28,17 @@ namespace UI
 
         protected override void OnDestroy()
         {
-            base.OnDestroy();
+            _openButton.onClick.RemoveListener(ToggleCanvas);
             _musicButton.onClick.RemoveListener(ToggleMusic);
             _soundButton.onClick.RemoveListener(ToggleSound);
+        }
+
+        private void ToggleCanvas()
+        {
+            if (_canvas.gameObject.activeSelf == false)
+                Show();
+            else 
+                Hide();
         }
 
         private void ToggleMusic()
