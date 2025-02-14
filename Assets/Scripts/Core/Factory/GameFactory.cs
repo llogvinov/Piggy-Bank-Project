@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+
+namespace Core.Factory
+{
+    public class GameFactory : IGameFactory
+    {
+        public Player Player { get; private set; }
+
+        public Player InstantiatePlayer()
+        {
+            var loaded = Resources.Load<Player>("Player");
+            if (loaded == null) 
+                Debug.LogError($"{typeof(Player)} not found in resources");
+            
+            Player = GameObject.Instantiate(loaded);
+            return Player;
+        }
+    }
+}
