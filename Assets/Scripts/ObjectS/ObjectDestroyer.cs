@@ -1,3 +1,4 @@
+using Main.Background;
 using UnityEngine;
 
 public class ObjectDestroyer : MonoBehaviour

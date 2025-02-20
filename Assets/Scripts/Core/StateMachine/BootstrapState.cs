@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using PiggyBank;
 
 namespace Core.StateMachine
 {
@@ -21,7 +22,7 @@ namespace Core.StateMachine
 
         public void Enter()
         {
-            _sceneLoader.LoadScene("Menu", () =>
+            _sceneLoader.LoadScene(AssetPath.MenuScene, () =>
                 _stateMachine.Enter<MenuState>());
         }
 

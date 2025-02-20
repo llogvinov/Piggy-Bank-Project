@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using PiggyBank;
+using UI;
 
 namespace Core.StateMachine
 {
@@ -29,17 +30,12 @@ namespace Core.StateMachine
 
         private void OnNormalModeSelected()
         {
-            
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
         }
 
         private void OnSurvivalModeSelected()
         {
-            
-        }
-
-        private void LoadGame()
-        {
-            _stateMachine.Enter<LoadSceneState, string>("Game");
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalModeScene);
         }
     }
 }

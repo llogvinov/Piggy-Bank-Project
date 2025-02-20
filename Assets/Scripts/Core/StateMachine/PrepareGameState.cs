@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Main.Background;
 using Main.Player;
 using UI;
 using UnityEngine;
@@ -21,15 +22,6 @@ namespace Core.StateMachine
 
         public void Enter()
         {
-            // apply location
-
-            var player = _gameFactory.InstantiatePlayer();
-            var skinCreator = player.GetComponent<PlayerSkinCreator>();
-            if (skinCreator != null)
-            {
-                skinCreator.SetFullSkin();
-            }
-
             Game.GameOver += OnGameOver;
         }
 
@@ -40,9 +32,7 @@ namespace Core.StateMachine
 
         private void OnGameOver()
         {
-            // _uiManager.UIHealth.Hide();
-            // _uiManager.UIScore.Hide();
-            // _uiManager.UICombo.Hide();
+            _stateMachine.Enter<GameOverState>();
         }
     }
 }

@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class EruptionDestroyer : MonoBehaviour
+namespace Main.Background
 {
-    public void DestroyEruption() => Destroy(gameObject);
+    public class EruptionDestroyer : MonoBehaviour
+    {
+        public void DestroyEruption() =>
+            Destroy(gameObject);
+    }
 }

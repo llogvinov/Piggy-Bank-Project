@@ -7,6 +7,11 @@ namespace Main.Player
         [SerializeField] private SpriteRenderer _hat;
         [SerializeField] private SpriteRenderer _mask;
 
+        private void Start()
+        {
+            SetFullSkin();
+        }
+
         public void SetFullSkin()
         {
             SetMask();
@@ -15,13 +20,13 @@ namespace Main.Player
 
         public void SetMask()
         {
-            Mask mask = GameDataManager.GetSelectedMask();
+            var mask = GameDataManager.GetSelectedMask();
             _mask.sprite = mask.image;
         }
 
         public void SetHat()
         {
-            Hat hat = GameDataManager.GetSelectedHat();
+            var hat = GameDataManager.GetSelectedHat();
             _hat.sprite = hat.image;
         }
     }

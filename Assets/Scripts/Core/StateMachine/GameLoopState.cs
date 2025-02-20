@@ -1,13 +1,9 @@
-﻿using UI;
-
-namespace Core.StateMachine
+﻿namespace Core.StateMachine
 {
     public class GameLoopState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
         
-        //private UIManager _uiManager;
-
         public GameLoopState(GameStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
@@ -15,15 +11,12 @@ namespace Core.StateMachine
 
         public void Enter()
         {
-            Game.GameOver += EnterGameOverState;
+
         }
 
         public void Exit()
         {
-            Game.GameOver -= EnterGameOverState;
+
         }
-        
-        private void EnterGameOverState()
-            => _stateMachine.Enter<GameOverState>();
     }
 }

@@ -1,44 +1,46 @@
 using UnityEngine;
 
-public class BackgroundCreator : MonoBehaviour
+namespace Main.Background
 {
-    [Header("Background elements")]
-    [SerializeField] private SpriteRenderer sky;
-    [SerializeField] private SpriteRenderer ground;
-    [SerializeField] private SpriteRenderer trees;
-    [SerializeField] private SpriteRenderer mountain;
-
-    [Header("Spawner")]
-    [SerializeField] private CloudSpawner cloudSpawner;
-
-    private void Awake()
+    public class BackgroundCreator : MonoBehaviour
     {
-        CreateBackground();
-    }
+        [Header("Background elements")]
+        [SerializeField] private SpriteRenderer _sky;
+        [SerializeField] private SpriteRenderer _ground;
+        [SerializeField] private SpriteRenderer _trees;
+        [SerializeField] private SpriteRenderer _mountain;
 
-    private void CreateBackground()
-    {
-        Location location = GameDataManager.GetSelectedLocation();
+        [Header("Spawner")]
+        [SerializeField] private CloudSpawner _cloudSpawner;
 
-        AdjustLocation(location);
-        AdjustClouds(location);
-    }
-
-    private void AdjustLocation(Location location)
-    {
-        sky.sprite = location.sky;
-        ground.sprite = location.ground;
-        trees.sprite = location.trees;
-        mountain.sprite = location.mountain;
-    }
-
-    private void AdjustClouds(Location location)
-    {
-        cloudSpawner.Clouds.Clear();
-        foreach (var cloud in location.clouds)
+        private void Start()
         {
-            cloudSpawner.Clouds.Add(cloud);
+            SetLocation();
+        }
+
+        public void SetLocation()
+        {
+            var location = GameDataManager.GetSelectedLocation();
+
+            SetBackground(location);
+            SetClouds(location);
+        }
+
+        private void SetBackground(Location location)
+        {
+            _sky.sprite = location.sky;
+            _ground.sprite = location.ground;
+            _trees.sprite = location.trees;
+            _mountain.sprite = location.mountain;
+        }
+
+        private void SetClouds(Location location)
+        {
+            _cloudSpawner.Clouds.Clear();
+            foreach (var cloud in location.clouds)
+            {
+                _cloudSpawner.Clouds.Add(cloud);
+            }
         }
     }
-
 }

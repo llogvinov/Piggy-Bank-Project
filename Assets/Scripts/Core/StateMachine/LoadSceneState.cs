@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using PiggyBank;
+using UI;
 
 namespace Core.StateMachine
 {
@@ -32,15 +33,15 @@ namespace Core.StateMachine
 
         private void OnSceneLoaded()
         {
-            // switch (_loadingScene)
-            // {
-            //     case AssetPath.GameScene:
-            //         _stateMachine.Enter<PrepareGameState>();
-            //         break;
-            //     case AssetPath.MenuScene:
-            //         _stateMachine.Enter<MenuState>();
-            //         break;
-            // }
+            switch (_loadingScene)
+            {
+                case AssetPath.MenuScene:
+                    _stateMachine.Enter<MenuState>();
+                    break;
+                case AssetPath.GameScene:
+                    _stateMachine.Enter<PrepareGameState>();
+                    break;
+            }
         }
     }
 }
