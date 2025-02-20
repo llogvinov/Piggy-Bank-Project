@@ -24,7 +24,6 @@ public class BackgroundCreator : MonoBehaviour
         AdjustClouds(location);
     }
 
-    //Adjust selected location to the scene
     private void AdjustLocation(Location location)
     {
         sky.sprite = location.sky;
@@ -33,7 +32,6 @@ public class BackgroundCreator : MonoBehaviour
         mountain.sprite = location.mountain;
     }
 
-    //Adjust selected set of clouds to the scene
     private void AdjustClouds(Location location)
     {
         cloudSpawner.Clouds.Clear();

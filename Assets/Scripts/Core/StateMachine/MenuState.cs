@@ -1,6 +1,4 @@
-﻿using System;
-using UI;
-using UnityEngine;
+﻿using UI;
 
 namespace Core.StateMachine
 {

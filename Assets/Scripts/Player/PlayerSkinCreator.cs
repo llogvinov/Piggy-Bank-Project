@@ -1,21 +1,28 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSkinCreator : MonoBehaviour
+namespace Main.Player
 {
-    [SerializeField] private SpriteRenderer hatImage;
-    [SerializeField] private SpriteRenderer maskImage;
-
-    private void Start() => SetHatAndMask();
-
-    private void SetHatAndMask()
+    public class PlayerSkinCreator : MonoBehaviour
     {
-        Hat hat = GameDataManager.GetSelectedHat();
-        Mask mask = GameDataManager.GetSelectedMask();
+        [SerializeField] private SpriteRenderer _hat;
+        [SerializeField] private SpriteRenderer _mask;
 
-        hatImage.sprite = hat.image;
-        maskImage.sprite = mask.image;
+        public void SetFullSkin()
+        {
+            SetMask();
+            SetHat();
+        }
+
+        public void SetMask()
+        {
+            Mask mask = GameDataManager.GetSelectedMask();
+            _mask.sprite = mask.image;
+        }
+
+        public void SetHat()
+        {
+            Hat hat = GameDataManager.GetSelectedHat();
+            _hat.sprite = hat.image;
+        }
     }
 }

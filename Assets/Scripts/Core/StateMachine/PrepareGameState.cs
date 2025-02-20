@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Main.Player;
 using UI;
 using UnityEngine;
 
@@ -20,18 +21,16 @@ namespace Core.StateMachine
 
         public void Enter()
         {
-            // _uiManager = GameObject.FindObjectOfType<UIManager>();
-            // _uiManager.UIHealth.Init();
-            // _uiManager.UIScore.Init();
-            // _uiManager.UICombo.Init();
-            
-            // _gameFactory.InstantiatePlayer();
-            // _gameFactory.InstantiateGirl();
-            // _gameFactory.InstantiateSpawners();
+            // apply location
+
+            var player = _gameFactory.InstantiatePlayer();
+            var skinCreator = player.GetComponent<PlayerSkinCreator>();
+            if (skinCreator != null)
+            {
+                skinCreator.SetFullSkin();
+            }
 
             Game.GameOver += OnGameOver;
-            
-            // _stateMachine.Enter<GameLoopState, UIManager>(_uiManager);
         }
 
         public void Exit()
