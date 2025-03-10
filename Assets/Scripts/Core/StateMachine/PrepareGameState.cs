@@ -22,6 +22,19 @@ namespace Core.StateMachine
 
         public void Enter()
         {
+            var backgroundCreator = GameObject.FindObjectOfType<BackgroundCreator>();
+            if (backgroundCreator != null)
+            {
+                backgroundCreator.SetLocation();
+            }
+
+            var player = _gameFactory.InstantiatePlayer();
+            var skinCreator = player.GetComponent<PlayerSkinCreator>();
+            if (skinCreator != null)
+            {
+                skinCreator.SetFullSkin();
+            }
+
             Game.GameOver += OnGameOver;
         }
 

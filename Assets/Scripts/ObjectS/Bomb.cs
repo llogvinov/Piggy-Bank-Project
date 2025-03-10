@@ -1,3 +1,4 @@
+using Main.Player;
 using UnityEngine;
 
 public class Bomb : Enemy

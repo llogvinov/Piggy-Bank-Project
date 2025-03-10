@@ -1,4 +1,5 @@
 using System;
+using Main.Player;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour

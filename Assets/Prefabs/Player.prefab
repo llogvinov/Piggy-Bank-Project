@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 575637502604741663}
   - component: {fileID: 575637502604741730}
   - component: {fileID: 575637502604741731}
+  - component: {fileID: 5076248769561158139}
   m_Layer: 0
   m_Name: Player Skin
   m_TagString: Player
@@ -527,17 +528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c280814c7813b849b0ce7d4868c118e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: 228a6a31deda4b24aa783f1101e4e354, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 115a6d329ecc4074db9a59566efbfe77, type: 3}
-  smallCrack: {fileID: 575637501997299863}
-  bigCrack: {fileID: 575637503296382263}
-  crackedPlayer: {fileID: 4906870308885110094, guid: d7bddd6fcc17cbe4c86b9d9394acb084, type: 3}
-  Health: 3
-  NumberOfHearts: 3
 --- !u!114 &575637502604741730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +555,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hat: {fileID: 575637503229586050}
   _mask: {fileID: 575637502099633982}
+--- !u!114 &5076248769561158139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575637502604741655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c7205d7bfe71446ad3fd7a3a39d849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _smallCrack: {fileID: 575637501997299863}
+  _bigCrack: {fileID: 575637503296382263}
+  _crackedPlayerPrefab: {fileID: 2855090873280375123, guid: d7bddd6fcc17cbe4c86b9d9394acb084, type: 3}
 --- !u!1 &575637503229586111
 GameObject:
   m_ObjectHideFlags: 0
