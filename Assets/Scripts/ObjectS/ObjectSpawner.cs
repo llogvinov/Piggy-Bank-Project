@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -17,15 +18,13 @@ public class ObjectSpawner : MonoBehaviour
 
     [SerializeField] private float gravityScale = 1.2f;
 
-    private GameManager gameManager;
-
     private int objectIndex;
     private float randomFloat;
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        
+        Game.GameOver += OnGameOver;
+
         for (int i = 0; i < objectPrefabs.Length; i++)
         {
             Rigidbody2D objectRb = objectPrefabs[i].GetComponent<Rigidbody2D>();
@@ -33,6 +32,16 @@ public class ObjectSpawner : MonoBehaviour
         }
 
         StartCoroutine(WaitToStartSpawning());
+    }
+
+    private void OnDestroy()
+    {
+        Game.GameOver -= OnGameOver;
+    }
+
+    private void OnGameOver()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator WaitToStartSpawning()
@@ -44,10 +53,10 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObject()
     {
-        while (!gameManager.IsGameOver)
+        while (true)
         {
             objectIndex = objectPrefabs.Length > 1 ? RandomPrefab() : 0;
-            
+
             Instantiate(objectPrefabs[objectIndex], RandomPosition(), objectPrefabs[objectIndex].transform.rotation, transform);
 
             yield return new WaitForSeconds(Random.Range(minTimeSpawn, maxTimeSpawn));
@@ -57,11 +66,11 @@ public class ObjectSpawner : MonoBehaviour
     private int RandomPrefab()
     {
         randomFloat = animationCurve.Evaluate(Random.value);
-        
+
         if (randomFloat > 0.3)
             return 0;
         else
-            return RandomPrefabPlus(objectPrefabs.Length); 
+            return RandomPrefabPlus(objectPrefabs.Length);
     }
 
     private int RandomPrefabPlus(int numberOfPrefabs)
@@ -75,7 +84,7 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     //Increase gravity scale for objects
-    private IEnumerator ChangeGravityScale() 
+    private IEnumerator ChangeGravityScale()
     {
         while (true)
         {

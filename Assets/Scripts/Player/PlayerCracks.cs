@@ -1,8 +1,7 @@
 using Core;
-using Core.Factory;
 using UnityEngine;
 
-namespace Main.Player
+namespace Main
 {
     public class PlayerCracks : MonoBehaviour
     {
@@ -10,27 +9,19 @@ namespace Main.Player
         [SerializeField] private GameObject _bigCrack;
         [SerializeField] private CrackedPlayer _crackedPlayerPrefab;
 
-        private PlayerHealth _playerHealth;
+        private Player _player;
 
-        private void Awake()
+        public void Initialize(Player player)
         {
-            _playerHealth = AllServices.Container.Single<IGameFactory>()
-                .Player.GetComponent<PlayerHealth>();
-        }
-
-        private void Start()
-        {
-            if (_playerHealth != null)
-            {
-                _playerHealth.HealthChanged += UpdatePlayerVisual;
-            }
+            _player = player;
+            _player.Health.HealthChanged += UpdatePlayerVisual;
         }
 
         private void OnDestroy()
         {
-            if (_playerHealth != null)
+            if (_player.Health != null)
             {
-                _playerHealth.HealthChanged -= UpdatePlayerVisual;
+                _player.Health.HealthChanged -= UpdatePlayerVisual;
             }
         }
 
@@ -39,29 +30,30 @@ namespace Main.Player
             switch (playerHealth.Health)
             {
                 case 2:
-                {
-                    _smallCrack.SetActive(true);
-                    _bigCrack.SetActive(false);
-                    break;
-                }
+                    {
+                        _smallCrack.SetActive(true);
+                        _bigCrack.SetActive(false);
+                        break;
+                    }
                 case 1:
-                {
-                    _smallCrack.SetActive(true);
-                    _bigCrack.SetActive(true);
-                    break;
-                }
+                    {
+                        _smallCrack.SetActive(true);
+                        _bigCrack.SetActive(true);
+                        break;
+                    }
                 case 0:
-                {
-                    Instantiate(_crackedPlayerPrefab, playerHealth.transform.position, playerHealth.transform.rotation);
-                    Game.GameOver?.Invoke();
-                    break;
-                }
+                    {
+                        GameObject.Destroy(_player.Health.gameObject);
+                        Instantiate(_crackedPlayerPrefab, playerHealth.transform.position, playerHealth.transform.rotation, transform);
+                        Game.GameOver?.Invoke();
+                        break;
+                    }
                 default:
-                {
-                    _smallCrack.SetActive(false);
-                    _bigCrack.SetActive(false);
-                    break;
-                }
+                    {
+                        _smallCrack.SetActive(false);
+                        _bigCrack.SetActive(false);
+                        break;
+                    }
             }
         }
     }

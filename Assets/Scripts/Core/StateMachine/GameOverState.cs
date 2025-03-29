@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using PiggyBank;
 using UI;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly IGameFactory _gameFactory;
 
+        private UIGameOver _uiGameOver;
+        private UIGameOver UIGameOver => _uiGameOver ??= GameObject.FindObjectOfType<UIGameOver>();
+
         public GameOverState(GameStateMachine stateMachine, IGameFactory gameFactory)
         {
             _stateMachine = stateMachine;
@@ -16,31 +20,25 @@ namespace Core.StateMachine
         }
 
         public void Enter()
-        {
-            // _uiManager = uiManager;
-            
-            // _uiManager.UIGameOver.Show();
-            // _uiManager.UIGameOver.MenuButton.onClick.AddListener(LoadMenu);
-            // _uiManager.UIGameOver.RestartButton.onClick.AddListener(RestartGame);
+        {          
+            UIGameOver.Show();
+            UIGameOver.MenuButton.onClick.AddListener(LoadMenu);
+            UIGameOver.RestartButton.onClick.AddListener(RestartGame);
         }
 
         public void Exit()
         {
-            // GameObject.Destroy(_gameFactory.Frog);
-            // GameObject.Destroy(_gameFactory.Girl);
+            GameObject.Destroy(_gameFactory.Player.gameObject);
 
-            // foreach (var enemySpawner in _gameFactory.EnemySpawners) 
-            //     GameObject.Destroy(enemySpawner);
-
-            // _uiManager.UIGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
-            // _uiManager.UIGameOver.RestartButton.onClick.RemoveListener(RestartGame);
-            // _uiManager.UIGameOver.Hide();
+            UIGameOver.Hide();
+            UIGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
+            UIGameOver.RestartButton.onClick.RemoveListener(RestartGame);
         }
 
-        // private void LoadMenu() 
-        //     => _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        private void LoadMenu() 
+            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
 
-        // private void RestartGame() 
-        //     => _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
+        private void RestartGame() 
+            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
     }
 }

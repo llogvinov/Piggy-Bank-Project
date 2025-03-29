@@ -1,4 +1,6 @@
-﻿namespace Core.Factory
+﻿using Main;
+
+namespace Core.Factory
 {
     public interface IGameFactory : IService
     {

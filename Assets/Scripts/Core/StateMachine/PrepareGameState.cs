@@ -1,6 +1,6 @@
 ﻿using Core.Factory;
 using Main.Background;
-using Main.Player;
+using Main;
 using UI;
 using UnityEngine;
 
@@ -11,6 +11,9 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly IGameFactory _gameFactory;
         private readonly UILoading _uiLoading;
+
+        private UIHealth _uiHealth;
+        private UIHealth UIHealth => _uiHealth ??= GameObject.FindObjectOfType<UIHealth>();
 
         public PrepareGameState(GameStateMachine stateMachine, IGameFactory gameFactory,
             UILoading uiLoading)
@@ -29,11 +32,8 @@ namespace Core.StateMachine
             }
 
             var player = _gameFactory.InstantiatePlayer();
-            var skinCreator = player.GetComponent<PlayerSkinCreator>();
-            if (skinCreator != null)
-            {
-                skinCreator.SetFullSkin();
-            }
+            UIHealth.Initialize(player);
+            player.SkinCreator.SetFullSkin();
 
             Game.GameOver += OnGameOver;
         }

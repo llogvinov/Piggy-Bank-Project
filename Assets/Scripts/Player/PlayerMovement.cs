@@ -9,13 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigitbody;
     private Animator playerAnimator;
     private PlayerInput playerInput;
-    private GameManager gameManager;
     
     private static readonly int Speed = Animator.StringToHash("Speed");
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
@@ -23,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gameManager.IsGameOver)
-            return;
-        
         MovePlayer();
         SetAnimation();
     }

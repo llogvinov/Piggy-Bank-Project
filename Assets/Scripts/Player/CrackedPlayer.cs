@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Main.Player
+namespace Main
 {
     public class CrackedPlayer : MonoBehaviour
     {

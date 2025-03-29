@@ -7,19 +7,15 @@ public class PlayerInput : MonoBehaviour
     private bool moveLeft;
     private bool moveRight;
 
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
     private void Update()
     {
-        if (gameManager.IsGameOver)
-            return;
-        
-        GetPlayerInput();
+        GetPlayerPCInput();
+        //GetPlayerInput();
+    }
+
+    private void GetPlayerPCInput()
+    {
+        HorizontalInput = Input.GetAxis("Horizontal");
     }
 
     //Move player with buttons 

@@ -1,6 +1,4 @@
-using Core;
-using Core.Factory;
-using Main.Player;
+using Main;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,18 +12,10 @@ namespace UI
 
         private PlayerHealth _playerHealth;
 
-        private void Awake()
+        public void Initialize(Player player)
         {
-            _playerHealth = AllServices.Container.Single<IGameFactory>()
-                .Player.GetComponent<PlayerHealth>();
-        }
-
-        private void Start()
-        {
-            if (_playerHealth != null)
-            {
-                _playerHealth.HealthChanged += UpdateHeartsUI;
-            }
+            _playerHealth = player.Health;
+            _playerHealth.HealthChanged += UpdateHeartsUI;
         }
 
         private void OnDestroy()

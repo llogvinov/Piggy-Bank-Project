@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MenuButton : MonoBehaviour
 {
     private Button menuButton;
-    private int mainScene = 0;
+    private int mainScene = 1;
 
     private void Awake() => menuButton = GetComponent<Button>();
 

@@ -1,5 +1,5 @@
 using System.Collections;
-using Main.Player;
+using Main;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Main.Player
+namespace Main
 {
     public class PlayerHealth : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace Main.Player
             get => _health;
             set
             {
-                Mathf.Min(value, MAX_HEALTH);
+                _health = Mathf.Clamp(value, 0, MAX_HEALTH);
                 HealthChanged?.Invoke(this);
             }
         }
@@ -24,10 +24,10 @@ namespace Main.Player
         public void SetInitialHealth(int value = MAX_HEALTH) =>
             Health = value;
 
-        public void TakeDamage(int damage) => 
+        public void TakeDamage(int damage) =>
             Health -= damage;
 
-        public void AddHeart() => 
+        public void AddHeart() =>
             Health++;
     }
 }

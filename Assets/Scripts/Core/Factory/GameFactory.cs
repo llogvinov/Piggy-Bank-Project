@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Main;
+using UnityEngine;
 
 namespace Core.Factory
 {
@@ -13,6 +14,7 @@ namespace Core.Factory
                 Debug.LogError($"{typeof(Player)} not found in resources");
             
             Player = GameObject.Instantiate(loaded);
+            Debug.Log("player " + Player.gameObject.name);
             return Player;
         }
     }

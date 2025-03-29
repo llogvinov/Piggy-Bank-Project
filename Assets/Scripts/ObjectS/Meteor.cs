@@ -1,4 +1,4 @@
-using Main.Player;
+using Main;
 using UnityEngine;
 
 public class Meteor : Enemy

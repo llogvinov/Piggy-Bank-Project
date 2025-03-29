@@ -26,14 +26,12 @@ namespace UI
 
         public virtual void Show()
         {
-            Debug.Log("show");
             _canvas.gameObject.SetActive(true);
             ToggleButtons(false);
         }
 
         public virtual void Hide()
         {
-            Debug.Log("hide");
             _canvas.gameObject.SetActive(false);
             ToggleButtons(true);
         }
