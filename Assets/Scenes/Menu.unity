@@ -3022,7 +3022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28b7439bdc568b4c8f0121d392c4ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 699786205}
+  _panel: {fileID: 699786201}
   _openButton: {fileID: 1857831238}
   _closeButton: {fileID: 1535636330}
   _toHide:
@@ -6242,7 +6242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329636e29fa9d6249b993c585abc3b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 27419780}
+  _panel: {fileID: 27419776}
   _openButton: {fileID: 753612597}
   _closeButton: {fileID: 1563117788}
   _toHide:
@@ -6988,7 +6988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28b7439bdc568b4c8f0121d392c4ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 1275071979}
+  _panel: {fileID: 1275071975}
   _openButton: {fileID: 1404216955}
   _closeButton: {fileID: 1508271302}
   _toHide:
@@ -7448,7 +7448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c0e2265722d8c40893698eaf707d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 329288285}
+  _panel: {fileID: 329288282}
   _openButton: {fileID: 1334198028}
   _closeButton: {fileID: 1207313678}
   _toHide:
@@ -7666,7 +7666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1369110850}
-  - component: {fileID: 1369110854}
   - component: {fileID: 1369110853}
   - component: {fileID: 1369110852}
   - component: {fileID: 1369110851}
@@ -7778,57 +7777,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369110849}
   m_CullTransparentMesh: 1
---- !u!114 &1369110854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369110849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: com.cringegamesls.piggybank.remove_ads
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
-        m_MethodName: OnPurchaseComplete
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: IAPManager, Assembly-CSharp
-        m_MethodName: OnPurchaseFailed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &1369912082
 GameObject:
   m_ObjectHideFlags: 0
@@ -7969,7 +7917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cfc97b16e5440498eece9ff4acba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 1435418892}
+  _panel: {fileID: 1435418888}
   _openButton: {fileID: 183701175}
   _closeButton: {fileID: 1876058475}
   _toHide:
@@ -10159,7 +10107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acad1a2f5a8c6c84b81d15bd0819f560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 607344409}
+  _panel: {fileID: 607344405}
   _openButton: {fileID: 364966859}
   _closeButton: {fileID: 0}
   _toHide: []
@@ -11435,7 +11383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9b65b8d45a87648a819e4abc5e9839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 2070823960}
+  _panel: {fileID: 2070823956}
   _openButton: {fileID: 72416225}
   _closeButton: {fileID: 898911722}
   _toHide:

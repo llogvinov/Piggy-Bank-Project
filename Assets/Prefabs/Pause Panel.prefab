@@ -28,11 +28,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8700830339470881406}
   - {fileID: 8700830339508995324}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -82,6 +82,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8700830339135235224}
     m_Modifications:
     - target: {fileID: 9220625685467325960, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
@@ -183,7 +184,7 @@ PrefabInstance:
     - target: {fileID: 9220625686358050899, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8704020295220008894, guid: 0be66a65ab5ac994d91b9da8fc71d4d1, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 9220625686358050899, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
@@ -193,6 +194,9 @@ PrefabInstance:
       value: PauseButton, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4b3c3143ad4874687b3e3051c37a13, type: 3}
 --- !u!224 &8700830339470881406 stripped
 RectTransform:
@@ -204,6 +208,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8700830339135235224}
     m_Modifications:
     - target: {fileID: 5793812409982500810, guid: 2e65175e99c5d5640853e6ddc06ae6df, type: 3}
@@ -306,7 +311,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4054705588443723351, guid: 2e65175e99c5d5640853e6ddc06ae6df, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e65175e99c5d5640853e6ddc06ae6df, type: 3}
 --- !u!224 &8700830339508995324 stripped
 RectTransform:

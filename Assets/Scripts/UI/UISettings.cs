@@ -35,7 +35,7 @@ namespace UI
 
         private void ToggleCanvas()
         {
-            if (_canvas.gameObject.activeSelf == false)
+            if (_panel.gameObject.activeSelf == false)
                 Show();
             else 
                 Hide();

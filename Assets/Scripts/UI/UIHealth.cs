@@ -16,6 +16,7 @@ namespace UI
         {
             _playerHealth = player.Health;
             _playerHealth.HealthChanged += UpdateHeartsUI;
+            UpdateHeartsUI(_playerHealth);
         }
 
         private void OnDestroy()
@@ -28,6 +29,7 @@ namespace UI
 
         private void UpdateHeartsUI(PlayerHealth playerHealth)
         {
+            Debug.Log(_hearts.Length + " " + _hearts[0].name);
             for (int i = 0; i < _hearts.Length; i++)
             {
                 _hearts[i].sprite = i < playerHealth.Health ? _fullHeart : _emptyHeart;

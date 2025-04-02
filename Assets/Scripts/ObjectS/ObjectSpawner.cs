@@ -21,7 +21,7 @@ public class ObjectSpawner : MonoBehaviour
     private int objectIndex;
     private float randomFloat;
 
-    private void Start()
+    public void StartSpawner()
     {
         Game.GameOver += OnGameOver;
 

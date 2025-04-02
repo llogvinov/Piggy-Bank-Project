@@ -1,6 +1,7 @@
-﻿using Core.Factory;
+﻿using System;
+using Core.Factory;
 using Main.Background;
-using Main;
+using PiggyBank;
 using UI;
 using UnityEngine;
 
@@ -12,8 +13,8 @@ namespace Core.StateMachine
         private readonly IGameFactory _gameFactory;
         private readonly UILoading _uiLoading;
 
+        private UIPause _uiPause;
         private UIHealth _uiHealth;
-        private UIHealth UIHealth => _uiHealth ??= GameObject.FindObjectOfType<UIHealth>();
 
         public PrepareGameState(GameStateMachine stateMachine, IGameFactory gameFactory,
             UILoading uiLoading)
@@ -25,6 +26,9 @@ namespace Core.StateMachine
 
         public void Enter()
         {
+            _uiPause = GameObject.FindObjectOfType<UIPause>();
+            _uiPause.MenuButton.onClick.AddListener(GoToMenu);
+
             var backgroundCreator = GameObject.FindObjectOfType<BackgroundCreator>();
             if (backgroundCreator != null)
             {
@@ -32,20 +36,34 @@ namespace Core.StateMachine
             }
 
             var player = _gameFactory.InstantiatePlayer();
-            UIHealth.Initialize(player);
+            _uiHealth = GameObject.FindObjectOfType<UIHealth>();
+            _uiHealth.Initialize(player);
             player.SkinCreator.SetFullSkin();
+
+            var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
+            foreach (var spawner in spawners)
+            {
+                spawner.StartSpawner(); 
+            }
 
             Game.GameOver += OnGameOver;
         }
 
-        public void Exit()
+        private void GoToMenu()
         {
-            _uiLoading.Hide();
+            _uiPause.MenuButton.onClick.RemoveListener(GoToMenu);
+            _uiPause.ResumeGame();
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
         }
 
         private void OnGameOver()
         {
             _stateMachine.Enter<GameOverState>();
+        }
+
+        public void Exit()
+        {
+            _uiLoading.Hide();
         }
     }
 }

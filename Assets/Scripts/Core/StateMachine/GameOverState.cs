@@ -11,7 +11,6 @@ namespace Core.StateMachine
         private readonly IGameFactory _gameFactory;
 
         private UIGameOver _uiGameOver;
-        private UIGameOver UIGameOver => _uiGameOver ??= GameObject.FindObjectOfType<UIGameOver>();
 
         public GameOverState(GameStateMachine stateMachine, IGameFactory gameFactory)
         {
@@ -20,19 +19,22 @@ namespace Core.StateMachine
         }
 
         public void Enter()
-        {          
-            UIGameOver.Show();
-            UIGameOver.MenuButton.onClick.AddListener(LoadMenu);
-            UIGameOver.RestartButton.onClick.AddListener(RestartGame);
+        { 
+            Game.GameOver = null;
+
+            _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();
+            _uiGameOver.Show();
+            _uiGameOver.MenuButton.onClick.AddListener(LoadMenu);
+            _uiGameOver.RestartButton.onClick.AddListener(RestartGame);
         }
 
         public void Exit()
         {
             GameObject.Destroy(_gameFactory.Player.gameObject);
 
-            UIGameOver.Hide();
-            UIGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
-            UIGameOver.RestartButton.onClick.RemoveListener(RestartGame);
+            _uiGameOver.Hide();
+            _uiGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
+            _uiGameOver.RestartButton.onClick.RemoveListener(RestartGame);
         }
 
         private void LoadMenu() 

@@ -29,7 +29,7 @@ public class PowerUp : MonoBehaviour
     //Collecting PowerUp
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.gameObject.TryGetComponent(out Player player);
+        var player = other.gameObject.GetComponentInParent<Player>();
         if (player == null)
             return;
         
