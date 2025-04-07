@@ -4,6 +4,7 @@ namespace Core.Services.PlayerData
 {
     public interface IPlayerDataService : IService
     {
+        PlayerData PlayerData { get; }
         PlayerData Load();
         void Save(PlayerData playerData);
         void RemoveAds();

@@ -1,0 +1,47 @@
+{
+    "RemovedAds": false,
+    "Coins": 0,
+    "NormalGamesPlayed": 0,
+    "SurvivalGamesPlayed": 0,
+    "NormalModeRecord": 0,
+    "SelectedHatId": 0,
+    "SelectedMaskId": 0,
+    "SelectedLocationId": 0,
+    "PurchasedHatsIds": [],
+    "PurchasedMasksIds": [],
+    "PurchasedLocationsIds": [],
+    "SelectedHat": {
+        "image": {
+            "instanceID": 0
+        },
+        "name": "none",
+        "price": 0,
+        "isPurchased": true
+    },
+    "SelectedMask": {
+        "image": {
+            "instanceID": 0
+        },
+        "name": "none",
+        "price": 0,
+        "isPurchased": true
+    },
+    "SelectedLocation": {
+        "name": "",
+        "sky": {
+            "instanceID": 0
+        },
+        "ground": {
+            "instanceID": 0
+        },
+        "trees": {
+            "instanceID": 0
+        },
+        "mountain": {
+            "instanceID": 0
+        },
+        "clouds": [],
+        "price": 0,
+        "isPurchased": false
+    }
+}

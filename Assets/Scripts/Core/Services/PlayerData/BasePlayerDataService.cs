@@ -4,6 +4,8 @@ namespace Core.Services.PlayerData
 {
     public abstract class BasePlayerDataService : IPlayerDataService
     {
+        public PlayerData PlayerData { get; protected set; }
+        
         public abstract PlayerData Load();
         
         public abstract void Save(PlayerData playerData);
