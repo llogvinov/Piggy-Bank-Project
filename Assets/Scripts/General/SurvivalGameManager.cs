@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +11,19 @@ public class SurvivalGameManager : GameManager
 
     [SerializeField] private float startingTime = 40f;
     [HideInInspector] public float СurrentTime;
+    
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
 
     private void Start()
     {
         StartGame();
 
-        GameDataManager.IncrementSurvivalGamesPlayed();
+        _playerDataService.IncrementSurvivalGamesPlayed();
         СurrentTime = startingTime;
         CoinToAdd = 75;
     }
@@ -26,7 +35,7 @@ public class SurvivalGameManager : GameManager
             СurrentTime -= Time.deltaTime;
             timerText.text = СurrentTime.ToString("00");
         }
-        
+
         if (СurrentTime <= 0 && !IsGameOver)
         {
             GameComplete();
@@ -42,7 +51,7 @@ public class SurvivalGameManager : GameManager
         gameCompletePanel.SetActive(true);
 
         rewardText.text = "+" + CoinToAdd;
-        GameDataManager.AddCoins(CoinToAdd);
+        _playerDataService.AddCoins(CoinToAdd);
         GameSharedUI.Instance.UpdateCoinsUIText();
 
         ShowInterstitialAd();
@@ -61,10 +70,10 @@ public class SurvivalGameManager : GameManager
     //Shows an interstitial ad after every game in Survival mode
     private void ShowInterstitialAd()
     {
-        if (GameDataManager.IsRemovedAds()) 
+        if (_playerDataService.IsRemovedAds())
             return;
-        
-        if (GameDataManager.GetSurvivalGamesPlayed() % 1 == 0)
+
+        if (_playerDataService.GetSurvivalGamesPlayed() % 1 == 0)
         {
             //adManager.ShowInterstitialAd();
         }

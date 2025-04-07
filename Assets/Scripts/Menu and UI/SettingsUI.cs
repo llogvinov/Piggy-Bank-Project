@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,14 @@ public class SettingsUI : MonoBehaviour
     [Space(20f)]
     [SerializeField] private Image noMusicImage;
     [SerializeField] private Image noSoundImage;
+    
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
+
 
     private void Start()
     {
@@ -21,9 +31,9 @@ public class SettingsUI : MonoBehaviour
 
         RemoveAdsComplete();
 
-        if (PlayerPrefs.GetFloat("music") == 0) 
+        if (PlayerPrefs.GetFloat("music") == 0)
             noMusicImage.gameObject.SetActive(true);
-        if (PlayerPrefs.GetFloat("sounds") == 0) 
+        if (PlayerPrefs.GetFloat("sounds") == 0)
             noSoundImage.gameObject.SetActive(true);
     }
 
@@ -44,8 +54,8 @@ public class SettingsUI : MonoBehaviour
 
     public void RemoveAdsComplete()
     {
-        if (GameDataManager.IsRemovedAds()) 
-            noAddsButton.gameObject.SetActive(false); 
+        if (_playerDataService.IsRemovedAds())
+            noAddsButton.gameObject.SetActive(false);
     }
 
     //Controls Music UI element
@@ -54,7 +64,7 @@ public class SettingsUI : MonoBehaviour
     {
         var noMusic = noMusicImage.gameObject;
         noMusic.SetActive(!noMusic.activeSelf);
-        
+
         PlayerPrefs.SetFloat("music", noMusic.activeSelf ? 0f : 1f);
     }
 
@@ -64,7 +74,7 @@ public class SettingsUI : MonoBehaviour
     {
         var noSound = noSoundImage.gameObject;
         noSound.SetActive(!noSound.activeSelf);
-        
+
         PlayerPrefs.SetFloat("sounds", noSound.activeSelf ? 0f : 1f);
     }
 

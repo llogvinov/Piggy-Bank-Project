@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 namespace Main
@@ -13,6 +15,13 @@ namespace Main
         [Space]
         [SerializeField] private List<Rigidbody2D> _parts = new List<Rigidbody2D>();
 
+        private IPlayerDataService _playerDataService;
+        
+        private void Awake()
+        {
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        }
+
         private void Start()
         {
             SetHatAndMask();
@@ -22,8 +31,8 @@ namespace Main
 
         private void SetHatAndMask()
         {
-            Hat hat = GameDataManager.GetSelectedHat();
-            Mask mask = GameDataManager.GetSelectedMask();
+            Hat hat = _playerDataService.GetSelectedHat();
+            Mask mask = _playerDataService.GetSelectedMask();
 
             _hatImage.sprite = hat.image;
             _maskImage.sprite = mask.image;
@@ -45,10 +54,10 @@ namespace Main
             }
         }
 
-        private void AddExplosionForceCustom(Rigidbody2D rb, 
+        private void AddExplosionForceCustom(Rigidbody2D rb,
             float explosionForce,
-            Vector2 explosionPosition, 
-            float upwardsModifier = 0f, 
+            Vector2 explosionPosition,
+            float upwardsModifier = 0f,
             ForceMode2D mode = ForceMode2D.Force)
         {
             var explosionDir = rb.position - explosionPosition;

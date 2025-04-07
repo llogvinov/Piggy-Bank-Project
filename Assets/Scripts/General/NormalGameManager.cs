@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +12,18 @@ public class NormalGameManager : GameManager
     public Image PowerupIcon;
     public Timer Timer;
 
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
+
     private void Start()
     {
         StartGame();
 
-        GameDataManager.IncrementNormalGamesPlayed();
+        _playerDataService.IncrementNormalGamesPlayed();
         CoinToAdd = 0;
     }
 
@@ -30,23 +39,23 @@ public class NormalGameManager : GameManager
         pauseButton.SetActive(false);
         gameOverPanel.SetActive(true);
 
-        GameDataManager.SetNewRecord(CoinToAdd);
-        recordText.text = "record: " + GameDataManager.GetPlayerRecord();
+        _playerDataService.SetNewRecord(CoinToAdd);
+        recordText.text = "record: " + _playerDataService.GetPlayerRecord();
         rewardText.text = "+" + CoinToAdd;
-        GameDataManager.AddCoins(CoinToAdd);
+        _playerDataService.AddCoins(CoinToAdd);
         GameSharedUI.Instance.UpdateCoinsUIText();
 
         ShowInterstitialAd();
-        Debug.Log(GameDataManager.GetNormalGamesPlayed());
+        Debug.Log(_playerDataService.GetNormalGamesPlayed());
     }
 
     //Shows an interstitial ad after every game in Normal mode
     private void ShowInterstitialAd()
     {
-        if (GameDataManager.IsRemovedAds()) 
+        if (_playerDataService.IsRemovedAds())
             return;
-        
-        if (GameDataManager.GetNormalGamesPlayed() % 1 == 0)
+
+        if (_playerDataService.GetNormalGamesPlayed() % 1 == 0)
         {
             //adManager.ShowInterstitialAd();
         }

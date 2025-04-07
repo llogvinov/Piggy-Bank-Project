@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 namespace Main
@@ -6,6 +8,13 @@ namespace Main
     {
         [SerializeField] private SpriteRenderer _hat;
         [SerializeField] private SpriteRenderer _mask;
+        
+        private IPlayerDataService _playerDataService;
+
+        private void Awake()
+        {
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        }
 
         private void Start()
         {
@@ -20,13 +29,13 @@ namespace Main
 
         public void SetMask()
         {
-            var mask = GameDataManager.GetSelectedMask();
+            var mask = _playerDataService.GetSelectedMask();
             _mask.sprite = mask.image;
         }
 
         public void SetHat()
         {
-            var hat = GameDataManager.GetSelectedHat();
+            var hat = _playerDataService.GetSelectedHat();
             _hat.sprite = hat.image;
         }
     }

@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +13,16 @@ public class GameSharedUI : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+        
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
     }
 
     #endregion
 
     [SerializeField] private Text[] coinsUIText;
 
+    private IPlayerDataService _playerDataService;
+    
     private void Start()
     {
         UpdateCoinsUIText();
@@ -26,7 +32,7 @@ public class GameSharedUI : MonoBehaviour
     {
         for (int i = 0; i < coinsUIText.Length; i++)
         {
-            SetCoinsText(coinsUIText[i], GameDataManager.GetCoins());
+            SetCoinsText(coinsUIText[i], _playerDataService.GetCoins());
         }
     }
 

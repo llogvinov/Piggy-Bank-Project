@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
@@ -12,34 +14,41 @@ public class IAPManager : MonoBehaviour
 
     private const string RemoveAds = "com.cringegamesls.piggybank.remove_ads";
 
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
+
     public void OnPurchaseComplete(Product product)
     {
         switch (product.definition.id)
         {
             case Coins1000:
-                GameDataManager.AddCoins(1000);
+                _playerDataService.AddCoins(1000);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 break;
             case Coins3000:
-                GameDataManager.AddCoins(3000);
+                _playerDataService.AddCoins(3000);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 break;
             case Coins10000:
-                GameDataManager.AddCoins(10000);
+                _playerDataService.AddCoins(10000);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 break;
             case Coins40000:
-                GameDataManager.AddCoins(40000);
+                _playerDataService.AddCoins(40000);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 break;
             case RemoveAds:
-                GameDataManager.RemoveAds();
+                _playerDataService.RemoveAds();
                 settingsUI.RemoveAdsComplete();
                 break;
         }
 
     }
-    
+
     public void OnPurchaseFailed(Product product, PurchaseFailureReason purchaseFailure)
     {
 #if UNITY_EDITOR

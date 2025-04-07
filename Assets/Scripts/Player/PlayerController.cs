@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,6 +20,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigitbody;
     private GameManager gameManager;
     private Animator playerAnimator;
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
+
 
     private void Start()
     {
@@ -33,8 +42,8 @@ public class PlayerController : MonoBehaviour
 
     private void SetHatAndMask()
     {
-        Hat hat = GameDataManager.GetSelectedHat();
-        Mask mask = GameDataManager.GetSelectedMask();
+        Hat hat = _playerDataService.GetSelectedHat();
+        Mask mask = _playerDataService.GetSelectedMask();
 
         hatImage.sprite = hat.image;
         maskImage.sprite = mask.image;
@@ -56,7 +65,7 @@ public class PlayerController : MonoBehaviour
     public void TouchUpLeft() { moveLeft = false; }
     public void TouchDownRight() { moveRight = true; }
     public void TouchUpRight() { moveRight = false; }
-    
+
     private void GetPlayerInput()
     {
         if (moveLeft)
@@ -86,7 +95,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
-    
+
     private void MovePlayerAndroid()
     {
         if (!PowerUp.IsSuperSpeedActive)

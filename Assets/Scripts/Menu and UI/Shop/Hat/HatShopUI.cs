@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +20,12 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
 
     private int newSelectedHatIndex;
     private int previousSelectedHatIndex;
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
 
     private void Start()
     {
@@ -27,7 +35,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
         SetSelectedItem();
 
         //Select UI item
-        SelectItemUI(GameDataManager.GetSelectedHatIndex());
+        SelectItemUI(_playerDataService.GetSelectedHatIndex());
 
         //Update player skin
         ChangeItemSkin();
@@ -36,10 +44,10 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
     public void SetSelectedItem()
     {
         //Get Saved index
-        int index = GameDataManager.GetSelectedHatIndex();
+        int index = _playerDataService.GetSelectedHatIndex();
 
         //Set selected index
-        GameDataManager.SetSelectedHat(hatDB.GetHat(index), index);
+        _playerDataService.SetSelectedHat(hatDB.GetHat(index), index);
     }
 
     //Generate UI Shop Item
@@ -47,9 +55,9 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
     {
         //Loop through save purchased items and
         //make them purchased in the Database array
-        for (int i = 0; i < GameDataManager.GetAllPurchasedHats().Count; i++)
+        for (int i = 0; i < _playerDataService.GetAllPurchasedHats().Count; i++)
         {
-            int purchaseHatIndex = GameDataManager.GetPurchasedHat(i);
+            int purchaseHatIndex = _playerDataService.GetPurchasedHat(i);
             hatDB.PurchaseHat(purchaseHatIndex);
         }
 
@@ -101,7 +109,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
 
     public void ChangeItemSkin()
     {
-        Hat hat = GameDataManager.GetSelectedHat();
+        Hat hat = _playerDataService.GetSelectedHat();
         mainMenuHatImage.sprite = hat.image;
     }
 
@@ -111,7 +119,7 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
         SelectItemUI(index);
 
         //Save Data
-        GameDataManager.SetSelectedHat(hatDB.GetHat(index), index);
+        _playerDataService.SetSelectedHat(hatDB.GetHat(index), index);
         
         //Change hat skin
         ChangeItemSkin();
@@ -136,17 +144,17 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
         Hat hat = hatDB.GetHat(index);
         HatItemUI hatUIItem = GetItemUI(index);
 
-        if (GameDataManager.CanSpendCoins(hat.price))
+        if (_playerDataService.CanSpendCoins(hat.price))
         {
             //Proceed with the purchase operation
-            GameDataManager.SpendCoins(hat.price);
+            _playerDataService.SpendCoins(hat.price);
             GameSharedUI.Instance.UpdateCoinsUIText();
             hatDB.PurchaseHat(index);
             hatUIItem.SetItemAsPurchased();
             hatUIItem.OnItemSelect(index, OnItemSelected);
 
             //Add purchased data on Shop Data
-            GameDataManager.AddPurchasedHat(index);
+            _playerDataService.AddPurchasedHat(index);
         } 
         else
         {

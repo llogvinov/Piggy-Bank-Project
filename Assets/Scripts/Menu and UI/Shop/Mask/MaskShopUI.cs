@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +20,12 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
 
     private int newSelectedMaskIndex;
     private int previousSelectedMaskIndex;
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
+    {
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+    }
 
     private void Start()
     {
@@ -27,7 +35,7 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
         SetSelectedItem();
 
         //Select UI item
-        SelectItemUI(GameDataManager.GetSelectedMaskIndex());
+        SelectItemUI(_playerDataService.GetSelectedMaskIndex());
 
         //Update player skin
         ChangeItemSkin();
@@ -36,10 +44,10 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
     public void SetSelectedItem()
     {
         //Get Saved index
-        int index = GameDataManager.GetSelectedMaskIndex();
+        int index = _playerDataService.GetSelectedMaskIndex();
 
         //Set selected index
-        GameDataManager.SetSelectedMask(maskDB.GetMask(index), index);
+        _playerDataService.SetSelectedMask(maskDB.GetMask(index), index);
     }
 
     //Generate UI Shop Item
@@ -47,9 +55,9 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
     {
         //Loop through save purchased items and
         //make them purchased in the Database aaray
-        for (int i = 0; i < GameDataManager.GetAllPurchasedMasks().Count; i++)
+        for (int i = 0; i < _playerDataService.GetAllPurchasedMasks().Count; i++)
         {
-            int purchaseCharacterIndex = GameDataManager.GetPurchasedMask(i);
+            int purchaseCharacterIndex = _playerDataService.GetPurchasedMask(i);
             maskDB.PurchaseMask(purchaseCharacterIndex);
         }
 
@@ -101,7 +109,7 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
 
     public void ChangeItemSkin()
     {
-        Mask mask = GameDataManager.GetSelectedMask();
+        Mask mask = _playerDataService.GetSelectedMask();
         mainMenuMaskImage.sprite = mask.image;
     }
 
@@ -111,7 +119,7 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
         SelectItemUI(index);
 
         //Save Data
-        GameDataManager.SetSelectedMask(maskDB.GetMask(index), index);
+        _playerDataService.SetSelectedMask(maskDB.GetMask(index), index);
 
         //Change mask skin
         ChangeItemSkin();
@@ -136,17 +144,17 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
         Mask mask = maskDB.GetMask(index);
         MaskItemUI maskUIItem = GetItemUI(index);
 
-        if (GameDataManager.CanSpendCoins(mask.price))
+        if (_playerDataService.CanSpendCoins(mask.price))
         {
             //Proceed with the purchase operation
-            GameDataManager.SpendCoins(mask.price);
+            _playerDataService.SpendCoins(mask.price);
             GameSharedUI.Instance.UpdateCoinsUIText();
             maskDB.PurchaseMask(index);
             maskUIItem.SetItemAsPurchased();
             maskUIItem.OnItemSelect(index, OnItemSelected);
 
             //Add purchased data on Shop Data
-            GameDataManager.AddPurchasedMask(index);
+            _playerDataService.AddPurchasedMask(index);
         }
         else
         {

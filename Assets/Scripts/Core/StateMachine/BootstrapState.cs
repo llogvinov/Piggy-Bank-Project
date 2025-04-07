@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Core.Services.PlayerData;
 using PiggyBank;
 
 namespace Core.StateMachine
@@ -33,7 +34,18 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
+#if UNITY_EDITOR
+            RegisterLocalDataService();
+#else
+            RegisterYandexDataService();
+#endif
             _services.RegisterSingle<IGameFactory>(new GameFactory());
         }
+
+        private void RegisterLocalDataService() =>
+            _services.RegisterSingle<IPlayerDataService>(new LocalPlayerDataService());
+
+        private void RegisterYandexDataService() =>
+            _services.RegisterSingle<IPlayerDataService>(new LocalPlayerDataService());
     }
 }

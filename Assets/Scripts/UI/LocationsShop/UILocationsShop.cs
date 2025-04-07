@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 namespace UI.LocationsShop
@@ -16,6 +18,12 @@ namespace UI.LocationsShop
 
         private int newSelectedLocationIndex;
         private int previousSelectedLocationIndex;
+        private IPlayerDataService _playerDataService;
+
+        private void Awake()
+        {
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        }
 
         private void Start()
         {
@@ -25,7 +33,7 @@ namespace UI.LocationsShop
             SetSelectedItem();
 
             //Select UI item
-            SelectItemUI(GameDataManager.GetSelectedLocationIndex());
+            SelectItemUI(_playerDataService.GetSelectedLocationIndex());
 
             //Update player skin
             ChangeItemSkin();
@@ -36,9 +44,9 @@ namespace UI.LocationsShop
         {
             //Loop through save purchased items and
             //make them purchased in the Database array
-            for (int i = 0; i < GameDataManager.GetAllPurchasedLocations().Count; i++)
+            for (int i = 0; i < _playerDataService.GetAllPurchasedLocations().Count; i++)
             {
-                int purchaseLocationIndex = GameDataManager.GetPurchasedLocation(i);
+                int purchaseLocationIndex = _playerDataService.GetPurchasedLocation(i);
                 locationDB.PurchaseLocation(purchaseLocationIndex);
             }
 
@@ -86,10 +94,10 @@ namespace UI.LocationsShop
         public void SetSelectedItem()
         {
             //Get Saved index
-            int index = GameDataManager.GetSelectedLocationIndex();
+            int index = _playerDataService.GetSelectedLocationIndex();
 
             //Set selected index
-            GameDataManager.SetSelectedLocation(locationDB.GetLocation(index), index);
+            _playerDataService.SetSelectedLocation(locationDB.GetLocation(index), index);
         }
 
         public void OnItemSelected(int index)
@@ -98,7 +106,7 @@ namespace UI.LocationsShop
             SelectItemUI(index);
 
             //Save Data
-            GameDataManager.SetSelectedLocation(locationDB.GetLocation(index), index);
+            _playerDataService.SetSelectedLocation(locationDB.GetLocation(index), index);
 
             //Change location
             ChangeItemSkin();
@@ -106,7 +114,7 @@ namespace UI.LocationsShop
 
         public void ChangeItemSkin()
         {
-            Location location = GameDataManager.GetSelectedLocation();
+            Location location = _playerDataService.GetSelectedLocation();
         }
 
         public void SelectItemUI(int itemIndex)
@@ -128,17 +136,17 @@ namespace UI.LocationsShop
             Location location = locationDB.GetLocation(index);
             LocationItemUI locationUIItem = GetItemUI(index);
 
-            if (GameDataManager.CanSpendCoins(location.price))
+            if (_playerDataService.CanSpendCoins(location.price))
             {
                 //Proceed with the purchase operation
-                GameDataManager.SpendCoins(location.price);
+                _playerDataService.SpendCoins(location.price);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 locationDB.PurchaseLocation(index);
                 locationUIItem.SetItemAsPurchased();
                 locationUIItem.OnItemSelect(index, OnItemSelected);
 
                 //Add purchased data on Shop Data
-                GameDataManager.AddPurchasedLocation(index);
+                _playerDataService.AddPurchasedLocation(index);
             }
             else
             {

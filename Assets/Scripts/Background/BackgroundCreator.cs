@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 namespace Main.Background
@@ -12,6 +14,13 @@ namespace Main.Background
 
         [Header("Spawner")]
         [SerializeField] private CloudSpawner _cloudSpawner;
+        
+        private IPlayerDataService _playerDataService;
+        
+        private void Awake()
+        {
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        }
 
         private void Start()
         {
@@ -20,7 +29,7 @@ namespace Main.Background
 
         public void SetLocation()
         {
-            var location = GameDataManager.GetSelectedLocation();
+            var location = _playerDataService.GetSelectedLocation();
 
             SetBackground(location);
             SetClouds(location);

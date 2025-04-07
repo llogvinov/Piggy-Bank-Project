@@ -64,7 +64,7 @@
 //         {
 //             case ShowResult.Finished:
 //                 // Reward the user for watching the ad to completion.
-//                 GameDataManager.AddCoins(gameManager.CoinToAdd);
+//                 _playerDataService.AddCoins(gameManager.CoinToAdd);
 //                 GameSharedUI.Instance.UpdateCoinsUIText();
 //                 gameManager.DoubleCoins();
 //                 rewardButton.gameObject.SetActive(false);

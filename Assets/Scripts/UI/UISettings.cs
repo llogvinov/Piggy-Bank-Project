@@ -1,3 +1,5 @@
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,14 @@ namespace UI
         [Space]
         [SerializeField] private Image noMusicImage;
         [SerializeField] private Image noSoundImage;
+        
+        private IPlayerDataService _playerDataService;
+        
+        private void Awake()
+        {
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        }
+
 
         protected override void Start()
         {
@@ -59,7 +69,7 @@ namespace UI
 
         public void RemoveAdsComplete()
         {
-            if (GameDataManager.IsRemovedAds())
+            if (_playerDataService.IsRemovedAds())
                 _noAddsButton.gameObject.SetActive(false);
         }
     }
