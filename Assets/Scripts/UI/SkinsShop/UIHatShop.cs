@@ -6,10 +6,6 @@ namespace UI
 {
     public class UIHatShop : MonoBehaviour, IItemShopUI
     {
-        [Header("Layout Settings")]
-        [SerializeField] private float itemSpacing = 5f;
-        [SerializeField] private float itemHeight;
-
         [Header("UI Elements")]
         [SerializeField] private Transform ShopItemsContainer;
         [SerializeField] private GameObject itemPrefab;
@@ -31,55 +27,32 @@ namespace UI
         private void Start()
         {
             GenerateShopItemUI();
-
-            //Set selected hat in the playerDataManager
             SetSelectedItem();
-
-            //Select UI item
             SelectItemUI(_playerDataService.GetSelectedHatIndex());
-
-            //Update player skin
             ChangeItemSkin();
         }
 
         public void SetSelectedItem()
         {
-            //Get Saved index
-            int index = _playerDataService.GetSelectedHatIndex();
-
-            //Set selected index
-            _playerDataService.SetSelectedHat(hatDB.GetHat(index), index);
+            int id = _playerDataService.GetSelectedHatIndex();
+            _playerDataService.SetSelectedHat(hatDB.GetHat(id), id);
         }
 
-        //Generate UI Shop Item
         public void GenerateShopItemUI()
         {
-            //Loop through save purchased items and
-            //make them purchased in the Database array
             for (int i = 0; i < _playerDataService.GetAllPurchasedHats().Count; i++)
             {
-                int purchaseHatIndex = _playerDataService.GetPurchasedHat(i);
-                hatDB.PurchaseHat(purchaseHatIndex);
+                int purchaseHatId = _playerDataService.GetPurchasedHat(i);
+                hatDB.PurchaseHat(purchaseHatId);
             }
 
-            //Delete item template after calculating item's height
-            itemHeight = ShopItemsContainer.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
-            Destroy(ShopItemsContainer.GetChild(0).gameObject);
-            ShopItemsContainer.DetachChildren();
-
-            //Generate Items
             for (int i = 0; i < hatDB.HatsCount; i++)
             {
                 Hat hat = hatDB.GetHat(i);
                 HatItemUI uiItem = Instantiate(itemPrefab, ShopItemsContainer).GetComponent<HatItemUI>();
 
-                //Move item to its position
-                uiItem.SetItemPosition(Vector2.down * i * (itemHeight + itemSpacing));
-
-                //Set item name in Hierarchy
                 uiItem.gameObject.name = "Item" + i + "-" + hat.name;
 
-                //Add information to the UI (one item)
                 uiItem.SetHatName(hat.name);
                 uiItem.SetHatImage(hat.image);
                 uiItem.SetHatPrice(hat.price);
@@ -91,20 +64,14 @@ namespace UI
 
                 if (hat.isPurchased)
                 {
-                    //Hat is purchased
                     uiItem.SetItemAsPurchased();
                     uiItem.OnItemSelect(i, OnItemSelected);
                 }
                 else
                 {
-                    //Hat is not purchased yet
                     uiItem.SetHatPrice(hat.price);
                     uiItem.OnItemPurchase(i, OnItemPurchased);
                 }
-
-                //ResizeItemsContainer
-                ShopItemsContainer.GetComponent<RectTransform>().sizeDelta =
-                    Vector2.up * ((itemHeight + itemSpacing) * hatDB.HatsCount + itemSpacing);
             }
         }
 
@@ -116,13 +83,10 @@ namespace UI
 
         public void OnItemSelected(int index)
         {
-            //Select item in the UI
             SelectItemUI(index);
 
-            //Save Data
             _playerDataService.SetSelectedHat(hatDB.GetHat(index), index);
 
-            //Change hat skin
             ChangeItemSkin();
         }
 
@@ -147,19 +111,16 @@ namespace UI
 
             if (_playerDataService.CanSpendCoins(hat.price))
             {
-                //Proceed with the purchase operation
                 _playerDataService.SpendCoins(hat.price);
                 GameSharedUI.Instance.UpdateCoinsUIText();
                 hatDB.PurchaseHat(index);
                 hatUIItem.SetItemAsPurchased();
                 hatUIItem.OnItemSelect(index, OnItemSelected);
 
-                //Add purchased data on Shop Data
                 _playerDataService.AddPurchasedHat(index);
             }
             else
             {
-                //Not enough coins
 #if UNITY_EDITOR
                 Debug.Log("Not Enough Coins!");
 #endif

@@ -208,9 +208,8 @@ GameObject:
   - component: {fileID: 6757699326016463728}
   - component: {fileID: 6757699326016463731}
   - component: {fileID: 6757699326016463727}
-  - component: {fileID: 6757699326016463729}
   m_Layer: 5
-  m_Name: Hat Shop Item
+  m_Name: Shop Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,26 +320,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6757699326016463729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6757699326016463730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a454ff0708a189f42adae62ff66bbe56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNotSelectedColor: {r: 0.31764707, g: 0.41960785, b: 0.2509804, a: 1}
-  itemSelectedColor: {r: 0.16862746, g: 0.21960784, b: 0.13333334, a: 1}
-  hatImage: {fileID: 6757699326373762419}
-  hatNameText: {fileID: 6757699327214991519}
-  hatPriceText: {fileID: 6757699326196883671}
-  hatPurchaseButton: {fileID: 6757699325916532402}
-  itemButton: {fileID: 6757699326016463727}
-  itemImage: {fileID: 6757699326016463731}
 --- !u!1 &6757699326196883673
 GameObject:
   m_ObjectHideFlags: 0

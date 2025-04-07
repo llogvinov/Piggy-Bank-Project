@@ -27,21 +27,37 @@
         "isPurchased": true
     },
     "SelectedLocation": {
-        "name": "",
+        "name": "mountains",
         "sky": {
-            "instanceID": 0
+            "instanceID": 25238
         },
         "ground": {
-            "instanceID": 0
+            "instanceID": 25196
         },
         "trees": {
-            "instanceID": 0
+            "instanceID": 25204
         },
         "mountain": {
-            "instanceID": 0
+            "instanceID": 25210
         },
-        "clouds": [],
+        "clouds": [
+            {
+                "instanceID": 25150
+            },
+            {
+                "instanceID": 25152
+            },
+            {
+                "instanceID": 25154
+            },
+            {
+                "instanceID": 25156
+            },
+            {
+                "instanceID": 25158
+            }
+        ],
         "price": 0,
-        "isPurchased": false
+        "isPurchased": true
     }
 }
