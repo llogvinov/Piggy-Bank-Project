@@ -43,7 +43,7 @@ namespace Main
                     }
                 case 0:
                     {
-                        GameObject.Destroy(_player.Health.gameObject);
+                        _player.Health.gameObject.SetActive(false);
                         Instantiate(_crackedPlayerPrefab, playerHealth.transform.position, playerHealth.transform.rotation, transform);
                         Game.GameOver?.Invoke();
                         break;

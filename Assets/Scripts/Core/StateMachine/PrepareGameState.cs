@@ -13,6 +13,7 @@ namespace Core.StateMachine
         private readonly IGameFactory _gameFactory;
         private readonly UILoading _uiLoading;
 
+        private UIAddCoins _uiAddCoins;
         private UIPause _uiPause;
         private UIHealth _uiHealth;
 
@@ -39,6 +40,9 @@ namespace Core.StateMachine
             _uiHealth = GameObject.FindObjectOfType<UIHealth>();
             _uiHealth.Initialize(player);
             player.SkinCreator.SetFullSkin();
+
+            _uiAddCoins = GameObject.FindObjectOfType<UIAddCoins>();
+            _uiAddCoins.Initialize(_gameFactory.Player);
 
             var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
             foreach (var spawner in spawners)

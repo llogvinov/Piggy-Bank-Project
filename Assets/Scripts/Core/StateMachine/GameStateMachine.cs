@@ -23,7 +23,7 @@ namespace Core.StateMachine
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 new PrepareGameState(this, services.Single<IGameFactory>(), uiLoading),
                 new GameLoopState(this),
-                new GameOverState(this, services.Single<IGameFactory>()),
+                new GameOverState(this, services),
             };
         }
 

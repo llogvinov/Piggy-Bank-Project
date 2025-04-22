@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8700830339135235225, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8700830339470881405, guid: f20e7cfc741f9f24aafcf3e2eb126128, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -934,6 +934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 568023731}
+  - component: {fileID: 568023732}
   m_Layer: 0
   m_Name: UI Coins
   m_TagString: Untagged
@@ -957,6 +958,19 @@ Transform:
   - {fileID: 379187976}
   m_Father: {fileID: 900265575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568023732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568023730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cfc97b16e5440498eece9ff4acba1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinsToAdd: {fileID: 1147435434}
 --- !u!1 &648226627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2044,9 @@ MonoBehaviour:
   _canvas: {fileID: 1476673327}
   _restartButton: {fileID: 1354184929}
   _menuButton: {fileID: 1606986710}
+  _recordText: {fileID: 954850394}
+  _coinToAddText: {fileID: 2054378923}
+  _totalCoinsText: {fileID: 1885591607}
 --- !u!4 &1135850238
 Transform:
   m_ObjectHideFlags: 0
@@ -2852,7 +2869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1453936849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4794,7 +4811,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076218315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73d8ef7dea2778847b860db9b6fa716f, type: 3}
   m_Name: 

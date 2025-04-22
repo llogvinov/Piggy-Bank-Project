@@ -8174,7 +8174,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400940751}
-  - component: {fileID: 1400940752}
   m_Layer: 0
   m_Name: UI Add Coins
   m_TagString: Untagged
@@ -8198,25 +8197,6 @@ Transform:
   - {fileID: 1435418889}
   m_Father: {fileID: 82160304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1400940752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400940749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69cfc97b16e5440498eece9ff4acba1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _panel: {fileID: 1435418888}
-  _openButton: {fileID: 183701175}
-  _closeButton: {fileID: 1876058475}
-  _toHide:
-  - {fileID: 72416223}
-  - {fileID: 753612594}
-  - {fileID: 364966856}
 --- !u!1 &1404216953
 GameObject:
   m_ObjectHideFlags: 0
@@ -11020,17 +11000,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2499432641635092251, guid: d5baa00deda26844a8518f609295a6cb, type: 3}
   m_PrefabInstance: {fileID: 1865083390}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1876058475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6351917890794757359, guid: d35e0dcee990a74428064d85e2e4a930, type: 3}
-  m_PrefabInstance: {fileID: 243908989}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1885847470
 GameObject:
   m_ObjectHideFlags: 0

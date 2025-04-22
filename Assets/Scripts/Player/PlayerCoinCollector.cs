@@ -1,42 +1,58 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
 
-public class PlayerCoinCollector : MonoBehaviour
+namespace Main
 {
-    [SerializeField] private AudioClip coinClip;
-
-    private AudioSource playerAudio;
-    private GameManager gameManager;
-
-    private IPlayerDataService _playerDataService;
-
-    private void Awake()
+    public class PlayerCoinCollector : MonoBehaviour
     {
-        gameManager = FindObjectOfType<GameManager>();
-        playerAudio = GetComponent<AudioSource>();
+        public event Action<int> CoinsUpdated;
 
-        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
-        playerAudio.volume = _playerDataService.GetSound() == true ? 1f : 0f;
-    }
+        [SerializeField] private AudioClip coinClip;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        other.gameObject.TryGetComponent(out Coin coin);
+        private AudioSource playerAudio;
 
-        if (coin != null)
-            CollectCoin(coin);
-    }
+        private int _coinsToAdd;
+        public int CoinsToAdd
+        {
+            get => _coinsToAdd;
+            private set
+            {
+                _coinsToAdd = value;
+                CoinsUpdated?.Invoke(value);
+            }
+        }
 
-    private void CollectCoin(Coin coin)
-    {
-        if (!PowerUp.IsDoubleCoinsActive)
-            gameManager.CoinToAdd += coin.CoinValue;
-        else
-            gameManager.CoinToAdd += 2 * coin.CoinValue;
+        private IPlayerDataService _playerDataService;
 
-        playerAudio.PlayOneShot(coinClip, 1);
+        private void Awake()
+        {
+            playerAudio = GetComponent<AudioSource>();
 
-        Destroy(coin.gameObject);
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+            playerAudio.volume = _playerDataService.GetSound() == true ? 1f : 0f;
+        }
+
+        private void Start()
+        {
+            CoinsToAdd = 0;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            other.gameObject.TryGetComponent(out Coin coin);
+
+            if (coin != null)
+                CollectCoin(coin);
+        }
+
+        private void CollectCoin(Coin coin)
+        {
+            var multiplier = PowerUp.IsDoubleCoinsActive == false ? 1 : 2;
+            CoinsToAdd += multiplier * coin.CoinValue;
+            playerAudio.PlayOneShot(coinClip, 1);
+            Destroy(coin.gameObject);
+        }
     }
 }
