@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core;
+using Core.Services.PlayerData;
 using UnityEngine;
 
 public class PlayerCoinCollector : MonoBehaviour
@@ -9,18 +9,21 @@ public class PlayerCoinCollector : MonoBehaviour
     private AudioSource playerAudio;
     private GameManager gameManager;
 
-    private void Start()
+    private IPlayerDataService _playerDataService;
+
+    private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         playerAudio = GetComponent<AudioSource>();
 
-        playerAudio.volume = PlayerPrefs.GetFloat("sounds");
+        _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+        playerAudio.volume = _playerDataService.GetSound() == true ? 1f : 0f;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.TryGetComponent(out Coin coin);
-        
+
         if (coin != null)
             CollectCoin(coin);
     }

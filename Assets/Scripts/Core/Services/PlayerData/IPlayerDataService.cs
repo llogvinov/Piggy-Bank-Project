@@ -7,6 +7,10 @@ namespace Core.Services.PlayerData
         PlayerData PlayerData { get; }
         PlayerData Load();
         void Save(PlayerData playerData);
+        bool GetMusic();
+        void SetMusic(bool value);
+        bool GetSound();
+        void SetSound(bool value);
         void RemoveAds();
         bool IsRemovedAds();
         Hat GetSelectedHat();

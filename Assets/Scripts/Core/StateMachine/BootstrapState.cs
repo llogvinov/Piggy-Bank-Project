@@ -19,6 +19,7 @@ namespace Core.StateMachine
             _services = services;
 
             RegisterServices();
+            LoadPlayerData();
         }
 
         public void Enter()
@@ -47,5 +48,8 @@ namespace Core.StateMachine
 
         private void RegisterYandexDataService() =>
             _services.RegisterSingle<IPlayerDataService>(new LocalPlayerDataService());
+
+        private void LoadPlayerData() =>
+            _services.Single<IPlayerDataService>().Load();
     }
 }

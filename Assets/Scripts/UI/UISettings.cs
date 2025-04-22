@@ -11,29 +11,31 @@ namespace UI
         [SerializeField] private Button _soundButton;
         [SerializeField] private Button _noAddsButton;
         [Space]
-        [SerializeField] private Image noMusicImage;
-        [SerializeField] private Image noSoundImage;
-        
+        [SerializeField] private GameObject _noMusicImage;
+        [SerializeField] private GameObject _noSoundImage;
+        [Space]
+        [SerializeField] private AudioSource _musicAudioSource;
+
         private IPlayerDataService _playerDataService;
-        
+
         private void Awake()
         {
             _playerDataService = AllServices.Container.Single<IPlayerDataService>();
-        }
+            
+            var music = _playerDataService.GetMusic();
+            _musicAudioSource.volume = music == true ? 1f : 0f;
+            _noMusicImage.SetActive(!music);
 
+            _noSoundImage.SetActive(!_playerDataService.GetSound());
+
+            RemoveAdsComplete();
+        }
 
         protected override void Start()
         {
             _openButton.onClick.AddListener(ToggleCanvas);
             _musicButton.onClick.AddListener(ToggleMusic);
             _soundButton.onClick.AddListener(ToggleSound);
-
-            RemoveAdsComplete();
-
-            if (PlayerPrefs.GetFloat("music") == 0)
-                noMusicImage.gameObject.SetActive(true);
-            if (PlayerPrefs.GetFloat("sounds") == 0)
-                noSoundImage.gameObject.SetActive(true);
         }
 
         protected override void OnDestroy()
@@ -47,24 +49,25 @@ namespace UI
         {
             if (_panel.gameObject.activeSelf == false)
                 Show();
-            else 
+            else
                 Hide();
         }
 
         private void ToggleMusic()
         {
-            var noMusic = noMusicImage.gameObject;
-            noMusic.SetActive(!noMusic.activeSelf);
+            _playerDataService.SetMusic(!_playerDataService.GetMusic());
+            var newValue = _playerDataService.GetMusic();
 
-            PlayerPrefs.SetFloat("music", noMusic.activeSelf ? 0f : 1f);
+            _noMusicImage.SetActive(!newValue);
+            _musicAudioSource.volume = newValue == true ? 1f : 0f;
         }
 
         private void ToggleSound()
         {
-            var noSound = noSoundImage.gameObject;
-            noSound.SetActive(!noSound.activeSelf);
+            _playerDataService.SetSound(!_playerDataService.GetSound());
+            var newValue = _playerDataService.GetSound();
 
-            PlayerPrefs.SetFloat("sounds", noSound.activeSelf ? 0f : 1f);
+            _noSoundImage.SetActive(!newValue);
         }
 
         public void RemoveAdsComplete()

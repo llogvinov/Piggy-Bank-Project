@@ -5,7 +5,10 @@ namespace Core.Services.PlayerData
     [System.Serializable]
     public class PlayerData
     {
+        public bool Music = true;
+        public bool Sound = true;
         public bool RemovedAds = false;
+        
         public int Coins = 0;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;
@@ -28,7 +31,10 @@ namespace YG
 {
     public partial class SavesYG
     {
+        public bool Music = true;
+        public bool Sound = true;
         public bool RemovedAds = false;
+        
         public int Coins = 0;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;

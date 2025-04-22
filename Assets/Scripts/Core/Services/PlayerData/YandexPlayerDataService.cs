@@ -6,6 +6,8 @@ namespace Core.Services.PlayerData
     {        
         public override PlayerData Load()
         {
+            PlayerData.Music = YG2.saves.Music;
+            PlayerData.Sound = YG2.saves.Sound;
             PlayerData.RemovedAds = YG2.saves.RemovedAds;
             PlayerData.Coins = YG2.saves.Coins;
             PlayerData.NormalGamesPlayed = YG2.saves.NormalGamesPlayed;
@@ -25,6 +27,8 @@ namespace Core.Services.PlayerData
 
         public override void Save(PlayerData playerData)
         {
+            YG2.saves.Music = playerData.Music;
+            YG2.saves.Sound = playerData.Sound;
             YG2.saves.RemovedAds = playerData.RemovedAds;
             YG2.saves.Coins = playerData.Coins;
             YG2.saves.NormalGamesPlayed = playerData.NormalGamesPlayed;
