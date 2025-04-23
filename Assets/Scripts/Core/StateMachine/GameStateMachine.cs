@@ -21,9 +21,14 @@ namespace Core.StateMachine
                 new BootstrapState(this, sceneLoader, services),
                 new MenuState(this, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
+                
                 new PrepareGameState(this, services.Single<IGameFactory>(), uiLoading),
                 new GameLoopState(this),
                 new GameOverState(this, services),
+
+                new PrepareSurvivalGameState(this, services.Single<IGameFactory>(), uiLoading),
+                new SurvivalGameLoopState(this),
+                new SurvivalGameOverState(this, services)
             };
         }
 

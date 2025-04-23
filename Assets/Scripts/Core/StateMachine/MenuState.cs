@@ -35,7 +35,7 @@ namespace Core.StateMachine
 
         private void OnSurvivalModeSelected()
         {
-            _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalModeScene);
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalGameScene);
         }
     }
 }

@@ -11,7 +11,8 @@ namespace Core.StateMachine
 
         private string _loadingScene;
 
-        public LoadSceneState(GameStateMachine stateMachine, SceneLoader sceneLoader,
+        public LoadSceneState(GameStateMachine stateMachine, 
+            SceneLoader sceneLoader,
             UILoading uiLoading)
         {
             _stateMachine = stateMachine;
@@ -40,6 +41,9 @@ namespace Core.StateMachine
                     break;
                 case AssetPath.GameScene:
                     _stateMachine.Enter<PrepareGameState>();
+                    break;
+                case AssetPath.SurvivalGameScene:
+                    _stateMachine.Enter<PrepareSurvivalGameState>();
                     break;
             }
         }

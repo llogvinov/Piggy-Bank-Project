@@ -10,7 +10,7 @@ public class NormalGameManager : GameManager
     [SerializeField] private Text recordText;
 
     public Image PowerupIcon;
-    public Timer Timer;
+    public TimerOld Timer;
 
     private IPlayerDataService _playerDataService;
 

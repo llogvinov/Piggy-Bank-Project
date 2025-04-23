@@ -39,7 +39,7 @@ public class ObjectSpawner : MonoBehaviour
         Game.GameOver -= OnGameOver;
     }
 
-    private void OnGameOver()
+    private void OnGameOver(GameOverCondition condition)
     {
         StopAllCoroutines();
     }

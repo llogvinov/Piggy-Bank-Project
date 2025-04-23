@@ -1,21 +1,27 @@
+using Core;
 using Main;
 using UnityEngine;
 
 public class Meteor : Enemy
 {
-    private SurvivalGameManager gameManager;
+    private void Awake()
+    {
+        playerHealth = FindObjectOfType<PlayerHealth>();
+    }
 
     private void Start()
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-
-        gameManager = FindObjectOfType<SurvivalGameManager>();
+        Game.GameOver += OnGameOver;
     }
 
-    private void FixedUpdate()
+    private void OnDestroy()
     {
-        if (gameManager.IsGameOver || gameManager.СurrentTime <= 0)
-            Explode(groundCameraShakeForce);
+        Game.GameOver -= OnGameOver;
+    }
+
+    private void OnGameOver(GameOverCondition condition)
+    {
+        Explode(groundCameraShakeForce);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

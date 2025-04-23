@@ -45,7 +45,7 @@ namespace Main
                     {
                         _player.Health.gameObject.SetActive(false);
                         Instantiate(_crackedPlayerPrefab, playerHealth.transform.position, playerHealth.transform.rotation, transform);
-                        Game.GameOver?.Invoke();
+                        Game.GameOver?.Invoke(GameOverCondition.Died);
                         break;
                     }
                 default:

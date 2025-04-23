@@ -1,23 +1,25 @@
 ﻿using System;
 using Core.Factory;
-using Main.Background;
+using Data;
 using PiggyBank;
+using Timer;
 using UI;
 using UnityEngine;
 
 namespace Core.StateMachine
 {
-    public class PrepareGameState : ISimpleState
+    public class PrepareSurvivalGameState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
         private readonly IGameFactory _gameFactory;
         private readonly UILoading _uiLoading;
 
-        private UIAddCoins _uiAddCoins;
+        private GameTimer _timer;
         private UIPause _uiPause;
         private UIHealth _uiHealth;
 
-        public PrepareGameState(GameStateMachine stateMachine, IGameFactory gameFactory,
+        public PrepareSurvivalGameState(GameStateMachine stateMachine, 
+            IGameFactory gameFactory,
             UILoading uiLoading)
         {
             _stateMachine = stateMachine;
@@ -27,22 +29,17 @@ namespace Core.StateMachine
 
         public void Enter()
         {
+            _timer = GameObject.FindObjectOfType<GameTimer>();
+            _timer.SetTimer(GameConstants.SURVIVAL_MODE_TIMER);
+            _timer.TimerCompleted += OnTimerCompleted;
+
             _uiPause = GameObject.FindObjectOfType<UIPause>();
             _uiPause.MenuButton.onClick.AddListener(GoToMenu);
-
-            var backgroundCreator = GameObject.FindObjectOfType<BackgroundCreator>();
-            if (backgroundCreator != null)
-            {
-                backgroundCreator.SetLocation();
-            }
 
             var player = _gameFactory.InstantiatePlayer();
             _uiHealth = GameObject.FindObjectOfType<UIHealth>();
             _uiHealth.Initialize(player);
             player.SkinCreator.SetFullSkin();
-
-            _uiAddCoins = GameObject.FindObjectOfType<UIAddCoins>();
-            _uiAddCoins.Initialize(_gameFactory.Player);
 
             var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
             foreach (var spawner in spawners)
@@ -51,6 +48,12 @@ namespace Core.StateMachine
             }
 
             Game.GameOver += OnGameOver;
+        }
+
+        private void OnTimerCompleted()
+        {
+            _timer.TimerCompleted -= OnTimerCompleted;
+            Game.GameOver?.Invoke(GameOverCondition.Completed);
         }
 
         private void GoToMenu()
@@ -62,7 +65,10 @@ namespace Core.StateMachine
 
         private void OnGameOver(GameOverCondition condition)
         {
-            _stateMachine.Enter<GameOverState>();
+            if (_timer.IsRunning)
+                _timer.PauseTimer();
+
+            _stateMachine.Enter<SurvivalGameOverState, GameOverCondition>(condition);
         }
 
         public void Exit()

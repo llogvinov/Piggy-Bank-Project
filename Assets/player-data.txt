@@ -2,7 +2,7 @@
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 91,
+    "Coins": 391,
     "NormalGamesPlayed": 3,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 11,
@@ -31,32 +31,32 @@
     "SelectedLocation": {
         "name": "mountains",
         "sky": {
-            "instanceID": 25278
+            "instanceID": 24520
         },
         "ground": {
-            "instanceID": 25238
+            "instanceID": 24518
         },
         "trees": {
-            "instanceID": 25244
+            "instanceID": 24512
         },
         "mountain": {
-            "instanceID": 25250
+            "instanceID": 24522
         },
         "clouds": [
             {
-                "instanceID": 25192
+                "instanceID": 24500
             },
             {
-                "instanceID": 25194
+                "instanceID": 24502
             },
             {
-                "instanceID": 25196
+                "instanceID": 24504
             },
             {
-                "instanceID": 25198
+                "instanceID": 24506
             },
             {
-                "instanceID": 25200
+                "instanceID": 24508
             }
         ],
         "price": 0,

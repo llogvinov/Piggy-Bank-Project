@@ -4,6 +4,6 @@ namespace PiggyBank
     {
         public const string MenuScene = "Menu";
         public const string GameScene = "Game";
-        public const string SurvivalModeScene = "SurvivalMode";
+        public const string SurvivalGameScene = "SurvivalGame";
     }
 }
