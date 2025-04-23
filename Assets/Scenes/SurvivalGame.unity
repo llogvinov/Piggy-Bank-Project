@@ -1013,6 +1013,26 @@ PrefabInstance:
       propertyPath: isNotMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1982019614915713289, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
+      propertyPath: Clouds.Array.data[0]
+      value: 
+      objectReference: {fileID: 1341331765687036960, guid: 16cc3a74ead6f2746966f19eedd3aa4e, type: 3}
+    - target: {fileID: 1982019614915713289, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
+      propertyPath: Clouds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8123130215240668909, guid: c540e6eec17025040bda1dcad61bd96d, type: 3}
+    - target: {fileID: 1982019614915713289, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
+      propertyPath: Clouds.Array.data[2]
+      value: 
+      objectReference: {fileID: 6736969094670769811, guid: d22ff445c81f30940b2cc3c614c8b354, type: 3}
+    - target: {fileID: 1982019614915713289, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
+      propertyPath: Clouds.Array.data[3]
+      value: 
+      objectReference: {fileID: 6099278437777919526, guid: 1270c05b1557d7f4c8914f1ebe9a1302, type: 3}
+    - target: {fileID: 1982019614915713289, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
+      propertyPath: Clouds.Array.data[4]
+      value: 
+      objectReference: {fileID: 5701170756361103599, guid: 73a11a31e770d7d42918eb1e5150b728, type: 3}
     - target: {fileID: 2004773215618185017, guid: a6b20ef49b44d1c4a9381806ccfb2f63, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2772,7 +2792,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 410}
-  m_SizeDelta: {x: 350, y: 200}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1508722751
 MonoBehaviour:
