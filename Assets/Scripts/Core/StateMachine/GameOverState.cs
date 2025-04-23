@@ -28,6 +28,7 @@ namespace Core.StateMachine
         {
             Game.GameOver = null;
 
+            _playerDataService.SetNewRecord(_gameFactory.Player.CoinCollector.CoinsToAdd);
             _playerDataService.AddCoins(_gameFactory.Player.CoinCollector.CoinsToAdd);
 
             _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();

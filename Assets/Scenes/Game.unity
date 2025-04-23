@@ -1100,7 +1100,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 900265575}
     m_Modifications:
     - target: {fileID: 1075512030037492231, guid: fb3c7baed2d9a3847b7b7d39ef231570, type: 3}
       propertyPath: m_Name
@@ -1191,6 +1191,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3c7baed2d9a3847b7b7d39ef231570, type: 3}
+--- !u!224 &668566267 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8944184580114054553, guid: fb3c7baed2d9a3847b7b7d39ef231570, type: 3}
+  m_PrefabInstance: {fileID: 668566266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689465546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1487,7 @@ Transform:
   - {fileID: 568023731}
   - {fileID: 1863215599}
   - {fileID: 2056932197}
+  - {fileID: 668566267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &927814717
@@ -1794,6 +1800,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 787999321121188704, guid: fb0f8044619938243ad9cf65f4a0ed90, type: 3}
   m_PrefabInstance: {fileID: 1003647930}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1003647932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 787999321121188767, guid: fb0f8044619938243ad9cf65f4a0ed90, type: 3}
+  m_PrefabInstance: {fileID: 1003647930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027726415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2061,7 @@ MonoBehaviour:
   _canvas: {fileID: 1476673327}
   _restartButton: {fileID: 1354184929}
   _menuButton: {fileID: 1606986710}
+  _rewardButton: {fileID: 1003647932}
   _recordText: {fileID: 954850394}
   _coinToAddText: {fileID: 2054378923}
   _totalCoinsText: {fileID: 1885591607}
@@ -5267,4 +5285,3 @@ SceneRoots:
   - {fileID: 224252229}
   - {fileID: 1752300876}
   - {fileID: 900265575}
-  - {fileID: 668566266}

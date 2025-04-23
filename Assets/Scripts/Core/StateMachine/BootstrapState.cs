@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Core.Services.Ad;
 using Core.Services.PlayerData;
 using PiggyBank;
 
@@ -41,6 +42,7 @@ namespace Core.StateMachine
             RegisterYandexDataService();
 #endif
             _services.RegisterSingle<IGameFactory>(new GameFactory());
+            _services.RegisterSingle<IAdService>(new YandexAdService());
         }
 
         private void RegisterLocalDataService() =>

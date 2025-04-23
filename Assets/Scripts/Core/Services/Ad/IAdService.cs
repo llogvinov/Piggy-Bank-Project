@@ -5,6 +5,6 @@ namespace Core.Services.Ad
     public interface IAdService : IService
     {
         void ShowInterstitialAd();
-        void ShowRewardedAd(Action onShown);
+        void ShowRewardedAd(string id, Action onShown);
     }
 }

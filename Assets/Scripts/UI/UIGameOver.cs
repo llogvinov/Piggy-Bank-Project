@@ -1,3 +1,7 @@
+using Core;
+using Core.Factory;
+using Core.Services.Ad;
+using Core.Services.PlayerData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +12,8 @@ namespace UI
         [SerializeField] protected Canvas _canvas;
         [Space]
         [SerializeField] private Button _restartButton;
-        [SerializeField] protected Button _menuButton;
+        [SerializeField] private Button _menuButton;
+        [SerializeField] private Button _rewardButton;
         [Space]
         [SerializeField] private Text _recordText;
         [SerializeField] private Text _coinToAddText;
@@ -16,6 +21,43 @@ namespace UI
 
         public Button RestartButton => _restartButton;
         public Button MenuButton => _menuButton;
+
+        public IGameFactory _gameFactory;
+        private IPlayerDataService _playerDataService;
+        private IAdService _adService;
+
+        private void Awake()
+        {
+            _gameFactory = AllServices.Container.Single<IGameFactory>();
+            _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+            _adService = AllServices.Container.Single<IAdService>();
+        }
+
+        private void Start()
+        {
+            _rewardButton.onClick.AddListener(ShowRewardedAd);
+        }
+
+        private void OnDestroy()
+        {
+            _rewardButton.onClick.RemoveListener(ShowRewardedAd);
+        }
+
+        private void ShowRewardedAd() =>
+            _adService.ShowRewardedAd("DoubleCoins", DoubleCoins);
+
+        private void DoubleCoins()
+        {
+            _rewardButton.gameObject.SetActive(false);
+            
+            var player = _gameFactory.Player;
+            var coinsToAdd = player.CoinCollector.CoinsToAdd;
+            _playerDataService.AddCoins(coinsToAdd);
+
+            UpdateUI(_playerDataService.GetPlayerRecord(),
+                coinsToAdd * 2,
+                _playerDataService.GetCoins());
+        }
 
         public void Show()
         {

@@ -73,7 +73,7 @@ namespace Core.Services.PlayerData
 
         public void SetNewRecord(int newRecord)
         {
-            if (newRecord > PlayerData.NormalModeRecord)
+            if (newRecord > GetPlayerRecord())
                 PlayerData.NormalModeRecord = newRecord;
         }
 

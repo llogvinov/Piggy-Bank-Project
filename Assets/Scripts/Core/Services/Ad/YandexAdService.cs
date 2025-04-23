@@ -10,9 +10,9 @@ namespace Core.Services.Ad
             YG2.InterstitialAdvShow();
         }
 
-        public void ShowRewardedAd(Action onShown)
+        public void ShowRewardedAd(string id, Action onShown)
         {
-            YG2.RewardedAdvShow("0", onShown);
+            YG2.RewardedAdvShow(id, onShown);
         }
     }
 }
