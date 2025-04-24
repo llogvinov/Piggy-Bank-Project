@@ -1,7 +1,10 @@
 ﻿using Core.Factory;
 using Core.Services.Ad;
+using Core.Services.Localization;
 using Core.Services.PlayerData;
 using PiggyBank;
+using UnityEngine;
+using YG;
 
 namespace Core.StateMachine
 {
@@ -10,6 +13,7 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
+        private readonly LocalizationData _localizationData;
 
         public BootstrapState(GameStateMachine stateMachine,
             SceneLoader sceneLoader,
@@ -19,9 +23,13 @@ namespace Core.StateMachine
             _sceneLoader = sceneLoader;
             _services = services;
 
+            _localizationData = Resources.Load<LocalizationData>("Localization Data");
+
             RegisterServices();
             LoadPlayerData();
+            SwitchLanguage();
         }
+
 
         public void Enter()
         {
@@ -41,6 +49,7 @@ namespace Core.StateMachine
 #else
             RegisterYandexDataService();
 #endif
+            _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_localizationData));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());
         }
@@ -53,5 +62,8 @@ namespace Core.StateMachine
 
         private void LoadPlayerData() =>
             _services.Single<IPlayerDataService>().Load();
+
+        private void SwitchLanguage() => 
+            _services.Single<ILocalizationService>().SwitchLanguage(YG2.lang);
     }
 }
