@@ -21,6 +21,10 @@ MonoBehaviour:
     name: just hat
     price: 290
     isPurchased: 0
+  - image: {fileID: 4258078597550032852, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
+    name: box
+    price: 490
+    isPurchased: 0
   - image: {fileID: 2099779557188951323, guid: 2251d0ebae793024fb241f65197115a8, type: 3}
     name: red cap
     price: 590
@@ -57,8 +61,16 @@ MonoBehaviour:
     name: clown hat
     price: 2490
     isPurchased: 0
+  - image: {fileID: -6884406223004845076, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
+    name: joker
+    price: 2990
+    isPurchased: 0
   - image: {fileID: 256130989153142938, guid: f4fc55eb24dbe13419ed478c171a2f8a, type: 3}
     name: panama hat
+    price: 3490
+    isPurchased: 0
+  - image: {fileID: -3179673671203921881, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
+    name: kyoto ghoul
     price: 3490
     isPurchased: 0
   - image: {fileID: 6907224409815537379, guid: 2251d0ebae793024fb241f65197115a8, type: 3}
@@ -68,16 +80,4 @@ MonoBehaviour:
   - image: {fileID: 6617894598283995488, guid: 2251d0ebae793024fb241f65197115a8, type: 3}
     name: jewish hat
     price: 7490
-    isPurchased: 0
-  - image: {fileID: 4258078597550032852, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
-    name: box
-    price: 490
-    isPurchased: 0
-  - image: {fileID: -3179673671203921881, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
-    name: kyoto ghoul
-    price: 3490
-    isPurchased: 0
-  - image: {fileID: -6884406223004845076, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
-    name: joker
-    price: 2990
     isPurchased: 0
