@@ -69,8 +69,7 @@ namespace Core.StateMachine
             _uiGameComplete.MenuButton.onClick.AddListener(LoadMenu);
             _uiGameComplete.RestartButton.onClick.AddListener(RestartGame);
             _uiGameComplete.ToggleRewardButton(!_game.IsRevived);
-            _uiGameComplete.Show(GameConstants.SURVIVAL_MODE_REWARD,
-                _playerDataService.GetCoins());
+            _uiGameComplete.Show(GameConstants.SURVIVAL_MODE_REWARD);
         }
 
         public void Exit()

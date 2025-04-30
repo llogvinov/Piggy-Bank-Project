@@ -16,7 +16,6 @@ namespace UI
         [SerializeField] private Button _rewardButton;
         [Space]
         [SerializeField] private Text _coinToAddText;
-        [SerializeField] private Text _totalCoinsText;
 
         public Button RestartButton => _restartButton;
         public Button MenuButton => _menuButton;
@@ -50,7 +49,7 @@ namespace UI
             var coinsToAdd = GameConstants.SURVIVAL_MODE_REWARD;
             _playerDataService.AddCoins(coinsToAdd);
 
-            UpdateUI(coinsToAdd * 2, _playerDataService.GetCoins());
+            UpdateUI(coinsToAdd * 2);
         }
 
         public void Show()
@@ -58,9 +57,9 @@ namespace UI
             _canvas.gameObject.SetActive(true);
         }
 
-        public void Show(int coinsToAdd, int totalCoins)
+        public void Show(int coinsToAdd)
         {
-            UpdateUI(coinsToAdd, totalCoins);
+            UpdateUI(coinsToAdd);
             Show();
         }
 
@@ -69,10 +68,9 @@ namespace UI
             _canvas.gameObject.SetActive(false);
         }
 
-        public void UpdateUI(int coinsToAdd, int totalCoins)
+        public void UpdateUI(int coinsToAdd)
         {
             _coinToAddText.text = "+" + coinsToAdd.ToString();
-            _totalCoinsText.text = totalCoins.ToString();
         }
 
         public void ToggleRewardButton(bool enable) =>

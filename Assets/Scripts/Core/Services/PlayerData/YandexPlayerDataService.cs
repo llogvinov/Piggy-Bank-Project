@@ -6,6 +6,7 @@ namespace Core.Services.PlayerData
     {        
         public override PlayerData Load()
         {
+            PlayerData = new PlayerData();
             PlayerData.Music = YG2.saves.Music;
             PlayerData.Sound = YG2.saves.Sound;
             PlayerData.RemovedAds = YG2.saves.RemovedAds;

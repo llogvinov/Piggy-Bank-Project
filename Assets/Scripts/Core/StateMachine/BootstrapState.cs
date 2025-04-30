@@ -44,11 +44,11 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
-#if UNITY_EDITOR
-            RegisterLocalDataService();
-#else
+// #if UNITY_EDITOR
+//             RegisterLocalDataService();
+// #else
             RegisterYandexDataService();
-#endif
+// #endif
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_localizationData));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());
@@ -58,7 +58,7 @@ namespace Core.StateMachine
             _services.RegisterSingle<IPlayerDataService>(new LocalPlayerDataService());
 
         private void RegisterYandexDataService() =>
-            _services.RegisterSingle<IPlayerDataService>(new LocalPlayerDataService());
+            _services.RegisterSingle<IPlayerDataService>(new YandexPlayerDataService());
 
         private void LoadPlayerData() =>
             _services.Single<IPlayerDataService>().Load();

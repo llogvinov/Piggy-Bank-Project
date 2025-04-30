@@ -14,5 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
   - Id: play
-    RU: "\u0418\u0433\u0440\u0430\u0442\u044C"
-    EN: Play
+    RU: "\u0418\u0413\u0420\u0410\u0422\u042C"
+    EN: PLAY
+  - Id: shop
+    RU: "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
+    EN: SHOP
+  - Id: locations
+    RU: "\u041B\u041E\u041A\u0410\u0426\u0418\u0418"
+    EN: LOCATIONS
+  - Id: game_over
+    RU: "\u0418\u0413\u0420\u0410 \u041E\u041A\u041E\u041D\u0427\u0415\u041D\u0410"
+    EN: GAME OVER
+  - Id: record
+    RU: "\u0420\u0415\u041A\u041E\u0420\u0414"
+    EN: RECORD
+  - Id: revive
+    RU: "\u0412\u041E\u0417\u0420\u041E\u0414\u0418\u0422\u042C"
+    EN: REVIVE
+  - Id: restart
+    RU: "\u0417\u0410\u041D\u041E\u0412\u041E"
+    EN: RESTART
+  - Id: menu
+    RU: "\u041C\u0415\u041D\u042E"
+    EN: MENU
+  - Id: resume
+    RU: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+    EN: RESUME
+  - Id: game_complete
+    RU: "\u0418\u0413\u0420\u0410 \u041F\u0420\u041E\u0419\u0414\u0415\u041D\u0410!"
+    EN: GAME COMPLETE!
+  - Id: pause
+    RU: "\u041F\u0410\u0423\u0417\u0410..."
+    EN: PAUSE...

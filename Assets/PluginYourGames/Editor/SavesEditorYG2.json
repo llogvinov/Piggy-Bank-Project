@@ -1,0 +1,74 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 43,
+    "Music": true,
+    "Sound": true,
+    "RemovedAds": false,
+    "Coins": 399,
+    "NormalGamesPlayed": 0,
+    "SurvivalGamesPlayed": 0,
+    "NormalModeRecord": 15,
+    "SelectedHatId": 0,
+    "SelectedMaskId": 0,
+    "SelectedLocationId": 0,
+    "PurchasedHatsIds": [],
+    "PurchasedMasksIds": [],
+    "PurchasedLocationsIds": [],
+    "SelectedHat": {
+        "image": {
+            "instanceID": 0
+        },
+        "name": "none",
+        "price": 0,
+        "isPurchased": true
+    },
+    "SelectedMask": {
+        "image": {
+            "instanceID": 0
+        },
+        "name": "none",
+        "price": 0,
+        "isPurchased": true
+    },
+    "SelectedLocation": {
+        "name": "mountains",
+        "sky": {
+            "instanceID": 24608
+        },
+        "ground": {
+            "instanceID": 24600
+        },
+        "trees": {
+            "instanceID": 24592
+        },
+        "mountain": {
+            "instanceID": 24610
+        },
+        "clouds": [
+            {
+                "instanceID": 24582
+            },
+            {
+                "instanceID": 24584
+            },
+            {
+                "instanceID": 24586
+            },
+            {
+                "instanceID": 24588
+            },
+            {
+                "instanceID": 24590
+            }
+        ],
+        "price": 0,
+        "isPurchased": true
+    }
+}

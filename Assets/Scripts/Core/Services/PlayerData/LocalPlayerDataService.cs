@@ -9,6 +9,7 @@ namespace Core.Services.PlayerData
 
         public override PlayerData Load()
         {
+            PlayerData = new PlayerData();
             if (File.Exists(_savePath))
             {
                 string json = File.ReadAllText(_savePath);
@@ -19,7 +20,6 @@ namespace Core.Services.PlayerData
             else
             {
                 Debug.LogWarning("Save file not found at " + _savePath);
-                PlayerData = new PlayerData();
                 Save(PlayerData);
                 return null;
             }
