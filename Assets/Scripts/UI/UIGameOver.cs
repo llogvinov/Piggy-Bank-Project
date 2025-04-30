@@ -1,7 +1,9 @@
+using System.Collections;
 using Core;
 using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.PlayerData;
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,14 +13,18 @@ namespace UI
     {
         [SerializeField] protected Canvas _canvas;
         [Space]
+        [SerializeField] private GameObject _revivePanel;
+        [SerializeField] private GameObject _buttonsPanel;
+        [Space]
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _rewardButton;
+        [SerializeField] private Button _reviveButton;
         [Space]
         [SerializeField] private Text _recordText;
         [SerializeField] private Text _coinToAddText;
-        [SerializeField] private Text _totalCoinsText;
 
+        public Button ReviveButton => _reviveButton;
         public Button RestartButton => _restartButton;
         public Button MenuButton => _menuButton;
 
@@ -49,14 +55,13 @@ namespace UI
         private void DoubleCoins()
         {
             _rewardButton.gameObject.SetActive(false);
-            
+
             var player = _gameFactory.Player;
             var coinsToAdd = player.CoinCollector.CoinsToAdd;
             _playerDataService.AddCoins(coinsToAdd);
 
             UpdateUI(_playerDataService.GetPlayerRecord(),
-                coinsToAdd * 2,
-                _playerDataService.GetCoins());
+                coinsToAdd * 2);
         }
 
         public void Show()
@@ -64,10 +69,15 @@ namespace UI
             _canvas.gameObject.SetActive(true);
         }
 
-        public void Show(int record, int coinsToAdd, int totalCoins)
+        public void Show(bool showRevive, int record, int coinsToAdd)
         {
-            UpdateUI(record, coinsToAdd, totalCoins);
+            SwitchPanels(showRevive);
+            UpdateUI(record, coinsToAdd);
             Show();
+            if (showRevive)
+            {
+                StartCoroutine(RevivePanelCoroutine());
+            }
         }
 
         public void Hide()
@@ -75,11 +85,25 @@ namespace UI
             _canvas.gameObject.SetActive(false);
         }
 
-        public void UpdateUI(int record, int coinsToAdd, int totalCoins)
+        public void UpdateUI(int record, int coinsToAdd)
         {
             _recordText.text = "record: " + record.ToString();
             _coinToAddText.text = "+" + coinsToAdd.ToString();
-            _totalCoinsText.text = totalCoins.ToString();
+        }
+
+        public void ToggleRewardButton(bool enable) =>
+            _rewardButton.gameObject.SetActive(enable);
+
+        private void SwitchPanels(bool showRevive)
+        {
+            _revivePanel.SetActive(showRevive);
+            _buttonsPanel.SetActive(!showRevive);
+        }
+
+        private IEnumerator RevivePanelCoroutine()
+        {
+            yield return new WaitForSeconds(GameConstants.REVIVE_PANEL_DURATION);
+            SwitchPanels(false);
         }
     }
 }

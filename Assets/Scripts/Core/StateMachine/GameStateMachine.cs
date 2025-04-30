@@ -22,9 +22,10 @@ namespace Core.StateMachine
                 new MenuState(this, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 
-                new PrepareGameState(this, services.Single<IGameFactory>(), uiLoading),
+                new PrepareGameState(this, game, services.Single<IGameFactory>(), uiLoading),
                 new GameLoopState(this),
-                new GameOverState(this, services),
+                new GameOverState(this, game, services),
+                new ReviveGameLoopState(this, game, services),
 
                 new PrepareSurvivalGameState(this, services.Single<IGameFactory>(), uiLoading),
                 new SurvivalGameLoopState(this),

@@ -9,6 +9,8 @@ namespace Main
         [SerializeField] private GameObject _bigCrack;
         [SerializeField] private CrackedPlayer _crackedPlayerPrefab;
 
+        public CrackedPlayer CrackedPlayer { get; private set; }
+
         private Player _player;
 
         public void Initialize(Player player)
@@ -44,7 +46,10 @@ namespace Main
                 case 0:
                     {
                         _player.Health.gameObject.SetActive(false);
-                        Instantiate(_crackedPlayerPrefab, playerHealth.transform.position, playerHealth.transform.rotation, transform);
+                        CrackedPlayer = Instantiate(_crackedPlayerPrefab, 
+                            playerHealth.transform.position, 
+                            playerHealth.transform.rotation, 
+                            transform);
                         Game.GameOver?.Invoke(GameOverCondition.Died);
                         break;
                     }

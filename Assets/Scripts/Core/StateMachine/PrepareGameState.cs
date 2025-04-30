@@ -10,6 +10,7 @@ namespace Core.StateMachine
     public class PrepareGameState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly Game _game;
         private readonly IGameFactory _gameFactory;
         private readonly UILoading _uiLoading;
 
@@ -17,16 +18,21 @@ namespace Core.StateMachine
         private UIPause _uiPause;
         private UIHealth _uiHealth;
 
-        public PrepareGameState(GameStateMachine stateMachine, IGameFactory gameFactory,
+        public PrepareGameState(GameStateMachine stateMachine,
+            Game game,
+            IGameFactory gameFactory,
             UILoading uiLoading)
         {
             _stateMachine = stateMachine;
+            _game = game;
             _gameFactory = gameFactory;
             _uiLoading = uiLoading;
         }
 
         public void Enter()
         {
+            _game.IsRevived = false;
+            
             _uiPause = GameObject.FindObjectOfType<UIPause>();
             _uiPause.MenuButton.onClick.AddListener(GoToMenu);
 
@@ -47,7 +53,7 @@ namespace Core.StateMachine
             var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
             foreach (var spawner in spawners)
             {
-                spawner.StartSpawner(); 
+                spawner.StartSpawner();
             }
 
             Game.GameOver += OnGameOver;

@@ -18,6 +18,7 @@ namespace Core
         public GameStateMachine StateMachine => _stateMachine;
 
         public static Action<GameOverCondition> GameOver;
+        public bool IsRevived;
 
         public Game(ICoroutineRunner coroutineRunner, UILoading uiLoading)
         {

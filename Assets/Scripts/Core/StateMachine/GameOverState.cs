@@ -1,4 +1,6 @@
-﻿using Core.Factory;
+﻿using System;
+using Core.Factory;
+using Core.Services.Ad;
 using Core.Services.PlayerData;
 using PiggyBank;
 using UI;
@@ -9,15 +11,19 @@ namespace Core.StateMachine
     public class GameOverState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly Game _game;
         private readonly AllServices _services;
         private readonly IGameFactory _gameFactory;
         private readonly IPlayerDataService _playerDataService;
 
         private UIGameOver _uiGameOver;
 
-        public GameOverState(GameStateMachine stateMachine, AllServices services)
+        public GameOverState(GameStateMachine stateMachine, 
+            Game game, 
+            AllServices services)
         {
             _stateMachine = stateMachine;
+            _game = game;
             _services = services;
 
             _gameFactory = _services.Single<IGameFactory>();
@@ -32,26 +38,40 @@ namespace Core.StateMachine
             _playerDataService.AddCoins(_gameFactory.Player.CoinCollector.CoinsToAdd);
 
             _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();
-            _uiGameOver.Show(_playerDataService.GetPlayerRecord(), 
-                _gameFactory.Player.CoinCollector.CoinsToAdd, 
-                _playerDataService.GetCoins());
+            _uiGameOver.ReviveButton.onClick.AddListener(ShowRewardedAd);
             _uiGameOver.MenuButton.onClick.AddListener(LoadMenu);
             _uiGameOver.RestartButton.onClick.AddListener(RestartGame);
+            _uiGameOver.ToggleRewardButton(!_game.IsRevived);
+            _uiGameOver.Show(!_game.IsRevived, 
+                _playerDataService.GetPlayerRecord(), 
+                _gameFactory.Player.CoinCollector.CoinsToAdd);
         }
 
         public void Exit()
         {
-            GameObject.Destroy(_gameFactory.Player.gameObject);
-
             _uiGameOver.Hide();
             _uiGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
             _uiGameOver.RestartButton.onClick.RemoveListener(RestartGame);
         }
 
+        private void ShowRewardedAd() =>
+            _services.Single<IAdService>().ShowRewardedAd("Revive", RevivePlayer);
+
+        private void RevivePlayer()
+        {
+            _stateMachine.Enter<ReviveGameLoopState>();
+        }
+
         private void LoadMenu()
-            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        {
+            GameObject.Destroy(_gameFactory.Player.gameObject);
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        }
 
         private void RestartGame()
-            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
+        {
+            GameObject.Destroy(_gameFactory.Player.gameObject);
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
+        }
     }
 }
