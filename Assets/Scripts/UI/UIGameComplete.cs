@@ -74,5 +74,8 @@ namespace UI
             _coinToAddText.text = "+" + coinsToAdd.ToString();
             _totalCoinsText.text = totalCoins.ToString();
         }
+
+        public void ToggleRewardButton(bool enable) =>
+            _rewardButton.gameObject.SetActive(enable);
     }
 }

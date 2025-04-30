@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Factory;
+using Core.Services.Ad;
 using Core.Services.PlayerData;
 using Data;
 using PiggyBank;
@@ -11,6 +12,7 @@ namespace Core.StateMachine
     public class SurvivalGameOverState : IPayloadState<GameOverCondition>
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly Game _game;
         private readonly AllServices _services;
         private readonly IGameFactory _gameFactory;
         private readonly IPlayerDataService _playerDataService;
@@ -20,9 +22,12 @@ namespace Core.StateMachine
 
         private GameOverCondition _gameOverCondition;
 
-        public SurvivalGameOverState(GameStateMachine stateMachine, AllServices services)
+        public SurvivalGameOverState(GameStateMachine stateMachine,
+            Game game,
+            AllServices services)
         {
             _stateMachine = stateMachine;
+            _game = game;
             _services = services;
 
             _gameFactory = _services.Single<IGameFactory>();
@@ -50,9 +55,10 @@ namespace Core.StateMachine
         private void OnDied()
         {
             _uiSurvivalGameOver = GameObject.FindObjectOfType<UISurvivalGameOver>();
-            _uiSurvivalGameOver.Show();
+            _uiSurvivalGameOver.ReviveButton.onClick.AddListener(ShowRewardedAd);
             _uiSurvivalGameOver.MenuButton.onClick.AddListener(LoadMenu);
             _uiSurvivalGameOver.RestartButton.onClick.AddListener(RestartGame);
+            _uiSurvivalGameOver.Show(!_game.IsRevived);
         }
 
         private void OnCompleted()
@@ -60,20 +66,20 @@ namespace Core.StateMachine
             _playerDataService.AddCoins(GameConstants.SURVIVAL_MODE_REWARD);
 
             _uiGameComplete = GameObject.FindObjectOfType<UIGameComplete>();
-            _uiGameComplete.Show(GameConstants.SURVIVAL_MODE_REWARD,
-                _playerDataService.GetCoins());
             _uiGameComplete.MenuButton.onClick.AddListener(LoadMenu);
             _uiGameComplete.RestartButton.onClick.AddListener(RestartGame);
+            _uiGameComplete.ToggleRewardButton(!_game.IsRevived);
+            _uiGameComplete.Show(GameConstants.SURVIVAL_MODE_REWARD,
+                _playerDataService.GetCoins());
         }
 
         public void Exit()
         {
-            GameObject.Destroy(_gameFactory.Player.gameObject);
-
             switch (_gameOverCondition)
             {
                 case GameOverCondition.Died:
                     _uiSurvivalGameOver.Hide();
+                    _uiSurvivalGameOver.ReviveButton.onClick.RemoveListener(ShowRewardedAd);
                     _uiSurvivalGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
                     _uiSurvivalGameOver.RestartButton.onClick.RemoveListener(RestartGame);
                     break;
@@ -87,10 +93,27 @@ namespace Core.StateMachine
             }
         }
 
+        private void ShowRewardedAd()
+        {
+            _uiSurvivalGameOver.ReviveButton.onClick.RemoveListener(ShowRewardedAd);
+            _services.Single<IAdService>().ShowRewardedAd("Revive", RevivePlayer);
+        }
+
+        private void RevivePlayer()
+        {
+            _stateMachine.Enter<ReviveSurvivalGameLoopState>();
+        }
+
         private void LoadMenu()
-            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        {
+            GameObject.Destroy(_gameFactory.Player.gameObject);
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        }
 
         private void RestartGame()
-            => _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalGameScene);
+        {
+            GameObject.Destroy(_gameFactory.Player.gameObject);
+            _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalGameScene);
+        }
     }
 }

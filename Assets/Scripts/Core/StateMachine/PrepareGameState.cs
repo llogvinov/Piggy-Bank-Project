@@ -1,5 +1,4 @@
-﻿using System;
-using Core.Factory;
+﻿using Core.Factory;
 using Main.Background;
 using PiggyBank;
 using UI;
@@ -11,8 +10,9 @@ namespace Core.StateMachine
     {
         private readonly GameStateMachine _stateMachine;
         private readonly Game _game;
-        private readonly IGameFactory _gameFactory;
+        private readonly AllServices _services;
         private readonly UILoading _uiLoading;
+        private readonly IGameFactory _gameFactory;
 
         private UIAddCoins _uiAddCoins;
         private UIPause _uiPause;
@@ -20,13 +20,14 @@ namespace Core.StateMachine
 
         public PrepareGameState(GameStateMachine stateMachine,
             Game game,
-            IGameFactory gameFactory,
+            AllServices services,
             UILoading uiLoading)
         {
             _stateMachine = stateMachine;
             _game = game;
-            _gameFactory = gameFactory;
+            _services = services;
             _uiLoading = uiLoading;
+            _gameFactory = _services.Single<IGameFactory>();
         }
 
         public void Enter()
@@ -68,6 +69,7 @@ namespace Core.StateMachine
 
         private void OnGameOver(GameOverCondition condition)
         {
+            Game.GameOver -= OnGameOver;
             _stateMachine.Enter<GameOverState>();
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using Core.Factory;
+﻿using Core.Factory;
 using Data;
 using PiggyBank;
 using Timer;
@@ -11,24 +10,31 @@ namespace Core.StateMachine
     public class PrepareSurvivalGameState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
-        private readonly IGameFactory _gameFactory;
+        private readonly Game _game;
+        private readonly AllServices _services;
         private readonly UILoading _uiLoading;
+        private readonly IGameFactory _gameFactory;
 
         private GameTimer _timer;
         private UIPause _uiPause;
         private UIHealth _uiHealth;
 
-        public PrepareSurvivalGameState(GameStateMachine stateMachine, 
-            IGameFactory gameFactory,
+        public PrepareSurvivalGameState(GameStateMachine stateMachine,
+            Game game,
+            AllServices services,
             UILoading uiLoading)
         {
             _stateMachine = stateMachine;
-            _gameFactory = gameFactory;
+            _game = game;
+            _services = services;
             _uiLoading = uiLoading;
+            _gameFactory = _services.Single<IGameFactory>();
         }
 
         public void Enter()
         {
+            _game.IsRevived = false;
+
             _timer = GameObject.FindObjectOfType<GameTimer>();
             _timer.SetTimer(GameConstants.SURVIVAL_MODE_TIMER);
             _timer.TimerCompleted += OnTimerCompleted;
@@ -65,6 +71,8 @@ namespace Core.StateMachine
 
         private void OnGameOver(GameOverCondition condition)
         {
+            Game.GameOver -= OnGameOver;
+            
             if (_timer.IsRunning)
                 _timer.PauseTimer();
 

@@ -1,17 +1,20 @@
 using Core.Factory;
+using Timer;
 using UnityEngine;
 
 namespace Core.StateMachine
 {
-    public class ReviveGameLoopState : ISimpleState
+    public class ReviveSurvivalGameLoopState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
         private readonly Game _game;
         private readonly AllServices _services;
         private readonly IGameFactory _gameFactory;
 
-        public ReviveGameLoopState(GameStateMachine stateMachine, 
-            Game game, 
+        private GameTimer _timer;
+
+        public ReviveSurvivalGameLoopState(GameStateMachine stateMachine,
+            Game game,
             AllServices services)
         {
             _stateMachine = stateMachine;
@@ -24,11 +27,14 @@ namespace Core.StateMachine
         {
             _game.IsRevived = true;
             Game.GameOver += OnGameOver;
-            
+
             var player = _gameFactory.Player;
-            player.Health.AddHeart(); 
+            player.Health.AddHeart();
             GameObject.Destroy(_gameFactory.Player.Cracks.CrackedPlayer.gameObject);
             player.Health.gameObject.SetActive(true);
+
+            _timer = GameObject.FindObjectOfType<GameTimer>();
+            _timer.UnPauseTimer();
 
             var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
             foreach (var spawner in spawners)
@@ -40,7 +46,11 @@ namespace Core.StateMachine
         private void OnGameOver(GameOverCondition condition)
         {
             Game.GameOver -= OnGameOver;
-            _stateMachine.Enter<GameOverState>();
+
+            if (_timer.IsRunning)
+                _timer.PauseTimer();
+
+            _stateMachine.Enter<SurvivalGameOverState, GameOverCondition>(condition);
         }
 
         public void Exit()

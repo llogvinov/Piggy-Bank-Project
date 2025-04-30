@@ -50,12 +50,16 @@ namespace Core.StateMachine
         public void Exit()
         {
             _uiGameOver.Hide();
+            _uiGameOver.ReviveButton.onClick.RemoveListener(ShowRewardedAd);
             _uiGameOver.MenuButton.onClick.RemoveListener(LoadMenu);
             _uiGameOver.RestartButton.onClick.RemoveListener(RestartGame);
         }
 
-        private void ShowRewardedAd() =>
+        private void ShowRewardedAd()
+        {
+            _uiGameOver.ReviveButton.onClick.RemoveListener(ShowRewardedAd);
             _services.Single<IAdService>().ShowRewardedAd("Revive", RevivePlayer);
+        }
 
         private void RevivePlayer()
         {

@@ -2,7 +2,7 @@
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 628,
+    "Coins": 778,
     "NormalGamesPlayed": 3,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 48,

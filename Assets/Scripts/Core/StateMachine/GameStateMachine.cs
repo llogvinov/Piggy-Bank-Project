@@ -22,14 +22,15 @@ namespace Core.StateMachine
                 new MenuState(this, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 
-                new PrepareGameState(this, game, services.Single<IGameFactory>(), uiLoading),
+                new PrepareGameState(this, game, services, uiLoading),
                 new GameLoopState(this),
                 new GameOverState(this, game, services),
                 new ReviveGameLoopState(this, game, services),
 
-                new PrepareSurvivalGameState(this, services.Single<IGameFactory>(), uiLoading),
+                new PrepareSurvivalGameState(this, game, services, uiLoading),
                 new SurvivalGameLoopState(this),
-                new SurvivalGameOverState(this, services)
+                new SurvivalGameOverState(this, game, services),
+                new ReviveSurvivalGameLoopState(this, game, services),
             };
         }
 
