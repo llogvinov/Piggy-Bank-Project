@@ -8,6 +8,7 @@ namespace UI
     public class LocalizedText : MonoBehaviour
     {
         [SerializeField] private string _id;
+        [SerializeField] private bool _shouldUpdateUI = true;
 
         private Text _text;
 
@@ -21,7 +22,10 @@ namespace UI
 
         private void Start()
         {
-            UpdateText();
+            if (_shouldUpdateUI)
+            {
+                UpdateText();
+            }
             _localizationService.LanguageChanged += OnLanguageChanged;
         }
 
@@ -30,9 +34,18 @@ namespace UI
             _localizationService.LanguageChanged -= OnLanguageChanged;
         }
 
-        private void OnLanguageChanged(string obj)
+        public string GetValue()
         {
-            UpdateText();
+            Debug.Log(_localizationService.GetLocalizedDataById(_id));
+            return _localizationService.GetLocalizedDataById(_id);
+        }
+
+        private void OnLanguageChanged(string lang)
+        {
+            if (_shouldUpdateUI)
+            {
+                UpdateText();
+            }
         }
 
         private void UpdateText()

@@ -1600,17 +1600,13 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3182991880521217399, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
-      propertyPath: _toHide.Array.data[0]
-      value: 
-      objectReference: {fileID: 1359339825}
-    - target: {fileID: 3182991880521217399, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
       propertyPath: _toHide.Array.data[1]
       value: 
       objectReference: {fileID: 1467555077}
     - target: {fileID: 3182991880521217399, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
       propertyPath: _toHide.Array.data[2]
       value: 
-      objectReference: {fileID: 1322372170815102593}
+      objectReference: {fileID: 1359339825}
     - target: {fileID: 4587087984002071196, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1660,11 +1656,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
---- !u!1 &1322372170815102593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 71196194254404115, guid: d77bda269dc2f2449a618efa4ad402a0, type: 3}
-  m_PrefabInstance: {fileID: 1322372170815102592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3387939125166712063
 PrefabInstance:
   m_ObjectHideFlags: 0

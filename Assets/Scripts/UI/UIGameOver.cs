@@ -72,8 +72,8 @@ namespace UI
         public void Show(bool showRevive, int record, int coinsToAdd)
         {
             SwitchPanels(showRevive);
-            UpdateUI(record, coinsToAdd);
             Show();
+            UpdateUI(record, coinsToAdd);
             if (showRevive)
             {
                 StartCoroutine(RevivePanelCoroutine());
@@ -87,7 +87,8 @@ namespace UI
 
         public void UpdateUI(int record, int coinsToAdd)
         {
-            _recordText.text = "record: " + record.ToString();
+            var localized = _recordText.GetComponent<LocalizedText>();
+            _recordText.text = $"{localized.GetValue()}: {record}";
             _coinToAddText.text = "+" + coinsToAdd.ToString();
         }
 

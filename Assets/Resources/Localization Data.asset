@@ -46,3 +46,12 @@ MonoBehaviour:
   - Id: pause
     RU: "\u041F\u0410\u0423\u0417\u0410..."
     EN: PAUSE...
+  - Id: select_mode
+    RU: "\u0412\u042B\u0411\u0415\u0420\u0415\u0422\u0415 \u0420\u0415\u0416\u0418\u041C"
+    EN: SELECT MODE
+  - Id: normal
+    RU: "\u041A\u041B\u0410\u0421\u0421\u0418\u041A\u0410"
+    EN: NORMAL
+  - Id: survival
+    RU: "\u0412\u042B\u0416\u0418\u0412\u0410\u041D\u0418\u0415"
+    EN: SURVIVAL
