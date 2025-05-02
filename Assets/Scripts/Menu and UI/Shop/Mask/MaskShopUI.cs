@@ -1,3 +1,4 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class MaskShopUI : MonoBehaviour, IItemShopUI
     private int newSelectedMaskIndex;
     private int previousSelectedMaskIndex;
     private IPlayerDataService _playerDataService;
+
+    public event Action UIGenerated;
 
     private void Awake()
     {

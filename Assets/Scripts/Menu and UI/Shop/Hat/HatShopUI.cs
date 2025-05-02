@@ -1,3 +1,4 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class HatShopUI : MonoBehaviour, IItemShopUI
     private int newSelectedHatIndex;
     private int previousSelectedHatIndex;
     private IPlayerDataService _playerDataService;
+
+    public event Action UIGenerated;
 
     private void Awake()
     {

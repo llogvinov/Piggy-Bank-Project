@@ -1,3 +1,4 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace UI
 {
     public class UIMaskShop : MonoBehaviour, IItemShopUI
     {
+        public event Action UIGenerated;
+
         [Header("UI Elements")]
         [SerializeField] private Transform ShopItemsContainer;
         [SerializeField] private GameObject itemPrefab;
@@ -73,6 +76,8 @@ namespace UI
                     uiItem.OnItemPurchase(i, OnItemPurchased);
                 }
             }
+
+            UIGenerated?.Invoke();
         }
 
         public void ChangeItemSkin()

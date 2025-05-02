@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 public interface IItemShopUI
 {
+    event Action UIGenerated;
     void SetSelectedItem();
     void GenerateShopItemUI();
     void OnItemSelected(int index);

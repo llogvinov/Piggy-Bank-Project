@@ -8,7 +8,6 @@ namespace UI
     public class ScrollSnapController : MonoBehaviour
     {
         [SerializeField] private UIShop _uiShop;
-        [SerializeField] private UILocationsShop _uiLocationsShop;
 
         public ScrollRect scrollRect;
         public RectTransform content;
@@ -16,6 +15,7 @@ namespace UI
         public Button rightButton;
         public float snapSpeed = 10f;
 
+        private IItemShopUI _itemShopUI;
         private int totalElements;
         private int currentIndex = 0;
         private float[] elementPositions;
@@ -24,13 +24,14 @@ namespace UI
 
         private void Awake()
         {
-            _uiLocationsShop.UIGenerated += OnUIGenerated;
+            _itemShopUI = GetComponent<IItemShopUI>();
+            _itemShopUI.UIGenerated += OnUIGenerated;
             _uiShop.Opened += ScrollToFirst;
         }
 
         private void OnDestroy()
         {
-            _uiLocationsShop.UIGenerated -= OnUIGenerated;
+            _itemShopUI.UIGenerated -= OnUIGenerated;
             _uiShop.Opened -= ScrollToFirst;
 
             leftButton.onClick.RemoveListener(ScrollLeft);

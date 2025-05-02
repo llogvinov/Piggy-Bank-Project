@@ -1,3 +1,4 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class LocationShopUI : MonoBehaviour, IItemShopUI
     private int newSelectedLocationIndex;
     private int previousSelectedLocationIndex;
     private IPlayerDataService _playerDataService;
+
+    public event Action UIGenerated;
 
     private void Awake()
     {
