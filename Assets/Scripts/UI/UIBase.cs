@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class UIBase : MonoBehaviour
     {
+        public event Action Opened, Hided;
+
         [SerializeField] protected GameObject _panel;
         [Space]
         [SerializeField] protected Button _openButton;
@@ -28,12 +31,14 @@ namespace UI
         {
             _panel.SetActive(true);
             ToggleButtons(false);
+            Opened?.Invoke();
         }
 
         public virtual void Hide()
         {
             _panel.SetActive(false);
             ToggleButtons(true);
+            Hided?.Invoke();
         }
 
         protected void ToggleButtons(bool enable)

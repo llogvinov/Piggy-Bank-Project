@@ -55,3 +55,6 @@ MonoBehaviour:
   - Id: survival
     RU: "\u0412\u042B\u0416\u0418\u0412\u0410\u041D\u0418\u0415"
     EN: SURVIVAL
+  - Id: select
+    RU: "\u0412\u042B\u0411\u0420\u0410\u0422\u042C"
+    EN: SELECT

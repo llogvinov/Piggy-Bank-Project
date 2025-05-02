@@ -1,3 +1,4 @@
+using System;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace UI.LocationsShop
 {
     public class UILocationsShop : MonoBehaviour, IItemShopUI
     {
+        public event Action UIGenerated;
+
         [Header("UI Elements")]
         [SerializeField] private Transform ShopItemsContainer;
         [SerializeField] private GameObject itemPrefab;
@@ -59,6 +62,8 @@ namespace UI.LocationsShop
                     uiItem.OnItemPurchase(i, OnItemPurchased);
                 }
             }
+
+            UIGenerated?.Invoke();
         }
 
         public void SetSelectedItem()

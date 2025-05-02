@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 79,
+    "idSave": 112,
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
@@ -40,32 +40,32 @@
     "SelectedLocation": {
         "name": "mountains",
         "sky": {
-            "instanceID": 24608
+            "instanceID": 25298
         },
         "ground": {
-            "instanceID": 24600
+            "instanceID": 25250
         },
         "trees": {
-            "instanceID": 24592
+            "instanceID": 25256
         },
         "mountain": {
-            "instanceID": 24610
+            "instanceID": 25274
         },
         "clouds": [
             {
-                "instanceID": 24582
+                "instanceID": 25172
             },
             {
-                "instanceID": 24584
+                "instanceID": 25174
             },
             {
-                "instanceID": 24586
+                "instanceID": 25176
             },
             {
-                "instanceID": 24588
+                "instanceID": 25178
             },
             {
-                "instanceID": 24590
+                "instanceID": 25180
             }
         ],
         "price": 0,
