@@ -44,6 +44,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8849048568030503455}
     m_Modifications:
+    - target: {fileID: 551740503979329883, guid: b7f2fcf2eb2b1564c8eb3485e304fec8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 672478646, guid: 8555a585040512941925aa52579b4ee9, type: 3}
+    - target: {fileID: 551740503979329883, guid: b7f2fcf2eb2b1564c8eb3485e304fec8, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4866133967648577113, guid: b7f2fcf2eb2b1564c8eb3485e304fec8, type: 3}
       propertyPath: m_Text
       value: REVIVE

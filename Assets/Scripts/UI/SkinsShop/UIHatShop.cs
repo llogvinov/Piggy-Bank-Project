@@ -117,7 +117,6 @@ namespace UI
             if (_playerDataService.CanSpendCoins(hat.price))
             {
                 _playerDataService.SpendCoins(hat.price);
-                GameSharedUI.Instance.UpdateCoinsUIText();
                 hatDB.PurchaseHat(index);
                 hatUIItem.SetItemAsPurchased();
                 hatUIItem.OnItemSelect(index, OnItemSelected);

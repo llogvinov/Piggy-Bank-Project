@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4921545448054487618, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
+  m_Sprite: {fileID: -723443402, guid: efa25fba07cec0c4895e8f0b4bc391c7, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3
+  m_PixelsPerUnitMultiplier: 3.5
 --- !u!114 &2313451432329263955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7786399038943183646, guid: 70d626426f9a57f4cae7764dd18072d0, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

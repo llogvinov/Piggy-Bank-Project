@@ -106,7 +106,6 @@ namespace UI.LocationsShop
             if (_playerDataService.CanSpendCoins(location.price))
             {
                 _playerDataService.SpendCoins(location.price);
-                GameSharedUI.Instance.UpdateCoinsUIText();
                 locationDB.PurchaseLocation(index);
                 locationUIItem.SetItemAsPurchased();
                 locationUIItem.OnItemSelect(index, OnItemSelected);

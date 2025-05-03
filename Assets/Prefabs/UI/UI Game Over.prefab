@@ -1164,10 +1164,6 @@ PrefabInstance:
       propertyPath: _id
       value: game_over
       objectReference: {fileID: 0}
-    - target: {fileID: 3294309144043614844, guid: 3cf8043e18055574db3552caace690a1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8929440768489705544, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
     - target: {fileID: 3645514693444527600, guid: 3cf8043e18055574db3552caace690a1, type: 3}
       propertyPath: m_SizeDelta.y
       value: 600

@@ -115,7 +115,6 @@ namespace UI
             if (_playerDataService.CanSpendCoins(mask.price))
             {
                 _playerDataService.SpendCoins(mask.price);
-                GameSharedUI.Instance.UpdateCoinsUIText();
                 maskDB.PurchaseMask(index);
                 maskUIItem.SetItemAsPurchased();
                 maskUIItem.OnItemSelect(index, OnItemSelected);

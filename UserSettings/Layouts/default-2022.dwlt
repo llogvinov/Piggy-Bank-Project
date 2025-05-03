@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 34238
+  controlID: 12688
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 34239
+  controlID: 12689
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 34183
+  controlID: 12615
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 34173
+  controlID: 12605
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -270,14 +270,14 @@ MonoBehaviour:
     y: 604
     width: 992
     height: 335
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -824,9 +824,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 107.148865, y: 227.8301, z: -1.7523048}
+    m_Target: {x: 123.032295, y: 266.46143, z: -2.8741953}
     speed: 2
-    m_Value: {x: 107.148865, y: 227.8301, z: -1.7523048}
+    m_Value: {x: 123.032295, y: 266.46143, z: -2.8741953}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -876,9 +876,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 254.0924
+    m_Target: 297.41705
     speed: 2
-    m_Value: 254.0924
+    m_Value: 297.41705
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -948,7 +948,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OArielG/2DSimpleUIPack/Examples/Graphics
+    - Assets/Sprites/UI
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -956,16 +956,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/OArielG/2DSimpleUIPack/Examples/Graphics
+  - Assets/Sprites/UI
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\work\Piggy-Bank-Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 46}
-    m_SelectedIDs: 26660000
-    m_LastClickedID: 26150
-    m_ExpandedIDs: 0000000000660000026600000466000006660000086600000a6600000c6600000e660000106600001266000000ca9a3b
+    scrollPos: {x: 0, y: 166}
+    m_SelectedIDs: 665e0000
+    m_LastClickedID: 24166
+    m_ExpandedIDs: 000000000a5e00000c5e00000e5e0000105e0000125e0000145e0000165e0000185e00001a5e0000365e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -993,7 +993,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000660000026600000466000006660000086600000a6600000c6600000e660000106600001266000000ca9a3b
+    m_ExpandedIDs: 000000000a5e00000c5e00000e5e0000105e0000125e0000145e0000165e0000185e00001a5e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300008cd70000dae100004a63000070630000146a0000a46200008a650000886500005260000050600000485d0000b8da00003e61000000000000
+    m_ExpandedInstanceIDs: c62300008cd70000dae100004a63000070630000146a0000a46200008a650000886500005260000050600000485d0000b8da00003e610000000000008c660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1037,7 +1037,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 8}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 225.2
@@ -1120,9 +1120,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: a05e0000
       m_LastClickedID: 0
-      m_ExpandedIDs: b2c0fefffec0feffa2c4feff2cc6feff92c7feffa2c7feffcad4feff30d5fefffad5feff2cdefeff3cdefeff74defeff2cebfefff6ebfeff18eefeff38fafeff58fcfeff9616ffff6017ffff7019ffff8019ffff1e1affffe225ffffac26ffffca28ffffda28ffff7429ffff3a43ffffde50ffff2051ffff2c51ffff8051ffff9051ffffd051ffff6c52ffff4253ffff6058ffff7058fffffc58ffff4065ffff7e67ffff8e67ffffb667ffffa073ffff6a74ffff26b3ffff0edbffff98ddffff9addffff9cddffffd0e0ffffd6faffff06fbffffe25d0000f05d0000ae5e0000da5e0000125f0000845f000022600000386000004260000066600000746000009c610000d66100009016020068170200fa170200d0230200a82402003a25020084290200e62902005c2a0200ee2a0200a42b0200ba2b0200942e02006c2f0200ac3702008438020016390200ec440200364902000e4a0200a04a02002e52020006530200005b020044680200f66c0200ce6d020040710200a271020018720200aa72020060730200767302002e8702000688020098880200
+      m_ExpandedIDs: 747bffffc07bffff6c7ffffffe80ffffc282ffffda82fffff49fffff8aafffff0cb0ffffe2beffff4cf5ffff08f6ffff18f6ffff1af6ffff18fbffffe8600000666200000aa3000064a500009aa50000a0a50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
