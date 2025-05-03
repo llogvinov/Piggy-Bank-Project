@@ -7,14 +7,14 @@
         false,
         false
     ],
-    "idSave": 140,
+    "idSave": 182,
     "Music": false,
     "Sound": false,
     "RemovedAds": false,
-    "Coins": 271,
+    "Coins": 517,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 15,
+    "NormalModeRecord": 75,
     "SelectedHatId": 0,
     "SelectedMaskId": 1,
     "SelectedLocationId": 0,
@@ -33,7 +33,7 @@
     },
     "SelectedMask": {
         "image": {
-            "instanceID": 26486
+            "instanceID": 27126
         },
         "name": "medicine mask",
         "price": 49,
@@ -42,32 +42,32 @@
     "SelectedLocation": {
         "name": "mountains",
         "sky": {
-            "instanceID": 24370
+            "instanceID": 27064
         },
         "ground": {
-            "instanceID": 26374
+            "instanceID": 27034
         },
         "trees": {
-            "instanceID": 26378
+            "instanceID": 27046
         },
         "mountain": {
-            "instanceID": 24358
+            "instanceID": 27048
         },
         "clouds": [
             {
-                "instanceID": 26296
+                "instanceID": 27000
             },
             {
-                "instanceID": 26298
+                "instanceID": 27002
             },
             {
-                "instanceID": 26300
+                "instanceID": 27004
             },
             {
-                "instanceID": 26302
+                "instanceID": 27006
             },
             {
-                "instanceID": 26304
+                "instanceID": 27008
             }
         ],
         "price": 0,

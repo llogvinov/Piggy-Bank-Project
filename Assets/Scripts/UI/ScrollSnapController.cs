@@ -1,4 +1,5 @@
-using System;
+using Core;
+using Core.Services.PlayerData;
 using UI.LocationsShop;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,13 +27,13 @@ namespace UI
         {
             _itemShopUI = GetComponent<IItemShopUI>();
             _itemShopUI.UIGenerated += OnUIGenerated;
-            _uiShop.Opened += ScrollToFirst;
+            _uiShop.Opened += ScrollToSelected;
         }
 
         private void OnDestroy()
         {
             _itemShopUI.UIGenerated -= OnUIGenerated;
-            _uiShop.Opened -= ScrollToFirst;
+            _uiShop.Opened -= ScrollToSelected;
 
             leftButton.onClick.RemoveListener(ScrollLeft);
             rightButton.onClick.RemoveListener(ScrollRight);
@@ -51,6 +52,7 @@ namespace UI
             leftButton.onClick.AddListener(ScrollLeft);
             rightButton.onClick.AddListener(ScrollRight);
 
+            ScrollToSelected();
             UpdateButtons();
         }
 
@@ -94,20 +96,37 @@ namespace UI
 
         private void SnapToElement(int index)
         {
+            currentIndex = index;
             targetPosition = elementPositions[index];
-            isLerping = true;
+            scrollRect.horizontalNormalizedPosition = targetPosition;
         }
 
-        private void ScrollToFirst()
+        private void ScrollToSelected()
         {
-            currentIndex = 0;
-            scrollRect.horizontalNormalizedPosition = elementPositions[0];
+            if (elementPositions == null) return;
+
+            var _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+            switch (_itemShopUI)
+            {
+                case UILocationsShop locationsShop:
+                    SnapToElement(_playerDataService.GetSelectedLocationIndex());
+                    break;
+                case UIHatShop hatShop:
+                    SnapToElement(_playerDataService.GetSelectedHatIndex());
+                    break;
+                case UIMaskShop maskShop:
+                    SnapToElement(_playerDataService.GetSelectedMaskIndex());
+                    break;
+                default:
+                    SnapToElement(0);
+                    break;
+            }
         }
 
         private void UpdateButtons()
         {
-            leftButton.interactable = currentIndex > 0;
-            rightButton.interactable = currentIndex < totalElements - 1;
+            leftButton.gameObject.SetActive(currentIndex > 0);
+            rightButton.gameObject.SetActive(currentIndex < totalElements - 1);
         }
     }
 }
