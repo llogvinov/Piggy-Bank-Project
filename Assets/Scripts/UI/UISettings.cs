@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class UISettings : UIBase
+    public class UISettings : MonoBehaviour
     {
         [SerializeField] private Button _musicButton;
-        [SerializeField] private Button _soundButton;
-        [SerializeField] private Button _noAddsButton;
+        [SerializeField] private Button _noMusicButton;
         [Space]
-        [SerializeField] private GameObject _noMusicImage;
-        [SerializeField] private GameObject _noSoundImage;
+        [SerializeField] private Button _soundButton;
+        [SerializeField] private Button _noSoundButton;
+        [Space]
+        [SerializeField] private Button _noAddsButton;
         [Space]
         [SerializeField] private AudioSource _musicAudioSource;
 
@@ -21,53 +22,55 @@ namespace UI
         private void Awake()
         {
             _playerDataService = AllServices.Container.Single<IPlayerDataService>();
-            
-            var music = _playerDataService.GetMusic();
-            _musicAudioSource.volume = music == true ? 1f : 0f;
-            _noMusicImage.SetActive(!music);
 
-            _noSoundImage.SetActive(!_playerDataService.GetSound());
+            var musicOn = _playerDataService.GetMusic();
+            _musicButton.gameObject.SetActive(musicOn);
+            _noMusicButton.gameObject.SetActive(!musicOn);
+            _musicAudioSource.volume = musicOn == true ? 1f : 0f;
+
+            var soundOn = _playerDataService.GetSound();
+            _soundButton.gameObject.SetActive(soundOn);
+            _noSoundButton.gameObject.SetActive(!soundOn);
 
             RemoveAdsComplete();
         }
 
-        protected override void Start()
+        private void Start()
         {
-            _openButton.onClick.AddListener(ToggleCanvas);
             _musicButton.onClick.AddListener(ToggleMusic);
+            _noMusicButton.onClick.AddListener(ToggleMusic);
+
             _soundButton.onClick.AddListener(ToggleSound);
+            _noSoundButton.onClick.AddListener(ToggleSound);
         }
 
-        protected override void OnDestroy()
+        private void OnDestroy()
         {
-            _openButton.onClick.RemoveListener(ToggleCanvas);
             _musicButton.onClick.RemoveListener(ToggleMusic);
-            _soundButton.onClick.RemoveListener(ToggleSound);
-        }
+            _noMusicButton.onClick.RemoveListener(ToggleMusic);
 
-        private void ToggleCanvas()
-        {
-            if (_panel.gameObject.activeSelf == false)
-                Show();
-            else
-                Hide();
+            _soundButton.onClick.RemoveListener(ToggleSound);
+            _noSoundButton.onClick.RemoveListener(ToggleSound);
         }
 
         private void ToggleMusic()
         {
             _playerDataService.SetMusic(!_playerDataService.GetMusic());
-            var newValue = _playerDataService.GetMusic();
+            var musicOn = _playerDataService.GetMusic();
 
-            _noMusicImage.SetActive(!newValue);
-            _musicAudioSource.volume = newValue == true ? 1f : 0f;
+            _musicButton.gameObject.SetActive(musicOn);
+            _noMusicButton.gameObject.SetActive(!musicOn);
+
+            _musicAudioSource.volume = musicOn == true ? 1f : 0f;
         }
 
         private void ToggleSound()
         {
             _playerDataService.SetSound(!_playerDataService.GetSound());
-            var newValue = _playerDataService.GetSound();
+            var soundOn = _playerDataService.GetSound();
 
-            _noSoundImage.SetActive(!newValue);
+            _soundButton.gameObject.SetActive(soundOn);
+            _noSoundButton.gameObject.SetActive(!soundOn);
         }
 
         public void RemoveAdsComplete()

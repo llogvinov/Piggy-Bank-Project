@@ -1,6 +1,6 @@
 {
     "Music": false,
-    "Sound": true,
+    "Sound": false,
     "RemovedAds": false,
     "Coins": 995297,
     "NormalGamesPlayed": 0,
