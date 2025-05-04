@@ -1,8 +1,8 @@
 {
     "Music": false,
-    "Sound": false,
+    "Sound": true,
     "RemovedAds": false,
-    "Coins": 986863,
+    "Coins": 986985,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 32,

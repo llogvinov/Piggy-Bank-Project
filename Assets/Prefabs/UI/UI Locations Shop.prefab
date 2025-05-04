@@ -1076,7 +1076,6 @@ MonoBehaviour:
   _toHide:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &1516819511971043464
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1608,7 +1608,6 @@ MonoBehaviour:
   _toHide:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &9032947763657587851
 GameObject:
   m_ObjectHideFlags: 0
