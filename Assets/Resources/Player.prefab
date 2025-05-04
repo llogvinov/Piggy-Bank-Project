@@ -365,7 +365,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -481,8 +481,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015302641, y: -0.0044846823}
-  m_Size: {x: 0.33960444, y: 0.16868845}
+  m_Offset: {x: -0.0049439874, y: 0.0018206446}
+  m_Size: {x: 0.40536273, y: 0.18130122}
   m_Direction: 1
 --- !u!50 &575637502604741658
 Rigidbody2D:

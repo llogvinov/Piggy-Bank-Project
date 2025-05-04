@@ -2,7 +2,7 @@
     "Music": false,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 986985,
+    "Coins": 987075,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 32,
@@ -34,7 +34,7 @@
         },
         "name": "mushu",
         "price": 690,
-        "isPurchased": false
+        "isPurchased": true
     },
     "SelectedLocation": {
         "name": "japan",
