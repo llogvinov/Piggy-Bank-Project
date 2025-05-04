@@ -52,7 +52,7 @@ namespace Main
             var multiplier = PowerUp.IsDoubleCoinsActive == false ? 1 : 2;
             CoinsToAdd += multiplier * coin.CoinValue;
             playerAudio.PlayOneShot(coinClip, 1);
-            Destroy(coin.gameObject);
+            coin.Release();
         }
     }
 }

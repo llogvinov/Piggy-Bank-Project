@@ -1,6 +1,7 @@
 ﻿using Core.Factory;
 using Main.Background;
 using PiggyBank;
+using Spawners;
 using UI;
 using UnityEngine;
 
@@ -51,7 +52,7 @@ namespace Core.StateMachine
             _uiAddCoins = GameObject.FindObjectOfType<UIAddCoins>();
             _uiAddCoins.Initialize(_gameFactory.Player);
 
-            var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
+            var spawners = GameObject.FindObjectsOfType<PooledObjectSpawner>();
             foreach (var spawner in spawners)
             {
                 spawner.StartSpawner();

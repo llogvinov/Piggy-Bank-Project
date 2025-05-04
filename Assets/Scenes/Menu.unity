@@ -6660,6 +6660,7 @@ GameObject:
   - component: {fileID: 1506387395}
   - component: {fileID: 1506387394}
   - component: {fileID: 1506387393}
+  - component: {fileID: 1506387399}
   m_Layer: 0
   m_Name: Player Skin
   m_TagString: Player
@@ -6836,6 +6837,20 @@ Transform:
   - {fileID: 140971819}
   m_Father: {fileID: 371472235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506387399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506387392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e7028ce212c60449c43b93929673e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hat: {fileID: 1296048313}
+  _mask: {fileID: 140971820}
 --- !u!1 &1525009623
 GameObject:
   m_ObjectHideFlags: 0

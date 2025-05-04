@@ -15,6 +15,12 @@ namespace Core.StateMachine
         private readonly AllServices _services;
         private readonly LocalizationData _localizationData;
 
+        private readonly IPlayerDataService _playerDataService;
+
+        private LocationShopDatabase _locationShopDatabase;
+        private HatShopDatabase _hatShopDatabase;
+        private MaskShopDatabase _maskShopDatabase;
+
         public BootstrapState(GameStateMachine stateMachine,
             SceneLoader sceneLoader,
             AllServices services)
@@ -24,10 +30,18 @@ namespace Core.StateMachine
             _services = services;
 
             _localizationData = Resources.Load<LocalizationData>("Localization Data");
+            _locationShopDatabase = Resources.Load<LocationShopDatabase>("Location Shop Database");
+            _hatShopDatabase = Resources.Load<HatShopDatabase>("Hat Shop Database");
+            _maskShopDatabase = Resources.Load<MaskShopDatabase>("Mask Shop Database");
 
             RegisterServices();
+            _playerDataService = _services.Single<IPlayerDataService>();
             LoadPlayerData();
             SwitchLanguage();
+
+            SetSelectedLocation();
+            SetSelectedHat();
+            SetSelectedMask();
         }
 
 
@@ -44,11 +58,11 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
-// #if UNITY_EDITOR
-//             RegisterLocalDataService();
-// #else
+#if UNITY_EDITOR
+            RegisterLocalDataService();
+#else
             RegisterYandexDataService();
-// #endif
+#endif
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_localizationData));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());
@@ -61,9 +75,27 @@ namespace Core.StateMachine
             _services.RegisterSingle<IPlayerDataService>(new YandexPlayerDataService());
 
         private void LoadPlayerData() =>
-            _services.Single<IPlayerDataService>().Load();
+            _playerDataService.Load();
 
         private void SwitchLanguage() => 
             _services.Single<ILocalizationService>().SwitchLanguage(YG2.lang);
+
+        public void SetSelectedLocation()
+        {
+            int index = _playerDataService.GetSelectedLocationIndex();
+            _playerDataService.SetSelectedLocation(_locationShopDatabase.GetLocation(index), index);
+        }
+
+        public void SetSelectedHat()
+        {
+            int index = _playerDataService.GetSelectedHatIndex();
+            _playerDataService.SetSelectedHat(_hatShopDatabase.GetHat(index), index);
+        }
+
+        public void SetSelectedMask()
+        {
+            int index = _playerDataService.GetSelectedMaskIndex();
+            _playerDataService.SetSelectedMask(_maskShopDatabase.GetMask(index), index);
+        }
     }
 }

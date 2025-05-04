@@ -27,7 +27,6 @@ namespace UI.LocationsShop
         private void Start()
         {
             GenerateShopItemUI();
-            SetSelectedItem();
             SelectItemUI(_playerDataService.GetSelectedLocationIndex());
             ChangeItemSkin();
         }
@@ -65,13 +64,7 @@ namespace UI.LocationsShop
 
             UIGenerated?.Invoke();
         }
-
-        public void SetSelectedItem()
-        {
-            int index = _playerDataService.GetSelectedLocationIndex();
-            _playerDataService.SetSelectedLocation(locationDB.GetLocation(index), index);
-        }
-
+        
         public void OnItemSelected(int index)
         {
             SelectItemUI(index);

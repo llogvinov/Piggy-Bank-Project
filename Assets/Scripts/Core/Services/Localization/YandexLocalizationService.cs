@@ -21,13 +21,11 @@ namespace Core.Services.Localization
 
         private void InvokeLanguageChanged(string language)
         {
-            Debug.Log("language changed");
             LanguageChanged?.Invoke(language);
         }
 
         public void SwitchLanguage(string language)
         {
-            Debug.Log("switch language");
             YG2.SwitchLanguage(language);
             Language = language;
         }

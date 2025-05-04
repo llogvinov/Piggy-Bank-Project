@@ -1,24 +1,28 @@
 {
-    "Music": true,
+    "Music": false,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 778,
-    "NormalGamesPlayed": 3,
+    "Coins": 995297,
+    "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 48,
-    "SelectedHatId": 0,
+    "NormalModeRecord": 18,
+    "SelectedHatId": 1,
     "SelectedMaskId": 0,
-    "SelectedLocationId": 0,
-    "PurchasedHatsIds": [],
+    "SelectedLocationId": 1,
+    "PurchasedHatsIds": [
+        1
+    ],
     "PurchasedMasksIds": [],
-    "PurchasedLocationsIds": [],
+    "PurchasedLocationsIds": [
+        1
+    ],
     "SelectedHat": {
         "image": {
-            "instanceID": 0
+            "instanceID": 25706
         },
-        "name": "none",
-        "price": 0,
-        "isPurchased": true
+        "name": "just hat",
+        "price": 290,
+        "isPurchased": false
     },
     "SelectedMask": {
         "image": {
@@ -29,37 +33,37 @@
         "isPurchased": true
     },
     "SelectedLocation": {
-        "name": "mountains",
+        "name": "desert",
         "sky": {
-            "instanceID": 25362
+            "instanceID": 26216
         },
         "ground": {
-            "instanceID": 25322
+            "instanceID": 26218
         },
         "trees": {
-            "instanceID": 25328
+            "instanceID": 26220
         },
         "mountain": {
-            "instanceID": 25334
+            "instanceID": 26222
         },
         "clouds": [
             {
-                "instanceID": 25276
+                "instanceID": 25030
             },
             {
-                "instanceID": 25278
+                "instanceID": 25032
             },
             {
-                "instanceID": 25280
+                "instanceID": 25034
             },
             {
-                "instanceID": 25282
+                "instanceID": 25036
             },
             {
-                "instanceID": 25284
+                "instanceID": 25028
             }
         ],
-        "price": 0,
-        "isPurchased": true
+        "price": 4490,
+        "isPurchased": false
     }
 }

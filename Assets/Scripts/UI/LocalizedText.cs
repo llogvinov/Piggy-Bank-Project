@@ -34,11 +34,8 @@ namespace UI
             _localizationService.LanguageChanged -= OnLanguageChanged;
         }
 
-        public string GetValue()
-        {
-            Debug.Log(_localizationService.GetLocalizedDataById(_id));
-            return _localizationService.GetLocalizedDataById(_id);
-        }
+        public string GetValue() => 
+            _localizationService.GetLocalizedDataById(_id);
 
         private void OnLanguageChanged(string lang)
         {

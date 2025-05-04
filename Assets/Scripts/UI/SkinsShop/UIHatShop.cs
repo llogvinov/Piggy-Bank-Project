@@ -30,15 +30,8 @@ namespace UI
         private void Start()
         {
             GenerateShopItemUI();
-            SetSelectedItem();
             SelectItemUI(_playerDataService.GetSelectedHatIndex());
             ChangeItemSkin();
-        }
-
-        public void SetSelectedItem()
-        {
-            int id = _playerDataService.GetSelectedHatIndex();
-            _playerDataService.SetSelectedHat(hatDB.GetHat(id), id);
         }
 
         public void GenerateShopItemUI()

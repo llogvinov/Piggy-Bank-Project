@@ -30,15 +30,8 @@ namespace UI
         private void Start()
         {
             GenerateShopItemUI();
-            SetSelectedItem();
             SelectItemUI(_playerDataService.GetSelectedMaskIndex());
             ChangeItemSkin();
-        }
-
-        public void SetSelectedItem()
-        {
-            int index = _playerDataService.GetSelectedMaskIndex();
-            _playerDataService.SetSelectedMask(maskDB.GetMask(index), index);
         }
 
         public void GenerateShopItemUI()
