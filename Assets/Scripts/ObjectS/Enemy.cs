@@ -10,8 +10,6 @@ public class Enemy : PooledObject
     [SerializeField] private int damage;
     [SerializeField] private float damageRadius;
     [SerializeField] private float scale;
-
-    protected PlayerHealth playerHealth;
     
     protected const float groundCameraShakeForce = 0.05f;
     private const float playerCameraShakeForce = 0.1f;
@@ -34,7 +32,7 @@ public class Enemy : PooledObject
         Explode(groundCameraShakeForce);
     }
 
-    protected void ExplodeOnPlayer()
+    protected void ExplodeOnPlayer(PlayerHealth playerHealth)
     {
         playerHealth.TakeDamage(damage);
         Explode(playerCameraShakeForce);
@@ -49,7 +47,7 @@ public class Enemy : PooledObject
         {
             if (overlapCollider.attachedRigidbody)
             {
-                if (overlapCollider.attachedRigidbody.GetComponent<Player>())
+                if (overlapCollider.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
                 {
                     playerHealth.TakeDamage(damage);
                 }

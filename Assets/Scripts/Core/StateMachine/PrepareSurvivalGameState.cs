@@ -1,6 +1,7 @@
 ﻿using Core.Factory;
 using Data;
 using PiggyBank;
+using Spawners;
 using Timer;
 using UI;
 using UnityEngine;
@@ -47,7 +48,7 @@ namespace Core.StateMachine
             _uiHealth.Initialize(player);
             player.SkinCreator.SetFullSkin();
 
-            var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
+            var spawners = GameObject.FindObjectsOfType<PooledObjectSpawner>();
             foreach (var spawner in spawners)
             {
                 spawner.StartSpawner(); 

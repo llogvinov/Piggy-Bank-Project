@@ -515,6 +515,77 @@ MonoBehaviour:
   eruptionPosition: {fileID: 990043983}
   minTimeEruption: 5
   maxTimeEruption: 10
+--- !u!1 &739930601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739930602}
+  - component: {fileID: 739930604}
+  - component: {fileID: 739930603}
+  m_Layer: 0
+  m_Name: Super Meteorit Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &739930602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739930601}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 902672027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &739930603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739930601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e4b8955c4d49748a525b65c558dd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 739930604}
+  spawnBounds: 2.8
+  startTimeSpawn: 3
+  minTimeSpawn: 1.5
+  maxTimeSpawn: 2.5
+  scaleTime: 10
+  gravityScale: 1.1
+  _isExplosive: 1
+  _explosionPool: {fileID: 2051898984}
+  _leaveMark: 1
+  _explosionMarkPool: {fileID: 1613676130}
+--- !u!114 &739930604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739930601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initPoolSize: 20
+  _maxPoolSize: 30
+  _objectToPool: {fileID: 664607659416414357, guid: 6313d48c8bd30544baf05da6f271aa1f, type: 3}
 --- !u!1 &741965946
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &810073384
 Transform:
   m_ObjectHideFlags: 0
@@ -703,6 +774,41 @@ MonoBehaviour:
   - {fileID: 5520639819595691353, guid: a0298ca5048cc1148bf81ac06edec032, type: 3}
   - {fileID: 4472913586974328851, guid: a8b8386d0667f8f4fb697116b449fec5, type: 3}
   gravityScale: 1.1
+--- !u!1 &902672026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902672027}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902672027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902672026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 961677237}
+  - {fileID: 739930602}
+  - {fileID: 2051898983}
+  - {fileID: 1613676129}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &911550392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,6 +983,77 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 918657631873064114, guid: 3d3b6e5950441384d92579f150c4f2ae, type: 3}
   m_PrefabInstance: {fileID: 911550392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &961677236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 961677237}
+  - component: {fileID: 961677239}
+  - component: {fileID: 961677238}
+  m_Layer: 0
+  m_Name: Meteorit Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &961677237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961677236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 902672027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961677238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961677236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e4b8955c4d49748a525b65c558dd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 961677239}
+  spawnBounds: 2.8
+  startTimeSpawn: 1
+  minTimeSpawn: 0.3
+  maxTimeSpawn: 0.7
+  scaleTime: 10
+  gravityScale: 1.1
+  _isExplosive: 1
+  _explosionPool: {fileID: 2051898984}
+  _leaveMark: 1
+  _explosionMarkPool: {fileID: 1613676130}
+--- !u!114 &961677239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961677236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initPoolSize: 20
+  _maxPoolSize: 30
+  _objectToPool: {fileID: 599466762129818961, guid: d4f855bb87e736b4ab28399db7a9d82a, type: 3}
 --- !u!1 &990043982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1562,53 @@ Transform:
   - {fileID: 1861822315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613676128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613676129}
+  - component: {fileID: 1613676130}
+  m_Layer: 0
+  m_Name: Explosion Mark Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1613676129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613676128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 902672027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613676130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613676128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initPoolSize: 40
+  _maxPoolSize: 60
+  _objectToPool: {fileID: -3467716800180410317, guid: 441f21dc2c9565245bd40f1855c275f3, type: 3}
 --- !u!4 &1741408486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7183305777704962815, guid: 44ba8d8ee80cb3f469fd6ae17795a0fc, type: 3}
@@ -1572,6 +1796,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21610999, y: 4.6342854}
   m_EdgeRadius: 0
+--- !u!1 &2051898982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051898983}
+  - component: {fileID: 2051898984}
+  m_Layer: 0
+  m_Name: Explosion Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2051898983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051898982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 902672027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2051898984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051898982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initPoolSize: 20
+  _maxPoolSize: 30
+  _objectToPool: {fileID: 5779594391464229569, guid: e9cd9aadce15e424d87472ac36c26cd7, type: 3}
 --- !u!1001 &1322372170815102592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1922,3 +2193,4 @@ SceneRoots:
   - {fileID: 648538631}
   - {fileID: 302777488}
   - {fileID: 1110731620}
+  - {fileID: 902672027}

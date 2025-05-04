@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Meteor : Enemy
 {
-    private void Awake()
-    {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-    }
-
     private void Start()
     {
         Game.GameOver += OnGameOver;
@@ -21,18 +16,26 @@ public class Meteor : Enemy
 
     private void OnGameOver(GameOverCondition condition)
     {
-        Explode(groundCameraShakeForce);
+        if (gameObject.activeSelf)
+        {
+            Explode(groundCameraShakeForce);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-        if (player)
-            ExplodeOnPlayer();
+        if (collision.gameObject.TryGetComponent<PlayerHealth>(out var playerHealth))
+        {
+            ExplodeOnPlayer(playerHealth);
+        }
         else if (collision.gameObject.CompareTag("Ground"))
+        {
             ExplodeOnGround();
+        }
         else
+        {
             Explode(groundCameraShakeForce);
+        }
     }
 
 }

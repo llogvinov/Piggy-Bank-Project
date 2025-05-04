@@ -6,7 +6,9 @@ namespace Spawners
     public class EnemySpawner : PooledObjectSpawner
     {
         [Space]
+        [SerializeField] private bool _isExplosive = true;
         [SerializeField] private ObjectPool _explosionPool;
+        [SerializeField] private bool _leaveMark = true;
         [SerializeField] private ObjectPool _explosionMarkPool;
 
         protected override IEnumerator WaitToStartSpawning()
@@ -14,8 +16,8 @@ namespace Spawners
             foreach (var pooledObject in _pool.AllInstances)
             {
                 var enemy = (Enemy)pooledObject;
-                enemy.Exploded += SpawnExplosion;
-                enemy.ExplodedOnGround += SpawnExplosionMark;
+                if (_isExplosive) enemy.Exploded += SpawnExplosion;
+                if (_leaveMark) enemy.ExplodedOnGround += SpawnExplosionMark;
             }
 
             return base.WaitToStartSpawning();

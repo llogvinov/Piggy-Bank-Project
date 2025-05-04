@@ -7,8 +7,6 @@ public class Bomb : Enemy
 
     private void Start()
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-
         Rigidbody.AddTorque(RandomTorque(), ForceMode2D.Force);
     }
 
@@ -28,7 +26,7 @@ public class Bomb : Enemy
             }
             else
             {
-                ExplodeOnPlayer();
+                ExplodeOnPlayer(playerHealth);
             }
         }
         else if (collision.gameObject.CompareTag("Ground"))
