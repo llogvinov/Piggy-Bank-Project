@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UI;
 
 public class MaskItemUI : MonoBehaviour, IItemUI
 {
@@ -9,7 +10,7 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 
 	[Space(20f)]
 	[SerializeField] private Image maskImage;
-	[SerializeField] private Text maskNameText;
+	[SerializeField] private LocalizedText localizedText;
 	[SerializeField] private Text maskPriceText;
 	[SerializeField] private Button maskPurchaseButton;
 
@@ -23,7 +24,11 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 
 	public void SetMaskImageOpacity() => maskImage.color = new Color(0f, 0f, 0f, 0f);
 
-	public void SetMaskName(string name) => maskNameText.text = name;
+	public void SetMaskName(string name)
+    {
+        localizedText.SetId(name);
+		localizedText.UpdateText();
+    }
 
 	public void SetMaskPrice(int price) => maskPriceText.text = price.ToString();
 

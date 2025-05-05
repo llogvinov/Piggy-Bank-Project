@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 333948b727576cb44bfd6064a4b0697d, type: 3}
-  m_Name: Localization Data
+  m_Name: UI Localization Data
   m_EditorClassIdentifier: 
+  CsvFile: {fileID: 4900000, guid: 8d35c77b71f47114fade8dddfdd2cf3f, type: 3}
   Data:
   - Id: play
     RU: "\u0418\u0413\u0420\u0410\u0422\u042C"

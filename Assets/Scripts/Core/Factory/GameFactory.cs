@@ -9,7 +9,7 @@ namespace Core.Factory
 
         public Player InstantiatePlayer()
         {
-            var loaded = Resources.Load<Player>("Player");
+            var loaded = Resources.Load<Player>("Prefabs/Player");
             if (loaded == null) 
                 Debug.LogError($"{typeof(Player)} not found in resources");
             

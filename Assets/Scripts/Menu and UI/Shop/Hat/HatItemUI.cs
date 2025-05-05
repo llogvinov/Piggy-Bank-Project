@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UI;
 
 public class HatItemUI : MonoBehaviour, IItemUI
 {
@@ -9,7 +10,7 @@ public class HatItemUI : MonoBehaviour, IItemUI
 
 	[Space(20f)]
 	[SerializeField] private Image hatImage;
-	[SerializeField] private Text hatNameText;
+	[SerializeField] private LocalizedText localizedText;
 	[SerializeField] private Text hatPriceText;
 	[SerializeField] private Button hatPurchaseButton;
 
@@ -23,9 +24,13 @@ public class HatItemUI : MonoBehaviour, IItemUI
 
 	public void SetHatImageOpacity() => hatImage.color = new Color(0f, 0f, 0f, 0f);
 
-	public void SetHatName(string name) => hatNameText.text = name;
+    public void SetHatName(string name)
+    {
+        localizedText.SetId(name);
+		localizedText.UpdateText();
+    }
 
-	public void SetHatPrice(int price) => hatPriceText.text = price.ToString();
+    public void SetHatPrice(int price) => hatPriceText.text = price.ToString();
 
 	public void SetItemAsPurchased()
 	{

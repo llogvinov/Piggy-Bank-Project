@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UI;
 
 public class LocationItemUI : MonoBehaviour, IItemUI
 {
@@ -11,7 +12,7 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 	[SerializeField] private Image mountainImage;
 
 	[Space(20f)]
-	[SerializeField] private Text locationNameText;
+	[SerializeField] private LocalizedText localizedText;
 	[SerializeField] private Text locationPriceText;
 	[SerializeField] private Button locationPurchaseButton;
 
@@ -28,7 +29,11 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 		mountainImage.sprite = mountain;
 	}
 
-	public void SetLocationName(string name) => locationNameText.text = name;
+	public void SetLocationName(string name)
+	{
+        localizedText.SetId(name);
+		localizedText.UpdateText();
+    }
 
 	public void SetLocationPrice(int price) => locationPriceText.text = price.ToString();
 

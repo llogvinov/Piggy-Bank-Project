@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d41e9ab969c9fb43b77d14edb67f09d, type: 3}
-  m_Name: LocationsShopDatabase
+  m_Name: Location Shop Database
   m_EditorClassIdentifier: 
   location:
-  - name: mountains
+  - name: mountain
     sky: {fileID: 21300000, guid: 2e48e120fa0787347a1bfd9c7d5d3cb8, type: 3}
     ground: {fileID: 198179880136576651, guid: 3883b84862c05c741ae79006dad4b533, type: 3}
     trees: {fileID: 4453295709044225315, guid: 562de74ba938ff949b4e2b366eff3a63, type: 3}

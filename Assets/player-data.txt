@@ -2,7 +2,7 @@
     "Music": false,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 987075,
+    "Coins": 987085,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 32,
@@ -22,15 +22,15 @@
     ],
     "SelectedHat": {
         "image": {
-            "instanceID": 25120
+            "instanceID": 24678
         },
-        "name": "blue cap",
+        "name": "blue_cap",
         "price": 590,
-        "isPurchased": false
+        "isPurchased": true
     },
     "SelectedMask": {
         "image": {
-            "instanceID": 25686
+            "instanceID": 24926
         },
         "name": "mushu",
         "price": 690,
@@ -39,32 +39,32 @@
     "SelectedLocation": {
         "name": "japan",
         "sky": {
-            "instanceID": 26224
+            "instanceID": 24720
         },
         "ground": {
-            "instanceID": 26226
+            "instanceID": 24722
         },
         "trees": {
-            "instanceID": 26228
+            "instanceID": 24724
         },
         "mountain": {
-            "instanceID": 26230
+            "instanceID": 24726
         },
         "clouds": [
             {
-                "instanceID": 26232
+                "instanceID": 24728
             },
             {
-                "instanceID": 26234
+                "instanceID": 24730
             },
             {
-                "instanceID": 26236
+                "instanceID": 24732
             },
             {
-                "instanceID": 26238
+                "instanceID": 24734
             },
             {
-                "instanceID": 26240
+                "instanceID": 24736
             }
         ],
         "price": 7490,

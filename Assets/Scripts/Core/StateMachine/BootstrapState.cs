@@ -13,7 +13,7 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
-        private readonly LocalizationData _localizationData;
+        private readonly AllLocalizationData _localizationData;
 
         private readonly IPlayerDataService _playerDataService;
 
@@ -29,10 +29,10 @@ namespace Core.StateMachine
             _sceneLoader = sceneLoader;
             _services = services;
 
-            _localizationData = Resources.Load<LocalizationData>("Localization Data");
-            _locationShopDatabase = Resources.Load<LocationShopDatabase>("Location Shop Database");
-            _hatShopDatabase = Resources.Load<HatShopDatabase>("Hat Shop Database");
-            _maskShopDatabase = Resources.Load<MaskShopDatabase>("Mask Shop Database");
+            _localizationData = Resources.Load<AllLocalizationData>("All Localization Data");
+            _locationShopDatabase = Resources.Load<LocationShopDatabase>("Databases/Location Shop Database");
+            _hatShopDatabase = Resources.Load<HatShopDatabase>("Databases/Hat Shop Database");
+            _maskShopDatabase = Resources.Load<MaskShopDatabase>("Databases/Mask Shop Database");
 
             RegisterServices();
             _playerDataService = _services.Single<IPlayerDataService>();

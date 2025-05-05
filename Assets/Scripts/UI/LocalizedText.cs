@@ -34,6 +34,9 @@ namespace UI
             _localizationService.LanguageChanged -= OnLanguageChanged;
         }
 
+        public void SetId(string id) =>
+            _id = id;
+
         public string GetValue() => 
             _localizationService.GetLocalizedDataById(_id);
 
@@ -45,7 +48,7 @@ namespace UI
             }
         }
 
-        private void UpdateText()
+        public void UpdateText()
         {
             _text.text = _localizationService.GetLocalizedDataById(_id);
         }

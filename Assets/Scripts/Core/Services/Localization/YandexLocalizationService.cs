@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using UnityEngine;
 using YG;
 
 namespace Core.Services.Localization
@@ -9,13 +8,13 @@ namespace Core.Services.Localization
     {
         public event Action<string> LanguageChanged;
 
-        public LocalizationData LocalizationData { get; private set; }
+        public AllLocalizationData AllLocalizationData { get; private set; }
 
         public string Language { get; private set; } = "ru";
 
-        public YandexLocalizationService(LocalizationData localizationData)
+        public YandexLocalizationService(AllLocalizationData allLocalizationData)
         {
-            LocalizationData = localizationData;
+            AllLocalizationData = allLocalizationData;
             YG2.onSwitchLang += InvokeLanguageChanged;
         }
 
@@ -32,18 +31,20 @@ namespace Core.Services.Localization
 
         public string GetLocalizedDataById(string id)
         {
-            var data = LocalizationData.Data.FirstOrDefault(d => d.Id == id);
-            if (data == null)
+            foreach (var partData in AllLocalizationData.PartDataList)
             {
-                Debug.LogError($"Data not found for id {id}");
-                return "";
+                var data = partData.Data.FirstOrDefault(d => d.Id == id);
+                if (data != null)
+                {
+                    return Language switch
+                    {
+                        "ru" => data.RU,
+                        "en" => data.EN,
+                        _ => data.EN
+                    };
+                }
             }
-            return Language switch
-            {
-                "ru" => data.RU,
-                "en" => data.EN,
-                _ => data.EN
-            };
+            return "";
         }
 
         ~YandexLocalizationService()

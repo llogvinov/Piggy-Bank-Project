@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333948b727576cb44bfd6064a4b0697d, type: 3}
+  m_Name: Hats Localization Data
+  m_EditorClassIdentifier: 
+  CsvFile: {fileID: 4900000, guid: 551af8076c41c484791cddaa3333dea6, type: 3}
+  Data:
+  - Id: none
+    RU: "\u041D\u0438\u0447\u0435\u0433\u043E"
+    EN: None
+  - Id: just_hat
+    RU: "\u041E\u0431\u044B\u0447\u043D\u0430\u044F \u0448\u043B\u044F\u043F\u0430"
+    EN: Just hat
+  - Id: bag
+    RU: "\u041F\u0430\u043A\u0435\u0442 \u043D\u0430 \u0433\u043E\u043B\u043E\u0432\u0443"
+    EN: Bag on the hat
+  - Id: red_cap
+    RU: "\u041A\u0440\u0430\u0441\u043D\u0430\u044F \u043A\u0435\u043F\u043A\u0430"
+    EN: Red cap
+  - Id: blue_cap
+    RU: "\u0421\u0438\u043D\u044F\u044F \u043A\u0435\u043F\u043A\u0430"
+    EN: Blue cap
+  - Id: musketeer
+    RU: "\u041C\u0443\u0448\u043A\u0435\u0442\u0435\u0440"
+    EN: Musketeer
+  - Id: samurai_hat
+    RU: "\u0428\u0430\u043F\u043A\u0430 \u0441\u0430\u043C\u0443\u0440\u0430\u044F"
+    EN: Samurai hat
+  - Id: pirate_hat
+    RU: "\u041F\u0438\u0440\u0430\u0442\u0441\u043A\u0430\u044F \u0448\u0430\u043F\u043A\u0430"
+    EN: Pirate hat
+  - Id: red_knit_hat
+    RU: "\u041A\u0440\u0430\u0441\u043D\u0430\u044F \u0432\u044F\u0437\u0430\u043D\u0430\u044F
+      \u0448\u0430\u043F\u043A\u0430"
+    EN: Red knitted hat
+  - Id: blue_knit_hat
+    RU: "\u0421\u0438\u043D\u044F\u044F \u0432\u044F\u0437\u0430\u043D\u0430\u044F
+      \u0448\u0430\u043F\u043A\u0430"
+    EN: Blue knitted hat
+  - Id: ninja_band
+    RU: "\u041F\u043E\u0432\u044F\u0437\u043A\u0430 \u043D\u0438\u043D\u0434\u0437\u044F"
+    EN: Ninja band
+  - Id: clown_wig
+    RU: "\u041A\u043B\u043E\u0443\u043D\u0441\u043A\u0438\u0439 \u043F\u0430\u0440\u0438\u043A"
+    EN: Clown wig
+  - Id: joker
+    RU: "\u0414\u0436\u043E\u043A\u0435\u0440"
+    EN: Joker
+  - Id: panama
+    RU: "\u041F\u0430\u043D\u0430\u043C\u0430"
+    EN: Panama
+  - Id: ghoul_hat
+    RU: 1000-7
+    EN: 1000-7
+  - Id: crown
+    RU: "\u041A\u043E\u0440\u043E\u043D\u0430"
+    EN: Crown
+  - Id: sage_hat
+    RU: "\u0428\u043B\u044F\u043F\u0430 \u043C\u0443\u0434\u0440\u0435\u0446\u0430"
+    EN: Sage hat

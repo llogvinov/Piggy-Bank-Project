@@ -182,7 +182,7 @@ MonoBehaviour:
   groundImage: {fileID: 1736856889887830936}
   treesImage: {fileID: 6896415461461204623}
   mountainImage: {fileID: 5808935873605211439}
-  locationNameText: {fileID: 6923418950153560127}
+  localizedText: {fileID: 4403051618402932080}
   locationPriceText: {fileID: 3224452936320049999}
   locationPurchaseButton: {fileID: 2362558254649257772}
   chooseLocationButton: {fileID: 5619362876814745012}
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 3031596915201440636}
   - component: {fileID: 1390398543634956912}
   - component: {fileID: 6923418950153560127}
+  - component: {fileID: 4403051618402932080}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -252,8 +253,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 260
+    m_Font: {fileID: 12800000, guid: 99d777f029619054eaa03f356b0de3a6, type: 3}
+    m_FontSize: 220
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -265,6 +266,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
   m_Text: Mountains
+--- !u!114 &4403051618402932080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063909817479693366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615c5949043693e488889433eac5654e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _shouldUpdateUI: 0
 --- !u!1 &5138527201219496587
 GameObject:
   m_ObjectHideFlags: 0
