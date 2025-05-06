@@ -7,21 +7,19 @@
         false,
         false
     ],
-    "idSave": 183,
-    "Music": false,
-    "Sound": false,
+    "idSave": 231,
+    "Music": true,
+    "Sound": true,
     "RemovedAds": false,
-    "Coins": 517,
+    "Coins": 0,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 75,
+    "NormalModeRecord": 0,
     "SelectedHatId": 0,
-    "SelectedMaskId": 1,
+    "SelectedMaskId": 0,
     "SelectedLocationId": 0,
     "PurchasedHatsIds": [],
-    "PurchasedMasksIds": [
-        1
-    ],
+    "PurchasedMasksIds": [],
     "PurchasedLocationsIds": [],
     "SelectedHat": {
         "image": {
@@ -33,41 +31,41 @@
     },
     "SelectedMask": {
         "image": {
-            "instanceID": 27126
+            "instanceID": 0
         },
-        "name": "medicine mask",
-        "price": 49,
+        "name": "none",
+        "price": 0,
         "isPurchased": true
     },
     "SelectedLocation": {
-        "name": "mountains",
+        "name": "mountain",
         "sky": {
-            "instanceID": 25136
+            "instanceID": 24374
         },
         "ground": {
-            "instanceID": 25100
+            "instanceID": 24376
         },
         "trees": {
-            "instanceID": 25108
+            "instanceID": 24378
         },
         "mountain": {
-            "instanceID": 25114
+            "instanceID": 24380
         },
         "clouds": [
             {
-                "instanceID": 25028
+                "instanceID": 24382
             },
             {
-                "instanceID": 25030
+                "instanceID": 24384
             },
             {
-                "instanceID": 25032
+                "instanceID": 24386
             },
             {
-                "instanceID": 25034
+                "instanceID": 24388
             },
             {
-                "instanceID": 25036
+                "instanceID": 24390
             }
         ],
         "price": 0,

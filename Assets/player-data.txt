@@ -1,73 +1,65 @@
 {
     "Music": false,
-    "Sound": true,
+    "Sound": false,
     "RemovedAds": false,
-    "Coins": 987085,
+    "Coins": 0,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 32,
-    "SelectedHatId": 4,
-    "SelectedMaskId": 7,
-    "SelectedLocationId": 2,
-    "PurchasedHatsIds": [
-        1,
-        4
-    ],
-    "PurchasedMasksIds": [
-        7
-    ],
-    "PurchasedLocationsIds": [
-        1,
-        2
-    ],
+    "NormalModeRecord": 0,
+    "SelectedHatId": 0,
+    "SelectedMaskId": 0,
+    "SelectedLocationId": 0,
+    "PurchasedHatsIds": [],
+    "PurchasedMasksIds": [],
+    "PurchasedLocationsIds": [],
     "SelectedHat": {
         "image": {
-            "instanceID": 24678
+            "instanceID": 0
         },
-        "name": "blue_cap",
-        "price": 590,
+        "name": "none",
+        "price": 0,
         "isPurchased": true
     },
     "SelectedMask": {
         "image": {
-            "instanceID": 24926
+            "instanceID": 0
         },
-        "name": "mushu",
-        "price": 690,
+        "name": "none",
+        "price": 0,
         "isPurchased": true
     },
     "SelectedLocation": {
-        "name": "japan",
+        "name": "mountain",
         "sky": {
-            "instanceID": 24720
+            "instanceID": 24370
         },
         "ground": {
-            "instanceID": 24722
+            "instanceID": 24360
         },
         "trees": {
-            "instanceID": 24724
+            "instanceID": 24350
         },
         "mountain": {
-            "instanceID": 24726
+            "instanceID": 24372
         },
         "clouds": [
             {
-                "instanceID": 24728
+                "instanceID": 24340
             },
             {
-                "instanceID": 24730
+                "instanceID": 24342
             },
             {
-                "instanceID": 24732
+                "instanceID": 24344
             },
             {
-                "instanceID": 24734
+                "instanceID": 24346
             },
             {
-                "instanceID": 24736
+                "instanceID": 24348
             }
         ],
-        "price": 7490,
-        "isPurchased": false
+        "price": 0,
+        "isPurchased": true
     }
 }

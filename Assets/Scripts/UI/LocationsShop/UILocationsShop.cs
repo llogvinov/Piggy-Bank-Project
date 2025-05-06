@@ -107,9 +107,7 @@ namespace UI.LocationsShop
             }
             else
             {
-#if UNITY_EDITOR
                 Debug.Log("Not Enough Coins!");
-#endif
             }
         }
     }

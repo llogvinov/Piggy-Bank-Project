@@ -20,13 +20,22 @@ namespace Core
         public static Action<GameOverCondition> GameOver;
         public bool IsRevived;
 
-        public Game(ICoroutineRunner coroutineRunner, UILoading uiLoading)
+        public Game(ICoroutineRunner coroutineRunner, UILoading uiLoading, GameSettings settings)
         {
-            _stateMachine = new GameStateMachine(this, 
+            _stateMachine = new GameStateMachine(this,
+                coroutineRunner,
                 uiLoading, 
                 new SceneLoader(coroutineRunner), 
-                AllServices.Container);
+                AllServices.Container,
+                settings);
         }
+    }
 
+    public class GameSettings
+    {
+        public AllLocalizationData LocalizationData;
+        public LocationShopDatabase LocationShopDatabase;
+        public HatShopDatabase HatShopDatabase;
+        public MaskShopDatabase MaskShopDatabase;
     }
 }

@@ -7,6 +7,11 @@ namespace Core
     public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
         [SerializeField] private UILoading _uiLoading;
+        [Space]
+        [SerializeField] private AllLocalizationData _localizationData;
+        [SerializeField] private LocationShopDatabase _locationShopDatabase;
+        [SerializeField] private HatShopDatabase _hatShopDatabase;
+        [SerializeField] private MaskShopDatabase _maskShopDatabase;
 
         private Game _game;
 
@@ -23,8 +28,14 @@ namespace Core
                 Destroy(gameObject);
                 return;
             }
-            
-            _game = new Game(this, _uiLoading);
+
+            _game = new Game(this, _uiLoading, new GameSettings
+                {
+                    LocalizationData = _localizationData,
+                    LocationShopDatabase = _locationShopDatabase,
+                    HatShopDatabase = _hatShopDatabase,
+                    MaskShopDatabase = _maskShopDatabase
+                });
             _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);

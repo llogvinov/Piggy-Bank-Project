@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using UnityEngine;
 using YG;
 
 namespace Core.Services.Localization

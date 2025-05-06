@@ -1,4 +1,6 @@
-﻿using Core.Factory;
+﻿using System;
+using System.Collections;
+using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.Localization;
 using Core.Services.PlayerData;
@@ -11,42 +13,60 @@ namespace Core.StateMachine
     public class BootstrapState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly ICoroutineRunner _coroutineRunner;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
+
+        private IPlayerDataService _playerDataService;
+
         private readonly AllLocalizationData _localizationData;
-
-        private readonly IPlayerDataService _playerDataService;
-
-        private LocationShopDatabase _locationShopDatabase;
-        private HatShopDatabase _hatShopDatabase;
-        private MaskShopDatabase _maskShopDatabase;
+        private readonly LocationShopDatabase _locationShopDatabase;
+        private readonly HatShopDatabase _hatShopDatabase;
+        private readonly MaskShopDatabase _maskShopDatabase;
 
         public BootstrapState(GameStateMachine stateMachine,
+            ICoroutineRunner coroutineRunner,
             SceneLoader sceneLoader,
-            AllServices services)
+            AllServices services,
+            GameSettings settings)
         {
             _stateMachine = stateMachine;
+            _coroutineRunner = coroutineRunner;
             _sceneLoader = sceneLoader;
             _services = services;
 
-            _localizationData = Resources.Load<AllLocalizationData>("All Localization Data");
-            _locationShopDatabase = Resources.Load<LocationShopDatabase>("Databases/Location Shop Database");
-            _hatShopDatabase = Resources.Load<HatShopDatabase>("Databases/Hat Shop Database");
-            _maskShopDatabase = Resources.Load<MaskShopDatabase>("Databases/Mask Shop Database");
+            _localizationData = settings.LocalizationData;
+            _locationShopDatabase = settings.LocationShopDatabase;
+            _hatShopDatabase = settings.HatShopDatabase;
+            _maskShopDatabase = settings.MaskShopDatabase;
+        }
 
+        public void Enter()
+        {
+            _coroutineRunner.StartCoroutine(WaitForInitialize());
+        }
+
+        private IEnumerator WaitForInitialize()
+        {
+            while (!YG2.isSDKEnabled)
+            {
+                yield return null;
+            }
+
+            YG2.SetDefaultSaves();
+            YG2.SaveProgress();
+            
             RegisterServices();
             _playerDataService = _services.Single<IPlayerDataService>();
+
             LoadPlayerData();
             SwitchLanguage();
+
 
             SetSelectedLocation();
             SetSelectedHat();
             SetSelectedMask();
-        }
 
-
-        public void Enter()
-        {
             _sceneLoader.LoadScene(AssetPath.MenuScene, () =>
                 _stateMachine.Enter<MenuState>());
         }
@@ -58,11 +78,9 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
-#if UNITY_EDITOR
-            RegisterLocalDataService();
-#else
+            // RegisterLocalDataService();
             RegisterYandexDataService();
-#endif
+
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_localizationData));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());
@@ -77,7 +95,7 @@ namespace Core.StateMachine
         private void LoadPlayerData() =>
             _playerDataService.Load();
 
-        private void SwitchLanguage() => 
+        private void SwitchLanguage() =>
             _services.Single<ILocalizationService>().SwitchLanguage(YG2.lang);
 
         public void SetSelectedLocation()

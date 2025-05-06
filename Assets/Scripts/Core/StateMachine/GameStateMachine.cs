@@ -13,12 +13,12 @@ namespace Core.StateMachine
         
         private IState _activeState;
         
-        public GameStateMachine(Game game, UILoading uiLoading, SceneLoader sceneLoader, AllServices services)
+        public GameStateMachine(Game game, ICoroutineRunner coroutineRunner, UILoading uiLoading, SceneLoader sceneLoader, AllServices services, GameSettings settings)
         {
             _game = game;
             _states = new List<IState>
             {
-                new BootstrapState(this, sceneLoader, services),
+                new BootstrapState(this, coroutineRunner, sceneLoader, services, settings),
                 new MenuState(this, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 

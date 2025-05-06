@@ -31,7 +31,7 @@ namespace UI
         {
             GenerateShopItemUI();
             SelectItemUI(_playerDataService.GetSelectedMaskIndex());
-            ChangeItemSkin();
+            //ChangeItemSkin();
         }
 
         public void GenerateShopItemUI()
@@ -115,9 +115,7 @@ namespace UI
             }
             else
             {
-#if UNITY_EDITOR
                 Debug.Log("Not Enough Coins!");
-#endif
             }
         }
     }
