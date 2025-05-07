@@ -10,6 +10,7 @@ public class Location
     public Sprite trees;
     public Sprite mountain;
     public Cloud[] clouds;
+    public Sprite[] cloudList;
     public int price;
 
     public bool isPurchased;

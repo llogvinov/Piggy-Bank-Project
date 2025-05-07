@@ -24,6 +24,12 @@ MonoBehaviour:
     - {fileID: 9195597285128162361, guid: d7c344c7c3f385744ab11f6860ac008f, type: 3}
     - {fileID: 8878031717934851226, guid: 27c5efe41679cb045bc41dce55f2ba06, type: 3}
     - {fileID: 7358448449538944762, guid: d5baa00deda26844a8518f609295a6cb, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
     price: 0
     isPurchased: 1
   - name: desert
@@ -37,6 +43,12 @@ MonoBehaviour:
     - {fileID: 8878031717934851226, guid: 27c5efe41679cb045bc41dce55f2ba06, type: 3}
     - {fileID: 7358448449538944762, guid: d5baa00deda26844a8518f609295a6cb, type: 3}
     - {fileID: 4248567325829228560, guid: 8e9b16f4b40b6764f8745685de54bb9d, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
     price: 4490
     isPurchased: 0
   - name: japan
@@ -50,8 +62,14 @@ MonoBehaviour:
     - {fileID: 3708312709550805017, guid: 847119623844bee4282be736e06e69ac, type: 3}
     - {fileID: 5847112234452892670, guid: 6ed7fb193f09bdb41a392cbb4ea455ff, type: 3}
     - {fileID: 6692799752261252593, guid: ac2561fe9ed7a804bb1597126a4a7e18, type: 3}
+    cloudList:
+    - {fileID: 3715321283245057710, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -2366835222695724432, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -8047218723885848687, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: 705044802513750631, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -4246210406333062741, guid: 47412cdb7120559489fd681d00719770, type: 3}
     price: 7490
-    isPurchased: 0
+    isPurchased: 1
   - name: moon
     sky: {fileID: 21300000, guid: 9b0764e073c98774cb0d36c61f61b520, type: 3}
     ground: {fileID: 21300000, guid: 57761cad524168d4f9231c2c5e45c062, type: 3}
@@ -62,8 +80,14 @@ MonoBehaviour:
     - {fileID: 1350774366287485374, guid: f86279839a321ed41a85881841f69463, type: 3}
     - {fileID: 4975379598316228040, guid: 359c7a6d1650660408875c0cf5edd5db, type: 3}
     - {fileID: 7996750775835451866, guid: fbf54e499dacb234498bb1813a944b01, type: 3}
+    cloudList:
+    - {fileID: 7462174434605616796, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 8172510760861403798, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 7348713283213436023, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: -8764785145564160227, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 7462174434605616796, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
     price: 8990
-    isPurchased: 0
+    isPurchased: 1
   - name: moscow
     sky: {fileID: 21300000, guid: f1d8a90d1ae9b8e41b827fd5b27b9960, type: 3}
     ground: {fileID: 21300000, guid: dd65ab897ba6f8e4297b22899c54cc4b, type: 3}
@@ -75,5 +99,11 @@ MonoBehaviour:
     - {fileID: 9195597285128162361, guid: d7c344c7c3f385744ab11f6860ac008f, type: 3}
     - {fileID: 8878031717934851226, guid: 27c5efe41679cb045bc41dce55f2ba06, type: 3}
     - {fileID: 7358448449538944762, guid: d5baa00deda26844a8518f609295a6cb, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
     price: 8990
     isPurchased: 0

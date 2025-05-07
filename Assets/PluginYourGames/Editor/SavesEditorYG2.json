@@ -7,14 +7,14 @@
         false,
         false
     ],
-    "idSave": 339,
+    "idSave": 356,
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 18,
+    "Coins": 0,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 18,
+    "NormalModeRecord": 0,
     "SelectedHatId": 0,
     "SelectedMaskId": 0,
     "SelectedLocationId": 0,
@@ -66,6 +66,23 @@
             },
             {
                 "instanceID": 24050
+            }
+        ],
+        "cloudList": [
+            {
+                "instanceID": 24378
+            },
+            {
+                "instanceID": 24380
+            },
+            {
+                "instanceID": 24382
+            },
+            {
+                "instanceID": 24384
+            },
+            {
+                "instanceID": 24386
             }
         ],
         "price": 0,

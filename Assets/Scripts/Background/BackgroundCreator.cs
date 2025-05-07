@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -12,8 +13,8 @@ namespace Main.Background
         [SerializeField] private SpriteRenderer _trees;
         [SerializeField] private SpriteRenderer _mountain;
 
-        [Header("Spawner")]
-        [SerializeField] private CloudSpawner _cloudSpawner;
+        [Header("Clouds")]
+        [SerializeField] private List<CloudPattern> _clouds;
         
         private IPlayerDataService _playerDataService;
         
@@ -45,10 +46,9 @@ namespace Main.Background
 
         private void SetClouds(Location location)
         {
-            _cloudSpawner.Clouds.Clear();
-            foreach (var cloud in location.clouds)
+            foreach (var pattern in _clouds)
             {
-                _cloudSpawner.Clouds.Add(cloud);
+                pattern.Initialize(location);
             }
         }
     }
