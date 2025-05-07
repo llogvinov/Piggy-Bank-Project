@@ -9,13 +9,16 @@ namespace Core.Services.Localization
     {
         public event Action<string> LanguageChanged;
 
+        public Game Game { get; private set; }
+
         public AllLocalizationData AllLocalizationData { get; private set; }
 
         public string Language { get; private set; } = "ru";
 
-        public YandexLocalizationService(AllLocalizationData allLocalizationData)
+        public YandexLocalizationService(Game game)
         {
-            AllLocalizationData = allLocalizationData;
+            Game = game;
+            AllLocalizationData = game.Settings.LocalizationData;
             YG2.onSwitchLang += InvokeLanguageChanged;
         }
 
@@ -32,6 +35,11 @@ namespace Core.Services.Localization
 
         public string GetLocalizedDataById(string id)
         {
+            if (AllLocalizationData == null)
+            {
+                AllLocalizationData = GameObject.FindObjectOfType<GameBootstrapper>().LocalizationData;
+            }
+            
             foreach (var partData in AllLocalizationData.PartDataList)
             {
                 var data = partData.Data.FirstOrDefault(d => d.Id == id);

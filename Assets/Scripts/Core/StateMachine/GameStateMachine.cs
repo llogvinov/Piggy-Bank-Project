@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Core.Factory;
 using UI;
 using UnityEngine;
 
@@ -13,12 +12,17 @@ namespace Core.StateMachine
         
         private IState _activeState;
         
-        public GameStateMachine(Game game, ICoroutineRunner coroutineRunner, UILoading uiLoading, SceneLoader sceneLoader, AllServices services, GameSettings settings)
+        public GameStateMachine(Game game, 
+            ICoroutineRunner coroutineRunner, 
+            UILoading uiLoading, 
+            SceneLoader sceneLoader, 
+            AllServices services, 
+            GameSettings settings)
         {
             _game = game;
             _states = new List<IState>
             {
-                new BootstrapState(this, coroutineRunner, sceneLoader, services, settings),
+                new BootstrapState(this, game, coroutineRunner, sceneLoader, services, settings),
                 new MenuState(this, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 

@@ -14,14 +14,17 @@ namespace Core
     public class Game
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly GameSettings _settings;
 
         public GameStateMachine StateMachine => _stateMachine;
+        public GameSettings Settings => _settings;
 
         public static Action<GameOverCondition> GameOver;
         public bool IsRevived;
 
         public Game(ICoroutineRunner coroutineRunner, UILoading uiLoading, GameSettings settings)
         {
+            _settings = settings;
             _stateMachine = new GameStateMachine(this,
                 coroutineRunner,
                 uiLoading, 
@@ -29,13 +32,5 @@ namespace Core
                 AllServices.Container,
                 settings);
         }
-    }
-
-    public class GameSettings
-    {
-        public AllLocalizationData LocalizationData;
-        public LocationShopDatabase LocationShopDatabase;
-        public HatShopDatabase HatShopDatabase;
-        public MaskShopDatabase MaskShopDatabase;
     }
 }

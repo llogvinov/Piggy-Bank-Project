@@ -13,6 +13,8 @@ namespace Core
         [SerializeField] private HatShopDatabase _hatShopDatabase;
         [SerializeField] private MaskShopDatabase _maskShopDatabase;
 
+        public AllLocalizationData LocalizationData => _localizationData;
+
         private Game _game;
 
         private static GameBootstrapper _instance;
@@ -30,12 +32,10 @@ namespace Core
             }
 
             _game = new Game(this, _uiLoading, new GameSettings
-                {
-                    LocalizationData = _localizationData,
-                    LocationShopDatabase = _locationShopDatabase,
-                    HatShopDatabase = _hatShopDatabase,
-                    MaskShopDatabase = _maskShopDatabase
-                });
+                (_localizationData,
+                _locationShopDatabase,
+                _hatShopDatabase,
+                _maskShopDatabase));
             _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);

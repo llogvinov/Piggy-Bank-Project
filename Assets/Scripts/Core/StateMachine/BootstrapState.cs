@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.Localization;
 using Core.Services.PlayerData;
 using PiggyBank;
-using UnityEngine;
 using YG;
 
 namespace Core.StateMachine
@@ -13,6 +11,7 @@ namespace Core.StateMachine
     public class BootstrapState : ISimpleState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly Game _game;
         private readonly ICoroutineRunner _coroutineRunner;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
@@ -25,12 +24,14 @@ namespace Core.StateMachine
         private readonly MaskShopDatabase _maskShopDatabase;
 
         public BootstrapState(GameStateMachine stateMachine,
+            Game game,
             ICoroutineRunner coroutineRunner,
             SceneLoader sceneLoader,
             AllServices services,
             GameSettings settings)
         {
             _stateMachine = stateMachine;
+            _game = game;
             _coroutineRunner = coroutineRunner;
             _sceneLoader = sceneLoader;
             _services = services;
@@ -39,6 +40,8 @@ namespace Core.StateMachine
             _locationShopDatabase = settings.LocationShopDatabase;
             _hatShopDatabase = settings.HatShopDatabase;
             _maskShopDatabase = settings.MaskShopDatabase;
+            
+            RegisterServices();
         }
 
         public void Enter()
@@ -55,13 +58,11 @@ namespace Core.StateMachine
 
             YG2.SetDefaultSaves();
             YG2.SaveProgress();
-            
-            RegisterServices();
+
             _playerDataService = _services.Single<IPlayerDataService>();
 
             LoadPlayerData();
             SwitchLanguage();
-
 
             SetSelectedLocation();
             SetSelectedHat();
@@ -81,7 +82,7 @@ namespace Core.StateMachine
             // RegisterLocalDataService();
             RegisterYandexDataService();
 
-            _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_localizationData));
+            _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_game));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,15 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerInput = GetComponent<PlayerInput>();
+
+        playerInput = YG2.infoYG.Simulation.device switch
+        {
+            YG2.Device.Desktop => GetComponent<PlayerComputerInput>(),
+            var device when 
+                device == YG2.Device.Mobile || device == YG2.Device.Tablet 
+                => GetComponent<PlayerTouchInput>(),
+            _ => GetComponent<PlayerComputerInput>()
+        };
     }
 
     private void FixedUpdate()

@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiLoading: {fileID: 2121703523}
-  _localizationData: {fileID: 11400000, guid: 278e49204d2138741a2b2488a0f49e5e, type: 2}
+  _localizationData: {fileID: 11400000, guid: 79d5f666d081d4f4f86999da3e89031c, type: 2}
   _locationShopDatabase: {fileID: 11400000, guid: 652e0a66273d9c64d8367a5de6ae0eca, type: 2}
   _hatShopDatabase: {fileID: 11400000, guid: fc2fed3983d2c594e98ed261d2cdb568, type: 2}
   _maskShopDatabase: {fileID: 11400000, guid: 0dfd4f46246111d46afc07f1cb2a6642, type: 2}

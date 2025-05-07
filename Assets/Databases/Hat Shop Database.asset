@@ -20,7 +20,7 @@ MonoBehaviour:
   - image: {fileID: -2185463993128593206, guid: 2251d0ebae793024fb241f65197115a8, type: 3}
     name: just_hat
     price: 290
-    isPurchased: 1
+    isPurchased: 0
   - image: {fileID: 4258078597550032852, guid: c16c9b8687f5b914195f66aafd3eaa76, type: 3}
     name: bag
     price: 490

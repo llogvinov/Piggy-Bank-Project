@@ -64,7 +64,7 @@ namespace UI.LocationsShop
 
             UIGenerated?.Invoke();
         }
-        
+
         public void OnItemSelected(int index)
         {
             SelectItemUI(index);

@@ -1,20 +1,20 @@
-// using UnityEngine;
-// using UnityEditor;
+using UnityEngine;
+using UnityEditor;
 
-// [CustomEditor(typeof(LocalizationData))]
-// public class LocalizationDataEditor : Editor
-// {
-//     public override void OnInspectorGUI()
-//     {
-//         base.OnInspectorGUI();
+[CustomEditor(typeof(LocalizationData))]
+public class LocalizationDataEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
 
-//         LocalizationData data = (LocalizationData)target;
+        LocalizationData data = (LocalizationData)target;
 
-//         if (GUILayout.Button("Load From CSV File"))
-//         {
-//             //data.LoadFromCSV();
-//             EditorUtility.SetDirty(data);
-//             AssetDatabase.SaveAssets();
-//         }
-//     }
-// }
+        if (GUILayout.Button("Load From CSV File"))
+        {
+            data.LoadFromCSV();
+            EditorUtility.SetDirty(data);
+            AssetDatabase.SaveAssets();
+        }
+    }
+}

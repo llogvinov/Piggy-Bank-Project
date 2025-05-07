@@ -2,7 +2,7 @@ namespace PiggyBank
 {
     public static class AssetPath
     {
-        public const string AllLocalizationData = "All Localization Data";
+        public const string AllLocalizationData = "Localization/Localization Data";
         
         public const string LocationShopDatabase = "Databases/Location Shop Database";
         public const string HatShopDatabase = "Databases/Hat Shop Database";
