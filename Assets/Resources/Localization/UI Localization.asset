@@ -73,3 +73,9 @@ MonoBehaviour:
   - Id: powerups
     RU: "\u0421\u043E\u0431\u0438\u0440\u0430\u0439 \u0431\u043E\u043D\u0443\u0441\u044B"
     EN: Collect powerups
+  - Id: purchase
+    RU: "\u041A\u0443\u043F\u0438\u0442\u044C"
+    EN: Purchase
+  - Id: coins
+    RU: "\u041C\u041E\u041D\u0415\u0422\u042B"
+    EN: COINS

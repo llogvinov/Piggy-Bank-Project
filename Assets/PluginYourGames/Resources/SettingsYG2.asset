@@ -32,30 +32,39 @@ MonoBehaviour:
     durationPayPanel: 1
     testBuyFail: 0
     purshases:
-    - id: gun
-      title: Gun
-      description: Product - Gun
+    - id: 1
+      title: Rookie's Wallet
+      description: 1000 coins
       imageURI: demo image
-      price: 5 YAN
-      priceValue: 5
+      price: 100 YAN
+      priceValue: 100
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
-    - id: armor
-      title: Armor
-      description: Product - Armor
+    - id: 2
+      title: Super Piggybank
+      description: 3000 coins
       imageURI: demo image
-      price: 10 YAN
-      priceValue: 10
+      price: 250 YAN
+      priceValue: 250
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
-    - id: grenade
-      title: Grenade
-      description: Product - Grenade
+    - id: 3
+      title: "Veteran\u2019s Treasure"
+      description: 10000 coins
       imageURI: demo image
-      price: 30 YAN
-      priceValue: 30
+      price: 800 YAN
+      priceValue: 800
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
+    - id: 4
+      title: "Legend\u2019s Hoard"
+      description: 40000 coins
+      imageURI: demo image
+      price: 1500 YAN
+      priceValue: 1500
       priceCurrencyCode: YAN
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
