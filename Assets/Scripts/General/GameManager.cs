@@ -34,8 +34,6 @@ public abstract class GameManager : MonoBehaviour
     protected void StartGame()
     {
         IsGameOver = false;
-        
-        PowerUp.DeactivateAllPowerUps();
     }
 
 }

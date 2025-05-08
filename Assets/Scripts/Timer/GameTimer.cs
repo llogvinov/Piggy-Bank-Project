@@ -12,7 +12,7 @@ namespace Timer
 
         private float _duration;
 
-        public void SetTimer(int duration)
+        public void SetTimer(float duration)
         {
             _duration = duration;
             TimeRemaining = _duration;

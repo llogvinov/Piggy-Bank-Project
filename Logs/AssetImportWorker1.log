@@ -1504,3 +1504,63 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: 8f84e3e0eb47668046e669c3eecde000 -> 9dbfdf27b8e4eff428dea1362517cab6
   custom:scripting/precompiled-assembly-types:Assembly-CSharp: b8e16205895f04a821a18d34e7305988 -> 4d363d9e2afb5d7dd6f49992d02b6bb0
+========================================================================
+Received Import Request.
+  Time since last request: 1957.832582 seconds.
+  path: Assets/Sprites/Objects/BOMB-Sheet.png
+  artifactKey: Guid(89a218a3ea649f7479cab63936f42b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/BOMB-Sheet.png using Guid(89a218a3ea649f7479cab63936f42b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd15d15f9b0dde89c1229366d438ca1a7') in 0.124951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Objects/REDBOMB-Sheet.png
+  artifactKey: Guid(dc8eb7194edfe5a4f85bc0edf900f351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/REDBOMB-Sheet.png using Guid(dc8eb7194edfe5a4f85bc0edf900f351) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6e128ebdba448db5061f7da5bb0c3f2') in 0.024671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Objects/TRANSPARENT_HEART.png
+  artifactKey: Guid(115a6d329ecc4074db9a59566efbfe77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/TRANSPARENT_HEART.png using Guid(115a6d329ecc4074db9a59566efbfe77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '043451e6877ed28928032c4914d0d4b4') in 0.018967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Objects/LAVA-Sheet.png
+  artifactKey: Guid(b0b7751d54a6d0e4b8c7cfd0313075c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/LAVA-Sheet.png using Guid(b0b7751d54a6d0e4b8c7cfd0313075c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2d131d3355f5ec3d1c03530b4997c256') in 0.042092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Objects/coin 1.png
+  artifactKey: Guid(2420203b65644fd438d179822997677f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/coin 1.png using Guid(2420203b65644fd438d179822997677f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '69081128f3965c24a8986dc6a1bac534') in 0.014829 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Objects/EXPLOSION-Sheet.png
+  artifactKey: Guid(3470a6c90ef1cd843a948b4dd3cca6ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Objects/EXPLOSION-Sheet.png using Guid(3470a6c90ef1cd843a948b4dd3cca6ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a01c5f320e133a4513e5d8668f2ad92e') in 0.060673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8

@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd25242884dad0c4bb1e93f7d2752f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 2466801115618663131}
   powerUpIcons:
   - {fileID: -1248348973, guid: fe9c6e97ba2773740b7bf942611090f0, type: 3}
   - {fileID: 910605330, guid: fe9c6e97ba2773740b7bf942611090f0, type: 3}
