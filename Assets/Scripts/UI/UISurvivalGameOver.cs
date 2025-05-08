@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class UISurvivalGameOver : MonoBehaviour
+    public class UISurvivalGameOver : UIBase
     {
-        [SerializeField] protected Canvas _canvas;
-        [Space]
         [SerializeField] private GameObject _revivePanel;
         [SerializeField] private GameObject _buttonsPanel;
         [Space]
@@ -23,16 +21,11 @@ namespace UI
         public void Show(bool showRevive)
         {
             SwitchPanels(showRevive);            
-            _canvas.gameObject.SetActive(true);
+            Show();
             if (showRevive)
             {
                 StartCoroutine(RevivePanelCoroutine());
             }
-        }
-
-        public void Hide()
-        {
-            _canvas.gameObject.SetActive(false);
         }
 
         private void SwitchPanels(bool showRevive)

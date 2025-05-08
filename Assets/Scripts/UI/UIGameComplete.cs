@@ -7,10 +7,8 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class UIGameComplete : MonoBehaviour
+    public class UIGameComplete : UIBase
     {
-        [SerializeField] protected Canvas _canvas;
-        [Space]
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _rewardButton;
@@ -29,13 +27,15 @@ namespace UI
             _adService = AllServices.Container.Single<IAdService>();
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             _rewardButton.onClick.AddListener(ShowRewardedAd);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
             _rewardButton.onClick.RemoveListener(ShowRewardedAd);
         }
 
@@ -52,20 +52,10 @@ namespace UI
             UpdateUI(coinsToAdd * 2);
         }
 
-        public void Show()
-        {
-            _canvas.gameObject.SetActive(true);
-        }
-
         public void Show(int coinsToAdd)
         {
             UpdateUI(coinsToAdd);
             Show();
-        }
-
-        public void Hide()
-        {
-            _canvas.gameObject.SetActive(false);
         }
 
         public void UpdateUI(int coinsToAdd)

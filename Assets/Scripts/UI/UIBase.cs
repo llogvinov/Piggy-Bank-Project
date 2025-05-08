@@ -17,14 +17,14 @@ namespace UI
 
         protected virtual void Start()
         {
-            _openButton.onClick.AddListener(Show);
-            _closeButton.onClick.AddListener(Hide);
+            if (_openButton != null) _openButton.onClick.AddListener(Show);
+            if (_closeButton != null) _closeButton.onClick.AddListener(Hide);
         }
 
         protected virtual void OnDestroy()
         {
-            _openButton.onClick.RemoveListener(Show);
-            _closeButton.onClick.RemoveListener(Hide);
+            if (_openButton != null) _openButton.onClick.RemoveListener(Show);
+            if (_closeButton != null) _closeButton.onClick.RemoveListener(Hide);
         }
 
         public virtual void Show()

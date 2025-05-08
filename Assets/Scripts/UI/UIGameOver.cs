@@ -9,10 +9,8 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class UIGameOver : MonoBehaviour
+    public class UIGameOver : UIBase
     {
-        [SerializeField] protected Canvas _canvas;
-        [Space]
         [SerializeField] private GameObject _revivePanel;
         [SerializeField] private GameObject _buttonsPanel;
         [Space]
@@ -39,13 +37,15 @@ namespace UI
             _adService = AllServices.Container.Single<IAdService>();
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             _rewardButton.onClick.AddListener(ShowRewardedAd);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
             _rewardButton.onClick.RemoveListener(ShowRewardedAd);
         }
 
@@ -64,11 +64,6 @@ namespace UI
                 coinsToAdd * 2);
         }
 
-        public void Show()
-        {
-            _canvas.gameObject.SetActive(true);
-        }
-
         public void Show(bool showRevive, int record, int coinsToAdd)
         {
             SwitchPanels(showRevive);
@@ -78,11 +73,6 @@ namespace UI
             {
                 StartCoroutine(RevivePanelCoroutine());
             }
-        }
-
-        public void Hide()
-        {
-            _canvas.gameObject.SetActive(false);
         }
 
         public void UpdateUI(int record, int coinsToAdd)
