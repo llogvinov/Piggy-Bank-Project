@@ -1,4 +1,5 @@
 using Core.Factory;
+using Spawners;
 using Timer;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace Core.StateMachine
             _timer = GameObject.FindObjectOfType<GameTimer>();
             _timer.UnPauseTimer();
 
-            var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
+            var spawners = GameObject.FindObjectsOfType<PooledObjectSpawner>();
             foreach (var spawner in spawners)
             {
                 spawner.StartSpawner();

@@ -1,4 +1,5 @@
 using Core.Factory;
+using Spawners;
 using UnityEngine;
 
 namespace Core.StateMachine
@@ -30,7 +31,7 @@ namespace Core.StateMachine
             GameObject.Destroy(_gameFactory.Player.Cracks.CrackedPlayer.gameObject);
             player.Health.gameObject.SetActive(true);
 
-            var spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
+            var spawners = GameObject.FindObjectsOfType<PooledObjectSpawner>();
             foreach (var spawner in spawners)
             {
                 spawner.StartSpawner();

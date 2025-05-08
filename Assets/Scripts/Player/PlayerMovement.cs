@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigitbody;
     private Animator playerAnimator;
     private PlayerInput playerInput;
-    
+
     private static readonly int Speed = Animator.StringToHash("Speed");
 
     private void Start()
@@ -18,16 +18,18 @@ public class PlayerMovement : MonoBehaviour
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
-        // playerInput = YG2.infoYG.Simulation.device switch
-        // {
-        //     YG2.Device.Desktop => GetComponent<PlayerComputerInput>(),
-        //     var device when 
-        //         device == YG2.Device.Mobile || device == YG2.Device.Tablet 
-        //         => GetComponent<PlayerTouchInput>(),
-        //     _ => GetComponent<PlayerComputerInput>()
-        // };
-
+#if UNITY_EDITOR
         playerInput = GetComponent<PlayerComputerInput>();
+#elif UNITY_WEBGL
+        if (YG2.envir.isMobile || YG2.envir.isMobile)
+        {
+            playerInput = GetComponent<PlayerTouchInput>();
+        }
+        else if (YG2.envir.isDesktop)
+        {
+            playerInput = GetComponent<PlayerComputerInput>();
+        }
+#endif
     }
 
     private void FixedUpdate()
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         else if (playerInput.HorizontalInput < 0 && facingRight)
             Flip();
     }
-    
+
     private void MovePlayer()
     {
         if (!PowerUp.IsSuperSpeedActive)
@@ -54,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
             playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed * PowerUp.SpeedPowerUpMultiplier;
     }
 
-    //Flip player
     private void Flip()
     {
         facingRight = !facingRight;
