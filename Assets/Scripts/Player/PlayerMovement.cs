@@ -18,14 +18,16 @@ public class PlayerMovement : MonoBehaviour
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
-        playerInput = YG2.infoYG.Simulation.device switch
-        {
-            YG2.Device.Desktop => GetComponent<PlayerComputerInput>(),
-            var device when 
-                device == YG2.Device.Mobile || device == YG2.Device.Tablet 
-                => GetComponent<PlayerTouchInput>(),
-            _ => GetComponent<PlayerComputerInput>()
-        };
+        // playerInput = YG2.infoYG.Simulation.device switch
+        // {
+        //     YG2.Device.Desktop => GetComponent<PlayerComputerInput>(),
+        //     var device when 
+        //         device == YG2.Device.Mobile || device == YG2.Device.Tablet 
+        //         => GetComponent<PlayerTouchInput>(),
+        //     _ => GetComponent<PlayerComputerInput>()
+        // };
+
+        playerInput = GetComponent<PlayerComputerInput>();
     }
 
     private void FixedUpdate()

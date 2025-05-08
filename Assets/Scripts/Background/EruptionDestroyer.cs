@@ -4,7 +4,7 @@ namespace Main.Background
 {
     public class EruptionDestroyer : MonoBehaviour
     {
-        public void DestroyEruption() =>
-            Destroy(gameObject);
+        public void DisableEruption() =>
+            gameObject.SetActive(false);
     }
 }

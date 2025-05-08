@@ -30,11 +30,11 @@ public class PlayerTouchInput : PlayerInput
 
             if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
-                float deltaX = touchWorldPos.x - playerTransform.position.x;
+                float deltaX = touchWorldPos.x - transform.position.x;
 
-                if (Mathf.Abs(deltaX) > deadZoneX)
+                if (Mathf.Abs(deltaX) > _deadZoneX)
                 {
-                    playerInput.HorizontalInput = deltaX < 0 ? -1f : 1f;
+                    HorizontalInput = deltaX < 0 ? -1f : 1f;
                 }
             }
         }

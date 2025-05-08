@@ -5,8 +5,7 @@ namespace Main.Background
 {
     public class Eruption : MonoBehaviour
     {
-        [SerializeField] private GameObject eruptionPrefab;
-        [SerializeField] private Transform eruptionPosition;
+        [SerializeField] private Animator _eruption;
 
         [SerializeField] private float minTimeEruption = 5;
         [SerializeField] private float maxTimeEruption = 10;
@@ -16,8 +15,14 @@ namespace Main.Background
             while (true)
             {
                 yield return new WaitForSeconds(Random.Range(minTimeEruption, maxTimeEruption));
-                Instantiate(eruptionPrefab, eruptionPosition.position, Quaternion.identity, transform);
+                PlayEruptionAnimation();
             }
+        }
+
+        private void PlayEruptionAnimation()
+        {
+            _eruption.gameObject.SetActive(true);
+            _eruption.Play("LavaAnimation");
         }
     }
 }
