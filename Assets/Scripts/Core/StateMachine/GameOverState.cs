@@ -3,6 +3,7 @@ using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.PlayerData;
 using PiggyBank;
+using Spawners;
 using UI;
 using UnityEngine;
 
@@ -36,6 +37,9 @@ namespace Core.StateMachine
 
             _playerDataService.SetNewRecord(_gameFactory.Player.CoinCollector.CoinsToAdd);
             _playerDataService.AddCoins(_gameFactory.Player.CoinCollector.CoinsToAdd);
+
+            var uiPowerup = GameObject.FindObjectOfType<PowerupSpawner>();
+            uiPowerup.DeactivateAllPowerups();
 
             _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();
             _uiGameOver.ReviveButton.onClick.AddListener(ShowRewardedAd);

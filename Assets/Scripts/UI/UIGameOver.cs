@@ -21,6 +21,8 @@ namespace UI
         [Space]
         [SerializeField] private Text _recordText;
         [SerializeField] private Text _coinToAddText;
+        [Space]
+        [SerializeField] private GameObject _uiPowerup;
 
         public Button ReviveButton => _reviveButton;
         public Button RestartButton => _restartButton;
@@ -68,6 +70,7 @@ namespace UI
         {
             SwitchPanels(showRevive);
             Show();
+            _uiPowerup.SetActive(false);
             UpdateUI(record, coinsToAdd);
             if (showRevive)
             {

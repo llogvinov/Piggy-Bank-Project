@@ -2,7 +2,6 @@ using System.Collections;
 using Core;
 using Core.Factory;
 using Data;
-using Main;
 using Timer;
 using UnityEngine;
 
@@ -12,6 +11,8 @@ namespace Spawners
     {
         private IGameFactory _gameFactory;
         private GameTimer _timer;
+
+        private Coroutine _currentPowerupCoroutine;
 
         private void Awake()
         {
@@ -30,6 +31,18 @@ namespace Spawners
             PowerUp.PowerupCollected -= OnPowerupCollected;
         }
 
+        public void DeactivateAllPowerups()
+        {
+            PowerUp.IsDoubleCoinsActive = false;
+            PowerUp.IsShieldActive = false;
+            PowerUp.IsSuperSpeedActive = false;
+
+            if (_currentPowerupCoroutine != null)
+            {
+                StopCoroutine(_currentPowerupCoroutine);
+            }
+        }
+
         private void SetTimer(float duration)
         {
             _timer.SetTimer(duration);
@@ -40,13 +53,16 @@ namespace Spawners
             switch (args.index)
             {
                 case 0:
-                    StartCoroutine(DoubleCoinsPowerup(GameConstants.DOUBLE_COINS_POWERUP_TIMER));
+                    _currentPowerupCoroutine = 
+                        StartCoroutine(DoubleCoinsPowerup(GameConstants.DOUBLE_COINS_POWERUP_TIMER));
                     break;
                 case 1:
-                    StartCoroutine(ShieldPowerUp(GameConstants.SHIELD_POWERUP_TIMER));
+                    _currentPowerupCoroutine = 
+                        StartCoroutine(ShieldPowerUp(GameConstants.SHIELD_POWERUP_TIMER));
                     break;
                 case 2:
-                    StartCoroutine(SuperSpeedPowerUp(GameConstants.SPEED_POWERUP_TIMER));
+                    _currentPowerupCoroutine = 
+                        StartCoroutine(SuperSpeedPowerUp(GameConstants.SPEED_POWERUP_TIMER));
                     break;
                 case 3:
                     StartCoroutine(HeartPowerUp());

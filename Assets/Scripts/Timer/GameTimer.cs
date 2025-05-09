@@ -5,7 +5,7 @@ namespace Timer
 {
     public class GameTimer : MonoBehaviour
     {
-        public event Action TimerCompleted;
+        public event Action TimerSet, TimerCompleted;
 
         public float TimeRemaining { get; private set; }
         public bool IsRunning { get; private set; } = false;
@@ -17,6 +17,7 @@ namespace Timer
             _duration = duration;
             TimeRemaining = _duration;
             IsRunning = true;
+            TimerSet?.Invoke();
         }
 
         public void UnPauseTimer() => 
