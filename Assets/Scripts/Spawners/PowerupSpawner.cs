@@ -1,4 +1,6 @@
 using System.Collections;
+using Core;
+using Core.Factory;
 using Data;
 using Main;
 using Timer;
@@ -8,10 +10,12 @@ namespace Spawners
 {
     public class PowerupSpawner : PooledObjectSpawner
     {
+        private IGameFactory _gameFactory;
         private GameTimer _timer;
 
         private void Awake()
         {
+            _gameFactory = AllServices.Container.Single<IGameFactory>();
             _timer = GameObject.FindObjectOfType<GameTimer>();
         }
 
@@ -85,7 +89,7 @@ namespace Spawners
 
         private IEnumerator HeartPowerUp()
         {
-            FindObjectOfType<PlayerHealth>().AddHeart();
+            _gameFactory.Player.Health.AddHeart();
 
             yield return new WaitForSeconds(2);
 

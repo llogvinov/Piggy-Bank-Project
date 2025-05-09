@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPoolSize: 20
-  _maxPoolSize: 30
+  _initPoolSize: 10
+  _maxPoolSize: 20
   _objectToPool: {fileID: 6358881181566367854, guid: b5128baa06e74d447b206f65f7ebdac4, type: 3}
 --- !u!1 &57707380
 GameObject:
@@ -584,8 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPoolSize: 40
-  _maxPoolSize: 60
+  _initPoolSize: 30
+  _maxPoolSize: 40
   _objectToPool: {fileID: -3467716800180410317, guid: 441f21dc2c9565245bd40f1855c275f3, type: 3}
 --- !u!4 &271055518 stripped
 Transform:
@@ -862,8 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPoolSize: 20
-  _maxPoolSize: 30
+  _initPoolSize: 10
+  _maxPoolSize: 20
   _objectToPool: {fileID: 6212240536211174756, guid: f1852f45c0ef2d441aa53080c8a73d1c, type: 3}
 --- !u!114 &560015149
 MonoBehaviour:
@@ -1840,6 +1840,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1128226602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1128226603}
+  - component: {fileID: 1128226605}
+  - component: {fileID: 1128226604}
+  m_Layer: 0
+  m_Name: Diamond Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1128226603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128226602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1399716015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128226604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128226602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043d7435f3ddfee44a60099e08633c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 1128226605}
+  spawnBounds: 2.6
+  startTimeSpawn: 5
+  minTimeSpawn: 3
+  maxTimeSpawn: 6
+  scaleTime: 15
+  gravityScale: 1.1
+--- !u!114 &1128226605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128226602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initPoolSize: 5
+  _maxPoolSize: 10
+  _objectToPool: {fileID: 6358881181566367854, guid: 56a64db822c766d47bcec34604177202, type: 3}
 --- !u!1 &1147435431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,8 +2183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPoolSize: 20
-  _maxPoolSize: 30
+  _initPoolSize: 15
+  _maxPoolSize: 25
   _objectToPool: {fileID: 5779594391464229569, guid: e9cd9aadce15e424d87472ac36c26cd7, type: 3}
 --- !u!114 &1172270615
 MonoBehaviour:
@@ -2841,8 +2908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec50870bccac704d8222858d8f18d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPoolSize: 20
-  _maxPoolSize: 30
+  _initPoolSize: 10
+  _maxPoolSize: 20
   _objectToPool: {fileID: 7355172691386520620, guid: cee5b1aa14874ae4098e03b27c74fcfd, type: 3}
 --- !u!114 &1377568698
 MonoBehaviour:
@@ -2897,6 +2964,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 40166178}
+  - {fileID: 1128226603}
   - {fileID: 402533495}
   - {fileID: 1377568695}
   - {fileID: 560015146}
