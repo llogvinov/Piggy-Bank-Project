@@ -39,7 +39,7 @@ MonoBehaviour:
     RU: "\u041C\u0443\u0448\u0443"
     EN: Mushu
   - Id: ski_glasses
-    RU: "\u0413\u043E\u0440\u043D\u043E\u043B\u044B\u0436\u043D\u044B\u0435 \u043E\u0447\u043A\u0438"
+    RU: "\u0417\u0438\u043C\u043D\u0438\u0435 \u043E\u0447\u043A\u0438"
     EN: Ski glasses
   - Id: moustache
     RU: "\u0423\u0441\u044B"
