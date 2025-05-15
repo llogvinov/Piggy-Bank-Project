@@ -17,12 +17,24 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 	[Space(20f)]
 	[SerializeField] private Button itemButton;
 	[SerializeField] private Image itemImage;
+	
+	private Mask _mask;
+	public Mask Mask => _mask;
 
-	public void SetItemPosition(Vector2 pos) => GetComponent<RectTransform>().anchoredPosition += pos;
-
-	public void SetMaskImage(Sprite sprite) => maskImage.sprite = sprite;
-
-	public void SetMaskImageOpacity() => maskImage.color = new Color(0f, 0f, 0f, 0f);
+	public void Initialize(Mask mask)
+	{
+		_mask = mask;
+		SetMaskName(mask.LocalizationId);
+		SetMaskPrice(mask.Price);
+		if (mask.Image != null)
+		{
+			SetMaskImage(mask.Image);
+		}
+		else
+		{
+			SetMaskImageOpacity();
+		}
+	}
 
 	public void SetMaskName(string name)
     {
@@ -30,7 +42,14 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 		localizedText.UpdateText();
     }
 
-	public void SetMaskPrice(int price) => maskPriceText.text = price.ToString();
+	public void SetMaskPrice(int price) => 
+		maskPriceText.text = price.ToString();
+
+	public void SetMaskImage(Sprite sprite) => 
+		maskImage.sprite = sprite;
+
+	public void SetMaskImageOpacity() => 
+		maskImage.color = new Color(0f, 0f, 0f, 0f);
 
 	public void SetItemAsPurchased()
 	{
@@ -38,6 +57,11 @@ public class MaskItemUI : MonoBehaviour, IItemUI
 		itemButton.interactable = true;
 
 		itemImage.color = itemNotSelectedColor;
+	}
+
+	public void SetItemAsNotPurchased()
+	{
+		
 	}
 
 	public void OnItemPurchase(int itemIndex, UnityAction<int> action)

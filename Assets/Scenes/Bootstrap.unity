@@ -247,7 +247,7 @@ MonoBehaviour:
   _localizationData: {fileID: 11400000, guid: 79d5f666d081d4f4f86999da3e89031c, type: 2}
   _locationShopDatabase: {fileID: 11400000, guid: 652e0a66273d9c64d8367a5de6ae0eca, type: 2}
   _hatShopDatabase: {fileID: 11400000, guid: b07fc6e0173960446a6a4a0a2f7a111f, type: 2}
-  _maskShopDatabase: {fileID: 11400000, guid: 0dfd4f46246111d46afc07f1cb2a6642, type: 2}
+  _maskShopDatabase: {fileID: 11400000, guid: b064df0bea8b2b64687b6c5eb465fc4f, type: 2}
 --- !u!1 &2053326044
 GameObject:
   m_ObjectHideFlags: 0

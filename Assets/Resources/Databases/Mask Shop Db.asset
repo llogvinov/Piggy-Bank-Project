@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade749fb3f77fae42957cea6e5c1946a, type: 3}
+  m_Name: Mask Shop Db
+  m_EditorClassIdentifier: 
+  _csvFile: {fileID: 4900000, guid: 0db895cdeeb4a834e8199c5d23a79aef, type: 3}
+  _masks:
+  - Image: {fileID: 0}
+    Id: 0
+    LocalizationId: none
+    Price: 0
+  - Image: {fileID: -1305136516854534094, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    Id: 1
+    LocalizationId: medicine_mask
+    Price: 49
+  - Image: {fileID: -7579279525607880232, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    Id: 2
+    LocalizationId: sun_glasses
+    Price: 190
+  - Image: {fileID: 729472806332753468, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    Id: 3
+    LocalizationId: clown_nose
+    Price: 190
+  - Image: {fileID: -6734069999539912144, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    Id: 4
+    LocalizationId: glasses
+    Price: 390
+  - Image: {fileID: 3145209889390319254, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    Id: 5
+    LocalizationId: tears
+    Price: 390
+  - Image: {fileID: -6488760723007481649, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    Id: 6
+    LocalizationId: eye_patch
+    Price: 590
+  - Image: {fileID: 3713756627450362764, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    Id: 7
+    LocalizationId: mushu
+    Price: 590
+  - Image: {fileID: 6020975001740733914, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    Id: 8
+    LocalizationId: ski_glasses
+    Price: 990
+  - Image: {fileID: -4001211420894096464, guid: 459fd91529d98e045829d62a9c28f148, type: 3}
+    Id: 9
+    LocalizationId: moustache
+    Price: 990
+  - Image: {fileID: -7018918851948514271, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    Id: 10
+    LocalizationId: black_ski_mask
+    Price: 1190
+  - Image: {fileID: 4854062428613024586, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    Id: 11
+    LocalizationId: white_ski_mask
+    Price: 1190
+  - Image: {fileID: -1922656819982350359, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    Id: 12
+    LocalizationId: joker
+    Price: 1190
+  - Image: {fileID: -824625527999740549, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    Id: 13
+    LocalizationId: hockey_mask
+    Price: 1490
+  - Image: {fileID: 6044197273956387778, guid: 3a01678c0efb04e4fbcf35839442be6f, type: 3}
+    Id: 14
+    LocalizationId: ghoul_mask
+    Price: 1490
+  - Image: {fileID: -1925337650781593062, guid: cb1fe895cd7ac3e438e5c1977807753a, type: 3}
+    Id: 15
+    LocalizationId: blind_glasses
+    Price: 1990
+  - Image: {fileID: 3045495363885205721, guid: 55d3302ddbc30ed43a7606b679cf9125, type: 3}
+    Id: 16
+    LocalizationId: sage_glasses
+    Price: 1990

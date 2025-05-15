@@ -7,7 +7,7 @@
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 11,
     "SelectedHatId": 8,
-    "SelectedMaskId": 0,
+    "SelectedMaskId": 1,
     "SelectedLocationId": 0,
     "PurchasedHatsIds": [
         0,
@@ -31,12 +31,12 @@
         "Price": 1190
     },
     "SelectedMask": {
-        "image": {
-            "instanceID": 0
+        "Image": {
+            "instanceID": 24166
         },
-        "name": "none",
-        "price": 0,
-        "isPurchased": true
+        "Id": 1,
+        "LocalizationId": "medicine_mask",
+        "Price": 49
     },
     "SelectedLocation": {
         "name": "mountain",

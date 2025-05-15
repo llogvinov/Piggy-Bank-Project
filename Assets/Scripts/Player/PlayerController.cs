@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         Mask mask = _playerDataService.GetSelectedMask();
 
         hatImage.sprite = hat.Image;
-        maskImage.sprite = mask.image;
+        maskImage.sprite = mask.Image;
     }
 
     private void FixedUpdate()

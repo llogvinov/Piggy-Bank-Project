@@ -673,10 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd4b8329d9a76348bc10b501893246d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopItemsContainer: {fileID: 9160881708544799283}
-  itemPrefab: {fileID: 1010765826461148074, guid: 3cd6f23f97b522f4ca340408164604ce, type: 3}
-  maskDB: {fileID: 11400000, guid: 0dfd4f46246111d46afc07f1cb2a6642, type: 2}
-  mainMenuMaskImage: {fileID: 0}
+  _container: {fileID: 9160881708544799283}
+  _uiItemPrefab: {fileID: 5757097024087626463, guid: 3cd6f23f97b522f4ca340408164604ce, type: 3}
+  _maskDB: {fileID: 11400000, guid: b064df0bea8b2b64687b6c5eb465fc4f, type: 2}
 --- !u!114 &2318720833529642154
 MonoBehaviour:
   m_ObjectHideFlags: 0

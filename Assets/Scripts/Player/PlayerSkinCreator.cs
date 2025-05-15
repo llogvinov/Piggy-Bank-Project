@@ -30,7 +30,7 @@ namespace Main
         public void SetMask()
         {
             var mask = _playerDataService.GetSelectedMask();
-            _mask.sprite = mask.image;
+            _mask.sprite = mask.Image;
         }
 
         public void SetHat()

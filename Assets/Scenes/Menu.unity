@@ -5977,10 +5977,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Skins Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 8989126989958001890, guid: dd63feae290c3e0489c59973603e72e7, type: 3}
-      propertyPath: mainMenuMaskImage
-      value: 
-      objectReference: {fileID: 140971820}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

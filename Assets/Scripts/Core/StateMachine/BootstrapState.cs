@@ -114,8 +114,9 @@ namespace Core.StateMachine
 
         public void SetSelectedMask()
         {
-            int index = _playerDataService.GetSelectedMaskIndex();
-            _playerDataService.SetSelectedMask(_maskShopDatabase.GetMask(index), index);
+            int maskId = _playerDataService.GetSelectedMaskIndex();
+            var mask = _maskShopDatabase.GetMaskById(maskId);
+            _playerDataService.SetSelectedMask(mask, maskId);
         }
     }
 }

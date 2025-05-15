@@ -3,11 +3,9 @@
 [System.Serializable]
 public class Mask
 {
-    public Sprite image;
-    public string name;
-    public int price;
-
-    public bool isPurchased;
-
+    public Sprite Image;
+    public int Id;
+    public string LocalizationId;
+    public int Price;
 }
 

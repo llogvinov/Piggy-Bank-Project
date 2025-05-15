@@ -41,7 +41,6 @@ namespace UI
             {
                 var hat = _hatDB.SortedHats[i];
                 var uiItem = Instantiate(_uiItemPrefab, _container);
-                Debug.Log("instantiated");
                 _uiHatDict.Add(hat, uiItem);
                 uiItem.gameObject.name = $"Item {i} {hat.LocalizationId}";
                 uiItem.Initialize(hat);

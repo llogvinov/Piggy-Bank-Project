@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Core;
 using Core.Services.PlayerData;
+using Main;
 using UnityEngine;
 
 namespace UI
@@ -10,17 +12,17 @@ namespace UI
         public event Action UIGenerated;
 
         [Header("UI Elements")]
-        [SerializeField] private Transform ShopItemsContainer;
-        [SerializeField] private GameObject itemPrefab;
+        [SerializeField] private Transform _container;
+        [SerializeField] private MaskItemUI _uiItemPrefab;
         [Space(20f)]
-        [SerializeField] private MaskShopDatabase maskDB;
+        [SerializeField] private MaskShopDatabase _maskDB;
 
-        [Header("Main Menu")]
-        [SerializeField] private SpriteRenderer mainMenuMaskImage;
-
-        private int newSelectedMaskIndex;
-        private int previousSelectedMaskIndex;
+        private MaskItemUI _currentSelectedItem;
         private IPlayerDataService _playerDataService;
+        private Dictionary<Mask, MaskItemUI> _uiMaskDict;
+
+        private PlayerSkinCreator _skinCreator;
+        private PlayerSkinCreator SkinCreator => _skinCreator ?? (_skinCreator = FindObjectOfType<PlayerSkinCreator>());
 
         private void Awake()
         {
@@ -30,93 +32,95 @@ namespace UI
         private void Start()
         {
             GenerateShopItemUI();
-            SelectItemUI(_playerDataService.GetSelectedMaskIndex());
-            //ChangeItemSkin();
         }
 
         public void GenerateShopItemUI()
         {
-            for (int i = 0; i < _playerDataService.GetAllPurchasedMasks().Count; i++)
+            _uiMaskDict = new Dictionary<Mask, MaskItemUI>();
+            for (int i = 0; i < _maskDB.SortedMasks.Count; i++)
             {
-                int purchaseCharacterIndex = _playerDataService.GetPurchasedMask(i);
-                maskDB.PurchaseMask(purchaseCharacterIndex);
-            }
+                var mask = _maskDB.SortedMasks[i];
+                var uiItem = Instantiate(_uiItemPrefab, _container);
+                _uiMaskDict.Add(mask, uiItem);
+                uiItem.gameObject.name = $"Item {i} {mask.LocalizationId}";
+                uiItem.Initialize(mask);
 
-            for (int i = 0; i < maskDB.MasksCount; i++)
-            {
-                Mask mask = maskDB.GetMask(i);
-                MaskItemUI uiItem = Instantiate(itemPrefab, ShopItemsContainer).GetComponent<MaskItemUI>();
-
-                uiItem.gameObject.name = "Item" + i + "-" + mask.name;
-
-                uiItem.SetMaskName(mask.name);
-                uiItem.SetMaskImage(mask.image);
-                uiItem.SetMaskPrice(mask.price);
-
-                if (i == 0)
-                {
-                    uiItem.SetMaskImageOpacity();
-                }
-
-                if (mask.isPurchased)
+                if (_playerDataService.PlayerData.PurchasedMasksIds.Contains(mask.Id))
                 {
                     uiItem.SetItemAsPurchased();
-                    uiItem.OnItemSelect(i, OnItemSelected);
+                    uiItem.OnItemSelect(mask.Id, OnItemSelected);
                 }
                 else
                 {
-                    uiItem.SetMaskPrice(mask.price);
-                    uiItem.OnItemPurchase(i, OnItemPurchased);
+                    uiItem.SetItemAsNotPurchased();
+                    uiItem.OnItemPurchase(mask.Id, OnItemPurchased);
+                }
+
+                if (_playerDataService.PlayerData.SelectedMaskId == mask.Id)
+                {
+                    SelectItemUI(mask.Id);
                 }
             }
 
             UIGenerated?.Invoke();
         }
 
-        public void ChangeItemSkin()
-        {
-            Mask mask = _playerDataService.GetSelectedMask();
-            mainMenuMaskImage.sprite = mask.image;
-        }
+        public void ChangeItemSkin() => 
+            SkinCreator.SetMask();
 
-        public void OnItemSelected(int index)
+        public void OnItemSelected(int maskId)
         {
-            SelectItemUI(index);
-            _playerDataService.SetSelectedMask(maskDB.GetMask(index), index);
+            var mask = _maskDB.GetMaskById(maskId);
+            _playerDataService.SetSelectedMask(mask, mask.Id);
+            SelectItemUI(maskId);
             ChangeItemSkin();
         }
 
-        public void SelectItemUI(int itemIndex)
+        public void SelectItemUI(int maskId)
         {
-            previousSelectedMaskIndex = newSelectedMaskIndex;
-            newSelectedMaskIndex = itemIndex;
+            if (_currentSelectedItem != null)
+            {
+                _currentSelectedItem.DeselectItem();
+            }
 
-            MaskItemUI previousUiItem = GetItemUI(previousSelectedMaskIndex);
-            MaskItemUI newUiItem = GetItemUI(newSelectedMaskIndex);
-
-            previousUiItem.DeselectItem();
-            newUiItem.SelectItem();
+            var maskItemUI = GetMaskItemUI(maskId);
+            if (maskItemUI != null)
+            {
+                _currentSelectedItem = maskItemUI;
+                maskItemUI.SelectItem();
+            }
         }
 
-        private MaskItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<MaskItemUI>();
-
-        public void OnItemPurchased(int index)
+        public void OnItemPurchased(int maskId)
         {
-            Mask mask = maskDB.GetMask(index);
-            MaskItemUI maskUIItem = GetItemUI(index);
+            var mask = _maskDB.GetMaskById(maskId);
+            var maskItemUI = GetMaskItemUI(maskId);
 
-            if (_playerDataService.CanSpendCoins(mask.price))
+            if (_playerDataService.CanSpendCoins(mask.Price))
             {
-                _playerDataService.SpendCoins(mask.price);
-                maskDB.PurchaseMask(index);
-                maskUIItem.SetItemAsPurchased();
-                maskUIItem.OnItemSelect(index, OnItemSelected);
-                _playerDataService.AddPurchasedMask(index);
+                _playerDataService.SpendCoins(mask.Price);
+                _playerDataService.AddPurchasedMask(maskId);
+                maskItemUI.SetItemAsPurchased();
+                maskItemUI.OnItemSelect(maskId, OnItemSelected);
             }
             else
             {
                 Debug.Log("Not Enough Coins!");
             }
+        }
+
+        public MaskItemUI GetMaskItemUI(int maskId)
+        {
+            var mask = _maskDB.GetMaskById(maskId);
+            var uiItem = _uiMaskDict[mask];
+            return uiItem;
+        }
+
+        public int GetElementChildIndex(int maskId)
+        {
+            var mask = _maskDB.GetMaskById(maskId);
+            var uiItem = _uiMaskDict[mask];
+            return uiItem.transform.GetSiblingIndex();
         }
     }
 }

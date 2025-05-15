@@ -1,6 +1,6 @@
-localization_id,price
-mountain,0
-moscow,2490
-desert,4490
-japan,6490
-moon,8490
+id,localization_id,price
+0,mountain,0
+1,moscow,2490
+2,desert,4490
+3,japan,6490
+4,moon,8490

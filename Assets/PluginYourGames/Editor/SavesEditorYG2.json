@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 559,
+    "idSave": 564,
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
@@ -36,12 +36,12 @@
         "Price": 0
     },
     "SelectedMask": {
-        "image": {
+        "Image": {
             "instanceID": 0
         },
-        "name": "",
-        "price": 0,
-        "isPurchased": false
+        "Id": 0,
+        "LocalizationId": "",
+        "Price": 0
     },
     "SelectedLocation": {
         "name": "",

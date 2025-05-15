@@ -105,6 +105,7 @@ namespace UI
         {
             if (elementPositions == null) return;
 
+            var elementChildIndex = 0;
             var _playerDataService = AllServices.Container.Single<IPlayerDataService>();
             switch (_itemShopUI)
             {
@@ -112,11 +113,12 @@ namespace UI
                     SnapToElement(_playerDataService.GetSelectedLocationIndex());
                     break;
                 case UIHatShop hatShop:
-                    var elementChildIndex = hatShop.GetElementChildIndex(_playerDataService.GetSelectedHatIndex());
+                    elementChildIndex = hatShop.GetElementChildIndex(_playerDataService.GetSelectedHatIndex());
                     SnapToElement(elementChildIndex);
                     break;
                 case UIMaskShop maskShop:
-                    SnapToElement(_playerDataService.GetSelectedMaskIndex());
+                    elementChildIndex = maskShop.GetElementChildIndex(_playerDataService.GetSelectedMaskIndex());
+                    SnapToElement(elementChildIndex);
                     break;
                 default:
                     SnapToElement(0);
