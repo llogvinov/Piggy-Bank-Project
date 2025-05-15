@@ -18,19 +18,38 @@ public class HatItemUI : MonoBehaviour, IItemUI
 	[SerializeField] private Button itemButton;
 	[SerializeField] private Image itemImage;
 
-	public void SetItemPosition(Vector2 pos) => GetComponent<RectTransform>().anchoredPosition += pos;
+	private Hat _hat;
+	public Hat Hat => _hat;
 
-	public void SetHatImage(Sprite sprite) => hatImage.sprite = sprite;
+	public void Initialize(Hat hat)
+	{
+		_hat = hat;
+		SetHatName(hat.LocalizationId);
+		SetHatPrice(hat.Price);
+		if (hat.Image != null)
+		{
+			SetHatImage(hat.Image);
+		}
+		else
+		{
+			SetHatImageOpacity();
+		}
+	}
 
-	public void SetHatImageOpacity() => hatImage.color = new Color(0f, 0f, 0f, 0f);
-
-    public void SetHatName(string name)
+    public void SetHatName(string localizationId)
     {
-        localizedText.SetId(name);
+        localizedText.SetId(localizationId);
 		localizedText.UpdateText();
     }
 
-    public void SetHatPrice(int price) => hatPriceText.text = price.ToString();
+    public void SetHatPrice(int price) => 
+		hatPriceText.text = price.ToString();
+
+	public void SetHatImage(Sprite sprite) => 
+		hatImage.sprite = sprite;
+
+	public void SetHatImageOpacity() => 
+		hatImage.color = new Color(0f, 0f, 0f, 0f);
 
 	public void SetItemAsPurchased()
 	{
@@ -38,6 +57,11 @@ public class HatItemUI : MonoBehaviour, IItemUI
 		itemButton.interactable = true;
 
 		itemImage.color = itemNotSelectedColor;
+	}
+
+	public void SetItemAsNotPurchased()
+	{
+		
 	}
 
 	public void OnItemPurchase(int itemIndex, UnityAction<int> action)
@@ -65,5 +89,4 @@ public class HatItemUI : MonoBehaviour, IItemUI
 		itemImage.color = itemNotSelectedColor;
 		itemButton.interactable = true;
 	}
-
 }

@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         Hat hat = _playerDataService.GetSelectedHat();
         Mask mask = _playerDataService.GetSelectedMask();
 
-        hatImage.sprite = hat.image;
+        hatImage.sprite = hat.Image;
         maskImage.sprite = mask.image;
     }
 

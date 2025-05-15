@@ -112,7 +112,8 @@ namespace UI
                     SnapToElement(_playerDataService.GetSelectedLocationIndex());
                     break;
                 case UIHatShop hatShop:
-                    SnapToElement(_playerDataService.GetSelectedHatIndex());
+                    var elementChildIndex = hatShop.GetElementChildIndex(_playerDataService.GetSelectedHatIndex());
+                    SnapToElement(elementChildIndex);
                     break;
                 case UIMaskShop maskShop:
                     SnapToElement(_playerDataService.GetSelectedMaskIndex());

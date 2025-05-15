@@ -17,9 +17,9 @@ namespace Core.Services.PlayerData
         public int SelectedMaskId = 0;
         public int SelectedLocationId = 0;
 
-        public List<int> PurchasedHatsIds = new List<int>();
-        public List<int> PurchasedMasksIds = new List<int>();
-        public List<int> PurchasedLocationsIds = new List<int>();
+        public List<int> PurchasedHatsIds = new List<int>() { 0 };
+        public List<int> PurchasedMasksIds = new List<int>() { 0 };
+        public List<int> PurchasedLocationsIds = new List<int>() { 0 };
 
         public Hat SelectedHat = new Hat();
         public Mask SelectedMask = new Mask();
@@ -43,9 +43,9 @@ namespace YG
         public int SelectedMaskId = 0;
         public int SelectedLocationId = 0;
 
-        public List<int> PurchasedHatsIds = new List<int>();
-        public List<int> PurchasedMasksIds = new List<int>();
-        public List<int> PurchasedLocationsIds = new List<int>();
+        public List<int> PurchasedHatsIds = new List<int>() { 0 };
+        public List<int> PurchasedMasksIds = new List<int>() { 0 };
+        public List<int> PurchasedLocationsIds = new List<int>() { 0 };
 
         public Hat SelectedHat = new Hat();
         public Mask SelectedMask = new Mask();

@@ -493,10 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d182313d38b6dc04aa78b9bc4522d8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopItemsContainer: {fileID: 8143227132843955070}
-  itemPrefab: {fileID: 1918903520647590844, guid: 71bc0b894f98e8d4a895be4ef24f01d8, type: 3}
-  hatDB: {fileID: 11400000, guid: fc2fed3983d2c594e98ed261d2cdb568, type: 2}
-  mainMenuHatImage: {fileID: 0}
+  _container: {fileID: 8143227132843955070}
+  _uiItemPrefab: {fileID: 486315473157316245, guid: 71bc0b894f98e8d4a895be4ef24f01d8, type: 3}
+  _hatDB: {fileID: 11400000, guid: b07fc6e0173960446a6a4a0a2f7a111f, type: 2}
 --- !u!114 &6133917740475322225
 MonoBehaviour:
   m_ObjectHideFlags: 0

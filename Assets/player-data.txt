@@ -1,24 +1,34 @@
 {
     "Music": false,
-    "Sound": false,
+    "Sound": true,
     "RemovedAds": false,
-    "Coins": 0,
+    "Coins": 392,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "NormalModeRecord": 0,
-    "SelectedHatId": 0,
+    "NormalModeRecord": 11,
+    "SelectedHatId": 8,
     "SelectedMaskId": 0,
     "SelectedLocationId": 0,
-    "PurchasedHatsIds": [],
-    "PurchasedMasksIds": [],
-    "PurchasedLocationsIds": [],
+    "PurchasedHatsIds": [
+        0,
+        6,
+        8
+    ],
+    "PurchasedMasksIds": [
+        0,
+        4,
+        1
+    ],
+    "PurchasedLocationsIds": [
+        0
+    ],
     "SelectedHat": {
-        "image": {
-            "instanceID": 0
+        "Image": {
+            "instanceID": 25260
         },
-        "name": "none",
-        "price": 0,
-        "isPurchased": true
+        "Id": 8,
+        "LocalizationId": "red_knit_hat",
+        "Price": 1190
     },
     "SelectedMask": {
         "image": {
@@ -31,32 +41,49 @@
     "SelectedLocation": {
         "name": "mountain",
         "sky": {
-            "instanceID": 24370
+            "instanceID": 24070
         },
         "ground": {
-            "instanceID": 24360
+            "instanceID": 24072
         },
         "trees": {
-            "instanceID": 24350
+            "instanceID": 24074
         },
         "mountain": {
-            "instanceID": 24372
+            "instanceID": 24076
         },
         "clouds": [
             {
-                "instanceID": 24340
+                "instanceID": 24078
             },
             {
-                "instanceID": 24342
+                "instanceID": 24080
             },
             {
-                "instanceID": 24344
+                "instanceID": 24082
             },
             {
-                "instanceID": 24346
+                "instanceID": 24084
             },
             {
-                "instanceID": 24348
+                "instanceID": 24086
+            }
+        ],
+        "cloudList": [
+            {
+                "instanceID": 24088
+            },
+            {
+                "instanceID": 24090
+            },
+            {
+                "instanceID": 24092
+            },
+            {
+                "instanceID": 24094
+            },
+            {
+                "instanceID": 24096
             }
         ],
         "price": 0,

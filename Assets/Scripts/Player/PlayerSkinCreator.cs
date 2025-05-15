@@ -8,7 +8,7 @@ namespace Main
     {
         [SerializeField] private SpriteRenderer _hat;
         [SerializeField] private SpriteRenderer _mask;
-        
+
         private IPlayerDataService _playerDataService;
 
         private void Awake()
@@ -36,7 +36,7 @@ namespace Main
         public void SetHat()
         {
             var hat = _playerDataService.GetSelectedHat();
-            _hat.sprite = hat.image;
+            _hat.sprite = hat.Image;
         }
     }
 }

@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Core;
 using Core.Services.PlayerData;
+using Main;
 using UnityEngine;
 
 namespace UI
@@ -8,19 +10,19 @@ namespace UI
     public class UIHatShop : MonoBehaviour, IItemShopUI
     {
         public event Action UIGenerated;
-        
+
         [Header("UI Elements")]
-        [SerializeField] private Transform ShopItemsContainer;
-        [SerializeField] private GameObject itemPrefab;
+        [SerializeField] private Transform _container;
+        [SerializeField] private HatItemUI _uiItemPrefab;
         [Space(20f)]
-        [SerializeField] private HatShopDatabase hatDB;
+        [SerializeField] private HatShopDatabase _hatDB;
 
-        [Header("Main Menu")]
-        [SerializeField] private SpriteRenderer mainMenuHatImage;
-
-        private int newSelectedHatIndex;
-        private int previousSelectedHatIndex;
+        private HatItemUI _currentSelectedItem;
         private IPlayerDataService _playerDataService;
+        private Dictionary<Hat, HatItemUI> _uiHatDict;
+
+        private PlayerSkinCreator _skinCreator;
+        private PlayerSkinCreator SkinCreator => _skinCreator ?? (_skinCreator = FindObjectOfType<PlayerSkinCreator>());
 
         private void Awake()
         {
@@ -30,96 +32,96 @@ namespace UI
         private void Start()
         {
             GenerateShopItemUI();
-            SelectItemUI(_playerDataService.GetSelectedHatIndex());
-            //ChangeItemSkin();
         }
 
         public void GenerateShopItemUI()
         {
-            for (int i = 0; i < _playerDataService.GetAllPurchasedHats().Count; i++)
+            _uiHatDict = new Dictionary<Hat, HatItemUI>();
+            for (int i = 0; i < _hatDB.SortedHats.Count; i++)
             {
-                int purchaseHatId = _playerDataService.GetPurchasedHat(i);
-                hatDB.PurchaseHat(purchaseHatId);
-            }
+                var hat = _hatDB.SortedHats[i];
+                var uiItem = Instantiate(_uiItemPrefab, _container);
+                Debug.Log("instantiated");
+                _uiHatDict.Add(hat, uiItem);
+                uiItem.gameObject.name = $"Item {i} {hat.LocalizationId}";
+                uiItem.Initialize(hat);
 
-            for (int i = 0; i < hatDB.HatsCount; i++)
-            {
-                Hat hat = hatDB.GetHat(i);
-                HatItemUI uiItem = Instantiate(itemPrefab, ShopItemsContainer).GetComponent<HatItemUI>();
-
-                uiItem.gameObject.name = "Item" + i + "-" + hat.name;
-
-                uiItem.SetHatName(hat.name);
-                uiItem.SetHatImage(hat.image);
-                uiItem.SetHatPrice(hat.price);
-
-                if (i == 0)
-                {
-                    uiItem.SetHatImageOpacity();
-                }
-
-                if (hat.isPurchased)
+                if (_playerDataService.PlayerData.PurchasedHatsIds.Contains(hat.Id))
                 {
                     uiItem.SetItemAsPurchased();
-                    uiItem.OnItemSelect(i, OnItemSelected);
+                    uiItem.OnItemSelect(hat.Id, OnItemSelected);
                 }
                 else
                 {
-                    uiItem.SetHatPrice(hat.price);
-                    uiItem.OnItemPurchase(i, OnItemPurchased);
+                    uiItem.SetItemAsNotPurchased();
+                    uiItem.OnItemPurchase(hat.Id, OnItemPurchased);
+                }
+
+                if (_playerDataService.PlayerData.SelectedHatId == hat.Id)
+                {
+                    SelectItemUI(hat.Id);
                 }
             }
 
             UIGenerated?.Invoke();
         }
 
-        public void ChangeItemSkin()
+        public void ChangeItemSkin() => 
+            SkinCreator.SetHat();
+
+        public void OnItemSelected(int hatId)
         {
-            Hat hat = _playerDataService.GetSelectedHat();
-            mainMenuHatImage.sprite = hat.image;
-        }
-
-        public void OnItemSelected(int index)
-        {
-            SelectItemUI(index);
-
-            _playerDataService.SetSelectedHat(hatDB.GetHat(index), index);
-
+            var hat = _hatDB.GetHatById(hatId);
+            _playerDataService.SetSelectedHat(hat, hat.Id);
+            SelectItemUI(hatId);
             ChangeItemSkin();
         }
 
-        public void SelectItemUI(int itemIndex)
+        public void SelectItemUI(int hatId)
         {
-            previousSelectedHatIndex = newSelectedHatIndex;
-            newSelectedHatIndex = itemIndex;
+            if (_currentSelectedItem != null)
+            {
+                _currentSelectedItem.DeselectItem();
+            }
 
-            HatItemUI previousUiItem = GetItemUI(previousSelectedHatIndex);
-            HatItemUI newUiItem = GetItemUI(newSelectedHatIndex);
-
-            previousUiItem.DeselectItem();
-            newUiItem.SelectItem();
+            var hatItemUI = GetHatItemUI(hatId);
+            if (hatItemUI != null)
+            {
+                _currentSelectedItem = hatItemUI;
+                hatItemUI.SelectItem();
+            }
         }
 
-        private HatItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<HatItemUI>();
-
-        public void OnItemPurchased(int index)
+        public void OnItemPurchased(int hatId)
         {
-            Hat hat = hatDB.GetHat(index);
-            HatItemUI hatUIItem = GetItemUI(index);
+            var hat = _hatDB.GetHatById(hatId);
+            var hatItemUI = GetHatItemUI(hatId);
 
-            if (_playerDataService.CanSpendCoins(hat.price))
+            if (_playerDataService.CanSpendCoins(hat.Price))
             {
-                _playerDataService.SpendCoins(hat.price);
-                hatDB.PurchaseHat(index);
-                hatUIItem.SetItemAsPurchased();
-                hatUIItem.OnItemSelect(index, OnItemSelected);
-
-                _playerDataService.AddPurchasedHat(index);
+                _playerDataService.SpendCoins(hat.Price);
+                _playerDataService.AddPurchasedHat(hatId);
+                hatItemUI.SetItemAsPurchased();
+                hatItemUI.OnItemSelect(hatId, OnItemSelected);
             }
             else
             {
                 Debug.Log("Not Enough Coins!");
             }
+        }
+
+        public HatItemUI GetHatItemUI(int hatId)
+        {
+            var hat = _hatDB.GetHatById(hatId);
+            var uiItem = _uiHatDict[hat];
+            return uiItem;
+        }
+
+        public int GetElementChildIndex(int hatId)
+        {
+            var hat = _hatDB.GetHatById(hatId);
+            var uiItem = _uiHatDict[hat];
+            return uiItem.transform.GetSiblingIndex();
         }
     }
 }

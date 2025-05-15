@@ -3,10 +3,8 @@ using UnityEngine;
 [System.Serializable] 
 public class Hat
 {
-    public Sprite image;
-    public string name;
-    public int price;
-
-    public bool isPurchased;
-
+    public Sprite Image;
+    public int Id;
+    public string LocalizationId;
+    public int Price;
 }

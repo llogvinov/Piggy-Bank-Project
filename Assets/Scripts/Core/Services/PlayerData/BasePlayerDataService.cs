@@ -36,10 +36,10 @@ namespace Core.Services.PlayerData
 
         public Location GetSelectedLocation() => PlayerData.SelectedLocation;
 
-        public void SetSelectedHat(Hat hat, int hatIndex)
+        public void SetSelectedHat(Hat hat, int hatId)
         {
             PlayerData.SelectedHat = hat;
-            PlayerData.SelectedHatId = hatIndex;
+            PlayerData.SelectedHatId = hatId;
             Save(PlayerData);
         }
 
@@ -63,7 +63,7 @@ namespace Core.Services.PlayerData
 
         public int GetSelectedLocationIndex() => PlayerData.SelectedLocationId;
 
-        public void SetSelectedHatIndex(int newHatIndex) => PlayerData.SelectedHatId = newHatIndex;
+        public void SetSelectedHatIndex(int hatId) => PlayerData.SelectedHatId = hatId;
 
         public void SetSelectedMaskIndex(int newMaskIndex) => PlayerData.SelectedMaskId = newMaskIndex;
 
@@ -109,15 +109,18 @@ namespace Core.Services.PlayerData
             Save(PlayerData);
         }
 
-        public void AddPurchasedHat(int hatIndex)
+        public void AddPurchasedHat(int hatId)
         {
-            PlayerData.PurchasedHatsIds.Add(hatIndex);
+            if (PlayerData.PurchasedHatsIds.Contains(hatId)) 
+                return;
+
+            PlayerData.PurchasedHatsIds.Add(hatId);
             Save(PlayerData);
         }
 
         public List<int> GetAllPurchasedHats() => PlayerData.PurchasedHatsIds;
 
-        public int GetPurchasedHat(int hatIndex) => PlayerData.PurchasedHatsIds[hatIndex];
+        public int GetPurchasedHat(int hatId) => PlayerData.PurchasedHatsIds[hatId];
 
         public void AddPurchasedMask(int maskIndex)
         {

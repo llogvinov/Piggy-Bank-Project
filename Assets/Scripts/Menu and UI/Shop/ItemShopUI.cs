@@ -4,8 +4,8 @@ public interface IItemShopUI
 {
     event Action UIGenerated;
     void GenerateShopItemUI();
-    void OnItemSelected(int index);
-    void SelectItemUI(int itemIndex);
     void ChangeItemSkin();
-    void OnItemPurchased(int index);
+    void OnItemSelected(int id);
+    void SelectItemUI(int itemId);
+    void OnItemPurchased(int id);
 }

@@ -7,9 +7,9 @@
         false,
         false
     ],
-    "idSave": 514,
-    "Music": false,
-    "Sound": false,
+    "idSave": 559,
+    "Music": true,
+    "Sound": true,
     "RemovedAds": false,
     "Coins": 0,
     "NormalGamesPlayed": 0,
@@ -18,74 +18,48 @@
     "SelectedHatId": 0,
     "SelectedMaskId": 0,
     "SelectedLocationId": 0,
-    "PurchasedHatsIds": [],
-    "PurchasedMasksIds": [],
-    "PurchasedLocationsIds": [],
+    "PurchasedHatsIds": [
+        0
+    ],
+    "PurchasedMasksIds": [
+        0
+    ],
+    "PurchasedLocationsIds": [
+        0
+    ],
     "SelectedHat": {
-        "image": {
+        "Image": {
             "instanceID": 0
         },
-        "name": "none",
-        "price": 0,
-        "isPurchased": true
+        "Id": 0,
+        "LocalizationId": "",
+        "Price": 0
     },
     "SelectedMask": {
         "image": {
             "instanceID": 0
         },
-        "name": "none",
+        "name": "",
         "price": 0,
-        "isPurchased": true
+        "isPurchased": false
     },
     "SelectedLocation": {
-        "name": "mountain",
+        "name": "",
         "sky": {
-            "instanceID": 24062
+            "instanceID": 0
         },
         "ground": {
-            "instanceID": 24064
+            "instanceID": 0
         },
         "trees": {
-            "instanceID": 24066
+            "instanceID": 0
         },
         "mountain": {
-            "instanceID": 24068
+            "instanceID": 0
         },
-        "clouds": [
-            {
-                "instanceID": 24070
-            },
-            {
-                "instanceID": 24072
-            },
-            {
-                "instanceID": 24074
-            },
-            {
-                "instanceID": 24076
-            },
-            {
-                "instanceID": 24078
-            }
-        ],
-        "cloudList": [
-            {
-                "instanceID": 24080
-            },
-            {
-                "instanceID": 24082
-            },
-            {
-                "instanceID": 24084
-            },
-            {
-                "instanceID": 24086
-            },
-            {
-                "instanceID": 24088
-            }
-        ],
+        "clouds": [],
+        "cloudList": [],
         "price": 0,
-        "isPurchased": true
+        "isPurchased": false
     }
 }

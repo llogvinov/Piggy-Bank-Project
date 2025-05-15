@@ -34,7 +34,7 @@ namespace Main
             Hat hat = _playerDataService.GetSelectedHat();
             Mask mask = _playerDataService.GetSelectedMask();
 
-            _hatImage.sprite = hat.image;
+            _hatImage.sprite = hat.Image;
             _maskImage.sprite = mask.image;
         }
 

@@ -79,8 +79,8 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
-            // RegisterLocalDataService();
-            RegisterYandexDataService();
+            RegisterLocalDataService();
+            // RegisterYandexDataService();
 
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_game));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
@@ -107,8 +107,9 @@ namespace Core.StateMachine
 
         public void SetSelectedHat()
         {
-            int index = _playerDataService.GetSelectedHatIndex();
-            _playerDataService.SetSelectedHat(_hatShopDatabase.GetHat(index), index);
+            int hatId = _playerDataService.GetSelectedHatIndex();
+            var hat = _hatShopDatabase.GetHatById(hatId);
+            _playerDataService.SetSelectedHat(hat, hatId);
         }
 
         public void SetSelectedMask()

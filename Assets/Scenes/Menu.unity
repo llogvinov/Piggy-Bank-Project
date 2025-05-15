@@ -5973,10 +5973,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7004073658086697776, guid: dd63feae290c3e0489c59973603e72e7, type: 3}
-      propertyPath: mainMenuHatImage
-      value: 
-      objectReference: {fileID: 1296048313}
     - target: {fileID: 7905622656350054539, guid: dd63feae290c3e0489c59973603e72e7, type: 3}
       propertyPath: m_Name
       value: UI Skins Shop
