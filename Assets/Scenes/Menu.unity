@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 183701177}
   - component: {fileID: 183701176}
   - component: {fileID: 183701175}
+  - component: {fileID: 183701178}
   m_Layer: 5
   m_Name: Add Coins Button
   m_TagString: Untagged
@@ -875,7 +876,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2420203b65644fd438d179822997677f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -891,6 +892,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183701173}
   m_CullTransparentMesh: 1
+--- !u!114 &183701178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183701173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a0c998b5906c649b88faa089c53c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulseSpeed: 3.5
+  _scaleAmount: 1.1
 --- !u!1 &215648004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,6 +3887,7 @@ MonoBehaviour:
   _toHide:
   - {fileID: 1221504826}
   - {fileID: 586799173}
+  - {fileID: 183701173}
 --- !u!114 &1400940753
 MonoBehaviour:
   m_ObjectHideFlags: 0

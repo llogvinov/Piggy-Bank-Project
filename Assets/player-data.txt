@@ -6,7 +6,7 @@
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 11,
-    "SelectedHatId": 6,
+    "SelectedHatId": 8,
     "SelectedMaskId": 1,
     "SelectedLocationId": 3,
     "PurchasedHatsIds": [
@@ -25,11 +25,11 @@
     ],
     "SelectedHat": {
         "Image": {
-            "instanceID": 25256
+            "instanceID": 25260
         },
-        "Id": 6,
-        "LocalizationId": "samurai_hat",
-        "Price": 990
+        "Id": 8,
+        "LocalizationId": "red_knit_hat",
+        "Price": 1190
     },
     "SelectedMask": {
         "Image": {
