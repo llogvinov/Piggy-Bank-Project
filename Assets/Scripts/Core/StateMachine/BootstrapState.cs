@@ -101,8 +101,9 @@ namespace Core.StateMachine
 
         public void SetSelectedLocation()
         {
-            int index = _playerDataService.GetSelectedLocationIndex();
-            _playerDataService.SetSelectedLocation(_locationShopDatabase.GetLocation(index), index);
+            int locationId = _playerDataService.GetSelectedLocationIndex();
+            var location = _locationShopDatabase.GetLocationById(locationId);
+            _playerDataService.SetSelectedLocation(location, locationId);
         }
 
         public void SetSelectedHat()

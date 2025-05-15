@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 564,
+    "idSave": 568,
     "Music": true,
     "Sound": true,
     "RemovedAds": false,
@@ -44,7 +44,9 @@
         "Price": 0
     },
     "SelectedLocation": {
-        "name": "",
+        "Id": 0,
+        "LocalizationId": "",
+        "Price": 0,
         "sky": {
             "instanceID": 0
         },
@@ -57,9 +59,6 @@
         "mountain": {
             "instanceID": 0
         },
-        "clouds": [],
-        "cloudList": [],
-        "price": 0,
-        "isPurchased": false
+        "cloudList": []
     }
 }

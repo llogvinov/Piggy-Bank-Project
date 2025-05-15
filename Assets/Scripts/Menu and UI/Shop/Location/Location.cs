@@ -1,17 +1,14 @@
-using Main.Background;
 using UnityEngine;
 
 [System.Serializable]
 public class Location
 {
-    public string name;
+    public int Id;
+    public string LocalizationId;
+    public int Price;
     public Sprite sky;
     public Sprite ground;
     public Sprite trees;
     public Sprite mountain;
-    public Cloud[] clouds;
     public Sprite[] cloudList;
-    public int price;
-
-    public bool isPurchased;
 }

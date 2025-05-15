@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Core;
 using Core.Services.PlayerData;
 using UnityEngine;
@@ -10,14 +11,14 @@ namespace UI.LocationsShop
         public event Action UIGenerated;
 
         [Header("UI Elements")]
-        [SerializeField] private Transform ShopItemsContainer;
-        [SerializeField] private GameObject itemPrefab;
+        [SerializeField] private Transform _container;
+        [SerializeField] private LocationItemUI _uiItemPrefab;
         [Space(20f)]
-        [SerializeField] private LocationShopDatabase locationDB;
+        [SerializeField] private LocationShopDatabase _locationDB;
 
-        private int newSelectedLocationIndex;
-        private int previousSelectedLocationIndex;
+        private LocationItemUI _currentSelectedItem;
         private IPlayerDataService _playerDataService;
+        private Dictionary<Location, LocationItemUI> _uiLocationDict;
 
         private void Awake()
         {
@@ -27,88 +28,94 @@ namespace UI.LocationsShop
         private void Start()
         {
             GenerateShopItemUI();
-            SelectItemUI(_playerDataService.GetSelectedLocationIndex());
-            ChangeItemSkin();
         }
 
         public void GenerateShopItemUI()
         {
-            for (int i = 0; i < _playerDataService.GetAllPurchasedLocations().Count; i++)
+            _uiLocationDict = new Dictionary<Location, LocationItemUI>();
+            for (int i = 0; i < _locationDB.SortedLocations.Count; i++)
             {
-                int purchaseLocationIndex = _playerDataService.GetPurchasedLocation(i);
-                locationDB.PurchaseLocation(purchaseLocationIndex);
-            }
+                var location = _locationDB.SortedLocations[i];
+                var uiItem = Instantiate(_uiItemPrefab, _container);
+                _uiLocationDict.Add(location, uiItem);
+                uiItem.gameObject.name = $"Item {i} {location.LocalizationId}";
+                uiItem.Initialize(location);
 
-            for (int i = 0; i < locationDB.LocationsCount; i++)
-            {
-                Location location = locationDB.GetLocation(i);
-                LocationItemUI uiItem = Instantiate(itemPrefab, ShopItemsContainer).GetComponent<LocationItemUI>();
-
-                uiItem.gameObject.name = "Item" + i + "-" + location.name;
-
-                uiItem.SetLocationName(location.name);
-                uiItem.SetLocationImages(location.sky, location.ground, location.trees, location.mountain);
-                uiItem.SetLocationPrice(location.price);
-
-                if (location.isPurchased)
+                if (_playerDataService.PlayerData.PurchasedLocationsIds.Contains(location.Id))
                 {
                     uiItem.SetItemAsPurchased();
-                    uiItem.OnItemSelect(i, OnItemSelected);
+                    uiItem.OnItemSelect(location.Id, OnItemSelected);
                 }
                 else
                 {
-                    uiItem.SetLocationPrice(location.price);
-                    uiItem.OnItemPurchase(i, OnItemPurchased);
+                    uiItem.SetItemAsNotPurchased();
+                    uiItem.OnItemPurchase(location.Id, OnItemPurchased);
+                }
+
+                if (_playerDataService.PlayerData.SelectedLocationId == location.Id)
+                {
+                    SelectItemUI(location.Id);
                 }
             }
 
             UIGenerated?.Invoke();
         }
 
-        public void OnItemSelected(int index)
+        public void ChangeItemSkin() { }
+
+        public void OnItemSelected(int locationId)
         {
-            SelectItemUI(index);
-            _playerDataService.SetSelectedLocation(locationDB.GetLocation(index), index);
+            var location = _locationDB.GetLocationById(locationId);
+            _playerDataService.SetSelectedLocation(location, location.Id);
+            SelectItemUI(locationId);
             ChangeItemSkin();
         }
 
-        public void ChangeItemSkin()
+        public void SelectItemUI(int locationId)
         {
-            Location location = _playerDataService.GetSelectedLocation();
-        }
-
-        public void SelectItemUI(int itemIndex)
-        {
-            previousSelectedLocationIndex = newSelectedLocationIndex;
-            newSelectedLocationIndex = itemIndex;
-
-            LocationItemUI previousUiItem = GetItemUI(previousSelectedLocationIndex);
-            LocationItemUI newUiItem = GetItemUI(newSelectedLocationIndex);
-
-            previousUiItem.DeselectItem();
-            newUiItem.SelectItem();
-        }
-
-        private LocationItemUI GetItemUI(int index) => ShopItemsContainer.GetChild(index).GetComponent<LocationItemUI>();
-
-        public void OnItemPurchased(int index)
-        {
-            Location location = locationDB.GetLocation(index);
-            LocationItemUI locationUIItem = GetItemUI(index);
-
-            if (_playerDataService.CanSpendCoins(location.price))
+            if (_currentSelectedItem != null)
             {
-                _playerDataService.SpendCoins(location.price);
-                locationDB.PurchaseLocation(index);
-                locationUIItem.SetItemAsPurchased();
-                locationUIItem.OnItemSelect(index, OnItemSelected);
+                _currentSelectedItem.DeselectItem();
+            }
 
-                _playerDataService.AddPurchasedLocation(index);
+            var locationItemUI = GetLocationItemUI(locationId);
+            if (locationItemUI != null)
+            {
+                _currentSelectedItem = locationItemUI;
+                locationItemUI.SelectItem();
+            }
+        }
+
+        public void OnItemPurchased(int locationId)
+        {
+            var location = _locationDB.GetLocationById(locationId);
+            var locationItemUI = GetLocationItemUI(locationId);
+
+            if (_playerDataService.CanSpendCoins(location.Price))
+            {
+                _playerDataService.SpendCoins(location.Price);
+                _playerDataService.AddPurchasedLocation(locationId);
+                locationItemUI.SetItemAsPurchased();
+                locationItemUI.OnItemSelect(locationId, OnItemSelected);
             }
             else
             {
                 Debug.Log("Not Enough Coins!");
             }
+        }
+
+        public LocationItemUI GetLocationItemUI(int locationId)
+        {
+            var location = _locationDB.GetLocationById(locationId);
+            var uiItem = _uiLocationDict[location];
+            return uiItem;
+        }
+
+        public int GetElementChildIndex(int locationId)
+        {
+            var location = _locationDB.GetLocationById(locationId);
+            var uiItem = _uiLocationDict[location];
+            return uiItem.transform.GetSiblingIndex();
         }
     }
 }

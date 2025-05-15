@@ -18,15 +18,16 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 
 	[Space(20f)]
 	[SerializeField] private Button chooseLocationButton;
-	
-	public void SetItemPosition(Vector2 pos) => GetComponent<RectTransform>().anchoredPosition += pos;
 
-	public void SetLocationImages(Sprite sky, Sprite ground, Sprite trees, Sprite mountain)
+	private Location _location;
+	public Location Location => _location;
+
+	public void Initialize(Location location)
 	{
-		skyImage.sprite = sky;
-		groundImage.sprite = ground;
-		treesImage.sprite = trees;
-		mountainImage.sprite = mountain;
+		_location = location;
+		SetLocationName(location.LocalizationId);
+		SetLocationPrice(location.Price);
+		SetLocationImages(location);
 	}
 
 	public void SetLocationName(string name)
@@ -35,12 +36,26 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 		localizedText.UpdateText();
     }
 
-	public void SetLocationPrice(int price) => locationPriceText.text = price.ToString();
+	public void SetLocationPrice(int price) => 
+		locationPriceText.text = price.ToString();
+
+	public void SetLocationImages(Location location)
+	{
+		skyImage.sprite = location.sky;
+		groundImage.sprite = location.ground;
+		treesImage.sprite = location.trees;
+		mountainImage.sprite = location.mountain;
+	}
 
 	public void SetItemAsPurchased()
 	{
 		locationPurchaseButton.gameObject.SetActive(false);
 		chooseLocationButton.interactable = true;
+	}
+
+	public void SetItemAsNotPurchased()
+	{
+		
 	}
 
 	public void OnItemPurchase(int itemIndex, UnityAction<int> action)
@@ -57,7 +72,9 @@ public class LocationItemUI : MonoBehaviour, IItemUI
 		chooseLocationButton.onClick.AddListener(() => action?.Invoke(itemIndex));
 	}
 
-	public void SelectItem() => chooseLocationButton.interactable = false;
+	public void SelectItem() => 
+		chooseLocationButton.interactable = false;
 
-	public void DeselectItem() => chooseLocationButton.interactable = true;
+	public void DeselectItem() => 
+		chooseLocationButton.interactable = true;
 }

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d41e9ab969c9fb43b77d14edb67f09d, type: 3}
+  m_Name: Location Shop Db
+  m_EditorClassIdentifier: 
+  _csvFile: {fileID: 4900000, guid: bbfb10c7ff673c8428be8673202347ff, type: 3}
+  _locations:
+  - Id: 0
+    LocalizationId: mountain
+    Price: 0
+    sky: {fileID: 21300000, guid: 2e48e120fa0787347a1bfd9c7d5d3cb8, type: 3}
+    ground: {fileID: 198179880136576651, guid: 3883b84862c05c741ae79006dad4b533, type: 3}
+    trees: {fileID: 4453295709044225315, guid: 562de74ba938ff949b4e2b366eff3a63, type: 3}
+    mountain: {fileID: -3242559309892534909, guid: 8dc2d43ff662d3744bfd55f4cb479f2c, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+  - Id: 1
+    LocalizationId: moscow
+    Price: 2490
+    sky: {fileID: 21300000, guid: f1d8a90d1ae9b8e41b827fd5b27b9960, type: 3}
+    ground: {fileID: 21300000, guid: dd65ab897ba6f8e4297b22899c54cc4b, type: 3}
+    trees: {fileID: 21300000, guid: 34efe9ec6c9ca7c4c9588d32773b5c08, type: 3}
+    mountain: {fileID: 21300000, guid: 8731c80e3c724634abeb88bc419e2478, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+  - Id: 2
+    LocalizationId: desert
+    Price: 4490
+    sky: {fileID: 21300000, guid: baebe88c88910c54f9abee56737651c1, type: 3}
+    ground: {fileID: 5939970390753216832, guid: 3883b84862c05c741ae79006dad4b533, type: 3}
+    trees: {fileID: 6507337415584669258, guid: 562de74ba938ff949b4e2b366eff3a63, type: 3}
+    mountain: {fileID: -5019009366824712315, guid: 8dc2d43ff662d3744bfd55f4cb479f2c, type: 3}
+    cloudList:
+    - {fileID: 6000739262259716075, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -7117388580015580092, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: 8362281794071715520, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -647135127182829874, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+    - {fileID: -3872124927040482833, guid: bff3527801bb57a46b900b943c7d8e3c, type: 3}
+  - Id: 3
+    LocalizationId: japan
+    Price: 6490
+    sky: {fileID: 21300000, guid: e6ec62c32355aa145b206ea0e4d28965, type: 3}
+    ground: {fileID: -1933334316723961814, guid: 3883b84862c05c741ae79006dad4b533, type: 3}
+    trees: {fileID: -8045997886748685829, guid: 562de74ba938ff949b4e2b366eff3a63, type: 3}
+    mountain: {fileID: -2629995050093455838, guid: 8dc2d43ff662d3744bfd55f4cb479f2c, type: 3}
+    cloudList:
+    - {fileID: 3715321283245057710, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -2366835222695724432, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -8047218723885848687, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: 705044802513750631, guid: 47412cdb7120559489fd681d00719770, type: 3}
+    - {fileID: -4246210406333062741, guid: 47412cdb7120559489fd681d00719770, type: 3}
+  - Id: 4
+    LocalizationId: moon
+    Price: 8490
+    sky: {fileID: 21300000, guid: 9b0764e073c98774cb0d36c61f61b520, type: 3}
+    ground: {fileID: 21300000, guid: 57761cad524168d4f9231c2c5e45c062, type: 3}
+    trees: {fileID: 21300000, guid: d076e201463c7b146b791f6ad328fca2, type: 3}
+    mountain: {fileID: 21300000, guid: 294b18bf1eff89b4f81cabc596e383ea, type: 3}
+    cloudList:
+    - {fileID: 7462174434605616796, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 8172510760861403798, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 7348713283213436023, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: -8764785145564160227, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}
+    - {fileID: 7348713283213436023, guid: 6adddb0643c7417468c22e5ee85fce4e, type: 3}

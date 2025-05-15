@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179c7809eeeb38e49ae37d197061dd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopItemsContainer: {fileID: 8314035503907422965}
-  itemPrefab: {fileID: 2287338222613640579, guid: 38ddc42cf4936f348831a44f4a300759, type: 3}
-  locationDB: {fileID: 11400000, guid: 652e0a66273d9c64d8367a5de6ae0eca, type: 2}
+  _container: {fileID: 8314035503907422965}
+  _uiItemPrefab: {fileID: 2946819777325959822, guid: 38ddc42cf4936f348831a44f4a300759, type: 3}
+  _locationDB: {fileID: 11400000, guid: eef2d77c24bdd914c9f47484d11fd6c1, type: 2}
 --- !u!114 &5456137754659158532
 MonoBehaviour:
   m_ObjectHideFlags: 0
