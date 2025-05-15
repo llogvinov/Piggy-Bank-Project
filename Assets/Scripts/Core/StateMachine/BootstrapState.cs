@@ -79,8 +79,8 @@ namespace Core.StateMachine
 
         private void RegisterServices()
         {
-            RegisterLocalDataService();
-            // RegisterYandexDataService();
+            // RegisterLocalDataService();
+            RegisterYandexDataService();
 
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_game));
             _services.RegisterSingle<IGameFactory>(new GameFactory());

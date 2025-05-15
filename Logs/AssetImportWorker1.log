@@ -7041,3 +7041,259 @@ Start importing Assets/OArielG/2DSimpleUIPack/Examples/Graphics/ui-small-buttons
  -> (artifact id: '2c4e4605fbf5dea3b48e81e4fda28f3a') in 0.280630 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 162
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.412 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.975 seconds
+Domain Reload Profiling: 1384ms
+	BeginReloadAssembly (149ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (187ms)
+		LoadAssemblies (253ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (975ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (564ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (348ms)
+			ProcessInitializeOnLoadMethodAttributes (124ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 11.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3416 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 18 unused Assets / (31.2 KB). Loaded Objects now: 4289.
+Memory consumption went from 131.4 MB to 131.4 MB.
+Total: 6.850600 ms (FindLiveObjects: 0.207500 ms CreateObjectMapping: 0.088400 ms MarkObjects: 6.486400 ms  DeleteObjects: 0.067000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/LocationItemUI.cs: cec094b691b3710f5bceff71d54400cf -> 3dd8f1f005128d98485743796c1f74b9
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/SingleLocalizationData.cs: 9ea0eb91a0c714d1a3e9f623ac370bf0 -> b63d7c553076ec67bd20f8e63575a5a7
+  custom:scripting/monoscript/fileName/Mask.cs: a433abdb7f52ada9a8f0a810915360f1 -> 93a77142792beb51887e0bbf307dac4f
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/AllLocalizationData.cs: 0cd4fd2472d7d3f1ca7df9870f0b40b0 -> cc4d9b603368ff962ab3df17f5f770ca
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Hat.cs: 4b2738059af9c5876987f279e842f10a -> 5f447dca5566a78ab2916640e99f8454
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LocalizationData.cs: 912b3d8a9099310c6acdd40a3ba9ab5e -> f1ed6ac2b000ff92f294e10f910929af
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Location.cs: 7083f7b036a783559f85ec0eba6fc436 -> 38c1a900ed1c0ccebc6dd111e5303351
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/UIPulsingElement.cs: 780f49cf4460599117320d5617915689 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/LocationShopDatabaseEditor.cs: bdbb2ba4ee99b147c27eeef6d4cf7db1 -> 
+  custom:scripting/monoscript/fileName/HatItemUI.cs: 35fa1b06b446ca58c92f1667f5529aa4 -> 9f5e4f172c9e99fdc17a5e50e163376a
+  custom:scripting/monoscript/fileName/LocationShopDatabase.cs: 84a462bdb1c6aad89051494c72c1be9a -> 0b2f7396914022914866cce176ea06b9
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/ItemShopUI.cs: 18ca82c485825d181f0c0ae184e49846 -> d7a33ae3d6b4bb0a234c338796e4e4c2
+  custom:scripting/monoscript/fileName/MaskItemUI.cs: ec2831e4061cbedeab8fa4272ff999bd -> ea82b73a1ffa0a87c1d263f69b27c3b4
+  custom:scripting/monoscript/fileName/UILocationsShop.cs: 81bcbd6f32618125dc987e97c01016b0 -> 26bbbb5b41d1d3d3a0f0d03e80ad365c
+  custom:scripting/monoscript/fileName/ItemUI.cs: e498ca9ab3cecb339e83571d0da1d539 -> 2b3afed17c00495f39aa83cc7c437b6f
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: c7a2ab974709d5e95d37af642313adc4 -> 71bc5721b3e4b21bbbdc589eb900f445
+  custom:scripting/monoscript/fileName/UIMaskShop.cs: 180785c6175e39b5086a96d6354ab472 -> 1bc8c89f55e1cb821c52bb34fd58b17d
+  custom:scripting/monoscript/fileName/HatShopDatabase.cs: 6f17bb8aadc2c75dab5a6b1f78e97a5f -> 382e8965d524c8b8b4b3bc0643cd0d94
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 602c08e0930adf93bd3b86da844eaec2 -> bb430cd3e420fcf71512019d7d7706cc
+  custom:scripting/monoscript/fileName/MaskShopDatabase.cs: f501781a3bbc5937c4b35de7a4302d88 -> de894ec28801879b206e32ec2e54ef8c
+  custom:scripting/monoscript/fileName/UIHatShop.cs: 35a3e4b23baf4d069b138dca5db69fae -> 5bfa14e56e43a36ce8f02fd4894a63ec
+  custom:scripting/monoscript/fileName/MaskShopDatabaseEditor.cs: 263bab8133686a1adf4071007e6cf7e3 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 160.794376 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a68e0a068b5c97bbc3c3e37ae3f82e7a') in 0.032127 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Import Request.
+  Time since last request: 7.104767 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6869a66db66afceabe4b832b22f60016') in 0.005832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Import Request.
+  Time since last request: 5.666651 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f1b8b243779f457c470f9166fbffbbb5') in 0.004895 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Import Request.
+  Time since last request: 2.089500 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bf732585c5237caee72e9706a7508b65') in 0.004845 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Import Request.
+  Time since last request: 14.647218 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '022482cd6210fc23c7f818aa4c289488') in 0.005154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Import Request.
+  Time since last request: 6.077363 seconds.
+  path: Assets/Prefabs/UI/Mask Shop Item.prefab
+  artifactKey: Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/Mask Shop Item.prefab using Guid(3cd6f23f97b522f4ca340408164604ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '57a1e196f7a787d957dcf69de261e7b6') in 0.005250 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 69
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.396 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+System.IO.IOException: Sharing violation on path C:\work\Piggy-Bank-Project\Assets\PluginYourGames\Editor\ModulesListYG2.txt
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00000] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string,System.Text.Encoding)
+  at System.IO.File.InternalReadAllLines (System.String path, System.Text.Encoding encoding) [0x00006] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at System.IO.File.ReadAllLines (System.String path) [0x0002c] in <1fd52158108c4fe3a6817b50854eb75e>:0 
+  at YG.EditorScr.DefineSymbols.ModulesDefineSymbols () [0x00035] in C:\work\Piggy-Bank-Project\Assets\PluginYourGames\Scripts\EditorScr\DefineSymbols.cs:146 
+  at YG.EditorScr.DefineSymbols.UpdateDefineSymbols () [0x0000f] in C:\work\Piggy-Bank-Project\Assets\PluginYourGames\Scripts\EditorScr\DefineSymbols.cs:57 
+  at YG.EditorScr.DefineSymbols..cctor () [0x00023] in C:\work\Piggy-Bank-Project\Assets\PluginYourGames\Scripts\EditorScr\DefineSymbols.cs:31 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.875 seconds
+Domain Reload Profiling: 1268ms
+	BeginReloadAssembly (131ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (204ms)
+		LoadAssemblies (258ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (9ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (875ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (509ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (296ms)
+			ProcessInitializeOnLoadMethodAttributes (136ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 11.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3416 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 16 unused Assets / (29.7 KB). Loaded Objects now: 4293.
+Memory consumption went from 131.4 MB to 131.4 MB.
+Total: 14.880600 ms (FindLiveObjects: 0.284700 ms CreateObjectMapping: 0.160200 ms MarkObjects: 14.384100 ms  DeleteObjects: 0.050700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/LocationItemUI.cs: cec094b691b3710f5bceff71d54400cf -> 3dd8f1f005128d98485743796c1f74b9
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/SingleLocalizationData.cs: 9ea0eb91a0c714d1a3e9f623ac370bf0 -> b63d7c553076ec67bd20f8e63575a5a7
+  custom:scripting/monoscript/fileName/Mask.cs: a433abdb7f52ada9a8f0a810915360f1 -> 93a77142792beb51887e0bbf307dac4f
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/AllLocalizationData.cs: 0cd4fd2472d7d3f1ca7df9870f0b40b0 -> cc4d9b603368ff962ab3df17f5f770ca
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Hat.cs: 4b2738059af9c5876987f279e842f10a -> 5f447dca5566a78ab2916640e99f8454
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/LocalizationData.cs: 912b3d8a9099310c6acdd40a3ba9ab5e -> f1ed6ac2b000ff92f294e10f910929af
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Location.cs: 7083f7b036a783559f85ec0eba6fc436 -> 38c1a900ed1c0ccebc6dd111e5303351
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/UIPulsingElement.cs: 780f49cf4460599117320d5617915689 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/LocationShopDatabaseEditor.cs: bdbb2ba4ee99b147c27eeef6d4cf7db1 -> 
+  custom:scripting/monoscript/fileName/HatItemUI.cs: 35fa1b06b446ca58c92f1667f5529aa4 -> 9f5e4f172c9e99fdc17a5e50e163376a
+  custom:scripting/monoscript/fileName/LocationShopDatabase.cs: 84a462bdb1c6aad89051494c72c1be9a -> 0b2f7396914022914866cce176ea06b9
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/ItemShopUI.cs: 18ca82c485825d181f0c0ae184e49846 -> d7a33ae3d6b4bb0a234c338796e4e4c2
+  custom:scripting/monoscript/fileName/MaskItemUI.cs: ec2831e4061cbedeab8fa4272ff999bd -> ea82b73a1ffa0a87c1d263f69b27c3b4
+  custom:scripting/monoscript/fileName/UILocationsShop.cs: 81bcbd6f32618125dc987e97c01016b0 -> 26bbbb5b41d1d3d3a0f0d03e80ad365c
+  custom:scripting/monoscript/fileName/ItemUI.cs: e498ca9ab3cecb339e83571d0da1d539 -> 2b3afed17c00495f39aa83cc7c437b6f
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: c7a2ab974709d5e95d37af642313adc4 -> 71bc5721b3e4b21bbbdc589eb900f445
+  custom:scripting/monoscript/fileName/UIMaskShop.cs: 180785c6175e39b5086a96d6354ab472 -> 1bc8c89f55e1cb821c52bb34fd58b17d
+  custom:scripting/monoscript/fileName/HatShopDatabase.cs: 6f17bb8aadc2c75dab5a6b1f78e97a5f -> 382e8965d524c8b8b4b3bc0643cd0d94
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 602c08e0930adf93bd3b86da844eaec2 -> bb430cd3e420fcf71512019d7d7706cc
+  custom:scripting/monoscript/fileName/MaskShopDatabase.cs: f501781a3bbc5937c4b35de7a4302d88 -> de894ec28801879b206e32ec2e54ef8c
+  custom:scripting/monoscript/fileName/UIHatShop.cs: 35a3e4b23baf4d069b138dca5db69fae -> 5bfa14e56e43a36ce8f02fd4894a63ec
+  custom:scripting/monoscript/fileName/MaskShopDatabaseEditor.cs: 263bab8133686a1adf4071007e6cf7e3 -> 
