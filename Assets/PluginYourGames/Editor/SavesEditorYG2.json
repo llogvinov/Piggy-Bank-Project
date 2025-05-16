@@ -7,8 +7,8 @@
         false,
         false
     ],
-    "idSave": 579,
-    "Music": true,
+    "idSave": 625,
+    "Music": false,
     "Sound": true,
     "RemovedAds": false,
     "Coins": 0,
@@ -32,7 +32,7 @@
             "instanceID": 0
         },
         "Id": 0,
-        "LocalizationId": "",
+        "LocalizationId": "none",
         "Price": 0
     },
     "SelectedMask": {
@@ -40,25 +40,41 @@
             "instanceID": 0
         },
         "Id": 0,
-        "LocalizationId": "",
+        "LocalizationId": "none",
         "Price": 0
     },
     "SelectedLocation": {
         "Id": 0,
-        "LocalizationId": "",
+        "LocalizationId": "mountain",
         "Price": 0,
         "sky": {
-            "instanceID": 0
+            "instanceID": 24072
         },
         "ground": {
-            "instanceID": 0
+            "instanceID": 24074
         },
         "trees": {
-            "instanceID": 0
+            "instanceID": 24076
         },
         "mountain": {
-            "instanceID": 0
+            "instanceID": 24078
         },
-        "cloudList": []
+        "cloudList": [
+            {
+                "instanceID": 24080
+            },
+            {
+                "instanceID": 24082
+            },
+            {
+                "instanceID": 24084
+            },
+            {
+                "instanceID": 24086
+            },
+            {
+                "instanceID": 24088
+            }
+        ]
     }
 }
