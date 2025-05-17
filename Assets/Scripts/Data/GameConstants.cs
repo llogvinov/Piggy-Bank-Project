@@ -4,7 +4,7 @@ namespace Data
     {
         public const float REVIVE_PANEL_DURATION = 3f;
 
-        public const float SURVIVAL_MODE_TIMER = 10f;
+        public const float SURVIVAL_MODE_TIMER = 40f;
         public const int SURVIVAL_MODE_REWARD = 75;
     
         public const float POWERUP_TIMER = 5f;

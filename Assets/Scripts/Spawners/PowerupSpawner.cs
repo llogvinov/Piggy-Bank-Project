@@ -9,15 +9,15 @@ namespace Spawners
 {
     public class PowerupSpawner : PooledObjectSpawner
     {
+        [SerializeField] private GameTimer _timer;
+
         private IGameFactory _gameFactory;
-        private GameTimer _timer;
 
         private Coroutine _currentPowerupCoroutine;
 
         private void Awake()
         {
             _gameFactory = AllServices.Container.Single<IGameFactory>();
-            _timer = GameObject.FindObjectOfType<GameTimer>();
         }
 
         private void Start()
