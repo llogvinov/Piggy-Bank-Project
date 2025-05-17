@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6758c7d5f3c6f3348be47839a80fe067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 4472913586974328855}
   damage: 2
   damageRadius: 0.6
   scale: 2
