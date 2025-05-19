@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    private AudioSource gameAudio;
-
     private static MusicManager instance;
 
     private void Awake()
@@ -20,9 +16,4 @@ public class MusicManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
-    private void Start() => gameAudio = GetComponent<AudioSource>();
-
-    private void Update() => gameAudio.volume = PlayerPrefs.GetFloat("music");
-
 }

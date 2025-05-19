@@ -6,6 +6,8 @@ namespace Data
 
         public const float SURVIVAL_MODE_TIMER = 40f;
         public const int SURVIVAL_MODE_REWARD = 75;
+
+        public const float MAX_MUSIC_VOLUME = 0.8f;
     
         public const float POWERUP_TIMER = 5f;
         public const float DOUBLE_COINS_POWERUP_TIMER = 10f;

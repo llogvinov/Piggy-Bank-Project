@@ -19,16 +19,11 @@ namespace Spawners
         [Header("Spawn Rules")]
         [SerializeField] private float minSpawnDistance = 0.8f;
 
-        private Player player;
-        private Transform playerTransform;
         public static float lastSpawnX = Mathf.Infinity;
 
         public virtual void StartSpawner()
         {
             Game.GameOver += OnGameOver;
-
-            player = AllServices.Container.Single<IGameFactory>().Player;
-            playerTransform = player.Movement.transform;
 
             StartCoroutine(WaitToStartSpawning());
         }
@@ -73,6 +68,7 @@ namespace Spawners
                     break;
             }
 
+            lastSpawnX = x;
             float y = transform.position.y;
             return new Vector2(x, y);
         }

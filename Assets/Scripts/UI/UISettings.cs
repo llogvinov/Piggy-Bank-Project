@@ -1,5 +1,6 @@
 using Core;
 using Core.Services.PlayerData;
+using Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +27,7 @@ namespace UI
             var musicOn = _playerDataService.GetMusic();
             _musicButton.gameObject.SetActive(musicOn);
             _noMusicButton.gameObject.SetActive(!musicOn);
-            _musicAudioSource.volume = musicOn == true ? 1f : 0f;
+            _musicAudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
 
             var soundOn = _playerDataService.GetSound();
             _soundButton.gameObject.SetActive(soundOn);
@@ -61,7 +62,7 @@ namespace UI
             _musicButton.gameObject.SetActive(musicOn);
             _noMusicButton.gameObject.SetActive(!musicOn);
 
-            _musicAudioSource.volume = musicOn == true ? 1f : 0f;
+            _musicAudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
         }
 
         private void ToggleSound()
