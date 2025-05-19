@@ -3,6 +3,7 @@ using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.Localization;
 using Core.Services.PlayerData;
+using Leaderboard;
 using PiggyBank;
 using YG;
 
@@ -82,6 +83,7 @@ namespace Core.StateMachine
             // RegisterLocalDataService();
             RegisterYandexDataService();
 
+            _services.RegisterSingle<ILeaderboardService>(new YandexLeaderboardService());
             _services.RegisterSingle<ILocalizationService>(new YandexLocalizationService(_game));
             _services.RegisterSingle<IGameFactory>(new GameFactory());
             _services.RegisterSingle<IAdService>(new YandexAdService());

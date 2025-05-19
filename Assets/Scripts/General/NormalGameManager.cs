@@ -39,8 +39,8 @@ public class NormalGameManager : GameManager
         pauseButton.SetActive(false);
         gameOverPanel.SetActive(true);
 
-        _playerDataService.SetNewRecord(CoinToAdd);
-        recordText.text = "record: " + _playerDataService.GetPlayerRecord();
+        _playerDataService.SetBestScore(CoinToAdd);
+        recordText.text = "record: " + _playerDataService.GetBestScore();
         rewardText.text = "+" + CoinToAdd;
         _playerDataService.AddCoins(CoinToAdd);
         GameSharedUI.Instance.UpdateCoinsUIText();

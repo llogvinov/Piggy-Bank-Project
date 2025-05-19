@@ -1,6 +1,7 @@
 Authorization v1.0
 EnvirData v1.002
 InterstitialAdv v1.001
+Leaderboards v1.0
 Localization v1.001
 Payments v1.01
 RewardedAdv v1.001

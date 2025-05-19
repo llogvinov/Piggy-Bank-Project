@@ -12,7 +12,7 @@ namespace Core.Services.PlayerData
         public int Coins = 0;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;
-        public int NormalModeRecord = 0;
+        public int BestScore = 0;
         public int SelectedHatId = 0;
         public int SelectedMaskId = 0;
         public int SelectedLocationId = 0;
@@ -38,7 +38,7 @@ namespace YG
         public int Coins = 0;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;
-        public int NormalModeRecord = 0;
+        public int BestScore = 0;
         public int SelectedHatId = 0;
         public int SelectedMaskId = 0;
         public int SelectedLocationId = 0;

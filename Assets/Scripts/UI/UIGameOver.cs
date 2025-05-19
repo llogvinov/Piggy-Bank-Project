@@ -62,7 +62,7 @@ namespace UI
             var coinsToAdd = player.CoinCollector.CoinsToAdd;
             _playerDataService.AddCoins(coinsToAdd);
 
-            UpdateUI(_playerDataService.GetPlayerRecord(),
+            UpdateUI(_playerDataService.GetBestScore(),
                 coinsToAdd * 2);
         }
 

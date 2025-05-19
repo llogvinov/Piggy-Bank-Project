@@ -1,15 +1,17 @@
 using System.Collections.Generic;
+using Leaderboard;
+using UnityEngine.SocialPlatforms;
 
 namespace Core.Services.PlayerData
 {
     public abstract class BasePlayerDataService : IPlayerDataService
     {
         public PlayerData PlayerData { get; protected set; }
-        
+
         public abstract PlayerData Load();
-        
+
         public abstract void Save(PlayerData playerData);
-        
+
         public bool GetMusic() => PlayerData.Music;
 
         public void SetMusic(bool value)
@@ -69,12 +71,20 @@ namespace Core.Services.PlayerData
 
         public void SetSelectedLocationIndex(int newLocationIndex) => PlayerData.SelectedLocationId = newLocationIndex;
 
-        public int GetPlayerRecord() => PlayerData.NormalModeRecord;
+        public int GetBestScore() => PlayerData.BestScore;
 
-        public void SetNewRecord(int newRecord)
+        public void SetBestScore(int score)
         {
-            if (newRecord > GetPlayerRecord())
-                PlayerData.NormalModeRecord = newRecord;
+            if (score > GetBestScore())
+            {
+                PlayerData.BestScore = score;
+                Save(PlayerData);
+                var leaderboardService = AllServices.Container.Single<ILeaderboardService>();
+                if (leaderboardService != null)
+                {
+                    leaderboardService.SetLeaderboard("BestScore", score);
+                }
+            }
         }
 
         public long GetNormalGamesPlayed() => PlayerData.NormalGamesPlayed;
@@ -111,7 +121,7 @@ namespace Core.Services.PlayerData
 
         public void AddPurchasedHat(int hatId)
         {
-            if (PlayerData.PurchasedHatsIds.Contains(hatId)) 
+            if (PlayerData.PurchasedHatsIds.Contains(hatId))
                 return;
 
             PlayerData.PurchasedHatsIds.Add(hatId);

@@ -35,7 +35,7 @@ namespace Core.StateMachine
         {
             Game.GameOver = null;
 
-            _playerDataService.SetNewRecord(_gameFactory.Player.CoinCollector.CoinsToAdd);
+            _playerDataService.SetBestScore(_gameFactory.Player.CoinCollector.CoinsToAdd);
             _playerDataService.AddCoins(_gameFactory.Player.CoinCollector.CoinsToAdd);
 
             var uiPowerup = GameObject.FindObjectOfType<PowerupSpawner>();
@@ -47,7 +47,7 @@ namespace Core.StateMachine
             _uiGameOver.RestartButton.onClick.AddListener(RestartGame);
             _uiGameOver.ToggleRewardButton(!_game.IsRevived);
             _uiGameOver.Show(!_game.IsRevived, 
-                _playerDataService.GetPlayerRecord(), 
+                _playerDataService.GetBestScore(), 
                 _gameFactory.Player.CoinCollector.CoinsToAdd);
         }
 

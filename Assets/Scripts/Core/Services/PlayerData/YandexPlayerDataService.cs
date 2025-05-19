@@ -13,7 +13,7 @@ namespace Core.Services.PlayerData
             PlayerData.Coins = YG2.saves.Coins;
             PlayerData.NormalGamesPlayed = YG2.saves.NormalGamesPlayed;
             PlayerData.SurvivalGamesPlayed = YG2.saves.SurvivalGamesPlayed;
-            PlayerData.NormalModeRecord = YG2.saves.NormalModeRecord;
+            PlayerData.BestScore = YG2.saves.BestScore;
             PlayerData.SelectedHatId = YG2.saves.SelectedHatId;
             PlayerData.SelectedMaskId = YG2.saves.SelectedMaskId;
             PlayerData.SelectedLocationId = YG2.saves.SelectedLocationId;
@@ -34,7 +34,7 @@ namespace Core.Services.PlayerData
             YG2.saves.Coins = playerData.Coins;
             YG2.saves.NormalGamesPlayed = playerData.NormalGamesPlayed;
             YG2.saves.SurvivalGamesPlayed = playerData.SurvivalGamesPlayed;
-            YG2.saves.NormalModeRecord = playerData.NormalModeRecord;
+            YG2.saves.BestScore = playerData.BestScore;
             YG2.saves.SelectedHatId = playerData.SelectedHatId;
             YG2.saves.SelectedMaskId = playerData.SelectedMaskId;
             YG2.saves.SelectedLocationId = playerData.SelectedLocationId;

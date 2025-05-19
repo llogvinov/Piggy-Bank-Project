@@ -25,8 +25,8 @@ namespace Core.Services.PlayerData
         void SetSelectedHatIndex(int newHatIndex);
         void SetSelectedMaskIndex(int newMaskIndex);
         void SetSelectedLocationIndex(int newLocationIndex);
-        int GetPlayerRecord();
-        void SetNewRecord(int newRecord);
+        int GetBestScore();
+        void SetBestScore(int newRecord);
         long GetNormalGamesPlayed();
         long GetSurvivalGamesPlayed();
         void IncrementNormalGamesPlayed();
