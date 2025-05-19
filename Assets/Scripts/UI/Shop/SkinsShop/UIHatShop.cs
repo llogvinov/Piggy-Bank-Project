@@ -14,6 +14,7 @@ namespace UI
         [Header("UI Elements")]
         [SerializeField] private Transform _container;
         [SerializeField] private HatItemUI _uiItemPrefab;
+        [SerializeField] private CoinsPanel _coinsPanel;
         [Space(20f)]
         [SerializeField] private HatShopDatabase _hatDB;
 
@@ -100,6 +101,7 @@ namespace UI
             {
                 _playerDataService.SpendCoins(hat.Price);
                 _playerDataService.AddPurchasedHat(hatId);
+                _coinsPanel.UpdateUI();
                 hatItemUI.SetItemAsPurchased();
                 hatItemUI.OnItemSelect(hatId, OnItemSelected);
             }

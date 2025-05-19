@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5520639819595691346}
   - component: {fileID: 5520639819595691349}
   - component: {fileID: 599466762129818961}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Normal Meteorit
   m_TagString: Bomb
   m_Icon: {fileID: 0}

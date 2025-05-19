@@ -7,17 +7,17 @@
         false,
         false
     ],
-    "idSave": 767,
-    "Music": true,
+    "idSave": 847,
+    "Music": false,
     "Sound": true,
     "RemovedAds": false,
-    "Coins": 0,
+    "Coins": 7510,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
     "NormalModeRecord": 0,
     "SelectedHatId": 0,
     "SelectedMaskId": 0,
-    "SelectedLocationId": 0,
+    "SelectedLocationId": 1,
     "PurchasedHatsIds": [
         0
     ],
@@ -25,7 +25,8 @@
         0
     ],
     "PurchasedLocationsIds": [
-        0
+        0,
+        1
     ],
     "SelectedHat": {
         "Image": {
@@ -44,20 +45,20 @@
         "Price": 0
     },
     "SelectedLocation": {
-        "Id": 0,
-        "LocalizationId": "mountain",
-        "Price": 0,
+        "Id": 1,
+        "LocalizationId": "moscow",
+        "Price": 2490,
         "sky": {
-            "instanceID": 24108
+            "instanceID": 24126
         },
         "ground": {
-            "instanceID": 24110
+            "instanceID": 24128
         },
         "trees": {
-            "instanceID": 24112
+            "instanceID": 24130
         },
         "mountain": {
-            "instanceID": 24114
+            "instanceID": 24132
         },
         "cloudList": [
             {

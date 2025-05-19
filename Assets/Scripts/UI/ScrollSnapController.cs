@@ -27,16 +27,34 @@ namespace UI
         {
             _itemShopUI = GetComponent<IItemShopUI>();
             _itemShopUI.UIGenerated += OnUIGenerated;
-            _uiShop.Opened += ScrollToSelected;
+            _uiShop.Opened += OnOpened;
         }
 
         private void OnDestroy()
         {
             _itemShopUI.UIGenerated -= OnUIGenerated;
-            _uiShop.Opened -= ScrollToSelected;
+            _uiShop.Opened -= OnOpened;
 
             leftButton.onClick.RemoveListener(ScrollLeft);
             rightButton.onClick.RemoveListener(ScrollRight);
+        }
+
+        private void Update()
+        {
+            if (isLerping)
+            {
+                scrollRect.horizontalNormalizedPosition = Mathf.Lerp(
+                    scrollRect.horizontalNormalizedPosition,
+                    targetPosition,
+                    Time.deltaTime * snapSpeed
+                );
+
+                if (Mathf.Abs(scrollRect.horizontalNormalizedPosition - targetPosition) < 0.001f)
+                {
+                    scrollRect.horizontalNormalizedPosition = targetPosition;
+                    isLerping = false;
+                }
+            }
         }
 
         private void OnUIGenerated()
@@ -56,22 +74,10 @@ namespace UI
             UpdateButtons();
         }
 
-        private void Update()
+        private void OnOpened()
         {
-            if (isLerping)
-            {
-                scrollRect.horizontalNormalizedPosition = Mathf.Lerp(
-                    scrollRect.horizontalNormalizedPosition,
-                    targetPosition,
-                    Time.deltaTime * snapSpeed
-                );
-
-                if (Mathf.Abs(scrollRect.horizontalNormalizedPosition - targetPosition) < 0.001f)
-                {
-                    scrollRect.horizontalNormalizedPosition = targetPosition;
-                    isLerping = false;
-                }
-            }
+            ScrollToSelected();
+            UpdateButtons();
         }
 
         private void ScrollLeft()

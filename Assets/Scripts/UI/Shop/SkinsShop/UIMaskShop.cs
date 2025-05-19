@@ -14,6 +14,7 @@ namespace UI
         [Header("UI Elements")]
         [SerializeField] private Transform _container;
         [SerializeField] private MaskItemUI _uiItemPrefab;
+        [SerializeField] private CoinsPanel _coinsPanel;
         [Space(20f)]
         [SerializeField] private MaskShopDatabase _maskDB;
 
@@ -100,6 +101,7 @@ namespace UI
             {
                 _playerDataService.SpendCoins(mask.Price);
                 _playerDataService.AddPurchasedMask(maskId);
+                _coinsPanel.UpdateUI();
                 maskItemUI.SetItemAsPurchased();
                 maskItemUI.OnItemSelect(maskId, OnItemSelected);
             }

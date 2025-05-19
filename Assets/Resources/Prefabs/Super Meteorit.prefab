@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4472913586974328856}
   - component: {fileID: 4472913586974328855}
   - component: {fileID: 664607659416414357}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Super Meteorit
   m_TagString: Bomb
   m_Icon: {fileID: 0}

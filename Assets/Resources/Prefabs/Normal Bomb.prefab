@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8896361929559651027}
   - component: {fileID: 6196804726961347432}
   - component: {fileID: 7355172691386520620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Normal Bomb
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -162,8 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6196804726961347432}
-  explosionPrefab: {fileID: 3150302385483457870, guid: e9cd9aadce15e424d87472ac36c26cd7, type: 3}
-  explosionMarkPrefab: {fileID: 9014201915262679212, guid: 441f21dc2c9565245bd40f1855c275f3, type: 3}
   damage: 1
   damageRadius: 0
   scale: 1

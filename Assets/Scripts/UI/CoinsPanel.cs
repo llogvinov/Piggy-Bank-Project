@@ -11,16 +11,16 @@ namespace UI
 
         private IPlayerDataService _playerDataService;
 
-        private void Awake()
-        {
+        private void Awake() => 
             _playerDataService = AllServices.Container.Single<IPlayerDataService>();
-        }
 
-        private void OnEnable()
-        {
+        private void OnEnable() =>
             SetCoinsText(_playerDataService.GetCoins());
-        }
 
-        private void SetCoinsText(int value) => _coinsText.text = value.ToString();
+        public void UpdateUI() =>
+            SetCoinsText(_playerDataService.GetCoins());
+
+        private void SetCoinsText(int value) =>
+            _coinsText.text = value.ToString();
     }
 }

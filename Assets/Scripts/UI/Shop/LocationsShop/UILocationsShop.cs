@@ -13,6 +13,7 @@ namespace UI.LocationsShop
         [Header("UI Elements")]
         [SerializeField] private Transform _container;
         [SerializeField] private LocationItemUI _uiItemPrefab;
+        [SerializeField] private CoinsPanel _coinsPanel;
         [Space(20f)]
         [SerializeField] private LocationShopDatabase _locationDB;
 
@@ -95,6 +96,7 @@ namespace UI.LocationsShop
             {
                 _playerDataService.SpendCoins(location.Price);
                 _playerDataService.AddPurchasedLocation(locationId);
+                _coinsPanel.UpdateUI();
                 locationItemUI.SetItemAsPurchased();
                 locationItemUI.OnItemSelect(locationId, OnItemSelected);
             }

@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 8314035503907422965}
   _uiItemPrefab: {fileID: 2946819777325959822, guid: 38ddc42cf4936f348831a44f4a300759, type: 3}
+  _coinsPanel: {fileID: 217388269444129612}
   _locationDB: {fileID: 11400000, guid: eef2d77c24bdd914c9f47484d11fd6c1, type: 2}
 --- !u!114 &5456137754659158532
 MonoBehaviour:
@@ -1124,6 +1125,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b4994b6b24213a4c91bd301099c9ee9, type: 3}
+--- !u!114 &217388269444129612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7306300526018659991, guid: 8b4994b6b24213a4c91bd301099c9ee9, type: 3}
+  m_PrefabInstance: {fileID: 7377284199144383963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280948b0913133746bc32933ee7b5e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3840914887238354229 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5993388791182680302, guid: 8b4994b6b24213a4c91bd301099c9ee9, type: 3}
