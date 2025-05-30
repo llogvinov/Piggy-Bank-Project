@@ -57,8 +57,8 @@ namespace Core.StateMachine
                 yield return null;
             }
 
-            YG2.SetDefaultSaves();
-            YG2.SaveProgress();
+            // YG2.SetDefaultSaves();
+            // YG2.SaveProgress();
 
             _playerDataService = _services.Single<IPlayerDataService>();
 
