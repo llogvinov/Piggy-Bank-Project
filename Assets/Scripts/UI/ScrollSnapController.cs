@@ -116,14 +116,14 @@ namespace UI
             switch (_itemShopUI)
             {
                 case UILocationsShop locationsShop:
-                    SnapToElement(_playerDataService.GetSelectedLocationIndex());
+                    SnapToElement(_playerDataService.GetSelectedLocationId());
                     break;
                 case UIHatShop hatShop:
-                    elementChildIndex = hatShop.GetElementChildIndex(_playerDataService.GetSelectedHatIndex());
+                    elementChildIndex = hatShop.GetElementChildIndex(_playerDataService.GetSelectedHatId());
                     SnapToElement(elementChildIndex);
                     break;
                 case UIMaskShop maskShop:
-                    elementChildIndex = maskShop.GetElementChildIndex(_playerDataService.GetSelectedMaskIndex());
+                    elementChildIndex = maskShop.GetElementChildIndex(_playerDataService.GetSelectedMaskId());
                     SnapToElement(elementChildIndex);
                     break;
                 default:

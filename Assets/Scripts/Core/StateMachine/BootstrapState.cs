@@ -103,21 +103,21 @@ namespace Core.StateMachine
 
         public void SetSelectedLocation()
         {
-            int locationId = _playerDataService.GetSelectedLocationIndex();
+            int locationId = _playerDataService.GetSelectedLocationId();
             var location = _locationShopDatabase.GetLocationById(locationId);
             _playerDataService.SetSelectedLocation(location, locationId);
         }
 
         public void SetSelectedHat()
         {
-            int hatId = _playerDataService.GetSelectedHatIndex();
+            int hatId = _playerDataService.GetSelectedHatId();
             var hat = _hatShopDatabase.GetHatById(hatId);
             _playerDataService.SetSelectedHat(hat, hatId);
         }
 
         public void SetSelectedMask()
         {
-            int maskId = _playerDataService.GetSelectedMaskIndex();
+            int maskId = _playerDataService.GetSelectedMaskId();
             var mask = _maskShopDatabase.GetMaskById(maskId);
             _playerDataService.SetSelectedMask(mask, maskId);
         }

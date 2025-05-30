@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
 namespace Core.Services.PlayerData
 {
-    public interface IPlayerDataService : IService
+    public partial interface IPlayerDataService : IService
     {
         PlayerData PlayerData { get; }
         PlayerData Load();
@@ -11,38 +9,17 @@ namespace Core.Services.PlayerData
         void SetMusic(bool value);
         bool GetSound();
         void SetSound(bool value);
-        void RemoveAds();
         bool IsRemovedAds();
-        Hat GetSelectedHat();
-        Mask GetSelectedMask();
-        Location GetSelectedLocation();
-        void SetSelectedHat(Hat hat, int hatIndex);
-        void SetSelectedMask(Mask mask, int maskIndex);
-        void SetSelectedLocation(Location location, int locationIndex);
-        int GetSelectedHatIndex();
-        int GetSelectedMaskIndex();
-        int GetSelectedLocationIndex();
-        void SetSelectedHatIndex(int newHatIndex);
-        void SetSelectedMaskIndex(int newMaskIndex);
-        void SetSelectedLocationIndex(int newLocationIndex);
+        void RemoveAds();
         int GetBestScore();
         void SetBestScore(int newRecord);
         long GetNormalGamesPlayed();
-        long GetSurvivalGamesPlayed();
         void IncrementNormalGamesPlayed();
+        long GetSurvivalGamesPlayed();
         void IncrementSurvivalGamesPlayed();
         int GetCoins();
         void AddCoins(int amount);
         bool CanSpendCoins(int amount);
         void SpendCoins(int amount);
-        void AddPurchasedHat(int hatIndex);
-        List<int> GetAllPurchasedHats();
-        int GetPurchasedHat(int hatIndex);
-        void AddPurchasedMask(int maskIndex);
-        List<int> GetAllPurchasedMasks();
-        int GetPurchasedMask(int maskIndex);
-        void AddPurchasedLocation(int locationIndex);
-        List<int> GetAllPurchasedLocations();
-        int GetPurchasedLocation(int locationIndex);
     }
 }
