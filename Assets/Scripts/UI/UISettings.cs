@@ -1,4 +1,5 @@
 using Core;
+using Core.Factory;
 using Core.Services.PlayerData;
 using Data;
 using UnityEngine;
@@ -15,19 +16,20 @@ namespace UI
         [SerializeField] private Button _noSoundButton;
         [Space]
         [SerializeField] private Button _noAddsButton;
-        [Space]
-        [SerializeField] private AudioSource _musicAudioSource;
 
         private IPlayerDataService _playerDataService;
+        private MusicManager _musicManager;
 
         private void Awake()
         {
             _playerDataService = AllServices.Container.Single<IPlayerDataService>();
+            var factory = AllServices.Container.Single<IGameFactory>();
+            _musicManager = factory.MusicManager;
 
             var musicOn = _playerDataService.GetMusic();
             _musicButton.gameObject.SetActive(musicOn);
             _noMusicButton.gameObject.SetActive(!musicOn);
-            _musicAudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
+            _musicManager.AudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
 
             var soundOn = _playerDataService.GetSound();
             _soundButton.gameObject.SetActive(soundOn);
@@ -62,7 +64,7 @@ namespace UI
             _musicButton.gameObject.SetActive(musicOn);
             _noMusicButton.gameObject.SetActive(!musicOn);
 
-            _musicAudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
+            _musicManager.AudioSource.volume = musicOn == true ? GameConstants.MAX_MUSIC_VOLUME : 0f;
         }
 
         private void ToggleSound()

@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class PlayerTouchInput : PlayerInput
 {
-    private float _deadZoneX = 0.3f;
+    [SerializeField] private float _deadZoneX = 0.3f;
 
     void Update()
     {
-        HorizontalInput = 0f;
-
 #if UNITY_EDITOR
         if (Input.GetMouseButton(0))
         {
@@ -20,6 +18,14 @@ public class PlayerTouchInput : PlayerInput
             {
                 HorizontalInput = deltaX < 0 ? -1f : 1f;
             }
+            else
+            {
+                HorizontalInput = 0f;
+            }
+        }
+        else
+        {
+            HorizontalInput = 0f;
         }
 #else
         if (Input.touchCount > 0)
@@ -36,7 +42,15 @@ public class PlayerTouchInput : PlayerInput
                 {
                     HorizontalInput = deltaX < 0 ? -1f : 1f;
                 }
+                else
+                {
+                    HorizontalInput = 0f;
+                }
             }
+        }
+        else
+        {
+            HorizontalInput = 0f;
         }
 #endif
     }

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
 
 #if UNITY_EDITOR
-        playerInput = GetComponent<PlayerComputerInput>();
+        playerInput = GetComponent<PlayerTouchInput>();
 #elif UNITY_WEBGL
         if (YG2.envir.isMobile || YG2.envir.isMobile)
         {
@@ -35,7 +35,19 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    private void Update()
+    {
         SetAnimation();
+    }
+
+    private void MovePlayer()
+    {
+        if (!PowerUp.IsSuperSpeedActive)
+            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed;
+        else
+            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed * PowerUp.SpeedPowerUpMultiplier;
     }
 
     private void SetAnimation()
@@ -46,14 +58,6 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         else if (playerInput.HorizontalInput < 0 && facingRight)
             Flip();
-    }
-
-    private void MovePlayer()
-    {
-        if (!PowerUp.IsSuperSpeedActive)
-            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed;
-        else
-            playerRigitbody.velocity = Vector2.right * playerInput.HorizontalInput * playerSpeed * PowerUp.SpeedPowerUpMultiplier;
     }
 
     private void Flip()
