@@ -3494,7 +3494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1369110850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4561,7 +4561,6 @@ MonoBehaviour:
   _soundButton: {fileID: 1022034045}
   _noSoundButton: {fileID: 286760137}
   _noAddsButton: {fileID: 1369110851}
-  _musicAudioSource: {fileID: 0}
 --- !u!1001 &1785048686
 PrefabInstance:
   m_ObjectHideFlags: 0

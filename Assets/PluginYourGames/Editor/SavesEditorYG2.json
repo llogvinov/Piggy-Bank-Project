@@ -7,14 +7,14 @@
         false,
         false
     ],
-    "idSave": 929,
+    "idSave": 943,
     "Music": false,
     "Sound": false,
     "RemovedAds": false,
-    "Coins": 0,
+    "Coins": 16,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "BestScore": 0,
+    "BestScore": 4,
     "SelectedHatId": 0,
     "SelectedMaskId": 0,
     "SelectedLocationId": 0,
@@ -48,18 +48,24 @@
         "LocalizationId": "mountain",
         "Price": 0,
         "sky": {
-            "instanceID": 24140
+            "instanceID": 24136
         },
         "ground": {
-            "instanceID": 24142
+            "instanceID": 24138
         },
         "trees": {
-            "instanceID": 24144
+            "instanceID": 24140
         },
         "mountain": {
-            "instanceID": 24146
+            "instanceID": 24142
         },
         "cloudList": [
+            {
+                "instanceID": 24144
+            },
+            {
+                "instanceID": 24146
+            },
             {
                 "instanceID": 24148
             },
@@ -68,12 +74,6 @@
             },
             {
                 "instanceID": 24152
-            },
-            {
-                "instanceID": 24154
-            },
-            {
-                "instanceID": 24156
             }
         ]
     }

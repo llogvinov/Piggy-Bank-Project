@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Core.Services.PlayerData;
 using Main.Background;
 using PiggyBank;
 using Spawners;
@@ -65,7 +66,15 @@ namespace Core.StateMachine
         {
             _uiPause.MenuButton.onClick.RemoveListener(GoToMenu);
             _uiPause.ResumeGame();
+            AddCollectedCoins();
             _stateMachine.Enter<LoadSceneState, string>(AssetPath.MenuScene);
+        }
+
+        private void AddCollectedCoins()
+        {
+            var playerDataService = _services.Single<IPlayerDataService>();
+            var coinCollector = _gameFactory.Player.CoinCollector;
+            playerDataService.AddCoins(coinCollector.CoinsToAdd);
         }
 
         private void OnGameOver(GameOverCondition condition)
