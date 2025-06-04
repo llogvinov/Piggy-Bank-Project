@@ -126,6 +126,7 @@ namespace Core.StateMachine
         private void RestartGame()
         {
             GameObject.Destroy(_gameFactory.Player.gameObject);
+            _services.Single<IAdService>().ShowInterstitialAd();
             _stateMachine.Enter<LoadSceneState, string>(AssetPath.SurvivalGameScene);
         }
     }

@@ -91,6 +91,7 @@ namespace Core.StateMachine
 
         private void RestartGame()
         {
+            _services.Single<IAdService>().ShowInterstitialAd();
             GameObject.Destroy(_gameFactory.Player.gameObject);
             _stateMachine.Enter<LoadSceneState, string>(AssetPath.GameScene);
         }
