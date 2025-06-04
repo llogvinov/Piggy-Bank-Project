@@ -28,12 +28,12 @@ namespace Core.StateMachine
                 
                 new PrepareGameState(this, game, services, uiLoading),
                 new GameLoopState(this),
-                new GameOverState(this, game, services),
+                new GameOverState(this, game, services, coroutineRunner),
                 new ReviveGameLoopState(this, game, services),
 
                 new PrepareSurvivalGameState(this, game, services, uiLoading),
                 new SurvivalGameLoopState(this),
-                new SurvivalGameOverState(this, game, services),
+                new SurvivalGameOverState(this, game, services, coroutineRunner),
                 new ReviveSurvivalGameLoopState(this, game, services),
             };
         }

@@ -10,7 +10,7 @@ public class Enemy : PooledObject
     [SerializeField] private int damage;
     [SerializeField] private float damageRadius;
     [SerializeField] private float scale;
-    
+
     protected const float groundCameraShakeForce = 0.05f;
     private const float playerCameraShakeForce = 0.1f;
 
@@ -49,7 +49,10 @@ public class Enemy : PooledObject
             {
                 if (overlapCollider.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
                 {
-                    playerHealth.TakeDamage(damage);
+                    if (playerHealth.enabled)
+                    {
+                        playerHealth.TakeDamage(damage);
+                    }
                 }
             }
         }

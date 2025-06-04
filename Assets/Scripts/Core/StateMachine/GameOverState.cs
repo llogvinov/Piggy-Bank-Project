@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.PlayerData;
@@ -14,19 +15,21 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly Game _game;
         private readonly AllServices _services;
+        private readonly ICoroutineRunner _coroutineRunner;
         private readonly IGameFactory _gameFactory;
         private readonly IPlayerDataService _playerDataService;
 
         private UIGameOver _uiGameOver;
 
-        public GameOverState(GameStateMachine stateMachine, 
-            Game game, 
-            AllServices services)
+        public GameOverState(GameStateMachine stateMachine,
+            Game game,
+            AllServices services,
+            ICoroutineRunner coroutineRunner)
         {
             _stateMachine = stateMachine;
             _game = game;
             _services = services;
-
+            _coroutineRunner = coroutineRunner;
             _gameFactory = _services.Single<IGameFactory>();
             _playerDataService = services.Single<IPlayerDataService>();
         }
@@ -35,20 +38,30 @@ namespace Core.StateMachine
         {
             Game.GameOver = null;
 
+            var player = _gameFactory.Player;
+            player.ToggleMovement(false);
+
             _playerDataService.SetBestScore(_gameFactory.Player.CoinCollector.CoinsToAdd);
             _playerDataService.AddCoins(_gameFactory.Player.CoinCollector.CoinsToAdd);
 
             var uiPowerup = GameObject.FindObjectOfType<PowerupSpawner>();
             uiPowerup.DeactivateAllPowerups();
 
-            _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();
-            _uiGameOver.ReviveButton.onClick.AddListener(ShowRewardedAd);
-            _uiGameOver.MenuButton.onClick.AddListener(LoadMenu);
-            _uiGameOver.RestartButton.onClick.AddListener(RestartGame);
-            _uiGameOver.ToggleRewardButton(!_game.IsRevived);
-            _uiGameOver.Show(!_game.IsRevived, 
-                _playerDataService.GetBestScore(), 
-                _gameFactory.Player.CoinCollector.CoinsToAdd);
+            _coroutineRunner.StartCoroutine(Delayed());
+
+            IEnumerator Delayed()
+            {
+                yield return new WaitForSeconds(0.5f);
+
+                _uiGameOver = GameObject.FindObjectOfType<UIGameOver>();
+                _uiGameOver.ReviveButton.onClick.AddListener(ShowRewardedAd);
+                _uiGameOver.MenuButton.onClick.AddListener(LoadMenu);
+                _uiGameOver.RestartButton.onClick.AddListener(RestartGame);
+                _uiGameOver.ToggleRewardButton(!_game.IsRevived);
+                _uiGameOver.Show(!_game.IsRevived,
+                    _playerDataService.GetBestScore(),
+                    _gameFactory.Player.CoinCollector.CoinsToAdd);
+            }
         }
 
         public void Exit()

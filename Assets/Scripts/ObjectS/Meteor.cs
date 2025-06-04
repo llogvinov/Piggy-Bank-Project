@@ -26,7 +26,10 @@ public class Meteor : Enemy
     {
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out var playerHealth))
         {
-            ExplodeOnPlayer(playerHealth);
+            if (playerHealth.enabled)
+            {
+                ExplodeOnPlayer(playerHealth);
+            }
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {

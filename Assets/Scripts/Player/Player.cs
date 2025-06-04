@@ -23,5 +23,11 @@ namespace Main
             Health.SetInitialHealth();
             Cracks.Initialize(this);
         }
+
+        public void ToggleMovement(bool enable) =>
+            _playerMovement.enabled = enable;
+
+        public void ToggleHealth(bool enable) =>
+            _playerHealth.enabled = enable;
     }
 }

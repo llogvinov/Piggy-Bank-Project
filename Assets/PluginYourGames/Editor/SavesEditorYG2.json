@@ -7,62 +7,79 @@
         false,
         false
     ],
-    "idSave": 950,
+    "idSave": 1154,
     "Music": false,
     "Sound": false,
     "RemovedAds": false,
-    "Coins": 16,
+    "Coins": 3345,
     "NormalGamesPlayed": 0,
     "SurvivalGamesPlayed": 0,
-    "BestScore": 4,
-    "SelectedHatId": 0,
-    "SelectedMaskId": 0,
+    "BestScore": 90,
+    "SelectedHatId": 11,
+    "SelectedMaskId": 9,
     "SelectedLocationId": 0,
     "PurchasedHatsIds": [
-        0
+        0,
+        15,
+        2,
+        13,
+        4,
+        7,
+        9,
+        5,
+        3,
+        11
     ],
     "PurchasedMasksIds": [
-        0
+        0,
+        4,
+        9,
+        15,
+        10,
+        14,
+        7,
+        6
     ],
     "PurchasedLocationsIds": [
-        0
+        0,
+        4,
+        2,
+        3,
+        1
     ],
     "SelectedHat": {
         "Image": {
-            "instanceID": 0
+            "instanceID": 24228
         },
-        "Id": 0,
-        "LocalizationId": "none",
-        "Price": 0
+        "Id": 11,
+        "LocalizationId": "clown_wig",
+        "Price": 1190
     },
     "SelectedMask": {
         "Image": {
-            "instanceID": 0
+            "instanceID": 24258
         },
-        "Id": 0,
-        "LocalizationId": "none",
-        "Price": 0
+        "Id": 9,
+        "LocalizationId": "moustache",
+        "Price": 990
     },
     "SelectedLocation": {
         "Id": 0,
         "LocalizationId": "mountain",
         "Price": 0,
         "sky": {
-            "instanceID": 24136
-        },
-        "ground": {
             "instanceID": 24138
         },
-        "trees": {
+        "ground": {
             "instanceID": 24140
         },
-        "mountain": {
+        "trees": {
             "instanceID": 24142
         },
+        "mountain": {
+            "instanceID": 24144
+        },
         "cloudList": [
-            {
-                "instanceID": 24144
-            },
             {
                 "instanceID": 24146
             },
@@ -74,6 +91,9 @@
             },
             {
                 "instanceID": 24152
+            },
+            {
+                "instanceID": 24154
             }
         ]
     }

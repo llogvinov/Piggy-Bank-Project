@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Core.Factory;
 using Core.Services.Ad;
 using Core.Services.PlayerData;
@@ -14,6 +15,7 @@ namespace Core.StateMachine
         private readonly GameStateMachine _stateMachine;
         private readonly Game _game;
         private readonly AllServices _services;
+        private readonly ICoroutineRunner _coroutineRunner;
         private readonly IGameFactory _gameFactory;
         private readonly IPlayerDataService _playerDataService;
 
@@ -24,11 +26,13 @@ namespace Core.StateMachine
 
         public SurvivalGameOverState(GameStateMachine stateMachine,
             Game game,
-            AllServices services)
+            AllServices services,
+            ICoroutineRunner coroutineRunner)
         {
             _stateMachine = stateMachine;
             _game = game;
             _services = services;
+            _coroutineRunner = coroutineRunner;
 
             _gameFactory = _services.Single<IGameFactory>();
             _playerDataService = services.Single<IPlayerDataService>();
@@ -39,16 +43,26 @@ namespace Core.StateMachine
             _gameOverCondition = gameOverCondition;
             Game.GameOver = null;
 
-            switch (_gameOverCondition)
+            var player = _gameFactory.Player;
+            player.ToggleMovement(false);
+            player.ToggleHealth(false);
+            _coroutineRunner.StartCoroutine(Delayed());
+
+            IEnumerator Delayed()
             {
-                case GameOverCondition.Died:
-                    OnDied();
-                    break;
-                case GameOverCondition.Completed:
-                    OnCompleted();
-                    break;
-                default:
-                    throw new Exception($"Invalid game over condition {_gameOverCondition}");
+                yield return new WaitForSeconds(0.5f);
+
+                switch (_gameOverCondition)
+                {
+                    case GameOverCondition.Died:
+                        OnDied();
+                        break;
+                    case GameOverCondition.Completed:
+                        OnCompleted();
+                        break;
+                    default:
+                        throw new Exception($"Invalid game over condition {_gameOverCondition}");
+                }
             }
         }
 

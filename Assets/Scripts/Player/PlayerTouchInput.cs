@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerTouchInput : PlayerInput
 {
-    [SerializeField] private float _deadZoneX = 0.3f;
+    [SerializeField] private float _deadZoneX = 0.5f;
 
     void Update()
     {

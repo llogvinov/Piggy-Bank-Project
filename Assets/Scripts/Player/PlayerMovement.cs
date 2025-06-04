@@ -13,13 +13,22 @@ public class PlayerMovement : MonoBehaviour
 
     private static readonly int Speed = Animator.StringToHash("Speed");
 
-    private void Start()
+    private void Awake()
     {
         playerRigitbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+    }
 
+    private void OnEnable() =>
+        Reset();
+
+    private void OnDisable() =>
+        Reset();
+
+    private void Start()
+    {
 #if UNITY_EDITOR
-        playerInput = GetComponent<PlayerTouchInput>();
+        playerInput = GetComponent<PlayerComputerInput>();
 #elif UNITY_WEBGL
         if (YG2.envir.isMobile || YG2.envir.isMobile)
         {
@@ -32,14 +41,16 @@ public class PlayerMovement : MonoBehaviour
 #endif
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() =>
         MovePlayer();
-    }
 
-    private void Update()
-    {
+    private void Update() =>
         SetAnimation();
+
+    private void Reset()
+    {
+        playerRigitbody.velocity = Vector2.zero;
+        playerAnimator.SetFloat(Speed, 0f);
     }
 
     private void MovePlayer()
@@ -52,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetAnimation()
     {
-        playerAnimator.SetFloat(Speed, Mathf.Abs(playerInput.HorizontalInput));
+        playerAnimator.SetFloat(Speed, Mathf.Abs(playerRigitbody.velocity.x));
 
         if (playerInput.HorizontalInput > 0 && !facingRight)
             Flip();

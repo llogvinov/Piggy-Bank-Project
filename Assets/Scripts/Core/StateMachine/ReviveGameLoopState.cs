@@ -27,6 +27,7 @@ namespace Core.StateMachine
             Game.GameOver += OnGameOver;
             
             var player = _gameFactory.Player;
+            player.ToggleMovement(true);
             player.Health.AddHeart(); 
             GameObject.Destroy(_gameFactory.Player.Cracks.CrackedPlayer.gameObject);
             player.Health.gameObject.SetActive(true);
