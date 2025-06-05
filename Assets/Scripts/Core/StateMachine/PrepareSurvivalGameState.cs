@@ -1,4 +1,5 @@
 ﻿using Core.Factory;
+using Core.Services.PlayerData;
 using Data;
 using PiggyBank;
 using Spawners;
@@ -34,6 +35,9 @@ namespace Core.StateMachine
 
         public void Enter()
         {
+            var playerDataService = _services.Single<IPlayerDataService>();
+            playerDataService.IncrementSurvivalGamesPlayed();
+
             _game.IsRevived = false;
 
             _timer = GameObject.FindObjectOfType<GameTimer>();

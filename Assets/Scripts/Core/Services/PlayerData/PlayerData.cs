@@ -10,6 +10,7 @@ namespace Core.Services.PlayerData
         public bool RemovedAds = false;
         
         public int Coins = 0;
+        public bool ReviewShown = false;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;
         public int BestScore = 0;
@@ -36,6 +37,7 @@ namespace YG
         public bool RemovedAds = false;
         
         public int Coins = 0;
+        public bool ReviewShown = false;
         public long NormalGamesPlayed = 0;
         public long SurvivalGamesPlayed = 0;
         public int BestScore = 0;

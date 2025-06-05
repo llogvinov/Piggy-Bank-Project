@@ -34,6 +34,9 @@ namespace Core.StateMachine
 
         public void Enter()
         {
+            var playerDataService = _services.Single<IPlayerDataService>();
+            playerDataService.IncrementNormalGamesPlayed();
+
             _game.IsRevived = false;
             
             _uiPause = GameObject.FindObjectOfType<UIPause>();

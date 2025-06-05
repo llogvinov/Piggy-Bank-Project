@@ -23,7 +23,7 @@ namespace Core.StateMachine
             _states = new List<IState>
             {
                 new BootstrapState(this, game, coroutineRunner, sceneLoader, services, settings),
-                new MenuState(this, uiLoading),
+                new MenuState(this, services, uiLoading),
                 new LoadSceneState(this, sceneLoader, uiLoading),
                 
                 new PrepareGameState(this, game, services, uiLoading),

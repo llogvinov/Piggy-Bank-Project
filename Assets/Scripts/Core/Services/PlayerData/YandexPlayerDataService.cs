@@ -11,6 +11,7 @@ namespace Core.Services.PlayerData
             PlayerData.Sound = YG2.saves.Sound;
             PlayerData.RemovedAds = YG2.saves.RemovedAds;
             PlayerData.Coins = YG2.saves.Coins;
+            PlayerData.ReviewShown = YG2.saves.ReviewShown;
             PlayerData.NormalGamesPlayed = YG2.saves.NormalGamesPlayed;
             PlayerData.SurvivalGamesPlayed = YG2.saves.SurvivalGamesPlayed;
             PlayerData.BestScore = YG2.saves.BestScore;
@@ -32,6 +33,7 @@ namespace Core.Services.PlayerData
             YG2.saves.Sound = playerData.Sound;
             YG2.saves.RemovedAds = playerData.RemovedAds;
             YG2.saves.Coins = playerData.Coins;
+            YG2.saves.ReviewShown = playerData.ReviewShown;
             YG2.saves.NormalGamesPlayed = playerData.NormalGamesPlayed;
             YG2.saves.SurvivalGamesPlayed = playerData.SurvivalGamesPlayed;
             YG2.saves.BestScore = playerData.BestScore;
