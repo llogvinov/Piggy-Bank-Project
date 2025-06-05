@@ -51,8 +51,11 @@ namespace UI
             _rewardButton.onClick.RemoveListener(ShowRewardedAd);
         }
 
-        private void ShowRewardedAd() =>
+        private void ShowRewardedAd()
+        {
             _adService.ShowRewardedAd("DoubleCoins", DoubleCoins);
+            SwitchPanels(false);
+        }
 
         private void DoubleCoins()
         {
