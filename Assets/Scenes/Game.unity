@@ -5140,14 +5140,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 900265575}
     m_Modifications:
-    - target: {fileID: 321726441781682132, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 607921898460765655, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 688048553186824605, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5188,66 +5180,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2351757351476492152, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5457882672112724461, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980101405607569684, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: _panel
-      value: 
-      objectReference: {fileID: 5023426767703292327}
     - target: {fileID: 5980101405607569684, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
       propertyPath: _uiPowerup
       value: 
       objectReference: {fileID: 1997905831}
-    - target: {fileID: 5980101405607569684, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: _toHide.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5980101405607569684, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
       propertyPath: _toHide.Array.data[0]
       value: 
@@ -5260,10 +5196,6 @@ PrefabInstance:
       propertyPath: _toHide.Array.data[2]
       value: 
       objectReference: {fileID: 1488020673}
-    - target: {fileID: 5980101405607569684, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-      propertyPath: _toHide.Array.data[3]
-      value: 
-      objectReference: {fileID: 1997905831}
     - target: {fileID: 6890978430924971317, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
       propertyPath: m_Name
       value: UI Game Over
@@ -5273,11 +5205,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
---- !u!1 &5023426767703292327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 321726441781682132, guid: d58ff6c72e9618f48aa5bf9a647f0ecf, type: 3}
-  m_PrefabInstance: {fileID: 5023426767703292326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &5141691448208678543
 SpriteRenderer:
   m_ObjectHideFlags: 0

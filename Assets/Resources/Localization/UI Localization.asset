@@ -30,7 +30,7 @@ MonoBehaviour:
     RU: "\u0420\u0415\u041A\u041E\u0420\u0414"
     EN: RECORD
   - Id: revive
-    RU: "\u0412\u041E\u0417\u0420\u041E\u0414\u0418\u0422\u042C"
+    RU: "\u041E\u0416\u0418\u0412\u0418\u0422\u042C"
     EN: REVIVE
   - Id: restart
     RU: "\u0417\u0410\u041D\u041E\u0412\u041E"
