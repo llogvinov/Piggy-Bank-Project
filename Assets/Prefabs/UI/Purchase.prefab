@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3914432915572936118}
   - component: {fileID: 2999831313696097}
   - component: {fileID: 539164524663746019}
+  - component: {fileID: 3105656530817704795}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 0.8
   m_Text: 1000 coins
+--- !u!114 &3105656530817704795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42978433525749426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615c5949043693e488889433eac5654e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _shouldUpdateUI: 0
 --- !u!1 &400371480818501536
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +184,7 @@ GameObject:
   - component: {fileID: 8019429015100701417}
   - component: {fileID: 4931043365106505518}
   - component: {fileID: 3434498973768381296}
+  - component: {fileID: 2680454332714899940}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -237,6 +253,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 0.8
   m_Text: super duper long Title
+--- !u!114 &2680454332714899940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427839251741584814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615c5949043693e488889433eac5654e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _shouldUpdateUI: 0
 --- !u!1 &1569701326146126822
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +573,7 @@ GameObject:
   - component: {fileID: 8019225467484753143}
   - component: {fileID: 4543975742287594896}
   - component: {fileID: 7847124850682214758}
+  - component: {fileID: 2152875702099971659}
   m_Layer: 5
   m_Name: Purchase
   m_TagString: Untagged
@@ -634,6 +665,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &2152875702099971659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8457099932473275768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51fe9858643987428cafdbf3049911b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _purchaseYG: {fileID: 8019225467484753143}
+  _titleLocalizedText: {fileID: 2680454332714899940}
+  _descriptionLocalizedText: {fileID: 3105656530817704795}
 --- !u!1 &9032741248848315998
 GameObject:
   m_ObjectHideFlags: 0

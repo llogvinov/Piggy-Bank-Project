@@ -7,7 +7,7 @@
         false,
         false
     ],
-    "idSave": 1265,
+    "idSave": 1304,
     "Music": false,
     "Sound": false,
     "RemovedAds": false,
@@ -51,7 +51,7 @@
     ],
     "SelectedHat": {
         "Image": {
-            "instanceID": 24208
+            "instanceID": 24226
         },
         "Id": 1,
         "LocalizationId": "just_hat",
@@ -59,7 +59,7 @@
     },
     "SelectedMask": {
         "Image": {
-            "instanceID": 24258
+            "instanceID": 24276
         },
         "Id": 9,
         "LocalizationId": "moustache",
@@ -70,32 +70,32 @@
         "LocalizationId": "mountain",
         "Price": 0,
         "sky": {
-            "instanceID": 24138
+            "instanceID": 24156
         },
         "ground": {
-            "instanceID": 24140
+            "instanceID": 24158
         },
         "trees": {
-            "instanceID": 24142
+            "instanceID": 24160
         },
         "mountain": {
-            "instanceID": 24144
+            "instanceID": 24162
         },
         "cloudList": [
             {
-                "instanceID": 24146
+                "instanceID": 24164
             },
             {
-                "instanceID": 24148
+                "instanceID": 24166
             },
             {
-                "instanceID": 24150
+                "instanceID": 24168
             },
             {
-                "instanceID": 24152
+                "instanceID": 24170
             },
             {
-                "instanceID": 24154
+                "instanceID": 24172
             }
         ]
     }

@@ -79,3 +79,27 @@ MonoBehaviour:
   - Id: coins
     RU: "\u041A\u0423\u041F\u0418\u0422\u042C \u041C\u041E\u041D\u0415\u0422\u042B"
     EN: PURCHASE COINS
+  - Id: in-app1
+    RU: "\u041A\u043E\u0448\u0435\u043B\u0451\u043A \u041D\u043E\u0432\u0438\u0447\u043A\u0430"
+    EN: Rookie's Wallet
+  - Id: in-app2
+    RU: "\u0421\u0443\u043F\u0435\u0440- \u0421\u0432\u0438\u043D\u043E\u0431\u0430\u043D\u043A"
+    EN: Super Piggybank
+  - Id: in-app3
+    RU: "\u0421\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0430 \u0412\u0435\u0442\u0435\u0440\u0430\u043D\u0430"
+    EN: "Veteran\u2019s Treasure"
+  - Id: in-app4
+    RU: "\u041A\u0430\u0437\u043D\u0430 \u041B\u0435\u0433\u0435\u043D\u0434\u044B"
+    EN: "Legend\u2019s Hoard"
+  - Id: in-app1_description
+    RU: "1000 \u043C\u043E\u043D\u0435\u0442"
+    EN: 1000 coins
+  - Id: in-app2_description
+    RU: "3000 \u043C\u043E\u043D\u0435\u0442"
+    EN: 3000 coins
+  - Id: in-app3_description
+    RU: "10000 \u043C\u043E\u043D\u0435\u0442"
+    EN: 10000 coins
+  - Id: in-app4_description
+    RU: "40000 \u043C\u043E\u043D\u0435\u0442"
+    EN: 40000 coins
