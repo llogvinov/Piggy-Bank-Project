@@ -788,7 +788,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 215648005}
-  - component: {fileID: 215648006}
   - component: {fileID: 215648007}
   m_Layer: 5
   m_Name: Catalog
@@ -817,18 +816,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &215648006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215648004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c66d3ab56cc71745982569cb28c3dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &215648007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3804,6 +3791,7 @@ GameObject:
   - component: {fileID: 1400940751}
   - component: {fileID: 1400940752}
   - component: {fileID: 1400940753}
+  - component: {fileID: 1400940754}
   m_Layer: 0
   m_Name: UI In App Purchase
   m_TagString: Untagged
@@ -3864,6 +3852,18 @@ MonoBehaviour:
   FailedPurchased:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1400940754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400940749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c66d3ab56cc71745982569cb28c3dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435418888
 GameObject:
   m_ObjectHideFlags: 0
